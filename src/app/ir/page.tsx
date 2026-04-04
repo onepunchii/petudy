@@ -701,11 +701,11 @@ export default function IRPage() {
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
 
       <section id="invest" className="relative z-10 text-center py-16 md:py-[120px] px-4">
-        <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-6 md:mb-8">09 / Investment</div>
+        <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-6 md:mb-8">09 / Business Plan</div>
         <div className="text-[clamp(2.5rem,8vw,6rem)] font-black tracking-[-2px] md:tracking-[-3px] leading-[1.2] mb-6 md:mb-8">
-          7,000<span className="text-[#A3DF46]">만원</span>
+          사업<span className="text-[#A3DF46]">계획</span>서
         </div>
-        <p className="text-base md:text-lg text-[#8888A0] mb-10 md:mb-20 leading-relaxed">Seed 투자 목표 — 포온과 함께 반려동물 장례 시장을 바꿉니다</p>
+        <p className="text-base md:text-lg text-[#8888A0] mb-10 md:mb-20 leading-relaxed">포온과 함께 반려동물 장례 시장을 바꿉니다</p>
         <div className="flex flex-col sm:flex-row gap-4 md:gap-8 justify-center">
           <button className="px-8 md:px-12 py-4 md:py-5 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)]">
             사업계획 미팅 신청
