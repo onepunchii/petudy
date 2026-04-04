@@ -5,10 +5,10 @@ import { useState, useEffect, useRef } from "react";
 const SECTIONS = [
   { id: "hero", title: "Po-On" },
   { id: "brand", title: "브랜드" },
-  { id: "problem", title: "Problem & Solution" },
+  { id: "problem", title: "Problem" },
   { id: "market", title: "시장" },
   { id: "competition", title: "경쟁" },
-  { id: "model", title: "비즈니스 모델" },
+  { id: "model", title: "모델" },
   { id: "financial", title: "재무" },
   { id: "roadmap", title: "로드맵" },
   { id: "team", title: "팀" },
@@ -18,7 +18,7 @@ const SECTIONS = [
 
 export default function PrintView({ onClose }: { onClose: () => void }) {
   const [currentIdx, setCurrentIdx] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -31,27 +31,21 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   useEffect(() => {
-    const el = document.getElementById(SECTIONS[currentIdx].id);
-    if (el && sectionRef.current) {
-      sectionRef.current.innerHTML = el.innerHTML;
-      const style = document.createElement("style");
-      style.textContent = `
-        .print-section * { font-size: unset !important; line-height: unset !important; }
-        .print-section > * { margin-bottom: 0 !important; }
-      `;
-      sectionRef.current.prepend(style);
+    if (contentRef.current) {
+      const section = SECTIONS[currentIdx];
+      const original = document.getElementById(section.id);
+      if (original) {
+        contentRef.current.innerHTML = original.innerHTML;
+        contentRef.current.scrollTop = 0;
+      }
     }
   }, [currentIdx]);
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
-    <div className="fixed inset-0 bg-[#0D0D14] z-[200] flex flex-col print:hiden">
-      <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0D0D14] print:hidden">
+    <div className="fixed inset-0 bg-[#0D0D14] z-[200] flex flex-col">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0D0D14]">
         <div className="flex items-center gap-4">
-          <button onClick={onClose} className="p-2 hover:bg-white/10 rounded-lg transition-colors">
+          <button onClick={onClose} className="p-2 hover:bg-white/10 rounded-lg">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -60,37 +54,48 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
           <span className="text-[#8888A0] text-sm">{currentIdx + 1} / {SECTIONS.length}</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-[#8888A0] text-sm">각 섹션마다 Ctrl+P로 PDF 저장</span>
-          <button
-            onClick={handlePrint}
-            className="px-5 py-2.5 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-xl hover:bg-[#BEF16E] transition-colors"
-          >
+          <span className="text-[#8888A0] text-sm">A4 비율로 확인 후 스크린샷/PDF 저장</span>
+          <button onClick={() => window.print()} className="px-5 py-2.5 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-xl hover:bg-[#BEF16E]">
             인쇄
           </button>
         </div>
       </div>
 
-      <div className="flex-1 flex items-center justify-center p-6 overflow-hidden">
-        <div className="w-full max-w-[1414px] aspect-[297/210] bg-[#0D0D14] border border-white/10 overflow-auto">
-          <div ref={sectionRef} className="print-section min-h-full" />
+      <div className="flex-1 flex items-center justify-center p-8 overflow-hidden bg-[#1a1a24]">
+        <div
+          className="bg-[#0D0D14] border border-white/20 relative"
+          style={{
+            width: "min(90vw, calc(90vh * 297 / 210))",
+            aspectRatio: "297 / 210",
+          }}
+        >
+          <div
+            ref={contentRef}
+            className="absolute inset-0 overflow-auto"
+            style={{ aspectRatio: "297 / 210" }}
+          />
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-2 py-3 bg-[#0D0D14] border-t border-white/10 print:hidden">
+      <div className="flex items-center justify-center gap-2 py-3 bg-[#0D0D14] border-t border-white/10 overflow-x-auto">
         {SECTIONS.map((s, i) => (
           <button
             key={s.id}
             onClick={() => setCurrentIdx(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-colors ${i === currentIdx ? "bg-[#A3DF46]" : "bg-white/20 hover:bg-white/40"}`}
-          />
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap ${
+              i === currentIdx ? "bg-[#A3DF46] text-[#0D0D14]" : "bg-white/10 text-white/70 hover:bg-white/20"
+            }`}
+          >
+            {s.title}
+          </button>
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-4 py-3 border-t border-white/10 bg-[#0D0D14] print:hidden">
+      <div className="flex items-center justify-center gap-4 py-3 border-t border-white/10 bg-[#0D0D14]">
         <button
           onClick={() => setCurrentIdx((p) => Math.max(p - 1, 0))}
           disabled={currentIdx === 0}
-          className="px-5 py-2 bg-white/10 text-white rounded-lg disabled:opacity-30 hover:bg-white/20 transition-colors"
+          className="px-5 py-2 bg-white/10 text-white rounded-lg disabled:opacity-30 hover:bg-white/20"
         >
           ← 이전
         </button>
@@ -98,7 +103,7 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
         <button
           onClick={() => setCurrentIdx((p) => Math.min(p + 1, SECTIONS.length - 1))}
           disabled={currentIdx === SECTIONS.length - 1}
-          className="px-5 py-2 bg-white/10 text-white rounded-lg disabled:opacity-30 hover:bg-white/20 transition-colors"
+          className="px-5 py-2 bg-white/10 text-white rounded-lg disabled:opacity-30 hover:bg-white/20"
         >
           다음 →
         </button>
@@ -107,7 +112,6 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
       <style jsx global>{`
         @media print {
           body > * { display: none !important; }
-          .print-section { display: block !important; }
         }
       `}</style>
     </div>
