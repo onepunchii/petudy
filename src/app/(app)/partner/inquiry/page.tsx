@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Check, Car, Bath } from "lucide-react";
+import { ArrowLeft, Check, Car, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type InquiryType = "funeral" | "bath";
@@ -42,7 +42,7 @@ export default function PartnerInquiryPage() {
                         {/* Intro Text */}
                         <div className="space-y-2">
                             <h2 className="text-2xl font-bold">
-                                펫터디와 새로운 가치를<br />
+                                Po-ON과 새로운 가치를<br />
                                 만들어갈 파트너님을 모십니다
                             </h2>
                             <p className="text-gray-400 text-sm">
@@ -93,10 +93,10 @@ export default function PartnerInquiryPage() {
                                     "w-12 h-12 rounded-full flex items-center justify-center transition-colors",
                                     inquiryType === "bath" ? "bg-foon-lime/20 text-foon-lime" : "bg-[#333] text-gray-500"
                                 )}>
-                                    <Bath className="w-6 h-6" />
+                                    <Building2 className="w-6 h-6" />
                                 </div>
                                 <span className={cn("font-bold", inquiryType === "bath" ? "text-foon-lime" : "text-gray-400")}>
-                                    모빌리티 목욕
+                                    고정식 장례
                                 </span>
                                 {inquiryType === "bath" && (
                                     <div className="absolute top-3 right-3 text-foon-lime">
@@ -115,7 +115,7 @@ export default function PartnerInquiryPage() {
                                     </label>
                                     <input
                                         type="text"
-                                        placeholder="홍길동 (펫터디 동물병원)"
+                                        placeholder="홍길동 (21gram 파트너)"
                                         className="w-full h-12 px-4 bg-[#2C2C2E] border border-transparent rounded-xl focus:border-foon-lime focus:outline-none transition-colors text-white placeholder:text-gray-600"
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}

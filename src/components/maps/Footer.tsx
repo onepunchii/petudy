@@ -9,12 +9,12 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="col-span-2">
                         <Link href="/" className="flex items-center gap-2 mb-6">
-                            <span className="text-xl font-bold text-white tracking-tight">MAPS</span>
-                            <div className="w-2 h-2 rounded-full bg-[#FF5500]"></div>
+                            <span className="text-xl font-bold text-white tracking-tight">Po-ON</span>
+                            <div className="w-2 h-2 rounded-full bg-[#A3DF46]"></div>
                         </Link>
                         <p className="text-[#666666] text-sm leading-relaxed max-w-xs break-keep">
-                            모빌리티 올펫 서비스 (Mobility All-Pet Service)<br />
-                            찾아가는 펫 비즈니스의 새로운 기준을 만듭니다.
+                            반려동물 장례 전문 에이전시<br />
+                            마지막까지, 품어드립니다.
                         </p>
                         <div className="flex gap-4 mt-6">
                             {/* Social Placeholders */}
@@ -43,7 +43,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-[#666666]">
-                    <p>Copyright © 2025 MAPS. All rights reserved.</p>
+                    <p>Copyright © 2025 21gram. All rights reserved.</p>
                     <p>Designed by Antigravity</p>
                 </div>
             </div>

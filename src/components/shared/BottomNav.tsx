@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Calendar, User, Trophy, Menu, X, Sparkles } from "lucide-react";
+import { Home, Calendar, User, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function BottomNav() {
@@ -12,29 +12,7 @@ export function BottomNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // Hamburger Menu State
 
     useEffect(() => {
-        // Only apply scroll behavior on the contest page on mobile
-        if (pathname !== "/contest") {
-            setIsVisible(true);
-            return;
-        }
-
-        let lastScrollY = window.scrollY;
-
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const direction = currentScrollY > lastScrollY ? "down" : "up";
-
-            if (direction === "down" && currentScrollY > 10 && (window.innerHeight + currentScrollY) < document.body.offsetHeight) {
-                setIsVisible(false);
-            } else if (direction === "up" || currentScrollY < 10) {
-                setIsVisible(true);
-            }
-
-            lastScrollY = currentScrollY > 0 ? currentScrollY : 0;
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
+        setIsVisible(true);
     }, [pathname]);
 
     // Close menu on navigation
@@ -48,8 +26,6 @@ export function BottomNav() {
 
     const tabs = [
         { name: "홈", href: "/", icon: Home },
-        { name: "펫픽", href: "/community/petpick", icon: Sparkles },
-        { name: "콘테스트", href: "/contest", icon: Trophy },
         { name: "예약하기", href: "/booking", icon: Calendar },
         { name: "내 정보", href: "/mypage", icon: User },
     ];

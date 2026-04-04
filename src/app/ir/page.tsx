@@ -125,120 +125,23 @@ export default function IRPage() {
         <div className="absolute rounded-full pointer-events-none hidden md:block" style={{ width: "500px", height: "500px", background: "radial-gradient(circle,rgba(60,60,120,.25) 0%,transparent 70%)", bottom: "-10%", right: "5%", filter: "blur(120px)" }} />
         <div className="absolute rounded-full pointer-events-none hidden md:block" style={{ width: "400px", height: "400px", background: "radial-gradient(circle,rgba(163,223,70,.04) 0%,transparent 70%)", top: "40%", left: "40%", filter: "blur(120px)" }} />
 
-        <div className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-20">
-          <div className="flex-1 max-w-[600px] w-full text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-[#8888A0] mb-6 md:mb-8">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#A3DF46] animate-[blink_2s_ease-in-out_infinite]" />
-              <span>2026년 Seed 투자 유치 — 서울·경기 관객권</span>
-            </div>
+        <div className="max-w-[1200px] mx-auto w-full relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-[#8888A0] mb-6 md:mb-8">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#A3DF46] animate-[blink_2s_ease-in-out_infinite]" />
+            <span>2026년 Seed 투자 유치 — 서울·경기 관객권</span>
+          </div>
 
-            <h1 className="text-[clamp(2.5rem,8vw,7.5rem)] font-black leading-[1.1] tracking-[-2px] md:tracking-[-3px] mb-4 md:mb-5 overflow-hidden">
-              <span className="block animate-[line-reveal_0.9s_cubic-bezier(.16,1,.3,1)_forwards] mb-2 md:mb-4" style={{ transform: "translateY(110%)", opacity: 0 }}>마지막까지</span>
-              <span className="block animate-[line-reveal_0.9s_cubic-bezier(.16,1,.3,1)_forwards] text-[#A3DF46]" style={{ transform: "translateY(110%)", opacity: 0, animationDelay: "0.15s" }}>품어드립니다</span>
-            </h1>
+          <h1 className="text-[clamp(2.5rem,8vw,7.5rem)] font-black leading-[1.1] tracking-[-2px] md:tracking-[-3px] mb-4 md:mb-5 overflow-hidden">
+            <span className="block animate-[line-reveal_0.9s_cubic-bezier(.16,1,.3,1)_forwards] mb-2 md:mb-4" style={{ transform: "translateY(110%)", opacity: 0 }}>마지막까지</span>
+            <span className="block animate-[line-reveal_0.9s_cubic-bezier(.16,1,.3,1)_forwards]" style={{ transform: "translateY(110%)", opacity: 0, animationDelay: "0.15s" }}>품다</span>
+            <span className="block animate-[line-reveal_0.9s_cubic-bezier(.16,1,.3,1)_forwards] text-white" style={{ transform: "translateY(110%)", opacity: 0, animationDelay: "0.25s" }}><span className="text-white">Po-</span><span className="text-[#A3DF46]">ON</span></span>
+          </h1>
 
             <p className="text-sm md:text-lg text-[#8888A0] leading-[1.7] mb-8 md:mb-12 animate-[fade-up_0.9s_0.3s_ease_forwards]" style={{ opacity: 0 }}>
               포온 (Po-On) — 반려동물 장례 전문 에이전시 플랫폼<br />
               슬픔의 순간, 투명하고 신뢰할 수 있는 장례 서비스를 연결합니다
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start animate-[fade-up_0.9s_0.45s_ease_forwards]" style={{ opacity: 0 }}>
-              <button
-                onClick={() => setShowPrintView(true)}
-                className="px-6 md:px-9 py-3 md:py-4 bg-[#A3DF46] text-[#0D0D14] font-bold text-sm rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)]"
-              >
-                인쇄용 보기
-              </button>
-              <button className="px-6 md:px-9 py-3 md:py-4 border border-white/15 text-white text-sm rounded-2xl bg-transparent transition-all hover:bg-white/5 hover:translate-y-[-2px]">
-                연락하기
-              </button>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 md:gap-4 mt-8 md:mt-12" ref={counterRef}>
-              {[
-                { target: 7000, suffix: "만원", label: "Seed 사용액" },
-                { target: 3000, suffix: "억", label: "국내 장례 시장 규모" },
-                { target: 15, suffix: "%+", label: "연평균 성장률" },
-                { target: 3, suffix: "분", label: "앱 예약 소요 시간" },
-              ].map((m, i) => (
-                <div key={i} className="p-3 md:p-4 rounded-[16px] bg-white/4 border border-white/8 transition-all hover:bg-white/7 hover:border-[rgba(163,223,70,.2)]">
-                  <div className="text-lg md:text-xl font-black text-[#A3DF46] tracking-[-1px]">
-                    <span className="counter" data-target={m.target} data-suffix={m.suffix}>0</span>
-                  </div>
-                  <div className="text-xs text-[#8888A0] mt-1">{m.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
-
-          <div className="relative flex-shrink-0 hidden lg:block">
-            <div className="absolute -top-8 -right-4 px-4 py-2 rounded-full text-xs font-medium backdrop-blur-xl border border-[rgba(163,223,70,.3)] text-[#A3DF46] bg-[rgba(163,223,70,.15)] animate-[float_6s_ease-in-out_infinite] z-20" style={{ animationDelay: "0s" }}>
-              펫장례 24시간
-            </div>
-            <div className="absolute -top-4 -left-16 px-4 py-2 rounded-full text-xs font-medium backdrop-blur-xl border border-white/15 text-[#8888A0] animate-[float_7s_ease-in-out_infinite] z-20" style={{ animationDelay: "1.2s" }}>
-              AI 펫로스 케어
-            </div>
-            <div className="absolute -bottom-8 -right-8 px-4 py-2 rounded-full text-xs font-medium backdrop-blur-xl border border-[rgba(163,223,70,.3)] text-[#A3DF46] bg-[rgba(163,223,70,.15)] animate-[float_6s_ease-in-out_infinite] z-20" style={{ animationDelay: "2.5s" }}>
-              3분 예약
-            </div>
-            <div className="absolute -bottom-4 -left-20 px-4 py-2 rounded-full text-xs font-medium backdrop-blur-xl border border-white/15 text-[#8888A0] animate-[float_8s_ease-in-out_infinite] z-20" style={{ animationDelay: "0.7s" }}>
-              투명 가격 공시
-            </div>
-
-            <div className="relative w-[280px] h-[560px] rounded-[40px] bg-gradient-to-b from-[#1E1E2A] to-[#12121E] border border-white/20 shadow-[0_40px_80px_rgba(0,0,0,.5),0_0_60px_rgba(163,223,70,.1)] overflow-hidden animate-[fade-up_0.9s_0.3s_ease_forwards]" style={{ opacity: 0 }}>
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[120px] h-[28px] bg-[#0D0D14] rounded-b-2xl z-10" />
-              <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-[8px] h-[8px] rounded-full bg-[#A3DF46] opacity-80" />
-              
-              <div className="pt-12 px-5">
-                <div className="text-center mb-6">
-                  <div className="text-3xl font-black tracking-[-1px] mb-1">
-                    <span className="text-white">Po-</span><span className="text-[#A3DF46]">On</span>
-                  </div>
-                  <div className="text-[10px] text-[#8888A0]">마지막까지, 품어드립니다</div>
-                </div>
-
-                <div className="bg-[rgba(163,223,70,.1)] border border-[rgba(163,223,70,.3)] rounded-2xl p-4 mb-4">
-                  <div className="text-xs text-[#A3DF46] font-bold mb-2">🐾 즉시 예약</div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-xs">
-                      <span className="text-[#8888A0]">예약 시간</span>
-                      <span className="text-white font-medium">지금</span>
-                    </div>
-                    <div className="flex justify-between text-xs">
-                      <span className="text-[#8888A0]">예상 비용</span>
-                      <span className="text-[#A3DF46] font-bold">₩ 280,000~</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white/5 rounded-2xl p-3 mb-4">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-[#A3DF46]/20 flex items-center justify-center text-sm">🏛️</div>
-                    <div>
-                      <div className="text-xs font-bold text-white">서울 장례식장</div>
-                      <div className="text-[10px] text-[#8888A0]">신규 파트너 · 즉시 예약</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white/5 rounded-2xl p-3 mb-4">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-[#6699ff]/20 flex items-center justify-center text-sm">💜</div>
-                    <div>
-                      <div className="text-xs font-bold text-white">AI 펫로스 케어</div>
-                      <div className="text-[10px] text-[#8888A0]">24시간 심리 지원</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-[rgba(163,223,70,.15)] rounded-2xl p-3 text-center">
-                  <div className="text-xs text-[#A3DF46] font-bold">✓ 예약 확정</div>
-                  <div className="text-[10px] text-[#8888A0] mt-1">SMS로 확인서 발송 완료</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div className="absolute bottom-9 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
           <span className="text-[0.65rem] tracking-[0.2em] uppercase text-[#8888A0]">Scroll</span>

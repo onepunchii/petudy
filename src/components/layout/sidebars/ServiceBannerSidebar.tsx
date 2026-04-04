@@ -15,15 +15,15 @@ export default function ServiceBannerSidebar() {
                     <div className="relative p-8 z-10">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foon-lime/10 text-foon-lime text-xs font-bold mb-4 border border-foon-lime/20">
                             <Sparkles className="w-3 h-3 fill-current" />
-                            가맹점 모집
+                            파트너 모집
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-2">
-                            펫터디와 함께할<br />
+                            Po-ON과 함께할<br />
                             파트너를 찾습니다
                         </h3>
                         <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                            반려동물 이동 서비스의 새로운 표준,<br />
-                            펫터디의 성공 노하우를 공유합니다.
+                            반려동물 장례 에이전시 플랫폼의<br />
+                            새로운 표준을 함께 만들어갑니다.
                         </p>
 
                         <Link href="/partner/inquiry" className="inline-flex items-center gap-2 text-white font-bold group-hover:text-foon-lime transition-colors">
@@ -39,7 +39,7 @@ export default function ServiceBannerSidebar() {
                     </div>
 
                     <h3 className="text-lg font-bold text-white mb-1">
-                        모빌리티 장례
+                        반려동물 장례
                     </h3>
                     <p className="text-gray-500 text-xs mb-4">
                         반려동물의 마지막 길을 정성껏 모십니다

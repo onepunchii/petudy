@@ -1,60 +1,37 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { ArrowRight, ChevronRight, X } from "lucide-react";
-import { useState, useRef, useEffect, Suspense } from "react";
+import { ArrowRight, X, Heart, Sparkles, Moon, Activity, Stethoscope, ShieldCheck, Leaf, Cloud, Star } from "lucide-react";
+import { useState, useRef, Suspense } from "react";
 
 type IntroStep = {
     title: string;
     description: string;
-    image: string; // Emoji or image URL
-    bgGradient: string;
+    icon: React.ElementType;
+    glowColor: string;
 };
 
 const introData: Record<string, { title: string; steps: IntroStep[] }> = {
-    BATH: {
-        title: "미용 예약",
-        steps: [
-            {
-                title: "프리미엄 스타일링",
-                description: "전문 스타일리스트의 손길로\n우리 아이의 미모를 찾아드려요.",
-                image: "✂️",
-                bgGradient: "from-pink-500/20 to-purple-500/20"
-            },
-            {
-                title: "스트레스 프리 케어",
-                description: "미용을 무서워하는 아이들도\n안심하고 맡길 수 있어요.",
-                image: "🛁",
-                bgGradient: "from-blue-500/20 to-cyan-500/20"
-            },
-            {
-                title: "최고급 스파 제품",
-                description: "피부가 예민한 아이들을 위해\n엄선된 천연 제품만 사용합니다.",
-                image: "✨",
-                bgGradient: "from-yellow-500/20 to-orange-500/20"
-            }
-        ]
-    },
     FUNERAL: {
         title: "펫장례",
         steps: [
             {
-                title: "아름다운 이별",
-                description: "마지막 순간까지 함께해준 아이에게\n존중과 예우를 다합니다.",
-                image: "🕊️",
-                bgGradient: "from-gray-700/50 to-gray-900/50"
+                title: "마지막 온기를 잇다",
+                description: "아이와 함께한 모든 빛나는 순간들이\n가장 아름답게 기억될 수 있도록.",
+                icon: Sparkles,
+                glowColor: "bg-amber-500/20"
             },
             {
-                title: "정성스러운 예식",
-                description: "전문 장례지도사가\n모든 절차를 세심하게 도와드립니다.",
-                image: "🕯️",
-                bgGradient: "from-stone-700/50 to-stone-900/50"
+                title: "가장 포근한 안식",
+                description: "전문 장례지도사가 모든 과정을\n마음 깊이 공감하며 세심하게 안내합니다.",
+                icon: Moon,
+                glowColor: "bg-slate-400/20"
             },
             {
-                title: "영원한 기억",
-                description: "메모리얼 스톤 제작으로\n아이를 영원히 곁에 간직하세요.",
-                image: "💎",
-                bgGradient: "from-indigo-900/50 to-slate-900/50"
+                title: "영원한 유대, 포온",
+                description: "이별이 끝이 아닌, 마음속 영원한\n별로 남을 수 있게 정성을 다합니다.",
+                icon: Star,
+                glowColor: "bg-foon-lime/20"
             }
         ]
     },
@@ -62,22 +39,45 @@ const introData: Record<string, { title: string; steps: IntroStep[] }> = {
         title: "건강검진",
         steps: [
             {
-                title: "종합 건강 체크",
-                description: "말 못하는 우리 아이,\n정기 검진으로 미리 지켜주세요.",
-                image: "🩺",
-                bgGradient: "from-green-500/20 to-emerald-500/20"
+                title: "말 못하는 아이를 위해",
+                description: "작은 변화도 놓치지 않도록,\n정밀하고 따뜻한 검진을 시작합니다.",
+                icon: Stethoscope,
+                glowColor: "bg-blue-500/20"
             },
             {
-                title: "최첨단 의료 장비",
-                description: "대학병원급 장비로\n작은 이상 징후도 놓치지 않습니다.",
-                image: "🔬",
-                bgGradient: "from-teal-500/20 to-cyan-500/20"
+                title: "대학병원급 인프라",
+                description: "최고 수준의 의료 장비와\n각 분야 전문 수의사진이 함께합니다.",
+                icon: Activity,
+                glowColor: "bg-cyan-500/20"
             },
             {
-                title: "전문 수의사 팀",
-                description: "분야별 전문 의료진이\n체계적인 진료를 약속합니다.",
-                image: "👨‍⚕️",
-                bgGradient: "from-blue-600/20 to-indigo-600/20"
+                title: "평생의 건강 방패",
+                description: "검진 결과를 바탕으로\n우리아이 맞춤형 평생 케어를 설계합니다.",
+                icon: ShieldCheck,
+                glowColor: "bg-foon-lime/20"
+            }
+        ]
+    },
+    SANGJO: {
+        title: "펫상조",
+        steps: [
+            {
+                title: "미리 준비하는 마음",
+                description: "갑작스러운 이별의 순간에도\n당황하지 않도록 든든하게 준비하세요.",
+                icon: Heart,
+                glowColor: "bg-rose-500/20"
+            },
+            {
+                title: "부담 없는 라이프케어",
+                description: "합리적인 월 납입금으로\n최고의 프리미엄 장례 서비스를 보장받습니다.",
+                icon: Cloud,
+                glowColor: "bg-indigo-500/20"
+            },
+            {
+                title: "신뢰의 파트너",
+                description: "투명하고 안전한 자산 관리로\n고객님의 믿음에 보답합니다.",
+                icon: Leaf,
+                glowColor: "bg-foon-lime/20"
             }
         ]
     }
@@ -86,8 +86,9 @@ const introData: Record<string, { title: string; steps: IntroStep[] }> = {
 function IntroPageContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
-    const category = searchParams.get("category") || "BATH";
-    const data = introData[category] || introData["BATH"];
+    const category = searchParams.get("category")?.toUpperCase() || "FUNERAL";
+    
+    const data = introData[category] || introData["FUNERAL"];
     const [currentStep, setCurrentStep] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -100,7 +101,7 @@ function IntroPageContent() {
     };
 
     const handleNext = () => {
-        if (currentStep < 2) {
+        if (currentStep < data.steps.length - 1) {
             containerRef.current?.scrollTo({
                 left: (currentStep + 1) * containerRef.current.offsetWidth,
                 behavior: "smooth"
@@ -110,103 +111,108 @@ function IntroPageContent() {
         }
     };
 
-    const handleSkip = () => {
-        router.push(`/booking/new?category=${category}`);
-    };
-
     return (
-        <div className="bg-bg-main min-h-screen text-white relative overflow-hidden flex flex-col">
-            {/* Header */}
-            <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-50">
-                <button onClick={() => router.back()} className="w-9 h-9 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md hover:bg-black/30 transition-colors">
-                    <X className="w-5 h-5 text-white" strokeWidth={3} />
+        <div className="bg-[#0A0A0B] min-h-screen text-white relative overflow-hidden flex flex-col font-sans">
+            
+            <div className="absolute inset-0 overflow-hidden pointer-events-none transition-colors duration-1000">
+                <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] rounded-full blur-[100px] opacity-40 transition-all duration-1000 ${data.steps[currentStep].glowColor}`} />
+                <div className="absolute inset-0 bg-[#0A0A0B]/60 backdrop-blur-[100px]" />
+            </div>
+
+            <header className="relative z-50 flex justify-between items-center p-6 pt-10">
+                <button 
+                    onClick={() => router.back()} 
+                    className="w-10 h-10 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all active:scale-95"
+                >
+                    <X className="w-5 h-5 text-gray-400" />
                 </button>
-                <div className="flex gap-1">
-                    {[0, 1, 2].map((i) => (
+                
+                <div className="flex gap-2 items-center">
+                    {data.steps.map((_, i) => (
                         <div
                             key={i}
-                            className={`h-1 rounded-full transition-all duration-300 ${i === currentStep ? "w-6 bg-foon-lime" : "w-2 bg-gray-600"
-                                }`}
+                            className={`h-1 rounded-full transition-all duration-500 ease-out ${
+                                i === currentStep ? "w-8 bg-foon-lime shadow-[0_0_10px_#A3DF46]" : "w-2 bg-white/20"
+                            }`}
                         />
                     ))}
                 </div>
+
                 <button
-                    onClick={handleSkip}
-                    className="text-gray-400 text-sm font-medium hover:text-white transition-colors px-2"
+                    onClick={() => router.push(`/booking/new?category=${category}`)}
+                    className="text-gray-500 text-sm font-semibold tracking-wider uppercase hover:text-white transition-colors px-2"
                 >
                     Skip
                 </button>
-            </div>
+            </header>
 
-            {/* Scroll Container */}
             <div
                 ref={containerRef}
                 onScroll={handleScroll}
-                className="flex-1 overflow-x-auto snap-x snap-mandatory flex scrollbar-hide"
-                style={{ scrollBehavior: 'smooth' }}
+                className="flex-1 overflow-x-auto snap-x snap-mandatory flex scrollbar-hide relative z-10"
             >
-                {data.steps.map((step, index) => (
-                    <div
-                        key={index}
-                        className="w-full h-full flex-shrink-0 snap-center flex flex-col items-center justify-center relative p-6"
-                    >
-                        {/* Dynamic Background */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${step.bgGradient} opacity-30`} />
-                        <div className="absolute inset-0 bg-black/40" /> {/* Dim overlay */}
+                {data.steps.map((step, index) => {
+                    const Icon = step.icon;
+                    return (
+                        <div
+                            key={index}
+                            className="w-full h-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-8 pb-32"
+                        >
+                            <div className={`transition-all duration-1000 transform ${currentStep === index ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} pt-10`}>
+                                
+                                <div className="relative w-48 h-48 mx-auto mb-12 flex items-center justify-center">
+                                    <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-[3rem] border border-white/10 shadow-2xl backdrop-blur-xl rotate-45 animate-slow-spin"></div>
+                                    <div className="relative z-10 w-24 h-24 bg-[#161618] rounded-full flex items-center justify-center shadow-inner border border-white/5">
+                                        <Icon className="w-10 h-10 text-white/90" strokeWidth={1.5} />
+                                    </div>
+                                </div>
 
-                        <div className="relative z-10 w-full max-w-sm flex flex-col items-center text-center space-y-8">
-                            {/* Icon/Image */}
-                            <div className="w-40 h-40 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center text-7xl shadow-[0_0_40px_rgba(0,0,0,0.5)] animate-float">
-                                {step.image}
-                            </div>
+                                <div className="text-center space-y-5 max-w-[320px] mx-auto">
+                                    <h2 className="text-3xl font-extrabold tracking-tight text-white/90 text-balance">
+                                        {step.title}
+                                    </h2>
+                                    <p className="text-gray-400 text-[15px] leading-relaxed text-balance">
+                                        {step.description}
+                                    </p>
+                                </div>
 
-                            {/* Text */}
-                            <div className="space-y-4">
-                                <h2 className="text-3xl font-bold leading-tight">{step.title}</h2>
-                                <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
-                                    {step.description}
-                                </p>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
-            {/* Bottom Action Area */}
-            <div className="absolute bottom-10 left-0 right-0 px-6 z-50">
+            <div className="absolute bottom-0 left-0 right-0 p-6 pb-10 bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/80 to-transparent z-50">
                 <button
                     onClick={handleNext}
-                    className={`w-full py-4 rounded-2xl font-bold text-lg shadow-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98] ${currentStep === 2
-                        ? "bg-foon-lime text-bg-main shadow-[0_4px_20px_rgba(163,223,70,0.4)]"
-                        : "bg-bg-card/80 backdrop-blur-md text-white border border-[#333]"
-                        }`}
+                    className={`w-full py-5 rounded-[2rem] font-bold text-lg flex items-center justify-center gap-3 transition-all duration-500 active:scale-95 border ${
+                        currentStep === data.steps.length - 1
+                            ? "bg-foon-lime text-[#0A0A0B] border-foon-lime shadow-[0_0_30px_rgba(163,223,70,0.3)] hover:shadow-[0_0_40px_rgba(163,223,70,0.5)]"
+                            : "bg-white/5 text-white border-white/10 hover:bg-white/10 backdrop-blur-md"
+                    }`}
                 >
-                    {currentStep === 2 ? (
-                        <>
-                            예약하러 가기 <ArrowRight className="w-5 h-5" />
-                        </>
+                    {currentStep === data.steps.length - 1 ? (
+                        <>예약 시작하기 <ArrowRight className="w-5 h-5" /></>
                     ) : (
-                        <>
-                            다음으로 <ChevronRight className="w-5 h-5" />
-                        </>
+                        <span className="tracking-wide">다음</span>
                     )}
                 </button>
             </div>
 
             <style jsx global>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
+                .scrollbar-hide::-webkit-scrollbar { display: none; }
+                .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+                
+                @keyframes slow-spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
                 }
-                .scrollbar-hide {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
+                .animate-slow-spin {
+                    animation: slow-spin 20s linear infinite;
                 }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-10px); }
-                }
-                .animate-float {
-                    animation: float 6s ease-in-out infinite;
+                
+                .text-balance {
+                    text-wrap: balance;
                 }
             `}</style>
         </div>
@@ -215,7 +221,7 @@ function IntroPageContent() {
 
 export default function IntroPage() {
     return (
-        <Suspense fallback={<div className="min-h-screen bg-bg-main" />}>
+        <Suspense fallback={<div className="min-h-screen bg-[#0A0A0B]" />}>
             <IntroPageContent />
         </Suspense>
     );

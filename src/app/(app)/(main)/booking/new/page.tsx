@@ -1,27 +1,166 @@
 "use client";
 
-import React, { useState, Suspense } from "react";
-import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
+import React, { useState, Suspense, useEffect, useRef } from "react";
+import { ChevronLeft, MapPin, Clock, Info, Check, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
-import Galaxy from "@/components/ui/Galaxy";
+import { useSearchParams, useRouter } from "next/navigation";
 import { usePets } from "@/hooks/usePets";
 
-// Service definitions
 const SERVICES: Record<string, { title: string; icon: string }> = {
     "TAXI": { title: "펫택시", icon: "🚕" },
-    "FUNERAL": { title: "모빌리티 장례", icon: "🕊️" },
-    "BATH": { title: "모빌리티 목욕", icon: "🛁" },
-    "CHECKUP": { title: "모빌리티 검진", icon: "🩺" },
+    "FUNERAL": { title: "펫장례", icon: "🕊️" },
+    "BATH": { title: "고정식 장례", icon: "🛁" },
+    "CHECKUP": { title: "건강검진", icon: "🩺" },
     "INSURANCE": { title: "펫보험", icon: "🛡️" },
     "MUTUAL_AID": { title: "펫상조", icon: "🌺" },
     "TRAVEL": { title: "펫여행", icon: "✈️" },
 };
 
+const FUNERAL_BRANCHES = [
+    {
+        id: "21g-gj-1",
+        name: "21그램 경기광주 1호점",
+        address: "경기도 광주시 매자리길 185-35",
+        time: "09:00 - 24:00",
+        lastOrder: "21시",
+        tag: "본점",
+        images: ["/21gram/1/1-1.webp", "/21gram/1/1-2.webp", "/21gram/1/2.webp", "/21gram/1/3.webp", "/21gram/1/4-1.webp", "/21gram/1/4-2.webp", "/21gram/1/5.webp"]
+    },
+    {
+        id: "21g-ca-2",
+        name: "21그램 천안아산 2호점",
+        address: "천안시 동남구 광풍로 1668",
+        time: "09:00 - 22:00",
+        lastOrder: "19시",
+        tag: "직영",
+        images: ["/21gram/2/1-1.webp", "/21gram/2/1-2.webp", "/21gram/2/2.webp", "/21gram/2/3.webp", "/21gram/2/4.webp", "/21gram/2/5.webp"]
+    },
+    {
+        id: "21g-ny-3",
+        name: "21그램 남양주 3호점",
+        address: "남양주시 화도읍 수레로964번길 86",
+        time: "09:00 - 22:00",
+        lastOrder: "19시",
+        tag: "직영",
+        images: ["/21gram/3/1.webp", "/21gram/3/2.webp", "/21gram/3/3.webp", "/21gram/3/4.webp", "/21gram/3/5.webp"]
+    }
+];
+
+function BranchCard({
+    branch,
+    isSelected,
+    onSelect
+}: {
+    branch: typeof FUNERAL_BRANCHES[0],
+    isSelected: boolean,
+    onSelect: (id: string) => void
+}) {
+    const [imageIndex, setImageIndex] = useState(0);
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const handleScroll = () => {
+                            if (!cardRef.current) return;
+                            
+                            const rect = cardRef.current.getBoundingClientRect();
+                            const windowHeight = window.innerHeight;
+                            const cardCenter = rect.top + rect.height / 2;
+                            const screenCenter = windowHeight / 2;
+                            const distanceFromCenter = screenCenter - cardCenter;
+                            const scrollRange = 300;
+                            
+                            let nextIndex = Math.floor((distanceFromCenter + scrollRange) / (scrollRange * 2 / branch.images.length));
+                            nextIndex = Math.max(0, Math.min(nextIndex, branch.images.length - 1));
+                            
+                            setImageIndex(nextIndex);
+                        };
+
+                        window.addEventListener("scroll", handleScroll);
+                        return () => window.removeEventListener("scroll", handleScroll);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (cardRef.current) observer.observe(cardRef.current);
+        return () => observer.disconnect();
+    }, [branch.images.length]);
+
+    return (
+        <div 
+            ref={cardRef}
+            onClick={() => onSelect(branch.id)}
+            className={`w-full rounded-[2rem] border transition-all duration-700 relative overflow-hidden mb-10 cursor-pointer ${
+                isSelected ? "border-amber-500/50 shadow-[0_0_40px_rgba(245,158,11,0.1)]" : "border-white/5"
+            }`}
+        >
+            <div className="relative h-[450px] bg-[#0A0A0B]">
+                {branch.images.map((img, idx) => (
+                    <Image
+                        key={img}
+                        src={img}
+                        alt={branch.name}
+                        fill
+                        className={`object-cover transition-opacity duration-1000 ease-in-out ${
+                            imageIndex === idx ? "opacity-100" : "opacity-0"
+                        }`}
+                        priority={idx === 0}
+                    />
+                ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="flex justify-between items-end mb-4">
+                        <div className="space-y-2">
+                            <div className="flex items-center gap-2">
+                                <h3 className="font-bold text-2xl text-white tracking-tight">{branch.name}</h3>
+                                <span className="px-2 py-0.5 rounded-md bg-amber-500/20 text-[10px] font-bold text-amber-500">
+                                    {branch.tag}
+                                </span>
+                            </div>
+                            <p className="text-sm text-gray-400 flex items-center gap-1.5 opacity-80">
+                                <MapPin className="w-3.5 h-3.5" /> {branch.address}
+                            </p>
+                        </div>
+                        {isSelected && (
+                            <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center shadow-lg animate-in zoom-in">
+                                <Check className="w-6 h-6 text-black" strokeWidth={3} />
+                            </div>
+                        )}
+                    </div>
+                    <div className="flex gap-6 pt-5 border-t border-white/10">
+                        <div className="flex items-center gap-2 text-[13px] text-gray-400">
+                            <Clock className="w-4 h-4" />
+                            <span>{branch.time}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-[13px] text-amber-500/80">
+                            <Info className="w-4 h-4" />
+                            <span>예약 마감 {branch.lastOrder}</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2">
+                    {branch.images.map((_, idx) => (
+                        <div
+                            key={idx}
+                            className={`w-1 rounded-full transition-all duration-500 ${
+                                imageIndex === idx ? "h-6 bg-amber-500" : "h-1.5 bg-white/20"
+                            }`}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export default function BookingPage() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className="min-h-screen bg-[#0A0A0B]" />}>
             <BookingContent />
         </Suspense>
     );
@@ -29,130 +168,123 @@ export default function BookingPage() {
 
 function BookingContent() {
     const searchParams = useSearchParams();
-    const category = searchParams.get("category") || "TAXI"; // Default to TAXI if not specified
-    const service = SERVICES[category] || SERVICES["TAXI"];
+    const router = useRouter();
+    const category = searchParams.get("category")?.toUpperCase() || "FUNERAL";
+    const service = SERVICES[category] || SERVICES["FUNERAL"];
     const isFuneral = category === "FUNERAL";
 
     const { data: pets, isLoading } = usePets();
-    const [step, setStep] = useState(1); // 1: Date/Time, 2: Pet/Option
+    const [step, setStep] = useState(isFuneral ? 0 : 1);
 
-    // Step 1 State
+    const [selectedBranch, setSelectedBranch] = useState<string | null>(null);
     const [selectedDate, setSelectedDate] = useState<number>(17);
     const [selectedTime, setSelectedTime] = useState<string | null>(null);
-
-    // Step 2 State
     const [selectedPetId, setSelectedPetId] = useState<string | null>(null);
-
-    // Constant Data
     const dates = [
         { day: "오늘", date: 14, disabled: true },
         { day: "내일", date: 15, disabled: true },
         { day: "목", date: 16, disabled: false },
         { day: "금", date: 17, disabled: false },
         { day: "토", date: 18, disabled: false, isWeekend: true },
-        { day: "일", date: 19, disabled: false },
+        { day: "일", date: 19, disabled: false, isWeekend: true },
         { day: "월", date: 20, disabled: false },
     ];
 
-    const morningSlots = ["10:00", "10:30", "11:00", "11:30"];
-    const afternoonSlots = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00"];
+    const morningSlots = ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30"];
+    const afternoonSlots = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
 
     const handleNext = () => {
-        if (step === 1 && selectedTime) {
-            setStep(2);
-        } else if (step === 2 && selectedPetId) {
-            alert(`예약이 완료되었습니다! (Pet: ${selectedPetId})`);
+        if (step === 0 && selectedBranch) setStep(1);
+        else if (step === 1 && selectedTime) setStep(2);
+        else if (step === 2 && selectedPetId) {
+            alert(`예약이 완료되었습니다!`);
+            router.push('/');
         }
     };
 
+    const handleBack = () => {
+        if (step === 0) router.back();
+        else if (step === 1) isFuneral ? setStep(0) : router.back();
+        else if (step === 2) setStep(1);
+    };
+
+    const isNextEnabled = 
+        (step === 0 && selectedBranch) || 
+        (step === 1 && selectedTime) || 
+        (step === 2 && selectedPetId);
+
     return (
-        <div className="absolute inset-0 w-full h-full z-50 flex flex-col overflow-hidden bg-bg-main text-white">
-            {/* Ambient Background Glow (Hide on Funeral) */}
-            {!isFuneral && (
-                <div className="absolute top-[-20%] right-[-20%] w-[500px] h-[500px] bg-foon-lime rounded-full blur-[150px] opacity-5 pointer-events-none"></div>
-            )}
+        <div className="absolute inset-0 w-full h-full z-50 flex flex-col bg-[#0A0A0B] text-white overflow-hidden font-sans">
+            
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className={`absolute top-0 right-0 w-[80vw] h-[80vw] rounded-full blur-[120px] opacity-20 transition-colors duration-1000 ${isFuneral ? 'bg-amber-500/20' : 'bg-foon-lime/10'}`} />
+            </div>
 
-            {/* Galaxy Background for Funeral */}
-            {isFuneral && (
-                <div className="absolute inset-0 pointer-events-none z-0">
-                    <Galaxy
-                        mouseInteraction={true}
-                        mouseRepulsion={true}
-                        density={1.9}
-                        glowIntensity={0.2}
-                        saturation={0}
-                        hueShift={0}
-                        twinkleIntensity={0.7}
-                        rotationSpeed={0}
-                        repulsionStrength={0}
-                        autoCenterRepulsion={0}
-                        starSpeed={0.2}
-                        speed={0.4}
-                        transparent={true}
-                    />
-                </div>
-            )}
-
-            {/* Header */}
-            <header className="px-4 py-3 flex items-center sticky top-0 z-30">
-                <button
-                    onClick={() => step === 1 ? window.history.back() : setStep(1)}
-                    className="p-1 -ml-1"
-                    aria-label="Go back"
-                >
-                    <ChevronLeft className="w-7 h-7 text-white" />
+            <header className="px-6 py-5 flex items-center justify-between sticky top-0 z-30 bg-[#0A0A0B]/80 backdrop-blur-xl border-b border-white/5">
+                <button onClick={handleBack} className="p-2 -ml-2 rounded-xl hover:bg-white/5 transition-colors">
+                    <ChevronLeft className="w-6 h-6 text-gray-300" />
                 </button>
+                <div className="flex gap-1.5">
+                    {Array.from({ length: isFuneral ? 3 : 2 }).map((_, i) => (
+                        <div key={i} className={`h-1 rounded-full transition-all duration-500 ${step === (isFuneral ? i : i + 1) ? "w-6 bg-foon-lime shadow-[0_0_8px_#A3DF46]" : "w-1.5 bg-white/20"}`} />
+                    ))}
+                </div>
+                <div className="w-6" />
             </header>
 
-            <main className="px-6 flex-1 overflow-hidden relative z-10 pt-2 pb-28">
+            <main className="px-6 flex-1 overflow-y-auto scrollbar-hide relative z-10 pt-6 pb-32">
 
-                {step === 1 && (
-                    <div className="animate-in fade-in slide-in-from-right duration-300 h-full overflow-y-auto scrollbar-hide">
-                        {/* Title */}
-                        <div className="flex items-center gap-2 mt-[50px] mb-4">
-                            <h1 className="text-2xl font-bold tracking-tight text-foon-lime leading-tight">
-                                언제 방문 드릴까요?
+                {step === 0 && isFuneral && (
+                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <div className="mb-8">
+                            <h1 className="text-2xl font-bold tracking-tight text-white leading-snug">
+                                방문하실 <span className="text-amber-500">21그램 장례식장</span>을<br />선택해 주세요
                             </h1>
-                            <Image
-                                src="/images/rocket-3d.png"
-                                alt="Rocket"
-                                width={40}
-                                height={40}
-                                className="object-contain animate-bounce"
-                            />
                         </div>
 
-                        {/* Date Picker Section */}
-                        <div className="mb-6">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="text-base font-bold text-white">날짜 선택</span>
-                            </div>
+                        <div className="space-y-4">
+                            {FUNERAL_BRANCHES.map((branch) => (
+                                <BranchCard
+                                    key={branch.id}
+                                    branch={branch}
+                                    isSelected={selectedBranch === branch.id}
+                                    onSelect={setSelectedBranch}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                )}
 
-                            {/* Horizontal Scroll Container */}
-                            <div className="flex gap-3 overflow-x-auto pb-6 pt-2 -mx-6 px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                {step === 1 && (
+                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <div className="mb-8">
+                            <h1 className="text-2xl font-bold tracking-tight text-white leading-snug">
+                                {isFuneral ? "안치 및 예식" : "방문"}을 진행할<br />
+                                <span className={isFuneral ? "text-amber-500" : "text-foon-lime"}>날짜와 시간</span>을 알려주세요
+                            </h1>
+                        </div>
+
+                        <div className="mb-10">
+                            <h3 className="text-sm font-semibold text-gray-400 mb-4 px-1">날짜 선택</h3>
+                            <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 scrollbar-hide">
                                 {dates.map((item) => (
                                     <button
                                         key={item.date}
                                         disabled={item.disabled}
                                         onClick={() => setSelectedDate(item.date)}
                                         className={`
-                                            flex flex-col items-center justify-center min-w-[64px] h-[76px] rounded-[20px] border transition-all z-20 relative shrink-0
-                                            ${item.disabled
-                                                ? "opacity-30 cursor-not-allowed bg-[#1A1A1A] border-[#333]"
-                                                : "cursor-pointer"}
+                                            flex flex-col items-center justify-center min-w-[70px] h-[85px] rounded-[1.2rem] border transition-all shrink-0
+                                            ${item.disabled ? "opacity-20 cursor-not-allowed bg-[#161618] border-transparent" : "cursor-pointer"}
                                             ${selectedDate === item.date
-                                                ? "bg-[#2C2C2E] border-foon-lime text-foon-lime shadow-[0_0_15px_rgba(163,223,70,0.2)] scale-105"
-                                                : "bg-[#2C2C2E] border-[#333] hover:border-gray-500 text-gray-300"
+                                                ? "bg-[#1C1C1E] border-foon-lime shadow-lg"
+                                                : "bg-[#161618] border-white/5 hover:bg-[#1C1C1E]"
                                             }
                                         `}
                                     >
-                                        <span className={`text-xs mb-1 ${selectedDate === item.date ? "text-foon-lime font-bold" :
-                                            item.isWeekend ? "text-orange-400" : "text-gray-500"
-                                            }`}>
+                                        <span className={`text-xs mb-1.5 ${selectedDate === item.date ? "text-foon-lime" : item.isWeekend ? "text-rose-400/80" : "text-gray-500"}`}>
                                             {item.day}
                                         </span>
-                                        <span className={`text-xl font-black ${selectedDate === item.date ? "text-foon-lime" : "text-white"
-                                            }`}>
+                                        <span className={`text-xl font-bold ${selectedDate === item.date ? "text-white" : "text-gray-300"}`}>
                                             {item.date}
                                         </span>
                                     </button>
@@ -160,185 +292,126 @@ function BookingContent() {
                             </div>
                         </div>
 
-                        {/* Time Slots Section */}
-                        <div className="mb-4">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="text-base font-bold text-white">시간 선택</span>
+                        <div className="mb-6">
+                            <h3 className="text-sm font-semibold text-gray-400 mb-4 px-1">오전</h3>
+                            <div className="grid grid-cols-4 gap-3 mb-8">
+                                {morningSlots.map((time) => (
+                                    <TimeSlot key={time} time={time} selected={selectedTime === time} onClick={() => setSelectedTime(time)} isFuneral={isFuneral} />
+                                ))}
                             </div>
 
-                            {/* Morning */}
-                            <div className="mb-4">
-                                <h3 className="text-xs font-bold mb-2 text-gray-400 px-1">오전</h3>
-                                <div className="flex gap-3 overflow-x-auto pb-4 pt-2 -mx-6 px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                                    {morningSlots.map((time) => (
-                                        <TimeSlot
-                                            key={time}
-                                            time={time}
-                                            selected={selectedTime === time}
-                                            onClick={() => setSelectedTime(time)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Afternoon */}
-                            <div>
-                                <h3 className="text-xs font-bold mb-2 text-gray-400 px-1">오후</h3>
-                                <div className="flex gap-3 overflow-x-auto pb-4 pt-2 -mx-6 px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                                    {afternoonSlots.map((time) => (
-                                        <TimeSlot
-                                            key={time}
-                                            time={time}
-                                            selected={selectedTime === time}
-                                            onClick={() => setSelectedTime(time)}
-                                        />
-                                    ))}
-                                </div>
+                            <h3 className="text-sm font-semibold text-gray-400 mb-4 px-1">오후</h3>
+                            <div className="grid grid-cols-4 gap-3">
+                                {afternoonSlots.map((time) => (
+                                    <TimeSlot key={time} time={time} selected={selectedTime === time} onClick={() => setSelectedTime(time)} isFuneral={isFuneral} />
+                                ))}
                             </div>
                         </div>
                     </div>
                 )}
 
                 {step === 2 && (
-                    <div className="animate-in fade-in slide-in-from-right duration-300 h-full overflow-y-auto scrollbar-hide pb-10">
-                        {/* Title */}
-                        <div className="mt-[20px] mb-8">
+                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-10">
+                        <div className="mb-8">
                             <h1 className="text-2xl font-bold tracking-tight text-white leading-snug">
-                                <span className="text-foon-lime">어느 아이</span>의<br />
-                                서비스를 받으실 건가요?
+                                어떤 아이의<br />
+                                마지막 여정을 준비해 드릴까요?
                             </h1>
                         </div>
 
-                        {/* Pet List (Drag Scroll) */}
                         <div className="mb-10">
-                            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 -mx-6 px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 scrollbar-hide">
                                 {isLoading ? (
-                                    <div className="text-gray-500 text-sm px-4">로딩중...</div>
+                                    <div className="text-gray-500 text-sm">로딩중...</div>
                                 ) : pets && pets.length > 0 ? (
                                     pets.map((pet) => (
                                         <div
                                             key={pet.id}
                                             onClick={() => setSelectedPetId(pet.id)}
                                             className={`
-                                                snap-center shrink-0 w-[200px] h-[280px] rounded-[24px] overflow-hidden relative border transition-all duration-300 cursor-pointer group
+                                                snap-center shrink-0 w-[220px] h-[300px] rounded-[2rem] overflow-hidden relative border transition-all duration-500 cursor-pointer group
                                                 ${selectedPetId === pet.id
-                                                    ? "border-foon-lime ring-1 ring-foon-lime/50 shadow-[0_0_30px_rgba(163,223,70,0.15)] scale-100"
-                                                    : "border-white/10 bg-[#1e1e20] scale-95 opacity-60 hover:opacity-100"
+                                                    ? "border-foon-lime/50 shadow-2xl"
+                                                    : "border-white/5 bg-[#161618] opacity-70 hover:opacity-100"
                                                 }
                                             `}
                                         >
-                                            {/* Photo Background */}
                                             {pet.photo_url ? (
-                                                <Image
-                                                    src={pet.photo_url}
-                                                    alt={pet.name}
-                                                    fill
-                                                    className="object-cover"
-                                                />
+                                                <Image src={pet.photo_url} alt={pet.name} fill className="object-cover" />
                                             ) : (
-                                                <div className="w-full h-full bg-[#333] flex items-center justify-center">
-                                                    <span className="text-4xl">🐾</span>
-                                                </div>
+                                                <div className="w-full h-full bg-[#1C1C1E] flex items-center justify-center text-4xl">🐾</div>
                                             )}
-
-                                            {/* Gradient Overlay */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-
-                                            {/* Info */}
-                                            <div className="absolute bottom-0 w-full p-6 text-left">
-                                                <div className="text-2xl font-black text-white mb-1 shadow-black drop-shadow-lg">
-                                                    {pet.name}
-                                                </div>
-                                                <div className="text-sm text-gray-300 flex items-center gap-2">
-                                                    <span>{pet.species === "dog" ? "강아지" : "고양이"}</span>
-                                                    <span>·</span>
-                                                    <span>{pet.breed || "품종 미입력"}</span>
-                                                </div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/40 to-transparent" />
+                                            <div className="absolute bottom-0 w-full p-6">
+                                                <div className="text-2xl font-bold text-white mb-1">{pet.name}</div>
+                                                <div className="text-xs text-gray-400">{pet.species === "dog" ? "강아지" : "고양이"} · {pet.breed || "품종 미입력"}</div>
                                             </div>
-
-                                            {/* Selected Check */}
                                             {selectedPetId === pet.id && (
-                                                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-foon-lime flex items-center justify-center text-black font-bold shadow-lg animate-in fade-in zoom-in">
-                                                    ✓
+                                                <div className={`absolute top-5 right-5 w-8 h-8 rounded-full ${isFuneral ? 'bg-amber-500 text-[#0A0A0B]' : 'bg-foon-lime text-[#0A0A0B]'} flex items-center justify-center font-bold animate-in zoom-in`}>
+                                                    <Check className="w-4 h-4" strokeWidth={3} />
                                                 </div>
                                             )}
                                         </div>
                                     ))
                                 ) : (
-                                    <div className="text-gray-500 p-4 border border-dashed border-gray-700 rounded-xl w-full text-center">
+                                    <div className="text-gray-500 p-6 border border-dashed border-white/10 bg-[#161618] rounded-[2rem] w-full text-center text-sm">
                                         등록된 반려동물이 없습니다.
                                     </div>
                                 )}
-                                {/* Add Pet Placeholder for UX */}
-                                <Link
-                                    href="/register"
-                                    className="snap-center shrink-0 w-[100px] h-[280px] rounded-[24px] border border-white/5 bg-[#1e1e20] flex flex-col items-center justify-center gap-4 text-gray-500 hover:bg-[#252527] transition-colors"
-                                >
-                                    <div className="w-12 h-12 rounded-full border border-dashed border-gray-500 flex items-center justify-center text-2xl">
-                                        +
-                                    </div>
-                                    <span className="text-xs">추가하기</span>
-                                </Link>
                             </div>
                         </div>
 
-                        {/* Options Section */}
-                        <div className="space-y-4">
-                            <h3 className="font-bold text-white text-lg">추가 옵션</h3>
-
-                            {/* Option Card 1 */}
-                            <div className="bg-[#1e1e20] rounded-2xl p-4 border border-white/5 flex items-center justify-between cursor-pointer hover:bg-[#252527] transition-colors">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-[#2a2a2c] flex items-center justify-center text-xl">
-                                        📦
+                        {isFuneral && (
+                            <div className="space-y-4 animate-in fade-in duration-700 delay-200">
+                                <h3 className="font-semibold text-gray-300 text-sm px-1">기본 제공 내역</h3>
+                                <div className="bg-[#161618] rounded-[1.5rem] p-5 border border-white/5 space-y-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-lg">📦</div>
+                                        <div>
+                                            <div className="text-sm font-bold text-white">기본 오동나무 관</div>
+                                            <div className="text-[11px] text-gray-500">아이가 편안하게 쉴 수 있는 친환경 관</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div className="font-bold text-white">기본 관</div>
-                                        <div className="text-xs text-gray-500">가장 기본적인 오동나무 관입니다.</div>
-                                    </div>
-                                </div>
-                                <div className="w-6 h-6 rounded-full border border-gray-600" />
-                            </div>
-
-                            {/* Option Card 2 */}
-                            <div className="bg-[#1e1e20] rounded-2xl p-4 border border-white/5 flex items-center justify-between cursor-pointer hover:bg-[#252527] transition-colors">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-[#2a2a2c] flex items-center justify-center text-xl">
-                                        🧶
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-white">고급 수의</div>
-                                        <div className="text-xs text-gray-500">부드러운 삼베 소재의 수의입니다.</div>
+                                    <div className="h-px bg-white/5 w-full" />
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-lg">🕯️</div>
+                                        <div>
+                                            <div className="text-sm font-bold text-white">단독 추모실 이용</div>
+                                            <div className="text-[11px] text-gray-500">보호자님만을 위한 프라이빗한 이별 공간</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="w-6 h-6 rounded-full border border-gray-600" />
                             </div>
-                        </div>
+                        )}
                     </div>
                 )}
             </main>
 
-            {/* Bottom Button */}
-            <div className="absolute bottom-0 w-full p-6 flex justify-center z-20 bg-gradient-to-t from-bg-main via-bg-main/90 to-transparent">
-                <div className="w-full max-w-[430px]">
-                    <button
-                        disabled={step === 1 ? !selectedTime : !selectedPetId}
-                        onClick={handleNext}
-                        className={`w-full py-4 rounded-2xl font-bold text-lg transition-all 
-                            ${(step === 1 ? selectedTime : selectedPetId)
-                                ? "bg-foon-lime text-bg-main shadow-[0_4px_14px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] active:scale-[0.98]"
-                                : "bg-[#2C2C2E] text-gray-600 border border-[#333] cursor-not-allowed"
-                            }`}
-                    >
-                        {step === 1 ? `${service.title} 예약하기` : "예약 확정하기"}
-                    </button>
-                </div>
+            <div className="absolute bottom-0 w-full px-6 py-6 z-40 bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/90 to-transparent">
+                <button
+                    disabled={!isNextEnabled}
+                    onClick={handleNext}
+                    className={`w-full py-5 rounded-[2rem] font-bold text-[17px] transition-all duration-300 flex items-center justify-center gap-2
+                        ${isNextEnabled
+                            ? isFuneral 
+                                ? "bg-amber-500 text-[#0A0A0B] shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:bg-amber-400 active:scale-[0.98]" 
+                                : "bg-foon-lime text-[#0A0A0B] shadow-[0_0_30px_rgba(163,223,70,0.2)] hover:bg-[#bbf080] active:scale-[0.98]"
+                            : "bg-[#161618] text-gray-600 border border-white/5 cursor-not-allowed"
+                        }`}
+                >
+                    {step === (isFuneral ? 2 : 1) ? `${service.title} 예약 확정하기` : "다음으로"} <ArrowRight className="w-5 h-5" />
+                </button>
             </div>
+            
+            <style jsx global>{`
+                .scrollbar-hide::-webkit-scrollbar { display: none; }
+                .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+            `}</style>
         </div>
     );
 }
 
-function TimeSlot({ time, selected, onClick }: { time: string, selected: boolean, onClick: () => void }) {
+function TimeSlot({ time, selected, onClick, isFuneral }: { time: string, selected: boolean, onClick: () => void, isFuneral: boolean }) {
     const [hour, minute] = time.split(':').map(Number);
     const period = hour < 12 ? "오전" : "오후";
     const displayHour = hour > 12 ? hour - 12 : hour;
@@ -347,19 +420,15 @@ function TimeSlot({ time, selected, onClick }: { time: string, selected: boolean
         <button
             onClick={onClick}
             className={`
-                flex flex-col items-center justify-center min-w-[64px] h-[76px] rounded-[20px] border transition-all relative z-20 shrink-0
+                flex flex-col items-center justify-center py-3.5 rounded-[1rem] border transition-all text-sm font-medium
                 ${selected
-                    ? "bg-[#2C2C2E] border-foon-lime text-foon-lime shadow-[0_0_15px_rgba(163,223,70,0.2)] font-bold scale-105"
-                    : "bg-[#2C2C2E] border-[#333] text-gray-300 hover:bg-[#3A3A3D] hover:border-gray-500"
+                    ? `bg-[#1C1C1E] border-foon-lime text-foon-lime`
+                    : "bg-[#161618] border-white/5 text-gray-400 hover:bg-[#1C1C1E] hover:text-gray-300"
                 }
             `}
         >
-            <span className={`text-xs mb-1 ${selected ? "text-foon-lime font-bold" : "text-gray-500"}`}>
-                {period}
-            </span>
-            <span className={`text-lg font-bold ${selected ? "text-foon-lime" : "text-white"}`}>
-                {displayHour}:{minute.toString().padStart(2, '0')}
-            </span>
+            <span className={`text-xs mb-1 ${selected ? "text-foon-lime" : "text-gray-500"}`}>{period}</span>
+            <span className={`font-bold ${selected ? "text-foon-lime" : "text-gray-300"}`}>{displayHour}:{minute.toString().padStart(2, '0')}</span>
         </button>
     );
 }
