@@ -151,7 +151,7 @@ export default function IRPage() {
 
             <div className="grid grid-cols-2 gap-3 md:gap-4 mt-8 md:mt-12" ref={counterRef}>
               {[
-                { target: 7000, suffix: "만원", label: "Seed 목표 자금" },
+                { target: 7000, suffix: "만원", label: "Seed 사용액" },
                 { target: 3000, suffix: "억", label: "국내 장례 시장 규모" },
                 { target: 15, suffix: "%+", label: "연평균 성장률" },
                 { target: 3, suffix: "분", label: "앱 예약 소요 시간" },
