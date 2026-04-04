@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { generateIRPdf } from "@/utils/pdfGenerator";
+import PrintView from "@/components/ir/PrintView";
 
 export default function IRPage() {
   const [scrollY, setScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
-  const [isPdfGenerating, setIsPdfGenerating] = useState(false);
+  const [showPrintView, setShowPrintView] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -144,11 +144,10 @@ export default function IRPage() {
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start animate-[fade-up_0.9s_0.45s_ease_forwards]" style={{ opacity: 0 }}>
               <button
-                onClick={() => { setIsPdfGenerating(true); generateIRPdf().finally(() => setIsPdfGenerating(false)); }}
-                disabled={isPdfGenerating}
-                className="px-6 md:px-9 py-3 md:py-4 bg-[#A3DF46] text-[#0D0D14] font-bold text-sm rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)] disabled:opacity-50"
+                onClick={() => setShowPrintView(true)}
+                className="px-6 md:px-9 py-3 md:py-4 bg-[#A3DF46] text-[#0D0D14] font-bold text-sm rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)]"
               >
-                {isPdfGenerating ? "PDF 생성중..." : "사업계획서 보기"}
+                인쇄용 보기
               </button>
               <button className="px-6 md:px-9 py-3 md:py-4 border border-white/15 text-white text-sm rounded-2xl bg-transparent transition-all hover:bg-white/5 hover:translate-y-[-2px]">
                 연락하기
@@ -773,6 +772,7 @@ export default function IRPage() {
           50% { transform: translateY(8px); opacity: 0.3; }
         }
       `}</style>
+      {showPrintView && <PrintView onClose={() => setShowPrintView(false)} />}
     </div>
   );
 }
