@@ -1,91 +1,70 @@
 import domtoimage from "dom-to-image-more";
 import jsPDF from "jspdf";
 
-const PAGE = { width: 297, height: 210, margin: 10 };
+const A4_LANDSCAPE = { width: 297, height: 210 };
 
-export async function generateIRPdf(elementId: string): Promise<void> {
-  const element = document.getElementById(elementId);
-  if (!element) return;
+const SECTIONS = [
+  { id: "hero", title: "Po-On" },
+  { id: "brand", title: "브랜드" },
+  { id: "problem", title: "Problem & Solution" },
+  { id: "market", title: "시장" },
+  { id: "competition", title: "경쟁" },
+  { id: "model", title: "비즈니스 모델" },
+  { id: "financial", title: "재무" },
+  { id: "roadmap", title: "로드맵" },
+  { id: "team", title: "팀" },
+  { id: "invest", title: "사업계획" },
+  { id: "contact", title: "연락처" },
+];
 
+export async function generateIRPdf(): Promise<void> {
   const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
-  const contentWidth = PAGE.width - PAGE.margin * 2;
-  const contentHeight = PAGE.height - PAGE.margin * 2;
 
-  const originalWidth = element.style.width;
-  const originalHeight = element.style.height;
-  const originalTransform = element.style.transform;
+  for (let i = 0; i < SECTIONS.length; i++) {
+    const section = SECTIONS[i];
+    const element = document.getElementById(section.id);
+    if (!element) continue;
 
-  element.style.width = `${PAGE.width}mm`;
-  element.style.transform = "none";
+    try {
+      const dataUrl = await domtoimage.toPng(element, {
+        width: element.offsetWidth * 2,
+        height: element.offsetHeight * 2,
+        style: {
+          transform: "none",
+          transformOrigin: "top left",
+          backgroundColor: "#0D0D14",
+        },
+        cacheBust: true,
+      });
 
-  const imgData = await domtoimage.toPng(element, {
-    width: element.offsetWidth * 2,
-    height: element.offsetHeight * 2,
-    style: {
-      transform: "none",
-      transformOrigin: "top left",
-      backgroundColor: "#0D0D14",
-    },
-    cacheBust: true,
-  });
+      const img = new Image();
+      await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = reject;
+        img.src = dataUrl;
+      });
 
-  element.style.width = originalWidth;
-  element.style.height = originalHeight;
-  element.style.transform = originalTransform;
+      const imgAspectRatio = img.height / img.width;
+      const pageWidth = A4_LANDSCAPE.width;
+      const pageHeight = A4_LANDSCAPE.height;
 
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
+      let imgWidth = pageWidth;
+      let imgHeight = imgWidth * imgAspectRatio;
 
-  const img = new Image();
-  await new Promise<void>((resolve, reject) => {
-    img.onload = () => resolve();
-    img.onerror = reject;
-    img.src = imgData;
-  });
-
-  canvas.width = img.width;
-  canvas.height = img.height;
-  ctx.fillStyle = "#0D0D14";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(img, 0, 0);
-
-  const finalImgData = canvas.toDataURL("image/png");
-  const imgAspectRatio = canvas.height / canvas.width;
-  let imgWidth = contentWidth;
-  let imgHeight = imgWidth * imgAspectRatio;
-
-  if (imgHeight > contentHeight) {
-    let remainingHeight = imgHeight;
-    let yOffset = 0;
-
-    while (remainingHeight > 0) {
-      const availableHeight = contentHeight;
-      const captureHeight = Math.min(
-        (availableHeight / imgHeight) * canvas.height,
-        canvas.height - yOffset
-      );
-
-      const tempCanvas = document.createElement("canvas");
-      tempCanvas.width = canvas.width;
-      tempCanvas.height = captureHeight;
-
-      const tempCtx = tempCanvas.getContext("2d");
-      if (tempCtx) {
-        tempCtx.drawImage(canvas, 0, yOffset, canvas.width, captureHeight, 0, 0, canvas.width, captureHeight);
-        const pageImgData = tempCanvas.toDataURL("image/png");
-        const pageImgHeight = (captureHeight / canvas.width) * contentWidth * (PAGE.height / PAGE.width);
-        pdf.addImage(pageImgData, "PNG", PAGE.margin, PAGE.margin, contentWidth, pageImgHeight);
+      if (imgHeight > pageHeight) {
+        imgHeight = pageHeight;
+        imgWidth = imgHeight / imgAspectRatio;
       }
 
-      remainingHeight -= availableHeight;
-      yOffset += captureHeight;
+      if (i > 0) pdf.addPage();
 
-      if (remainingHeight > 0) pdf.addPage();
+      const xOffset = (pageWidth - imgWidth) / 2;
+      const yOffset = (pageHeight - imgHeight) / 2;
+
+      pdf.addImage(dataUrl, "PNG", xOffset, yOffset, imgWidth, imgHeight);
+    } catch (e) {
+      console.error(`Failed to capture section ${section.id}:`, e);
     }
-  } else {
-    const yOffset = PAGE.margin + (contentHeight - imgHeight) / 2;
-    pdf.addImage(finalImgData, "PNG", PAGE.margin, yOffset, imgWidth, imgHeight);
   }
 
   pdf.save("poon-business-plan.pdf");

@@ -144,7 +144,7 @@ export default function IRPage() {
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start animate-[fade-up_0.9s_0.45s_ease_forwards]" style={{ opacity: 0 }}>
               <button
-                onClick={() => { setIsPdfGenerating(true); generateIRPdf("ir-content").finally(() => setIsPdfGenerating(false)); }}
+                onClick={() => { setIsPdfGenerating(true); generateIRPdf().finally(() => setIsPdfGenerating(false)); }}
                 disabled={isPdfGenerating}
                 className="px-6 md:px-9 py-3 md:py-4 bg-[#A3DF46] text-[#0D0D14] font-bold text-sm rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)] disabled:opacity-50"
               >
