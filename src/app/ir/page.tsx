@@ -91,7 +91,7 @@ export default function IRPage() {
     { href: "#model", label: "비즈니스" },
     { href: "#financial", label: "재무" },
     { href: "#team", label: "팀" },
-    { href: "#invest", label: "투자" },
+    { href: "#invest", label: "사업계획" },
   ];
 
   return (
@@ -142,7 +142,7 @@ export default function IRPage() {
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start animate-[fade-up_0.9s_0.45s_ease_forwards]" style={{ opacity: 0 }}>
               <button className="px-6 md:px-9 py-3 md:py-4 bg-[#A3DF46] text-[#0D0D14] font-bold text-sm rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)]">
-                투자 제안서 보기
+                사업계획서 보기
               </button>
               <button className="px-6 md:px-9 py-3 md:py-4 border border-white/15 text-white text-sm rounded-2xl bg-transparent transition-all hover:bg-white/5 hover:translate-y-[-2px]">
                 연락하기
@@ -708,7 +708,7 @@ export default function IRPage() {
         <p className="text-base md:text-lg text-[#8888A0] mb-10 md:mb-20 leading-relaxed">Seed 투자 목표 — 포온과 함께 반려동물 장례 시장을 바꿉니다</p>
         <div className="flex flex-col sm:flex-row gap-4 md:gap-8 justify-center">
           <button className="px-8 md:px-12 py-4 md:py-5 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)]">
-            투자 미팅 신청
+            사업계획 미팅 신청
           </button>
           <button className="px-8 md:px-12 py-4 md:py-5 border border-white/15 text-white rounded-2xl bg-transparent transition-all hover:bg-white/5 hover:translate-y-[-2px]">
             사업계획서 요청
