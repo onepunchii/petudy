@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const SECTIONS = [
   { id: "hero", title: "Po-On" },
@@ -16,17 +16,14 @@ const SECTIONS = [
   { id: "contact", title: "연락처" },
 ];
 
-const A4_WIDTH_MM = 297;
-const A4_HEIGHT_MM = 210;
-const BASE_WIDTH_PX = 1414;
+const A4_WIDTH = 1414;
+const A4_HEIGHT = 951;
 
 export default function PrintView({ onClose }: { onClose: () => void }) {
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [wrapperHeight, setWrapperHeight] = useState(0);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-
-  const a4Width = BASE_WIDTH_PX;
-  const a4Height = (BASE_WIDTH_PX / A4_WIDTH_MM) * A4_HEIGHT_MM;
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -39,34 +36,28 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   useEffect(() => {
-    if (wrapperRef.current) {
-      const updateHeight = () => {
-        const vh = window.innerHeight;
-        const used = 140 + 60 + 60;
-        setWrapperHeight(Math.min(vh - used, a4Height));
-      };
-      updateHeight();
-      window.addEventListener("resize", updateHeight);
-      return () => window.removeEventListener("resize", updateHeight);
-    }
+    const calculateScale = () => {
+      const available = window.innerHeight - 200;
+      const availableWidth = window.innerWidth - 96;
+      const scaleX = availableWidth / A4_WIDTH;
+      const scaleY = available / A4_HEIGHT;
+      setScale(Math.min(scaleX, scaleY, 1));
+    };
+    calculateScale();
+    window.addEventListener("resize", calculateScale);
+    return () => window.removeEventListener("resize", calculateScale);
   }, []);
 
-  const cloneAndInject = useCallback(() => {
-    if (!wrapperRef.current) return;
-    const container = wrapperRef.current.querySelector(".print-content") as HTMLDivElement;
-    if (!container) return;
-
-    const section = SECTIONS[currentIdx];
-    const original = document.getElementById(section.id);
-    if (!original) return;
-
-    container.innerHTML = original.innerHTML;
-    container.scrollTop = 0;
-  }, [currentIdx]);
-
   useEffect(() => {
-    cloneAndInject();
-  }, [cloneAndInject]);
+    if (contentRef.current) {
+      const section = SECTIONS[currentIdx];
+      const original = document.getElementById(section.id);
+      if (original) {
+        contentRef.current.innerHTML = original.innerHTML;
+        contentRef.current.scrollTop = 0;
+      }
+    }
+  }, [currentIdx]);
 
   return (
     <div className="fixed inset-0 bg-[#0D0D14] z-[200] flex flex-col">
@@ -81,23 +72,28 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
           <span className="text-[#8888A0] text-sm">{currentIdx + 1} / {SECTIONS.length}</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-[#8888A0] text-sm">A4 동일 크기로 표시</span>
+          <span className="text-[#8888A0] text-sm">모든 섹션 동일한 A4 크기</span>
           <button onClick={() => window.print()} className="px-5 py-2.5 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-xl hover:bg-[#BEF16E]">
             인쇄
           </button>
         </div>
       </div>
 
-      <div className="flex-1 flex items-center justify-center p-6 overflow-hidden bg-[#1a1a24]">
+      <div className="flex-1 flex items-center justify-center overflow-hidden bg-[#1a1a24]">
         <div
-          ref={wrapperRef}
+          ref={containerRef}
           className="bg-[#0D0D14] border border-white/20 relative"
           style={{
-            width: a4Width,
-            height: wrapperHeight || a4Height,
+            width: A4_WIDTH,
+            height: A4_HEIGHT,
+            transform: `scale(${scale})`,
+            transformOrigin: "center center",
           }}
         >
-          <div className="print-content absolute inset-0 overflow-auto" />
+          <div
+            ref={contentRef}
+            className="absolute inset-0 overflow-auto"
+          />
         </div>
       </div>
 
@@ -132,15 +128,6 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
           다음 →
         </button>
       </div>
-
-      <style jsx global>{`
-        .print-content > * { color: #F5F5F7 !important; }
-        .print-content h1, .print-content h2, .print-content h3 { color: #F5F5F7 !important; }
-        @media print {
-          body > * { display: none !important; }
-          .print-content { overflow: visible !important; }
-        }
-      `}</style>
     </div>
   );
 }
