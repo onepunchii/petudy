@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const SECTIONS = [
   { id: "hero", title: "Po-On" },
@@ -16,9 +16,17 @@ const SECTIONS = [
   { id: "contact", title: "연락처" },
 ];
 
+const A4_WIDTH_MM = 297;
+const A4_HEIGHT_MM = 210;
+const BASE_WIDTH_PX = 1414;
+
 export default function PrintView({ onClose }: { onClose: () => void }) {
   const [currentIdx, setCurrentIdx] = useState(0);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const [wrapperHeight, setWrapperHeight] = useState(0);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const a4Width = BASE_WIDTH_PX;
+  const a4Height = (BASE_WIDTH_PX / A4_WIDTH_MM) * A4_HEIGHT_MM;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -31,19 +39,38 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   useEffect(() => {
-    if (contentRef.current) {
-      const section = SECTIONS[currentIdx];
-      const original = document.getElementById(section.id);
-      if (original) {
-        contentRef.current.innerHTML = original.innerHTML;
-        contentRef.current.scrollTop = 0;
-      }
+    if (wrapperRef.current) {
+      const updateHeight = () => {
+        const vh = window.innerHeight;
+        const used = 140 + 60 + 60;
+        setWrapperHeight(Math.min(vh - used, a4Height));
+      };
+      updateHeight();
+      window.addEventListener("resize", updateHeight);
+      return () => window.removeEventListener("resize", updateHeight);
     }
+  }, []);
+
+  const cloneAndInject = useCallback(() => {
+    if (!wrapperRef.current) return;
+    const container = wrapperRef.current.querySelector(".print-content") as HTMLDivElement;
+    if (!container) return;
+
+    const section = SECTIONS[currentIdx];
+    const original = document.getElementById(section.id);
+    if (!original) return;
+
+    container.innerHTML = original.innerHTML;
+    container.scrollTop = 0;
   }, [currentIdx]);
+
+  useEffect(() => {
+    cloneAndInject();
+  }, [cloneAndInject]);
 
   return (
     <div className="fixed inset-0 bg-[#0D0D14] z-[200] flex flex-col">
-      <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0D0D14]">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0D0D14] shrink-0">
         <div className="flex items-center gap-4">
           <button onClick={onClose} className="p-2 hover:bg-white/10 rounded-lg">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,30 +81,27 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
           <span className="text-[#8888A0] text-sm">{currentIdx + 1} / {SECTIONS.length}</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-[#8888A0] text-sm">A4 비율로 확인 후 스크린샷/PDF 저장</span>
+          <span className="text-[#8888A0] text-sm">A4 동일 크기로 표시</span>
           <button onClick={() => window.print()} className="px-5 py-2.5 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-xl hover:bg-[#BEF16E]">
             인쇄
           </button>
         </div>
       </div>
 
-      <div className="flex-1 flex items-center justify-center p-8 overflow-hidden bg-[#1a1a24]">
+      <div className="flex-1 flex items-center justify-center p-6 overflow-hidden bg-[#1a1a24]">
         <div
+          ref={wrapperRef}
           className="bg-[#0D0D14] border border-white/20 relative"
           style={{
-            width: "min(90vw, calc(90vh * 297 / 210))",
-            aspectRatio: "297 / 210",
+            width: a4Width,
+            height: wrapperHeight || a4Height,
           }}
         >
-          <div
-            ref={contentRef}
-            className="absolute inset-0 overflow-auto"
-            style={{ aspectRatio: "297 / 210" }}
-          />
+          <div className="print-content absolute inset-0 overflow-auto" />
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-2 py-3 bg-[#0D0D14] border-t border-white/10 overflow-x-auto">
+      <div className="flex items-center justify-center gap-2 py-3 bg-[#0D0D14] border-t border-white/10 overflow-x-auto shrink-0">
         {SECTIONS.map((s, i) => (
           <button
             key={s.id}
@@ -91,7 +115,7 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-4 py-3 border-t border-white/10 bg-[#0D0D14]">
+      <div className="flex items-center justify-center gap-4 py-3 border-t border-white/10 bg-[#0D0D14] shrink-0">
         <button
           onClick={() => setCurrentIdx((p) => Math.max(p - 1, 0))}
           disabled={currentIdx === 0}
@@ -110,8 +134,11 @@ export default function PrintView({ onClose }: { onClose: () => void }) {
       </div>
 
       <style jsx global>{`
+        .print-content > * { color: #F5F5F7 !important; }
+        .print-content h1, .print-content h2, .print-content h3 { color: #F5F5F7 !important; }
         @media print {
           body > * { display: none !important; }
+          .print-content { overflow: visible !important; }
         }
       `}</style>
     </div>
