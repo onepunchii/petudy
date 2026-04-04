@@ -46,7 +46,7 @@ export default function StepBasicInfo({
                     type="text"
                     value={formData.name || ""}
                     onChange={(e) => onChange("name", e.target.value)}
-                    className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white text-lg focus:border-petudy-lime focus:outline-none transition-colors text-center"
+                    className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white text-lg focus:border-foon-lime focus:outline-none transition-colors text-center"
                     placeholder="이름을 입력해주세요"
                     autoFocus
                 />
@@ -64,7 +64,7 @@ export default function StepBasicInfo({
                     <button
                         onClick={() => onChange("species", "dog")}
                         className={`p-6 rounded-2xl border transition-all flex flex-col items-center justify-center gap-3 h-48 ${formData.species === "dog"
-                            ? "bg-petudy-lime/20 border-petudy-lime text-petudy-lime"
+                            ? "bg-foon-lime/20 border-foon-lime text-foon-lime"
                             : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
                             }`}
                     >
@@ -81,7 +81,7 @@ export default function StepBasicInfo({
                     <button
                         onClick={() => onChange("species", "cat")}
                         className={`p-6 rounded-2xl border transition-all flex flex-col items-center justify-center gap-3 h-48 ${formData.species === "cat"
-                            ? "bg-petudy-lime/20 border-petudy-lime text-petudy-lime"
+                            ? "bg-foon-lime/20 border-foon-lime text-foon-lime"
                             : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
                             }`}
                     >
@@ -140,7 +140,7 @@ export default function StepBasicInfo({
                     </button>
                 ) : (
                     /* Selected Breed Info */
-                    <div className="bg-[#222] p-4 rounded-xl border border-petudy-lime/50 shrink-0 relative pr-10">
+                    <div className="bg-[#222] p-4 rounded-xl border border-foon-lime/50 shrink-0 relative pr-10">
                         <button
                             onClick={() => {
                                 onChange("breed", null);
@@ -151,7 +151,7 @@ export default function StepBasicInfo({
                             <X className="w-5 h-5" />
                         </button>
                         <div className="flex justify-between items-center mb-2">
-                            <span className="font-bold text-petudy-lime">{selectedBreedData.name}</span>
+                            <span className="font-bold text-foon-lime">{selectedBreedData.name}</span>
                             <span className="text-xs text-gray-400">{selectedBreedData.origin}</span>
                         </div>
                         {selectedBreedData.description && (
@@ -169,7 +169,7 @@ export default function StepBasicInfo({
                                             e.stopPropagation();
                                             setExpandedBreed(expandedBreed === selectedBreedData.name ? null : selectedBreedData.name);
                                         }}
-                                        className="absolute right-0 bottom-0 text-petudy-lime hover:text-white p-1 bg-[#222]/80 backdrop-blur-sm rounded-full"
+                                        className="absolute right-0 bottom-0 text-foon-lime hover:text-white p-1 bg-[#222]/80 backdrop-blur-sm rounded-full"
                                     >
                                         <Info className="w-4 h-4" />
                                     </button>
@@ -182,14 +182,14 @@ export default function StepBasicInfo({
 
                 {/* Fallback Mix display if selected but not in data (e.g. "믹스") */}
                 {formData.breed === "믹스" && !selectedBreedData && (
-                    <div className="bg-[#222] p-4 rounded-xl border border-petudy-lime/50 shrink-0 relative">
+                    <div className="bg-[#222] p-4 rounded-xl border border-foon-lime/50 shrink-0 relative">
                         <button
                             onClick={() => onChange("breed", null)}
                             className="absolute right-2 top-2 p-2 text-gray-400 hover:text-white"
                         >
                             <X className="w-5 h-5" />
                         </button>
-                        <div className="font-bold text-petudy-lime mb-1">믹스 (Mix)</div>
+                        <div className="font-bold text-foon-lime mb-1">믹스 (Mix)</div>
                         <div className="text-sm text-gray-400">해당하는 품종이 없어요</div>
                     </div>
                 )}

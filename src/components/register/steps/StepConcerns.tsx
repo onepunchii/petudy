@@ -26,7 +26,7 @@ export default function StepConcerns({ formData, onChange }: StepConcernsProps) 
     return (
         <div className="space-y-4 animate-fade-in-up h-full flex flex-col justify-center">
             <h2 className="text-2xl font-bold text-white mb-6 text-center leading-snug break-keep">
-                <span className="text-petudy-lime">{formData.name || "아이"}</span>의<br />
+                <span className="text-foon-lime">{formData.name || "아이"}</span>의<br />
                 건강 고민이 있나요?
             </h2>
             <p className="text-gray-400 text-center text-xs mb-4">
@@ -37,7 +37,7 @@ export default function StepConcerns({ formData, onChange }: StepConcernsProps) 
                 <button
                     onClick={() => onChange("none")}
                     className={`col-span-3 p-3 rounded-xl border transition-all ${formData.concern?.includes("none")
-                        ? "bg-petudy-lime/20 border-petudy-lime text-petudy-lime font-bold"
+                        ? "bg-foon-lime/20 border-foon-lime text-foon-lime font-bold"
                         : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
                         }`}
                 >
@@ -49,7 +49,7 @@ export default function StepConcerns({ formData, onChange }: StepConcernsProps) 
                         key={opt.value}
                         onClick={() => onChange(opt.value)}
                         className={`p-2 rounded-xl border transition-all flex flex-col items-center justify-center gap-1.5 h-24 ${formData.concern?.includes(opt.value)
-                            ? "bg-petudy-lime/20 border-petudy-lime text-petudy-lime shadow-[0_0_15px_rgba(206,255,0,0.2)]"
+                            ? "bg-foon-lime/20 border-foon-lime text-foon-lime shadow-[0_0_15px_rgba(206,255,0,0.2)]"
                             : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
                             }`}
                     >

@@ -23,7 +23,7 @@ export const useAuthStore = create<AuthState>()(
             setRestored: (val) => set({ isRestored: val }),
         }),
         {
-            name: 'petudy-auth-storage', // Key in localStorage
+            name: 'foon-auth-storage', // Key in localStorage
             storage: createJSONStorage(() => localStorage),
             onRehydrateStorage: () => (state) => {
                 // When hydration finishes, set isRestored to true

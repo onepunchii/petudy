@@ -1,4 +1,4 @@
-# Petudy Design Guidelines 🎨
+# foon Design Guidelines 🎨
 
 ## Core Philosophy: Apple Human Interface & Glassmorphism
 

@@ -98,7 +98,7 @@ export default function DatePickerModal({ isOpen, onClose, onSelect, title = "ë‚
                                 <option key={y} value={y} className="text-black">{y}ë…„</option>
                             ))}
                         </select>
-                        <div className="text-lg font-bold text-white flex gap-1 group-hover:text-petudy-lime transition-colors">
+                        <div className="text-lg font-bold text-white flex gap-1 group-hover:text-foon-lime transition-colors">
                             <span>{year}ë…„</span>
                             <span>{month + 1}ì›”</span>
                         </div>
@@ -135,9 +135,9 @@ export default function DatePickerModal({ isOpen, onClose, onSelect, title = "ë‚
                                     key={day}
                                     onClick={() => handleDateClick(day)}
                                     className={`h-10 w-10 mx-auto rounded-full flex items-center justify-center text-sm font-medium transition-all ${isSelected
-                                        ? "bg-petudy-lime text-bg-main shadow-[0_0_10px_rgba(163,223,70,0.4)] scale-105 font-bold"
+                                        ? "bg-foon-lime text-bg-main shadow-[0_0_10px_rgba(163,223,70,0.4)] scale-105 font-bold"
                                         : isToday
-                                            ? "border border-petudy-lime text-petudy-lime font-bold"
+                                            ? "border border-foon-lime text-foon-lime font-bold"
                                             : "text-gray-300 hover:bg-[#333] hover:text-white"
                                         }`}
                                 >
@@ -153,7 +153,7 @@ export default function DatePickerModal({ isOpen, onClose, onSelect, title = "ë‚
                     onClick={handleConfirm}
                     disabled={!selectedDate}
                     className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${selectedDate
-                        ? "bg-petudy-lime text-bg-main shadow-[0_4px_14px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] active:scale-[0.98]"
+                        ? "bg-foon-lime text-bg-main shadow-[0_4px_14px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] active:scale-[0.98]"
                         : "bg-[#2C2C2E] text-gray-600 border border-[#333] cursor-not-allowed"
                         }`}
                 >

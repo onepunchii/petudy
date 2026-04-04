@@ -28,8 +28,6 @@ export async function GET(request: NextRequest) {
 
         const url = `${API_BASE_URL}/getDogInfoSearch?${queryParams.toString()}`;
 
-        console.log(`Fetching from: ${API_BASE_URL}/getDogInfoSearch?serviceKey=***&dog_reg_no=${dogRegNo}&owner_nm=${ownerNm}`);
-
         const response = await fetch(url);
 
         if (!response.ok) {

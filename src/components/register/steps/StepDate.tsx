@@ -31,7 +31,7 @@ export default function StepDate({ formData, onOpenPicker }: StepDateProps) {
                 </label>
                 <div
                     onClick={() => onOpenPicker("birth")}
-                    className="w-full p-4 rounded-xl bg-bg-input border border-[#333] text-lg text-white flex items-center justify-between cursor-pointer hover:border-petudy-lime transition-colors"
+                    className="w-full p-4 rounded-xl bg-bg-input border border-[#333] text-lg text-white flex items-center justify-between cursor-pointer hover:border-foon-lime transition-colors"
                 >
                     <span className={formData.birth ? "text-white" : "text-gray-500"}>
                         {formatDateObj(formData.birth) || "YYYY. MM. DD"}
@@ -47,7 +47,7 @@ export default function StepDate({ formData, onOpenPicker }: StepDateProps) {
                 </label>
                 <div
                     onClick={() => onOpenPicker("adoptionDate")}
-                    className="w-full p-4 rounded-xl bg-bg-input border border-[#333] text-lg text-white flex items-center justify-between cursor-pointer hover:border-petudy-lime transition-colors"
+                    className="w-full p-4 rounded-xl bg-bg-input border border-[#333] text-lg text-white flex items-center justify-between cursor-pointer hover:border-foon-lime transition-colors"
                 >
                     <span className={formData.adoptionDate ? "text-white" : "text-gray-500"}>
                         {formatDateObj(formData.adoptionDate) || "YYYY. MM. DD"}

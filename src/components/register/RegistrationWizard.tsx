@@ -204,8 +204,10 @@ export default function RegistrationWizard({
             const { createPet, updatePet } = await import("@/actions/pet");
 
             if (isEditMode && petId) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 await updatePet(petId, payload as any);
             } else {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const result = await createPet(payload as any);
                 if (result && result.petId) {
                     setCreatedPetId(result.petId);
@@ -251,6 +253,7 @@ export default function RegistrationWizard({
         return (
             <RegistrationSuccess3D
                 onComplete={() => router.push("/")}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 formData={formData as any}
                 petId={createdPetId || petId}
             />
@@ -311,6 +314,7 @@ export default function RegistrationWizard({
             case "photo":
                 return <StepPhoto formData={{ ...formData, photo: formData.photo || undefined }} onFileSelect={handlePhotoSelect} />;
             case "review":
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 return <StepReview formData={formData as any} />;
             default:
                 return null;
@@ -320,7 +324,7 @@ export default function RegistrationWizard({
     return (
         <div className="flex flex-col h-full w-full absolute inset-0 bg-bg-main touch-none text-white overflow-hidden">
             {/* Ambient Background Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-petudy-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-foon-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
 
             {/* Modals */}
             <ImportRegistrationModal
@@ -354,7 +358,7 @@ export default function RegistrationWizard({
                     {STEP_IDS.map((id, i) => (
                         <div
                             key={id}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${i <= currentStepIndex ? "w-6 bg-petudy-lime shadow-[0_0_10px_#A3DF46]" : "w-1.5 bg-[#333]"
+                            className={`h-1.5 rounded-full transition-all duration-300 ${i <= currentStepIndex ? "w-6 bg-foon-lime shadow-[0_0_10px_#A3DF46]" : "w-1.5 bg-[#333]"
                                 } `}
                         />
                     ))}
@@ -387,7 +391,7 @@ export default function RegistrationWizard({
                         onClick={handleNext}
                         disabled={!isStepValid() || isSubmitting}
                         className={`h-14 rounded-2xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2 flex-1 ${isStepValid()
-                            ? "bg-petudy-lime text-bg-main shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-[0.98]"
+                            ? "bg-foon-lime text-bg-main shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-[0.98]"
                             : "bg-[#2C2C2E] text-gray-600 border border-[#333] cursor-not-allowed"
                             } `}
                     >

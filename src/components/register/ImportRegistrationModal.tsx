@@ -96,7 +96,7 @@ export default function ImportRegistrationModal({ isOpen, onClose, onImport }: I
                             <button
                                 type="button"
                                 onClick={() => setShowTooltip(!showTooltip)}
-                                className="text-gray-500 hover:text-petudy-lime transition-colors"
+                                className="text-gray-500 hover:text-foon-lime transition-colors"
                             >
                                 <Info className="w-4 h-4" />
                             </button>
@@ -114,7 +114,7 @@ export default function ImportRegistrationModal({ isOpen, onClose, onImport }: I
                             value={ownerName}
                             onChange={(e) => setOwnerName(e.target.value)}
                             placeholder="이름을 입력해주세요"
-                            className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-petudy-lime focus:shadow-[0_0_10px_rgba(163,223,70,0.2)] transition-all disabled:bg-[#222] disabled:text-gray-600"
+                            className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-foon-lime focus:shadow-[0_0_10px_rgba(163,223,70,0.2)] transition-all disabled:bg-[#222] disabled:text-gray-600"
                             disabled={isLoading}
                         />
                     </div>
@@ -129,7 +129,7 @@ export default function ImportRegistrationModal({ isOpen, onClose, onImport }: I
                             value={regNumber}
                             onChange={(e) => setRegNumber(e.target.value)}
                             placeholder="번호를 입력해주세요"
-                            className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-petudy-lime focus:shadow-[0_0_10px_rgba(163,223,70,0.2)] transition-all disabled:bg-[#222] disabled:text-gray-600"
+                            className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-foon-lime focus:shadow-[0_0_10px_rgba(163,223,70,0.2)] transition-all disabled:bg-[#222] disabled:text-gray-600"
                             disabled={isLoading}
                         />
                     </div>
@@ -138,7 +138,7 @@ export default function ImportRegistrationModal({ isOpen, onClose, onImport }: I
                     <button
                         onClick={handleSearch}
                         disabled={isLoading}
-                        className="w-full bg-petudy-lime text-bg-main font-bold text-lg py-4 rounded-2xl shadow-[0_4px_14px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4 disabled:bg-[#333] disabled:text-gray-500 disabled:shadow-none disabled:cursor-wait"
+                        className="w-full bg-foon-lime text-bg-main font-bold text-lg py-4 rounded-2xl shadow-[0_4px_14px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4 disabled:bg-[#333] disabled:text-gray-500 disabled:shadow-none disabled:cursor-wait"
                     >
                         {isLoading ? (
                             <>

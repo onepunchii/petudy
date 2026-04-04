@@ -8,7 +8,7 @@ export default function CompanyIntroSidebar() {
                 {/* Brand Section */}
                 <div className="space-y-4">
                     <h1 className="text-6xl font-black text-white tracking-tighter">
-                        PETUDY <span className="text-3xl font-light text-white align-middle px-1">by</span> <span className="text-petudy-lime">MAPS</span>
+                        foon <span className="text-3xl font-light text-white align-middle px-1">by</span> <span className="text-foon-lime">MAPS</span>
                     </h1>
                     <p className="text-2xl font-medium text-gray-400">
                         반려동물과 함께하는<br />
@@ -24,7 +24,7 @@ export default function CompanyIntroSidebar() {
                         아우르는 라이프스타일 플랫폼입니다.
                     </p>
 
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 justify-items-end text-sm font-bold text-petudy-lime mb-4">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 justify-items-end text-sm font-bold text-foon-lime mb-4">
                         <span className="hover:text-white transition-colors cursor-pointer">사업 제휴</span>
                         <span className="hover:text-white transition-colors cursor-pointer">광고 문의</span>
                         <span className="hover:text-white transition-colors cursor-pointer">인증 사업 문의</span>
@@ -34,7 +34,7 @@ export default function CompanyIntroSidebar() {
 
                     <div className="flex flex-col items-end gap-3 text-sm text-gray-500">
                         <div className="flex items-center gap-2">
-                            <span>contact@petudy.com</span>
+                            <span>contact@foon.com</span>
                             <Mail className="w-4 h-4" />
                         </div>
                         <div className="flex items-center gap-2">
@@ -50,13 +50,13 @@ export default function CompanyIntroSidebar() {
 
                 {/* Footer Links (Mock) */}
                 <div className="flex gap-4 justify-end text-xs text-gray-600 pt-8">
-                    <Link href="#" className="hover:text-petudy-lime transition-colors">이용약관</Link>
-                    <Link href="#" className="hover:text-petudy-lime transition-colors">개인정보처리방침</Link>
-                    <Link href="#" className="hover:text-petudy-lime transition-colors">사업자정보확인</Link>
+                    <Link href="#" className="hover:text-foon-lime transition-colors">이용약관</Link>
+                    <Link href="#" className="hover:text-foon-lime transition-colors">개인정보처리방침</Link>
+                    <Link href="#" className="hover:text-foon-lime transition-colors">사업자정보확인</Link>
                 </div>
 
                 <div className="pt-2 text-[10px] text-gray-700 font-mono">
-                    © 2025 PETUDY Corp. All rights reserved.
+                    © 2025 foon Corp. All rights reserved.
                 </div>
             </div>
         </aside>

@@ -53,7 +53,7 @@ export default function PetBreedSearch({ species, value, onChange }: PetBreedSea
         <div className="w-full space-y-4">
             {/* Search Input */}
             <div className="relative">
-                <div className="flex items-center bg-bg-input border-b-2 border-[#444] rounded-t-lg transition-colors focus-within:border-petudy-lime">
+                <div className="flex items-center bg-bg-input border-b-2 border-[#444] rounded-t-lg transition-colors focus-within:border-foon-lime">
                     <Search className="w-5 h-5 text-gray-500 ml-3" />
                     <input
                         type="text"
@@ -96,9 +96,9 @@ export default function PetBreedSearch({ species, value, onChange }: PetBreedSea
             {/* Selected Breed Info & Bars */}
             {selectedBreedData && (
                 <div className="animate-fade-in-up">
-                    <div className="bg-[#2C2C2E]/50 p-4 rounded-xl border border-petudy-lime/30">
+                    <div className="bg-[#2C2C2E]/50 p-4 rounded-xl border border-foon-lime/30">
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="text-xl font-bold text-petudy-lime">{selectedBreedData.name}</span>
+                            <span className="text-xl font-bold text-foon-lime">{selectedBreedData.name}</span>
                             <span className="text-sm text-gray-400">정보</span>
                         </div>
                         <p className="text-gray-300 text-sm mb-4">"{selectedBreedData.description}"</p>

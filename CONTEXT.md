@@ -1,4 +1,4 @@
-# Petudy Project Context
+# foon Project Context
 
 ## 1. 프로젝트 목표 (Project Goal)
 
@@ -41,7 +41,7 @@
 ## 5. 아키텍처 및 디렉토리 구조 (Architecture Reference)
 
 ```text
-petudy/
+foon/
 ├── app/                        # Next.js App Router
 ├── components/                 # UI Components (shadcn/ui based)
 ├── lib/                        # Utils (supabase, db, etc)

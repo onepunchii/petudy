@@ -1,5 +1,5 @@
 {
-  "name": "petudy",
+  "name": "foon",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
+    "@google/generative-ai": "^0.24.1",
     "@lottiefiles/dotlottie-react": "^0.17.10",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
@@ -30,6 +31,7 @@
     "html2canvas": "^1.4.1",
     "lucide-react": "^0.561.0",
     "meshline": "^3.3.1",
+    "motion": "^12.23.26",
     "next": "16.0.10",
     "ogl": "^1.0.11",
     "postgres": "^3.4.7",

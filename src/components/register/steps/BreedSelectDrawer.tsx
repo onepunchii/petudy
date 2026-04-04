@@ -75,7 +75,7 @@ export default function BreedSelectDrawer({ isOpen, onClose, onSelect, species }
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             placeholder="검색"
-                            className="w-full bg-[#111] border border-[#333] rounded-2xl pl-12 pr-4 py-4 text-white text-lg placeholder:text-gray-500 focus:border-petudy-lime focus:outline-none transition-colors"
+                            className="w-full bg-[#111] border border-[#333] rounded-2xl pl-12 pr-4 py-4 text-white text-lg placeholder:text-gray-500 focus:border-foon-lime focus:outline-none transition-colors"
                             autoFocus
                         />
                     </div>
@@ -90,10 +90,10 @@ export default function BreedSelectDrawer({ isOpen, onClose, onSelect, species }
                                 onSelect("믹스");
                                 onClose();
                             }}
-                            className="w-full text-left py-4 border-b border-[#333] text-gray-300 hover:text-petudy-lime hover:bg-[#252527] transition-colors flex items-center justify-between group px-2 rounded-lg"
+                            className="w-full text-left py-4 border-b border-[#333] text-gray-300 hover:text-foon-lime hover:bg-[#252527] transition-colors flex items-center justify-between group px-2 rounded-lg"
                         >
                             <span className="font-medium">믹스 (Mix)</span>
-                            <span className="text-xs text-gray-500 font-normal group-hover:text-petudy-lime/70">해당하는 품종이 없어요</span>
+                            <span className="text-xs text-gray-500 font-normal group-hover:text-foon-lime/70">해당하는 품종이 없어요</span>
                         </button>
 
                         {filteredBreeds.map((breed) => (
@@ -103,7 +103,7 @@ export default function BreedSelectDrawer({ isOpen, onClose, onSelect, species }
                                     onSelect(breed.name);
                                     onClose();
                                 }}
-                                className="w-full text-left py-4 border-b border-[#333] text-gray-300 hover:text-petudy-lime hover:bg-[#252527] transition-colors px-2 rounded-lg"
+                                className="w-full text-left py-4 border-b border-[#333] text-gray-300 hover:text-foon-lime hover:bg-[#252527] transition-colors px-2 rounded-lg"
                             >
                                 {breed.name}
                             </button>

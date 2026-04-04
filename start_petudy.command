@@ -3,7 +3,7 @@ cd "$(dirname "$0")"
 
 # Terminal title
 echo "========================================"
-echo "   Petudy 2.0 - Local Server Launcher   "
+echo "   foon 2.0 - Local Server Launcher   "
 echo "========================================"
 
 # Kill process on port 3000
@@ -19,7 +19,7 @@ fi
 
 # Start server
 echo ""
-echo "2. Starting Petudy server (npm run dev)..."
+echo "2. Starting foon server (npm run dev)..."
 npm run dev &
 SERVER_PID=$!
 

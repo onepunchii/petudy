@@ -18,7 +18,7 @@ export function RankingBanner({ topEntries }: RankingBannerProps) {
         <div className="w-full bg-gradient-to-b from-[#1E1E20] to-bg-main px-4 py-6 border-b border-[#333]">
             <div className="mb-6 text-center">
                 <h2 className="text-lg font-bold text-white flex items-center justify-center gap-2">
-                    <Crown className="w-5 h-5 text-petudy-lime fill-current drop-shadow-[0_0_8px_rgba(163,223,70,0.6)]" />
+                    <Crown className="w-5 h-5 text-foon-lime fill-current drop-shadow-[0_0_8px_rgba(163,223,70,0.6)]" />
                     실시간 랭킹
                 </h2>
                 <p className="text-xs text-gray-400 mt-1">현재 가장 인기있는 펫터디 모델 후보들이에요!</p>
@@ -46,20 +46,20 @@ export function RankingBanner({ topEntries }: RankingBannerProps) {
                 {/* 1st Place */}
                 <div className="flex flex-col items-center w-1/3 max-w-[120px] -mb-2 z-10 shrink-0">
                     <div className="relative mb-3">
-                        <Crown className="absolute -top-6 left-1/2 -translate-x-1/2 w-8 h-8 text-petudy-lime fill-petudy-lime animate-bounce drop-shadow-[0_0_10px_rgba(163,223,70,0.8)]" />
-                        <div className="w-24 h-24 rounded-full ring-4 ring-petudy-lime p-1 bg-[#1E1E20] shadow-[0_0_20px_rgba(163,223,70,0.3)] relative overflow-hidden">
+                        <Crown className="absolute -top-6 left-1/2 -translate-x-1/2 w-8 h-8 text-foon-lime fill-foon-lime animate-bounce drop-shadow-[0_0_10px_rgba(163,223,70,0.8)]" />
+                        <div className="w-24 h-24 rounded-full ring-4 ring-foon-lime p-1 bg-[#1E1E20] shadow-[0_0_20px_rgba(163,223,70,0.3)] relative overflow-hidden">
                             <img
                                 src={winner.imageUrl}
                                 alt={winner.petName}
                                 className="w-full h-full rounded-full object-cover"
                             />
                         </div>
-                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-petudy-lime text-bg-main text-xs font-bold px-3 py-1 rounded-full shadow-lg whitespace-nowrap">
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-foon-lime text-bg-main text-xs font-bold px-3 py-1 rounded-full shadow-lg whitespace-nowrap">
                             1위
                         </div>
                     </div>
                     <span className="font-bold text-base mt-2 truncate w-full text-center text-white">{winner.petName}</span>
-                    <span className="text-sm text-petudy-lime font-bold">{winner.voteCount}표</span>
+                    <span className="text-sm text-foon-lime font-bold">{winner.voteCount}표</span>
                 </div>
 
                 {/* 3rd Place */}

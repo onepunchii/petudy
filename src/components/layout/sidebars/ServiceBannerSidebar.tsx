@@ -7,13 +7,13 @@ export default function ServiceBannerSidebar() {
             <div className="max-w-md w-full space-y-6 animate-in fade-in slide-in-from-right-10 duration-700 delay-100">
 
                 {/* Banner 1: Franchise Recruitment */}
-                <div className="group relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#2A2A2C] to-[#1E1E20] border border-white/5 hover:border-petudy-lime/50 transition-all duration-300 shadow-2xl hover:shadow-[0_0_30px_rgba(163,223,70,0.1)]">
+                <div className="group relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#2A2A2C] to-[#1E1E20] border border-white/5 hover:border-foon-lime/50 transition-all duration-300 shadow-2xl hover:shadow-[0_0_30px_rgba(163,223,70,0.1)]">
                     <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                         <Building2 className="w-32 h-32 rotate-12" />
                     </div>
 
                     <div className="relative p-8 z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-petudy-lime/10 text-petudy-lime text-xs font-bold mb-4 border border-petudy-lime/20">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foon-lime/10 text-foon-lime text-xs font-bold mb-4 border border-foon-lime/20">
                             <Sparkles className="w-3 h-3 fill-current" />
                             가맹점 모집
                         </div>
@@ -26,7 +26,7 @@ export default function ServiceBannerSidebar() {
                             펫터디의 성공 노하우를 공유합니다.
                         </p>
 
-                        <Link href="/partner/inquiry" className="inline-flex items-center gap-2 text-white font-bold group-hover:text-petudy-lime transition-colors">
+                        <Link href="/partner/inquiry" className="inline-flex items-center gap-2 text-white font-bold group-hover:text-foon-lime transition-colors">
                             상담 신청하기 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
@@ -55,7 +55,7 @@ export default function ServiceBannerSidebar() {
                             </div>
                         </div>
 
-                        <Link href="/regulatory-notice" className="w-full py-2 rounded-xl bg-[#2A2A2C] border border-white/10 hover:bg-[#333] hover:border-petudy-lime/30 text-xs text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1.5 group-hover:shadow-lg">
+                        <Link href="/regulatory-notice" className="w-full py-2 rounded-xl bg-[#2A2A2C] border border-white/10 hover:bg-[#333] hover:border-foon-lime/30 text-xs text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1.5 group-hover:shadow-lg">
                             <span>📄 실증특례 이용자 고지 보기</span>
                             <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                         </Link>

@@ -39,7 +39,7 @@ export default function StepPhysical({ stepId, formData, onChange }: StepPhysica
                         inputMode="decimal"
                         value={formData.weight || ""}
                         onChange={(e) => onChange("weight", e.target.value)}
-                        className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white text-lg focus:border-petudy-lime focus:outline-none transition-colors pr-12 text-center"
+                        className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white text-lg focus:border-foon-lime focus:outline-none transition-colors pr-12 text-center"
                         placeholder="0.0"
                         autoFocus
                     />
@@ -55,7 +55,7 @@ export default function StepPhysical({ stepId, formData, onChange }: StepPhysica
         return (
             <div className="space-y-4 animate-fade-in-up h-full flex flex-col justify-center">
                 <h2 className="text-2xl font-bold text-white mb-10 text-center">
-                    <span className="text-petudy-lime">{formData.name}</span>(의) 털 색상은?
+                    <span className="text-foon-lime">{formData.name}</span>(의) 털 색상은?
                     <p className="text-xs text-center font-normal text-gray-400 mt-2">가장 비슷한 색상으로 선택해 주세요</p>
                 </h2>
 
@@ -65,12 +65,12 @@ export default function StepPhysical({ stepId, formData, onChange }: StepPhysica
                             key={c.label}
                             onClick={() => onChange("color", c.label)}
                             className={`flex items-center gap-3 p-2 rounded-xl border transition-all ${formData.color === c.label
-                                ? "bg-petudy-lime/20 border-petudy-lime"
+                                ? "bg-foon-lime/20 border-foon-lime"
                                 : "bg-bg-input border-[#333] hover:bg-[#252527]"
                                 }`}
                         >
                             <div className={`w-6 h-6 rounded-full border border-gray-600 shrink-0 shadow-sm ${c.bg}`} />
-                            <span className={`text-xs font-bold ${formData.color === c.label ? "text-petudy-lime" : "text-gray-400"}`}>
+                            <span className={`text-xs font-bold ${formData.color === c.label ? "text-foon-lime" : "text-gray-400"}`}>
                                 {c.label}
                             </span>
                         </button>
@@ -83,7 +83,7 @@ export default function StepPhysical({ stepId, formData, onChange }: StepPhysica
                         type="text"
                         value={formData.color || ""}
                         onChange={(e) => onChange("color", e.target.value)}
-                        className="w-full bg-bg-input border border-[#333] rounded-xl p-3 text-white text-md focus:border-petudy-lime focus:outline-none transition-colors text-center"
+                        className="w-full bg-bg-input border border-[#333] rounded-xl p-3 text-white text-md focus:border-foon-lime focus:outline-none transition-colors text-center"
                         placeholder="직접 입력"
                     />
                 </div>

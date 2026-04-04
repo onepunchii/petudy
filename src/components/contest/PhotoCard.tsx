@@ -16,7 +16,7 @@ export function PhotoCard({ entry, onVote, isVoted = false, onClick }: PhotoCard
         <div
             onClick={onClick}
             className={cn(
-                "break-inside-avoid mb-4 group relative overflow-hidden rounded-[20px] bg-bg-card shadow-lg border border-[#333] transition-all hover:border-petudy-lime/50",
+                "break-inside-avoid mb-4 group relative overflow-hidden rounded-[20px] bg-bg-card shadow-lg border border-[#333] transition-all hover:border-foon-lime/50",
                 onClick && "cursor-pointer active:scale-98"
             )}
         >
@@ -35,7 +35,7 @@ export function PhotoCard({ entry, onVote, isVoted = false, onClick }: PhotoCard
                 {entry.rank && entry.rank <= 3 && (
                     <div className={cn(
                         "absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-bold text-bg-main shadow-md",
-                        entry.rank === 1 ? "bg-petudy-lime" :
+                        entry.rank === 1 ? "bg-foon-lime" :
                             entry.rank === 2 ? "bg-gray-300" :
                                 "bg-orange-300"
                     )}>

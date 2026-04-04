@@ -133,12 +133,12 @@ export const PetPassCard = forwardRef<HTMLDivElement, PetPassCardProps>(({ data,
                         // animation: "badge-pulse 2s infinite" // Validation: User requested to remove blinking square
                     }}
                 >
-                    <div className="rounded-full bg-black/80 backdrop-blur-md border-[3px] border-petudy-lime p-3 shadow-[0_0_20px_rgba(163,223,70,0.5)] flex items-center justify-center w-20 h-20">
+                    <div className="rounded-full bg-black/80 backdrop-blur-md border-[3px] border-foon-lime p-3 shadow-[0_0_20px_rgba(163,223,70,0.5)] flex items-center justify-center w-20 h-20">
                         <div className="transform scale-150">
                             {badgeInfo.icon}
                         </div>
                     </div>
-                    <div className="mt-2 bg-petudy-lime text-black font-black text-xs px-2 py-1 rounded-full shadow-lg border border-white/20">
+                    <div className="mt-2 bg-foon-lime text-black font-black text-xs px-2 py-1 rounded-full shadow-lg border border-white/20">
                         {data.gender === 'male' ? badgeInfo.label.replace("공주님", "왕자님") : badgeInfo.label}
                     </div>
                 </div>
@@ -210,7 +210,7 @@ export const PetPassCard = forwardRef<HTMLDivElement, PetPassCardProps>(({ data,
                         }}
                     >
                         <QRCodeSVG
-                            value={`PETUDY-${data.petId}`}
+                            value={`foon-${data.petId}`}
                             size={62}
                             bgColor="#FFFFFF"
                             fgColor="#000000"

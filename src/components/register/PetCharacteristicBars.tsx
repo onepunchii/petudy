@@ -42,7 +42,7 @@ export default function PetCharacteristicBars({ traits }: PetCharacteristicBarsP
                                 key={score}
                                 className={`flex-1 rounded-full transition-all duration-500 ease-out border border-transparent
                                     ${item.value >= score
-                                        ? `bg-petudy-lime shadow-[0_0_5px_rgba(163,223,70,0.4)] ${animate ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`
+                                        ? `bg-foon-lime shadow-[0_0_5px_rgba(163,223,70,0.4)] ${animate ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`
                                         : "bg-[#27272a] opacity-50"
                                     }
                                 `}

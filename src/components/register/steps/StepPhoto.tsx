@@ -21,7 +21,7 @@ export default function StepPhoto({ formData, onFileSelect }: StepPhotoProps) {
                 (건너뛰면 기본 이미지가 적용돼요)
             </p>
 
-            <div className="relative w-48 h-48 rounded-full border-2 border-dashed border-gray-600 bg-[#252527] overflow-hidden flex items-center justify-center group hover:border-petudy-lime transition-colors cursor-pointer">
+            <div className="relative w-48 h-48 rounded-full border-2 border-dashed border-gray-600 bg-[#252527] overflow-hidden flex items-center justify-center group hover:border-foon-lime transition-colors cursor-pointer">
                 {formData.photo ? (
                     <img
                         src={formData.photo}
@@ -29,7 +29,7 @@ export default function StepPhoto({ formData, onFileSelect }: StepPhotoProps) {
                         className="w-full h-full object-cover"
                     />
                 ) : (
-                    <div className="flex flex-col items-center gap-2 text-gray-500 group-hover:text-petudy-lime transition-colors">
+                    <div className="flex flex-col items-center gap-2 text-gray-500 group-hover:text-foon-lime transition-colors">
                         <Upload className="w-8 h-8" />
                         <span className="text-xs">사진 선택하기</span>
                     </div>

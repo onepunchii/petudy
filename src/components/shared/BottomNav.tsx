@@ -72,12 +72,12 @@ export function BottomNav() {
                                 href={tab.href}
                                 className={cn(
                                     "flex flex-col items-center justify-center w-full h-full space-y-1 transition-all relative",
-                                    isActive ? "text-petudy-lime scale-105" : "text-gray-500 hover:text-gray-300"
+                                    isActive ? "text-foon-lime scale-105" : "text-gray-500 hover:text-gray-300"
                                 )}
                             >
                                 {/* Neon Glow for Active State */}
                                 {isActive && (
-                                    <div className="absolute -top-1 w-8 h-8 bg-petudy-lime rounded-full blur-[15px] opacity-20 pointer-events-none"></div>
+                                    <div className="absolute -top-1 w-8 h-8 bg-foon-lime rounded-full blur-[15px] opacity-20 pointer-events-none"></div>
                                 )}
 
                                 <tab.icon size={22} strokeWidth={isActive ? 2.5 : 2} className="relative z-10" />
@@ -91,7 +91,7 @@ export function BottomNav() {
             {/* 2. Desktop Hamburger Button (Visible only on Large Screens) */}
             <button
                 onClick={() => setIsMenuOpen(true)}
-                className="hidden lg:flex fixed top-8 right-8 z-50 w-12 h-12 bg-[#2A2A2C] border border-white/10 rounded-full items-center justify-center text-white hover:text-petudy-lime hover:border-petudy-lime/30 transition-all shadow-lg active:scale-95 group"
+                className="hidden lg:flex fixed top-8 right-8 z-50 w-12 h-12 bg-[#2A2A2C] border border-white/10 rounded-full items-center justify-center text-white hover:text-foon-lime hover:border-foon-lime/30 transition-all shadow-lg active:scale-95 group"
             >
                 <Menu className="w-6 h-6 group-hover:scale-110 transition-transform" />
             </button>
@@ -130,11 +130,11 @@ export function BottomNav() {
                                         className={cn(
                                             "flex items-center gap-4 p-4 rounded-2xl transition-all border border-transparent",
                                             isActive
-                                                ? "bg-petudy-lime/10 text-petudy-lime border-petudy-lime/20 font-bold"
+                                                ? "bg-foon-lime/10 text-foon-lime border-foon-lime/20 font-bold"
                                                 : "hover:bg-[#2A2A2C] text-gray-400 hover:text-white hover:border-white/5"
                                         )}
                                     >
-                                        <tab.icon className={cn("w-6 h-6", isActive ? "text-petudy-lime" : "text-gray-500")} />
+                                        <tab.icon className={cn("w-6 h-6", isActive ? "text-foon-lime" : "text-gray-500")} />
                                         <span className="text-lg">{tab.name}</span>
                                     </Link>
                                 )
@@ -144,7 +144,7 @@ export function BottomNav() {
                         {/* Quick Action / Footer */}
                         <div className="pt-8 border-t border-white/10">
                             <div className="text-xs text-gray-500 text-center">
-                                © 2025 PETUDY
+                                © 2025 foon
                             </div>
                         </div>
                     </div>

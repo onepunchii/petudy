@@ -89,7 +89,7 @@ function SortablePetItem({
             style={style}
             onClick={() => !isEditMode && onSelect()} // Allow selection on click
             className={`bg-[#252527] rounded-[24px] p-4 shadow-lg border relative group transition-all touch-manipulation
-            ${isSelected && !isEditMode ? 'border-petudy-lime/50 ring-1 ring-petudy-lime/20' : 'border-[#333] hover:border-gray-500'}
+            ${isSelected && !isEditMode ? 'border-foon-lime/50 ring-1 ring-foon-lime/20' : 'border-[#333] hover:border-gray-500'}
             ${isDragging ? 'opacity-80 scale-105 shadow-2xl bg-[#2D2D30]' : ''}
             ${!isEditMode ? 'cursor-pointer hover:bg-[#2a2a2c]' : ''}`} // Add cursor pointer
         >
@@ -122,7 +122,7 @@ function SortablePetItem({
                                 {pet.gender === "male" ? "♂" : "♀"}
                             </div>
                             <span className="text-base font-black text-white tracking-tight">{pet.name}</span>
-                            {isSelected && !isEditMode && <Check className="w-4 h-4 text-petudy-lime" />}
+                            {isSelected && !isEditMode && <Check className="w-4 h-4 text-foon-lime" />}
                         </div>
                         <div className="text-gray-400 text-[11px] font-medium tracking-tight">
                             {pet.breed || "믹스"} · {calculateAge(pet.birth_date)}
@@ -153,7 +153,7 @@ function SortablePetItem({
                                 e.stopPropagation();
                                 onViewPass(pet);
                             }}
-                            className="w-8 h-8 rounded-full bg-[#333] border border-[#444] flex items-center justify-center text-gray-400 hover:text-petudy-lime hover:border-petudy-lime/30 transition-colors active:scale-90"
+                            className="w-8 h-8 rounded-full bg-[#333] border border-[#444] flex items-center justify-center text-gray-400 hover:text-foon-lime hover:border-foon-lime/30 transition-colors active:scale-90"
                             title="펫 패스 보기"
                         >
                             <IdCard className="w-4 h-4" />
@@ -371,12 +371,12 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
                 <div className="px-6 pb-4 flex justify-between items-center bg-[#1c1c1e] z-10 sticky top-0">
                     <h2 className="text-xl font-bold text-white flex items-center gap-2">
                         반려동물 선택
-                        <span className="text-petudy-lime text-sm font-normal">({pets.length})</span>
+                        <span className="text-foon-lime text-sm font-normal">({pets.length})</span>
                     </h2>
                     <button
                         onClick={() => setIsEditMode(!isEditMode)}
                         className={`text-sm px-3 py-1.5 rounded-full border transition-all ${isEditMode
-                            ? "bg-petudy-lime text-bg-main border-petudy-lime font-bold"
+                            ? "bg-foon-lime text-bg-main border-foon-lime font-bold"
                             : "text-gray-400 border-gray-600 hover:text-white hover:border-white"
                             }`}
                     >
@@ -425,10 +425,10 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
                     <div className="px-4 w-full mb-8 shrink-0">
                         <button
                             onClick={() => router.push("/register")}
-                            className="w-full py-4 rounded-2xl border border-dashed border-[#444] text-gray-400 font-bold flex items-center justify-center gap-2 hover:bg-[#222] hover:text-petudy-lime hover:border-petudy-lime/50 transition-all active:scale-[0.99] group animate-in fade-in slide-in-from-bottom-2 duration-300"
+                            className="w-full py-4 rounded-2xl border border-dashed border-[#444] text-gray-400 font-bold flex items-center justify-center gap-2 hover:bg-[#222] hover:text-foon-lime hover:border-foon-lime/50 transition-all active:scale-[0.99] group animate-in fade-in slide-in-from-bottom-2 duration-300"
                             onTouchStart={(e) => e.stopPropagation()}
                         >
-                            <div className="w-5 h-5 rounded-full border border-current flex items-center justify-center group-hover:bg-petudy-lime group-hover:border-petudy-lime group-hover:text-bg-main transition-colors">
+                            <div className="w-5 h-5 rounded-full border border-current flex items-center justify-center group-hover:bg-foon-lime group-hover:border-foon-lime group-hover:text-bg-main transition-colors">
                                 <Plus className="w-3 h-3" />
                             </div>
                             새로운 아이 등록하기

@@ -18,6 +18,7 @@ export interface Poll {
     options: PollOption[];
     total_votes: number;
     user_voted_option_id?: number | null; // ID of the option the user voted for
+    pollType?: "VS_IMAGE" | "TEXT_CHOICE";
 }
 
 export async function getLatestPoll(): Promise<Poll | null> {
@@ -163,29 +164,32 @@ export async function votePoll(pollId: number, optionId: number) {
 // NEW: Expansion Features
 // ----------------------------------------------------------------------
 
-export async function getPolls(limit = 10, offset = 0) {
+export async function getPolls(limit = 10, offset = 0, sortBy: 'latest' | 'popular' = 'latest') {
     try {
         const supabase = await createClient();
 
-        const { data: pollsData, error } = await supabase
+        // Base Query
+        let query = supabase
             .from("polls")
             .select(`
                 *,
                 poll_options (*)
             `)
-            .eq("status", "OPEN")
-            .order("created_at", { ascending: false })
-            .range(offset, offset + limit - 1); // Pagination
+            .eq("status", "OPEN");
+
+        // Sort Logic (Server-side for Latest, In-memory/Hybrid for Popular)
+        if (sortBy === 'latest') {
+            query = query.order("created_at", { ascending: false });
+        } else {
+            // For popular, we fetch more items and sort in memory for now
+            // since we don't have a total_votes column to sort by.
+            // Ideally should add total_votes column to polls table.
+            // For MVP, limit is higher for popular fetch.
+        }
+
+        const { data: pollsData, error } = await query.range(offset, offset + limit * 2); // Fetch double for popular sort buffer if needed
 
         if (error) throw error;
-
-        // Process data to match Poll interface
-        // Note: Supabase Drizzle helper or raw query might be cleaner, 
-        // but adapting basic query for now.
-        // We'll calculate totals on the fly from options if needed.
-
-        // Wait, 'poll_votes(count)' isn't working directly without aggregation setup in Supabase sometimes?
-        // Let's rely on option.vote_count which we increment manually in votePoll.
 
         const formattedPolls: Poll[] = pollsData.map((p: any) => {
             const options = p.poll_options || [];
@@ -205,7 +209,13 @@ export async function getPolls(limit = 10, offset = 0) {
             };
         });
 
-        return formattedPolls;
+        // Apply Popular Sort in Memory
+        if (sortBy === 'popular') {
+            formattedPolls.sort((a, b) => b.total_votes - a.total_votes);
+        }
+
+        // Apply Limit
+        return formattedPolls.slice(0, limit);
 
     } catch (error) {
         console.error("Error fetching polls list:", error);
@@ -262,9 +272,9 @@ export async function createPoll(data: CreatePollData) {
 
         return { success: true, pollId: newPoll.id };
 
-    } catch (error) {
+    } catch (error: any) {
         console.error("Create poll error:", error);
-        return { success: false, message: "Failed to create poll" };
+        return { success: false, message: error.message || "Failed to create poll" };
     }
 }
 
@@ -417,8 +427,8 @@ export async function addPollComment(pollId: number, content: string) {
 
         return { success: true };
 
-    } catch (error) {
+    } catch (error: any) {
         console.error("Error adding comment:", error);
-        return { success: false, message: "댓글 등록 실패" };
+        return { success: false, message: error.message || "댓글 등록 실패" };
     }
 }

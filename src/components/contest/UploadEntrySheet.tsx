@@ -124,7 +124,7 @@ export function UploadEntrySheet({ isOpen, onClose, onSubmit }: UploadEntrySheet
                                 </div>
                                 <div className="flex-1">
                                     <p className="font-bold text-white">{selectedPet.name}</p>
-                                    <p className="text-xs text-petudy-lime font-medium">{selectedPet.breed || "대표 반려동물"}</p>
+                                    <p className="text-xs text-foon-lime font-medium">{selectedPet.breed || "대표 반려동물"}</p>
                                 </div>
                                 {/* Simple toggle for demo or fetch list */}
                                 {pets.length > 1 && (
@@ -174,7 +174,7 @@ export function UploadEntrySheet({ isOpen, onClose, onSubmit }: UploadEntrySheet
                         <input
                             type="text"
                             placeholder="우리 아이의 매력을 자랑해주세요!"
-                            className="w-full p-4 bg-bg-input border border-[#333] rounded-xl focus:outline-none focus:border-petudy-lime focus:ring-1 focus:ring-petudy-lime transition-all font-medium text-white placeholder-gray-600"
+                            className="w-full p-4 bg-bg-input border border-[#333] rounded-xl focus:outline-none focus:border-foon-lime focus:ring-1 focus:ring-foon-lime transition-all font-medium text-white placeholder-gray-600"
                             maxLength={50}
                             value={caption}
                             onChange={(e) => setCaption(e.target.value)}
@@ -186,7 +186,7 @@ export function UploadEntrySheet({ isOpen, onClose, onSubmit }: UploadEntrySheet
 
                     {/* Submit Button */}
                     <button
-                        className="w-full bg-petudy-lime text-bg-main font-bold py-4 rounded-xl text-lg shadow-[0_4px_14px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] active:scale-[0.98] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                        className="w-full bg-foon-lime text-bg-main font-bold py-4 rounded-xl text-lg shadow-[0_4px_14px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] active:scale-[0.98] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                         disabled={!selectedImage || !caption}
                         onClick={handleCreateSubmit}
                     >

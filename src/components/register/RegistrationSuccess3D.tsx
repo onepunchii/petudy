@@ -134,7 +134,7 @@ export default function RegistrationSuccess3D({
             const image = canvas.toDataURL("image/png");
             const link = document.createElement("a");
             link.href = image;
-            link.download = `PETUDY_PASS_${cardData.name}.png`;
+            link.download = `foon_PASS_${cardData.name}.png`;
             link.click();
         } catch (err) {
             console.error("Download Failed:", err);
@@ -149,7 +149,7 @@ export default function RegistrationSuccess3D({
     return (
         <div className="absolute inset-0 z-50 bg-bg-main flex flex-col items-center justify-center font-sans pb-10 overflow-hidden touch-none h-full w-full">
             {/* Ambient Background Glow */}
-            <div className="absolute top-[-20%] left-[-20%] w-[500px] h-[500px] bg-petudy-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+            <div className="absolute top-[-20%] left-[-20%] w-[500px] h-[500px] bg-foon-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
 
             {/* Success Popup */}
             {!viewMode && (
@@ -157,7 +157,7 @@ export default function RegistrationSuccess3D({
                     className={`absolute top - 1 / 4 left - 1 / 2 - translate - x - 1 / 2 z - [60] transition - all duration - 500 transform ${showPopup ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-90 pointer-events-none"} `}
                 >
                     <div className="bg-white/90 backdrop-blur-md px-8 py-4 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.2)] border border-white/20 flex items-center gap-3">
-                        <div className="w-8 h-8 bg-petudy-lime rounded-full flex items-center justify-center text-lg shadow-sm animate-bounce">
+                        <div className="w-8 h-8 bg-foon-lime rounded-full flex items-center justify-center text-lg shadow-sm animate-bounce">
                             🎉
                         </div>
                         <span className="text-gray-900 font-black text-lg tracking-tight">완료!!</span>
@@ -197,7 +197,7 @@ export default function RegistrationSuccess3D({
                         {/* Home Button (Right) */}
                         <button
                             onClick={onComplete}
-                            className="flex-1 bg-petudy-lime text-black font-bold py-4 rounded-2xl shadow-[0_4px_20px_rgba(163,223,70,0.4)] hover:bg-[#92c93e] active:scale-95 transition-all flex items-center justify-center gap-2"
+                            className="flex-1 bg-foon-lime text-black font-bold py-4 rounded-2xl shadow-[0_4px_20px_rgba(163,223,70,0.4)] hover:bg-[#92c93e] active:scale-95 transition-all flex items-center justify-center gap-2"
                         >
                             <Home className="w-5 h-5" />
                             <span>홈으로</span>

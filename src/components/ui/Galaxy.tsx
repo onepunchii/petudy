@@ -318,7 +318,7 @@ export default function Galaxy({
     }
 
     if (mouseInteraction) {
-      ctn.addEventListener('mousemove', handleMouseMove as any);
+      ctn.addEventListener('mousemove', handleMouseMove as EventListener);
       ctn.addEventListener('mouseleave', handleMouseLeave);
     }
 
@@ -326,7 +326,7 @@ export default function Galaxy({
       cancelAnimationFrame(animateId);
       window.removeEventListener('resize', resize);
       if (mouseInteraction) {
-        ctn.removeEventListener('mousemove', handleMouseMove as any);
+        ctn.removeEventListener('mousemove', handleMouseMove as EventListener);
         ctn.removeEventListener('mouseleave', handleMouseLeave);
       }
       ctn.removeChild(gl.canvas);

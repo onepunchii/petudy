@@ -23,7 +23,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
     useEffect(() => {
         // Only set default pet if we have pets and haven't selected one yet
         if (initialPets.length > 0 && !currentPet) {
-            const storedId = localStorage.getItem("petudy_current_pet_id");
+            const storedId = localStorage.getItem("foon_current_pet_id");
             const found = initialPets.find((p: Pet) => p.id === storedId);
 
             if (found) {
@@ -36,7 +36,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
 
     const handleSelectPet = (pet: Pet) => {
         setCurrentPet(pet);
-        localStorage.setItem("petudy_current_pet_id", pet.id);
+        localStorage.setItem("foon_current_pet_id", pet.id);
     };
 
     const hasPet = !!currentPet;
@@ -55,9 +55,8 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
     }
 
     const services: ServiceItem[] = [
-        { title: "미용 예약", icon: "✂️", href: "/intro?category=BATH" },
         { title: "펫장례", icon: "🕊️", href: "/intro?category=FUNERAL", isVertical: true },
-        { title: "건강검진", icon: "🩺", href: "/intro?category=CHECKUP" },
+        { title: "건강검진", icon: "🩺", href: "/intro?category=CHECKUP", isVertical: true },
         {
             title: "펫터디 AI 상담사",
             icon: (
@@ -83,14 +82,14 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
         <div className="bg-bg-main min-h-screen text-white px-6 py-8 flex flex-col relative overflow-hidden pb-32">
 
             {/* Ambient Background Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-petudy-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-foon-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
 
             {/* Header */}
             <header className="flex justify-between items-center mb-8 z-10">
                 <div>
                     <h1 className="text-2xl font-bold leading-tight">
                         안녕하세요,<br />
-                        <span className="text-petudy-lime">{petName === "보호자" ? "예비" : petName}</span> {petName === "보호자" ? "보호자님!" : "보호자님!"}
+                        <span className="text-foon-lime">{petName === "보호자" ? "예비" : petName}</span> {petName === "보호자" ? "보호자님!" : "보호자님!"}
                     </h1>
                 </div>
                 <button
@@ -115,7 +114,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
                     )}
                     {/* Add badge if has pet, indicating "Add another" or "Edit" */}
                     {hasPet && (
-                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-petudy-lime rounded-full border-2 border-bg-main flex items-center justify-center">
+                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-foon-lime rounded-full border-2 border-bg-main flex items-center justify-center">
                             <Plus className="w-2.5 h-2.5 text-bg-main stroke-[3]" />
                         </div>
                     )}
@@ -129,7 +128,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
                     <>
                         <div className="flex justify-between items-start">
                             <div>
-                                <span className="bg-bg-input text-petudy-lime text-xs font-bold px-3 py-1 rounded-full">PETUDY FAMILY</span>
+                                <span className="bg-bg-input text-foon-lime text-xs font-bold px-3 py-1 rounded-full">foon FAMILY</span>
                                 <h2 className="text-xl font-bold mt-3 leading-tight">우리 아이를<br />등록해주세요</h2>
                                 <p className="text-gray-400 text-sm mt-2">맞춤형 케어 서비스 시작하기</p>
                             </div>
@@ -138,7 +137,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
                             </div>
                         </div>
                         <Link href="/register">
-                            <button className="w-full mt-6 bg-petudy-lime text-bg-main font-bold py-4 rounded-2xl hover:bg-petudy-soft transition-colors shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-95">
+                            <button className="w-full mt-6 bg-foon-lime text-bg-main font-bold py-4 rounded-2xl hover:bg-foon-soft transition-colors shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-95">
                                 등록하러 가기
                             </button>
                         </Link>
@@ -148,7 +147,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
                     <>
                         <div className="flex justify-between items-start">
                             <div>
-                                <span className="bg-bg-input text-petudy-lime text-xs font-bold px-3 py-1 rounded-full">PETUDY MOBILITY</span>
+                                <span className="bg-bg-input text-foon-lime text-xs font-bold px-3 py-1 rounded-full">foon MOBILITY</span>
                                 <h2 className="text-xl font-bold mt-3 leading-tight">어디로<br />떠나시나요?</h2>
                                 <p className="text-gray-400 text-sm mt-2">안전한 펫택시 예약하기</p>
                             </div>
@@ -157,7 +156,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
                             </div>
                         </div>
                         <Link href="/booking/new?category=TAXI">
-                            <button className="w-full mt-6 bg-petudy-lime text-bg-main font-bold py-4 rounded-2xl hover:bg-petudy-soft transition-colors shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-95">
+                            <button className="w-full mt-6 bg-foon-lime text-bg-main font-bold py-4 rounded-2xl hover:bg-foon-soft transition-colors shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-95">
                                 지금 호출하기
                             </button>
                         </Link>
@@ -175,16 +174,16 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
                         ${s.isVertical ? "row-span-2 h-full flex-col" : ""} 
                         ${s.isBanner
                                 ? s.isAi
-                                    ? "col-span-2 aspect-[4/1] flex-row px-8 justify-between bg-gradient-to-r from-[#1c1c1e] to-petudy-lime/10 border border-petudy-lime/30"
+                                    ? "col-span-2 aspect-[4/1] flex-row px-8 justify-between bg-gradient-to-r from-[#1c1c1e] to-foon-lime/10 border border-foon-lime/30"
                                     : "col-span-2 aspect-[4/1] flex-row px-8 justify-between bg-gradient-to-r from-[#2c2c2e] to-[#1c1c1e] border border-[#333]"
                                 : ""
                             } 
                         ${!s.isVertical && !s.isBanner ? "aspect-[4/3] flex-col" : ""}
-                        ${s.isMbti ? "border border-petudy-lime/20" : ""}
+                        ${s.isMbti ? "border border-foon-lime/20" : ""}
                         `}
                     >
-                        {s.isMbti && <div className="absolute top-3 right-3 w-2 h-2 bg-petudy-lime rounded-full animate-pulse shadow-[0_0_8px_#A3DF46]"></div>}
-                        {s.isAi && <div className="absolute top-0 right-0 w-20 h-20 bg-petudy-lime blur-[50px] opacity-20 pointer-events-none"></div>}
+                        {s.isMbti && <div className="absolute top-3 right-3 w-2 h-2 bg-foon-lime rounded-full animate-pulse shadow-[0_0_8px_#A3DF46]"></div>}
+                        {s.isAi && <div className="absolute top-0 right-0 w-20 h-20 bg-foon-lime blur-[50px] opacity-20 pointer-events-none"></div>}
 
                         <div className={`w-14 h-14 bg-bg-input rounded-full flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-300 ${s.isBanner ? "order-2" : ""}`}>
                             {s.icon}
@@ -195,7 +194,7 @@ export default function HomePageClient({ initialPoll }: HomePageClientProps) {
                                 {s.title}
                             </span>
                             {s.isBanner && (
-                                <p className={`text-xs mt-1 font-light ${s.isAi ? "text-petudy-lime" : "text-gray-400"}`}>
+                                <p className={`text-xs mt-1 font-light ${s.isAi ? "text-foon-lime" : "text-gray-400"}`}>
                                     {s.isAi ? "무엇이든 물어보세요" : "프리미엄 혜택 받기"}
                                 </p>
                             )}

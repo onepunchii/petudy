@@ -1,0 +1,65 @@
+:root {
+  /* REDSUN Design System - Deep Dark Tech SaaS */
+
+  /* Primary Brand (Neon Orange) */
+  --primary-gradient-start: #FF5500;
+  --primary-gradient-end: #FF9900;
+
+  /* Backgrounds */
+  --bg-main: #050505;
+  --bg-card: #141414;
+  --bg-card-hover: #1F1F1F;
+
+  /* Typography */
+  --text-headline: #FFFFFF;
+  --text-body: #B0B0B0;
+  --text-sub: #666666;
+
+  /* Borders & Glass */
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-highlight: rgba(255, 85, 0, 0.5);
+
+  /* Font */
+  --font-inter: var(--font-inter);
+}
+
+@utility bento-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-default);
+  border-radius: 1.5rem;
+  /* 24px */
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  /* Performance optimization */
+  transform: translateZ(0);
+}
+
+@utility bento-card-hover {
+  &:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-default);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@utility glass-header {
+  background: rgba(5, 5, 5, 0.85);
+  /* Slightly more opaque */
+  backdrop-filter: blur(12px);
+  /* Reduced from 16px */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-default);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 30px rgba(255, 85, 0, 0.4);
+}
+
+@utility orange-gradient-text {
+  background: linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

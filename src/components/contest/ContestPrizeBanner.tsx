@@ -29,7 +29,7 @@ export function ContestPrizeBanner({ onClose }: ContestPrizeBannerProps) {
 
                 {/* Animation & Title */}
                 <div className="text-center mb-6">
-                    <div className="w-32 h-32 mx-auto bg-petudy-lime/5 rounded-full flex items-center justify-center relative mb-4">
+                    <div className="w-32 h-32 mx-auto bg-foon-lime/5 rounded-full flex items-center justify-center relative mb-4">
                         <div className="absolute inset-0 scale-125">
                             <DotLottieReact
                                 src="https://lottie.host/cf598b05-7b3e-49d8-ad6b-f96754f1651c/CUv1G5wTha.lottie"
@@ -39,9 +39,9 @@ export function ContestPrizeBanner({ onClose }: ContestPrizeBannerProps) {
                         </div>
                     </div>
 
-                    <div className="inline-flex items-center gap-2 bg-petudy-lime/20 border border-petudy-lime/30 px-3 py-1 rounded-full mb-3">
-                        <span className="w-2 h-2 rounded-full bg-petudy-lime animate-pulse" />
-                        <span className="text-petudy-lime text-xs font-bold">12월 스페셜 리워드</span>
+                    <div className="inline-flex items-center gap-2 bg-foon-lime/20 border border-foon-lime/30 px-3 py-1 rounded-full mb-3">
+                        <span className="w-2 h-2 rounded-full bg-foon-lime animate-pulse" />
+                        <span className="text-foon-lime text-xs font-bold">12월 스페셜 리워드</span>
                     </div>
 
                     <h2 className="text-2xl font-bold text-white mb-2">
@@ -55,13 +55,13 @@ export function ContestPrizeBanner({ onClose }: ContestPrizeBannerProps) {
                 {/* Prizes Grid */}
                 <div className="space-y-3">
                     {/* 1st Place */}
-                    <div className="bg-black/40 rounded-2xl p-4 flex items-center gap-4 border border-petudy-lime/30 relative overflow-hidden group">
-                        <div className="w-12 h-12 rounded-xl bg-petudy-lime/10 flex items-center justify-center shrink-0">
+                    <div className="bg-black/40 rounded-2xl p-4 flex items-center gap-4 border border-foon-lime/30 relative overflow-hidden group">
+                        <div className="w-12 h-12 rounded-xl bg-foon-lime/10 flex items-center justify-center shrink-0">
                             <span className="text-2xl">🥇</span>
                         </div>
                         <div className="flex-1">
                             <div className="flex items-center gap-2 mb-0.5">
-                                <span className="bg-petudy-lime text-black text-[10px] font-bold px-1.5 py-0.5 rounded">1등</span>
+                                <span className="bg-foon-lime text-black text-[10px] font-bold px-1.5 py-0.5 rounded">1등</span>
                                 <span className="text-white font-bold">프리미엄 개모차</span>
                             </div>
                             <span className="text-xs text-gray-500">50만원 상당의 최고급 유모차</span>
@@ -100,7 +100,7 @@ export function ContestPrizeBanner({ onClose }: ContestPrizeBannerProps) {
                 {/* Footer Action */}
                 <button
                     onClick={onClose}
-                    className="w-full mt-6 bg-petudy-lime text-bg-main font-bold py-3.5 rounded-xl hover:bg-lime-400 transition-colors shadow-[0_4px_20px_rgba(163,223,70,0.3)] text-sm"
+                    className="w-full mt-6 bg-foon-lime text-bg-main font-bold py-3.5 rounded-xl hover:bg-lime-400 transition-colors shadow-[0_4px_20px_rgba(163,223,70,0.3)] text-sm"
                 >
                     확인했어요
                 </button>

@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, uuid, date, decimal, pgEnum, serial, integer, boolean, unique, jsonb } from 'drizzle-orm/pg-core';
+import { pgTable, text, timestamp, uuid, date, decimal, pgEnum, serial, integer, boolean, unique, jsonb, vector, index } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 // ====================================================================
@@ -324,4 +324,18 @@ export const pollCommentsRelations = relations(pollComments, ({ one }) => ({
         fields: [pollComments.userId],
         references: [users.id],
     }),
+}));
+// ====================================================================
+// NEW: AI / RAG 관련 테이블
+// ====================================================================
+
+// 1. AI 지식 베이스 (Vector Store)
+export const aiKnowledge = pgTable("ai_knowledge", {
+    id: serial("id").primaryKey(),
+    content: text("content").notNull(), // 실제 텍스트 내용
+    embedding: vector("embedding", { dimensions: 768 }), // Gemini 1.5 Flash Embedding (768)
+    metadata: jsonb("metadata"), // 데이터 출처, 태그 등
+    createdAt: timestamp("created_at").defaultNow(),
+}, (table) => ({
+    embeddingIndex: index("embedding_index").using("hnsw", table.embedding.op("vector_cosine_ops")),
 }));

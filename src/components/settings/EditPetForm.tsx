@@ -127,7 +127,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
     return (
         <div className="flex flex-col min-h-screen bg-bg-main text-white relative pb-32">
             {/* Ambient Background Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-petudy-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-foon-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
 
             <div className="px-6 pt-6 flex flex-col gap-8 relative z-10 text-sm">
 
@@ -141,7 +141,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                                 <span className="text-4xl">🐶</span>
                             )}
                         </div>
-                        <div className="absolute bottom-0 right-0 w-8 h-8 bg-petudy-lime rounded-full flex items-center justify-center text-bg-main shadow-md border-2 border-bg-main">
+                        <div className="absolute bottom-0 right-0 w-8 h-8 bg-foon-lime rounded-full flex items-center justify-center text-bg-main shadow-md border-2 border-bg-main">
                             <Camera className="w-4 h-4" />
                         </div>
                         <input type="file" accept="image/*" className="hidden" onChange={handlePhotoSelect} />
@@ -160,7 +160,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                             type="text"
                             value={formData.name || ""}
                             onChange={(e) => handleChange("name", e.target.value)}
-                            className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-petudy-lime outline-none transition-colors font-medium"
+                            className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-foon-lime outline-none transition-colors font-medium"
                             placeholder="이름을 입력해주세요"
                         />
                     </div>
@@ -173,7 +173,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                                 type="text"
                                 value={formData.reg_number || ""}
                                 onChange={(e) => handleChange("reg_number", e.target.value)}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 pl-10 text-white focus:border-petudy-lime outline-none transition-colors font-medium"
+                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 pl-10 text-white focus:border-foon-lime outline-none transition-colors font-medium"
                                 placeholder="등록번호 15자리"
                             />
                             <Hash className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
@@ -281,7 +281,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                                 type="number"
                                 value={formData.weight || ""}
                                 onChange={(e) => handleChange("weight", e.target.value)}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-petudy-lime outline-none transition-colors font-medium placeholder-gray-600"
+                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-foon-lime outline-none transition-colors font-medium placeholder-gray-600"
                                 placeholder="0.0"
                                 step="0.1"
                             />
@@ -292,7 +292,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                                 type="text"
                                 value={formData.color || ""}
                                 onChange={(e) => handleChange("color", e.target.value)}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-petudy-lime outline-none transition-colors font-medium placeholder-gray-600"
+                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-foon-lime outline-none transition-colors font-medium placeholder-gray-600"
                                 placeholder="예: 갈색"
                             />
                         </div>
@@ -303,7 +303,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                         <input
                             type="checkbox"
                             id="neuter"
-                            className="w-5 h-5 accent-petudy-lime rounded cursor-pointer"
+                            className="w-5 h-5 accent-foon-lime rounded cursor-pointer"
                             checked={formData.neuter === true}
                             onChange={(e) => handleChange("neuter", e.target.checked)}
                         />
@@ -322,7 +322,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                         <button
                             onClick={() => handleConcernChange("none")}
                             className={`col-span-4 p-3 rounded-xl border transition-all text-xs font-bold ${formData.concern?.includes("none")
-                                ? "bg-petudy-lime/20 border-petudy-lime text-petudy-lime"
+                                ? "bg-foon-lime/20 border-foon-lime text-foon-lime"
                                 : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
                                 }`}
                         >
@@ -333,7 +333,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                                 key={opt.value}
                                 onClick={() => handleConcernChange(opt.value)}
                                 className={`flex flex-col items-center justify-center gap-2 p-2 h-20 rounded-xl border transition-all ${formData.concern?.includes(opt.value)
-                                    ? "bg-petudy-lime/20 border-petudy-lime text-petudy-lime"
+                                    ? "bg-foon-lime/20 border-foon-lime text-foon-lime"
                                     : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
                                     }`}
                             >
@@ -350,7 +350,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                 <button
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="w-full max-w-[430px] mx-auto bg-petudy-lime text-bg-main font-bold py-4 rounded-2xl shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-95 transition-transform disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-2"
+                    className="w-full max-w-[430px] mx-auto bg-foon-lime text-bg-main font-bold py-4 rounded-2xl shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-95 transition-transform disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-2"
                 >
                     {isSubmitting ? <span className="animate-spin text-xl">⏳</span> : "저장하기"}
                 </button>
