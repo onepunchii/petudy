@@ -18,12 +18,32 @@ export async function generateIRPdf(elementId: string): Promise<void> {
   element.style.width = `${PAGE.width}mm`;
   element.style.transform = "none";
 
-  const canvas = await html2canvas(element, {
-    scale: 2,
-    useCORS: true,
-    logging: false,
-    backgroundColor: "#0D0D14",
-  });
+  let canvas: HTMLCanvasElement;
+  try {
+    canvas = await html2canvas(element, {
+      scale: 2,
+      useCORS: true,
+      logging: false,
+      backgroundColor: "#0D0D14",
+      onclone: (clonedDoc) => {
+        const allElements = clonedDoc.body.querySelectorAll("*");
+        allElements.forEach((el) => {
+          const computedStyle = window.getComputedStyle(el);
+          if (computedStyle.backgroundColor.includes("oklab") || computedStyle.backgroundColor.includes("oklch")) {
+            (el as HTMLElement).style.backgroundColor = "#0D0D14";
+          }
+        });
+      },
+    });
+  } catch (e) {
+    console.warn("html2canvas error, retrying with fallback:", e);
+    canvas = await html2canvas(element, {
+      scale: 1,
+      useCORS: true,
+      logging: false,
+      backgroundColor: "#0D0D14",
+    });
+  }
 
   element.style.width = originalWidth;
   element.style.height = originalHeight;
