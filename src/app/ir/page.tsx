@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import PrintView from "@/components/ir/PrintView";
 
 export default function IRPage() {
+  const router = useRouter();
   const [scrollY, setScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
@@ -145,9 +147,8 @@ export default function IRPage() {
               포온 (Po-On) — 반려동물 장례 전문 에이전시 플랫폼<br />
               슬픔의 순간, 투명하고 신뢰할 수 있는 장례 서비스를 연결합니다
             </p>
-            <a
-              href="/ir/PO-ON 사업계획서.pdf"
-              download="PO-ON_사업계획서.pdf"
+            <button
+              onClick={() => router.push('/ir/print')}
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_30px_rgba(163,223,70,.2)] animate-[fade-up_0.9s_0.5s_ease_forwards]"
               style={{ opacity: 0 }}
             >
@@ -155,7 +156,7 @@ export default function IRPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               사업계획서 다운로드
-            </a>
+            </button>
           </div>
 
         <div className="absolute bottom-9 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
@@ -887,16 +888,15 @@ export default function IRPage() {
           <button className="px-8 md:px-12 py-4 md:py-5 bg-[#A3DF46] text-[#0D0D14] font-bold rounded-2xl transition-all hover:bg-[#BEF16E] hover:translate-y-[-2px] shadow-[0_0_40px_rgba(163,223,70,.25)]">
             사업계획 미팅 신청
           </button>
-          <a
-            href="/ir/PO-ON 사업계획서.pdf"
-            download="PO-ON_사업계획서.pdf"
+          <button
+            onClick={() => router.push('/ir/print')}
             className="px-8 md:px-12 py-4 md:py-5 border border-white/15 text-white rounded-2xl bg-transparent transition-all hover:bg-white/5 hover:translate-y-[-2px] flex items-center justify-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
             사업계획서 다운로드
-          </a>
+          </button>
         </div>
       </section>
 
