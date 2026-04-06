@@ -91,7 +91,11 @@ export default function IRPage() {
     { href: "#brand", label: "브랜드" },
     { href: "#market", label: "시장" },
     { href: "#model", label: "비즈니스" },
+    { href: "#moat", label: "경쟁우위" },
+    { href: "#technology", label: "기술" },
+    { href: "#kpi", label: "KPI" },
     { href: "#financial", label: "재무" },
+    { href: "#persona", label: "고객" },
     { href: "#team", label: "팀" },
     { href: "#invest", label: "사업계획" },
   ];
@@ -270,7 +274,7 @@ export default function IRPage() {
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
 
-      <section id="market" className="relative z-10 bg-[#12121E]">
+      <section id="market" className="relative z-10 bg-[#12121E]" ref={counterRef}>
         <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-[100px]">
           <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-4">03 / Market Analysis</div>
           <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-black leading-[1.05] tracking-[-1px] md:tracking-[-1.5px] mb-4">시장 분석</h2>
@@ -280,9 +284,9 @@ export default function IRPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-6">
             {[
-              { target: 6, suffix: "조+", label: "국내 반려동물 전체 시장 (2026)", sub: "연평균 12% 성장" },
-              { target: 3000, suffix: "억", label: "국내 반려동물 장례 시장", sub: "연평균 15%+ 성장" },
-              { target: 1500, suffix: "억", label: "수도권 장례 시장", sub: "초기 집중 공략 대상" },
+              { target: 328, suffix: "만마리", label: "등록 반려동물 (2024)", sub: "지속적 증가세" },
+              { target: 12, suffix: "만건", label: "연간 사체 처리 규모", sub: "2년 만에 2배 증가" },
+              { target: 13, suffix: "%", label: "시장 연평균 성장률", sub: "2025~2030년 예상" },
             ].map((s, i) => (
               <div key={i} className="p-5 md:p-9 rounded-2xl md:rounded-3xl bg-gradient-to-br from-white/6 to-white/2 border border-white/8 text-center transition-all hover:-translate-y-1 hover:border-[rgba(163,223,70,.2)] group">
                 <div className="text-2xl md:text-3xl font-black tracking-[-1px] md:tracking-[-2px] mb-1">
@@ -298,8 +302,8 @@ export default function IRPage() {
             {[
               { pct: "76.8%", text: "반려견 보호자가 향후 별도 장례 서비스 이용 의향 있음" },
               { pct: "71.5%", text: "반려묘 보호자가 향후 별도 장례 서비스 이용 의향 있음" },
-              { pct: "2.4x", text: "1인당 장례 소비액 5년 만에 11만원 → 26만원 증가" },
-              { pct: "14.7%", text: "온라인 예약 플랫폼 CAGR — 가장 빠르게 성장하는 채널" },
+              { pct: "2배", text: "동물장묘업 사체 처리량 2년 만에 증가" },
+              { pct: "13%", text: "국내 반려동물 장례 시장 연평균 성장률 (2025~2030)" },
             ].map((ins, i) => (
               <div key={i} className="flex items-center gap-3 md:gap-5 p-4 md:p-5 rounded-[14px] md:rounded-[18px] bg-white/4 border border-white/7 transition-all hover:-translate-y-1 hover:bg-white/7">
                 <div className="text-lg md:text-xl font-black text-[#A3DF46] whitespace-nowrap min-w-[60px] md:min-w-[80px] tracking-[-1px]">{ins.pct}</div>
@@ -375,6 +379,78 @@ export default function IRPage() {
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
 
+      <section id="moat" className="relative z-10">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-[100px]">
+          <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-4">04-1 / 경쟁 우위</div>
+          <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-black leading-[1.05] tracking-[-1px] md:tracking-[-1.5px] mb-8 md:mb-12">경쟁 우위</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {[
+              { icon: "🏅", title: "100항목 현장 실사 인증", desc: "실사 항목: 시설 위생, 인력 자격, 서비스 품질, 가격 투명성 등 100항목. 분기별 현장 감사実施", color: "#A3DF46" },
+              { icon: "📊", title: "예약 데이터 네트워크 효과", desc: "반복 예약 고객 비율 40% 목표. 데이터 기반 개인화 추천으로 재방문율 극대화", color: "#6699ff" },
+              { icon: "🔒", title: "전환 비용(Coverting Cost)", desc: "디지털 추모관 + 예약 이력 저장 → 재방문율 40% 목표. 한번 사용하면 벗어날 수 없는 생태계", color: "#cc88ff" },
+            ].map((m, i) => (
+              <div key={i} className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white/4 border border-white/7 text-center transition-all hover:-translate-y-2 hover:border-[rgba(163,223,70,.2)]">
+                <div className="text-3xl md:text-4xl mb-4">{m.icon}</div>
+                <div className="text-base md:text-lg font-bold text-white mb-3">{m.title}</div>
+                <div className="text-xs md:text-sm text-[#8888A0] leading-[1.6]">{m.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+
+      <section id="social" className="relative z-10 bg-[#12121E]">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-[100px]">
+          <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-4">04-2 / 사회적 증거</div>
+          <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-black leading-[1.05] tracking-[-1px] md:tracking-[-1.5px] mb-8 md:mb-12">사회적 증거</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-8">
+            {[
+              { year: "2026", nps: "40+", desc: "초기 목표" },
+              { year: "2027", nps: "60+", desc: "성장 목표" },
+              { year: "2028", nps: "70+", desc: "업계 최고 수준" },
+            ].map((n, i) => (
+              <div key={i} className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-gradient-to-br from-[rgba(163,223,70,.1)] to-[rgba(163,223,70,.02)] border border-[rgba(163,223,70,.2)] text-center">
+                <div className="text-xs text-[#8888A0] mb-2">{n.year}년</div>
+                <div className="text-4xl md:text-5xl font-black text-[#A3DF46] tracking-[-2px] mb-2">NPS {n.nps}</div>
+                <div className="text-xs text-[#8888A0]">{n.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="p-5 md:p-6 rounded-xl bg-white/4 border border-white/6 text-center mb-6">
+            <div className="text-xs text-[#8888A0]">※ 베타 테스트 및 언론 보도는 런칭 후 추가 예정</div>
+          </div>
+
+          <div className="p-6 md:p-8 rounded-2xl bg-[#1E1E2A] border border-white/6">
+            <div className="text-sm font-bold text-white mb-4">NPS (순추천지수)란?</div>
+            <div className="text-xs text-[#8888A0] leading-[1.8] mb-4">
+              NPS는 고객이 해당 서비스를 얼마나 친구나 지인에게 추천할 의향이 있는지를 나타내는 지표입니다.
+              <span className="text-[#A3DF46]"> 0에서 100까지</span> 점수로 표현되며, 점수가 높을수록 고객 충성도와 만족도가 높음을 의미합니다.
+            </div>
+            <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="p-3 rounded-lg bg-white/4">
+                <div className="text-lg font-black text-[#ff7070]">0~39</div>
+                <div className="text-xs text-[#8888A0]">개선 필요</div>
+              </div>
+              <div className="p-3 rounded-lg bg-white/4">
+                <div className="text-lg font-black text-[#ffcc44]">40~69</div>
+                <div className="text-xs text-[#8888A0]">양호</div>
+              </div>
+              <div className="p-3 rounded-lg bg-white/4">
+                <div className="text-lg font-black text-[#A3DF46]">70~100</div>
+                <div className="text-xs text-[#8888A0]">최고 수준</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+
       <section id="model" className="relative z-10 bg-[#12121E]">
         <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-[100px]">
           <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-4">05 / Business Model</div>
@@ -402,7 +478,7 @@ export default function IRPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-3.5 mb-8 md:mb-10">
             {[
-              { pct: "65%", title: "중개 수수료", desc: "예약 1건당 거래액의 15~18%", color: "#A3DF46" },
+              { pct: "65%", title: "중개 수수료", desc: "예약 1건당 거래액의 30%", color: "#A3DF46" },
               { pct: "10%", title: "프리미엄 노출", desc: "월 5~15만원 파트너 구독", color: "#6699ff" },
               { pct: "15%", title: "추모품 커머스", desc: "유골함·메모리얼 스톤, 35% 마진", color: "#cc88ff" },
               { pct: "5%", title: "AI 구독", desc: "월 9,900원 심리 케어", color: "#ff9944" },
@@ -425,11 +501,11 @@ export default function IRPage() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-center py-2 border-b border-white/6 text-xs md:text-sm">
                     <span className="text-[#8888A0]">평균 거래금액</span>
-                    <span className="text-white font-bold">400,000원</span>
+                    <span className="text-white font-bold">600,000원</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-white/6 text-xs md:text-sm">
-                    <span className="text-[#8888A0]">중개 수수료 (17%)</span>
-                    <span className="text-[#A3DF46]">+68,000원</span>
+                    <span className="text-[#8888A0]">중개 수수료 (30%)</span>
+                    <span className="text-[#A3DF46]">+180,000원</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-white/6 text-xs md:text-sm">
                     <span className="text-[#8888A0]">추모품 (35%×6만원)</span>
@@ -448,7 +524,77 @@ export default function IRPage() {
               <div className="hidden md:flex items-center justify-center text-2xl text-[#8888A0]">=</div>
               <div className="text-center p-6 md:p-8 bg-black/30 rounded-[16px] md:rounded-[20px]">
                 <div className="text-xs text-[#8888A0] mb-2">거래당 순기여 마진</div>
-                <div className="text-2xl md:text-3xl font-black text-[#A3DF46] tracking-[-1px] md:tracking-[-2px]">86<span className="text-sm text-[#8888A0]">,000원</span></div>
+                <div className="text-2xl md:text-3xl font-black text-[#A3DF46] tracking-[-1px] md:tracking-[-2px]">198<span className="text-sm text-[#8888A0]">,000원</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+
+      <section id="technology" className="relative z-10">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-[100px]">
+          <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-4">05-1 / 기술 우위</div>
+          <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-black leading-[1.05] tracking-[-1px] md:tracking-[-1.5px] mb-8 md:mb-12">기술 우위</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-8">
+            {[
+              { icon: "🌐", title: "웹 + 앱 동시 제공", desc: "기존 에이전시는 웹 only. 포온은 Cross-Platform으로 언제 어디서나 접근 가능", color: "#A3DF46" },
+              { icon: "⚡", title: "3분 예약 완료", desc: "전화/방문 대비 10x 빠른 처리. 새벽 임종에도 즉시 예약 가능", color: "#ffcc44" },
+              { icon: "🤖", title: "24시간 AI 챗봇", desc: "업계首个 AI 펫로스 케어. 전문 상담사 연결 + 디지털 추모관 제공", color: "#cc88ff" },
+            ].map((t, i) => (
+              <div key={i} className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white/4 border border-white/7 text-center transition-all hover:-translate-y-2 hover:border-[rgba(163,223,70,.2)]">
+                <div className="text-3xl md:text-4xl mb-4">{t.icon}</div>
+                <div className="text-base md:text-lg font-bold text-white mb-3">{t.title}</div>
+                <div className="text-xs md:text-sm text-[#8888A0] leading-[1.6]">{t.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-5 md:p-6 rounded-xl bg-white/4 border border-white/6">
+              <div className="text-xs text-[#A3DF46] font-bold mb-3">개발 현황</div>
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-xs text-[#8888A0] mb-1">
+                    <span>웹 MVP</span>
+                    <span>80% 완료 (2026 Q2 런칭)</span>
+                  </div>
+                  <div className="h-2 bg-white/6 rounded-full overflow-hidden">
+                    <div className="h-full rounded-full bg-[#A3DF46]" style={{ width: "80%" }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between text-xs text-[#8888A0] mb-1">
+                    <span>iOS/Android 앱</span>
+                    <span>2026 Q4 출시 예정</span>
+                  </div>
+                  <div className="h-2 bg-white/6 rounded-full overflow-hidden">
+                    <div className="h-full rounded-full bg-[#6699ff]" style={{ width: "0%" }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="p-5 md:p-6 rounded-xl bg-white/4 border border-white/6">
+              <div className="text-xs text-[#A3DF46] font-bold mb-3">Tech Stack</div>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#A3DF46]" />
+                  <span className="text-[#8888A0]">Next.js 16 (Turbopack)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#A3DF46]" />
+                  <span className="text-[#8888A0]">GPT-4 AI 챗봇</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#A3DF46]" />
+                  <span className="text-[#8888A0]">SMS + 앱 푸시 알림</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#A3DF46]" />
+                  <span className="text-[#8888A0]">Vercel 호스팅</span>
+                </div>
               </div>
             </div>
           </div>
@@ -475,11 +621,11 @@ export default function IRPage() {
               <tbody className="text-xs md:text-sm">
                 {[
                   { label: "월 평균 예약 건수", v1: "65건", v2: "140건", v3: "230건", highlight: false, profit: false },
-                  { label: "평균 거래금액", v1: "42만원", v2: "45만원", v3: "48만원", highlight: false, profit: false },
-                  { label: "연간 총 거래액", v1: "3.3억원", v2: "7.6억원", v3: "13.2억원", highlight: false, profit: false },
-                  { label: "총 플랫폼 수익", v1: "6,700만원", v2: "1.61억원", v3: "2.89억원", highlight: true, profit: false },
+                  { label: "평균 거래금액", v1: "60만원", v2: "60만원", v3: "60만원", highlight: false, profit: false },
+                  { label: "연간 총 거래액", v1: "4.68억원", v2: "10.08억원", v3: "16.56억원", highlight: false, profit: false },
+                  { label: "총 플랫폼 수익", v1: "1.54억원", v2: "3.33억원", v3: "5.47억원", highlight: true, profit: false },
                   { label: "총 운영 비용", v1: "2.44억원", v2: "2.84억원", v3: "4.0억원", highlight: false, profit: false },
-                  { label: "영업이익", v1: "▼ 1.74억원", v2: "▼ 1.23억원", v3: "▲ 8,900만원", highlight: false, profit: true },
+                  { label: "영업이익", v1: "▼ 0.90억원", v2: "▲ 0.49억원", v3: "▲ 1.47억원", highlight: false, profit: true },
                 ].map((row, i) => (
                   <tr key={i} className={`border-b border-white/4 hover:bg-white/2 transition-colors ${row.highlight ? "bg-white/2" : ""}`}>
                     <td className={`p-3 md:p-4 ${row.highlight ? "text-white font-medium" : "text-[#8888A0]"}`}>{row.label}</td>
@@ -495,7 +641,7 @@ export default function IRPage() {
           <div className="grid grid-cols-2 gap-5 mb-12">
             <div className="p-8 rounded-[22px] bg-white/4 border border-white/8">
               <div className="text-xs text-[#8888A0] mb-3">손익분기점 (BEP)</div>
-              <div className="text-2xl font-black text-white">월 <span className="text-[#A3DF46]">약 100건</span></div>
+              <div className="text-2xl font-black text-white">월 <span className="text-[#A3DF46]">약 103건</span></div>
               <div className="text-xs text-[#8888A0] mt-2">구독·B2B·추모품 수익 포함 시</div>
             </div>
             <div className="p-6 md:p-8 rounded-[18px] md:rounded-[22px] bg-white/4 border border-white/8">
@@ -525,6 +671,59 @@ export default function IRPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+
+      <section id="kpi" className="relative z-10">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-[100px]">
+          <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-4">06-1 / 핵심 성과 지표</div>
+          <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-black leading-[1.05] tracking-[-1px] md:tracking-[-1.5px] mb-8 md:mb-12">핵심 성과 지표</h2>
+
+          <div className="overflow-x-auto mb-8">
+            <table className="w-full border-collapse min-w-[600px]">
+              <thead>
+                <tr className="border-b border-white/8">
+                  <th className="text-left p-3 md:p-4 text-xs font-bold tracking-[0.1em] uppercase text-[#8888A0] bg-white/3">KPI</th>
+                  <th className="text-right p-3 md:p-4 text-xs font-bold tracking-[0.1em] uppercase text-[#A3DF46] bg-white/3">2026</th>
+                  <th className="text-right p-3 md:p-4 text-xs font-bold tracking-[0.1em] uppercase text-[#A3DF46] bg-white/3">2027</th>
+                  <th className="text-right p-3 md:p-4 text-xs font-bold tracking-[0.1em] uppercase text-[#A3DF46] bg-white/3">2028</th>
+                </tr>
+              </thead>
+              <tbody className="text-xs md:text-sm">
+                {[
+                  { label: "MAU (월간 활성 사용자)", v1: "2,000", v2: "8,000", v3: "20,000", highlight: true },
+                  { label: "예약 전환율", v1: "3%", v2: "5%", v3: "7%", highlight: false },
+                  { label: "NPS (순추천지수)", v1: "40+", v2: "60+", v3: "70+", highlight: false },
+                  { label: "파트너 장례식장 수", v1: "15+", v2: "40+", v3: "80+", highlight: false },
+                  { label: "구독자 (AI 케어)", v1: "200", v2: "800", v3: "2,000", highlight: false },
+                ].map((row, i) => (
+                  <tr key={i} className={`border-b border-white/4 hover:bg-white/2 transition-colors ${row.highlight ? "bg-white/2" : ""}`}>
+                    <td className={`p-3 md:p-4 ${row.highlight ? "text-white font-medium" : "text-[#8888A0]"}`}>{row.label}</td>
+                    <td className="text-right p-3 md:p-4 text-[#A3DF46] font-bold">{row.v1}</td>
+                    <td className="text-right p-3 md:p-4 text-[#A3DF46] font-bold">{row.v2}</td>
+                    <td className="text-right p-3 md:p-4 text-[#A3DF46] font-bold">{row.v3}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "목표 재방문율", value: "40%+", icon: "🔄" },
+              { label: "고객 만족도", value: "4.5/5", icon: "⭐" },
+              { label: "앱 설치 목표", value: "5만+", icon: "📱" },
+              { label: "월간 예약 목표", value: "500건+", icon: "📅" },
+            ].map((k, i) => (
+              <div key={i} className="p-4 md:p-5 rounded-xl bg-white/4 border border-white/6 text-center">
+                <div className="text-xl mb-2">{k.icon}</div>
+                <div className="text-lg font-bold text-white mb-1">{k.value}</div>
+                <div className="text-xs text-[#8888A0]">{k.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -583,6 +782,65 @@ export default function IRPage() {
                   </div>
                 </div>
                 <div className="text-xs text-[#8888A0] leading-[1.6] whitespace-pre-line pl-[52px]">{rm.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+
+      <section id="persona" className="relative z-10 bg-[#12121E]">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-10 py-16 md:py-[100px]">
+          <div className="text-xs tracking-[0.2em] uppercase text-[#A3DF46] font-bold mb-4">07-1 / 타겟 고객</div>
+          <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-black leading-[1.05] tracking-[-1px] md:tracking-[-1.5px] mb-8 md:mb-12">타겟 고객</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {[
+              { 
+                icon: "💔", 
+                name: "슬픔의 동반자", 
+                age: "30-45세", 
+                type: "중산층, 단독/1인 가구",
+                pain: "정보 부재로 인한 판단 능력 상실. 여러 곳에 전화해야 하는 번거로움.", 
+                solution: "투명 가격 비교 + 실시간 예약 시스템",
+                color: "#ff7070"
+              },
+              { 
+                icon: "✨", 
+                name: "명예로운 이별 추구자", 
+                age: "25-35세", 
+                type: "고학력, 반려동물 가족화 인식 높음",
+                pain: "품질 불균일로 인한 신뢰 부족. 서비스 수준 사전 파악 방법 없음.", 
+                solution: "100항목 인증 파트너 + 실시간 진행 알림",
+                color: "#A3DF46"
+              },
+              { 
+                icon: "📱", 
+                name: "실용주의자", 
+                age: "35-55세", 
+                type: "비용 효율 중시, 시간 부족",
+                pain: "가격 불투명 + 전화/방문 필요. 새벽 임종 시 대응 어려움.", 
+                solution: "3분 앱 예약 + 비교 플랫폼",
+                color: "#6699ff"
+              },
+            ].map((p, i) => (
+              <div key={i} className="p-5 md:p-7 rounded-2xl md:rounded-3xl bg-white/4 border border-white/7 transition-all hover:-translate-y-2">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-3xl">{p.icon}</div>
+                  <div>
+                    <div className="text-base font-bold text-white">{p.name}</div>
+                    <div className="text-xs text-[#8888A0]">{p.age} · {p.type}</div>
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <div className="text-xs text-[#ff7070] font-bold mb-1"> Pain Point</div>
+                  <div className="text-xs text-[#8888A0] leading-[1.5]">{p.pain}</div>
+                </div>
+                <div>
+                  <div className="text-xs font-bold mb-1" style={{ color: p.color }}> How We Solve</div>
+                  <div className="text-xs text-[#8888A0] leading-[1.5]">{p.solution}</div>
+                </div>
               </div>
             ))}
           </div>
