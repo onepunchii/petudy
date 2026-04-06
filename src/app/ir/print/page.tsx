@@ -605,7 +605,7 @@ export default function PrintPage() {
         html, body { margin: 0; padding: 0; background: #0D0D14; }
       `}</style>
 
-      <div id="print-root" style={{ background:"#1a1a2e", minHeight:"100vh", padding:"0 24px 24px", display:"flex", flexDirection:"column", alignItems:"center" }}>
+      <div id="print-root" style={{ background:"#0D0D14", minHeight:"100vh", padding:"0 24px 24px", display:"flex", flexDirection:"column", alignItems:"center" }}>
         <div style={{ display:"flex", flexDirection:"column", gap:"24px", width:"100%", maxWidth:"1122px" }}>
           <Slide1 />
           <Slide2 />
