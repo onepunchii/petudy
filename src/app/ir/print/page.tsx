@@ -605,15 +605,7 @@ export default function PrintPage() {
         body { margin: 0; padding: 0; background: #1a1a2e; }
       `}</style>
 
-      <div id="print-root" style={{ background:"#1a1a2e", minHeight:"100vh", padding:"24px", display:"flex", flexDirection:"column", alignItems:"center" }}>
-        <div style={{ marginBottom:20, textAlign:"center", padding:"16px 24px", background:"rgba(163,223,70,.1)", borderRadius:12, border:"1px solid rgba(163,223,70,.3)", maxWidth:600 }}>
-          <div style={{ fontSize:13, fontWeight:700, color:"#A3DF46", marginBottom:8 }}>인쇄 옵션 설정</div>
-          <div style={{ fontSize:11, color:"#8888A0", lineHeight:1.8, textAlign:"left" }}>
-            <div style={{ marginBottom:4 }}>1. <span style={{ color:"#F5F5F7" }}>목적지</span> → <span style={{ color:"#A3DF46" }}>PDF로 저장</span> 선택</div>
-            <div>2. <span style={{ color:"#F5F5F7" }}>배경 그래픽</span> → <span style={{ color:"#A3DF46" }}>체크</span> (배경색 포함)</div>
-            <div style={{ marginTop:4, color:"#8888A0" }}>※ 이미지로 저장 시에도 동일하게 설정</div>
-          </div>
-        </div>
+      <div id="print-root" style={{ background:"#1a1a2e", minHeight:"100vh", padding:"0 24px 24px", display:"flex", flexDirection:"column", alignItems:"center" }}>
         <div style={{ display:"flex", flexDirection:"column", gap:"24px", width:"100%", maxWidth:"1122px" }}>
           <Slide1 />
           <Slide2 />
