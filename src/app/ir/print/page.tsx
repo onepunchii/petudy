@@ -596,12 +596,12 @@ export default function PrintPage() {
       <style>{`
         @media print {
           body > *:not(#print-root) { display: none !important; }
-          #print-root { display: block !important; }
-          .poon-page { width: 297mm !important; min-height: 210mm !important; page-break-after: always; break-after: page; }
+          #print-root { display: block !important; width: 100% !important; background: #0D0D14 !important; }
+          .poon-page { width: 297mm !important; min-height: 210mm !important; page-break-after: always; break-after: page; transform: none !important; }
           @page { size: A4 landscape; margin: 0; }
           * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
         }
-        #print-root { display: block; }
+        #print-root { display: block; width: 1122px; max-width: 100%; }
         html, body { margin: 0; padding: 0; background: #0D0D14; }
       `}</style>
 
