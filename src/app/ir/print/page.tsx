@@ -602,7 +602,7 @@ export default function PrintPage() {
           * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
         }
         #print-root { display: block; }
-        body { margin: 0; padding: 0; background: #1a1a2e; }
+        html, body { margin: 0; padding: 0; background: #0D0D14; }
       `}</style>
 
       <div id="print-root" style={{ background:"#1a1a2e", minHeight:"100vh", padding:"0 24px 24px", display:"flex", flexDirection:"column", alignItems:"center" }}>
