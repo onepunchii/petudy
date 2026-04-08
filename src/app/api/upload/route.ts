@@ -1,12 +1,16 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
 export async function POST(request: Request) {
     try {
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+        if (!supabaseUrl || !supabaseAnonKey) {
+            return Response.json({ error: "Supabase not configured" }, { status: 503 });
+        }
+
+        const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
         const formData = await request.formData();
         const file = formData.get("file") as File;
 
