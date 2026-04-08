@@ -1,14 +1,17 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { ArrowRight, X, Heart, Sparkles, Moon, Activity, Stethoscope, ShieldCheck, Leaf, Cloud, Star } from "lucide-react";
-import { useState, useRef, Suspense } from "react";
+import { ArrowRight, X, Heart, Sparkles, Moon, Activity, Stethoscope, ShieldCheck, Leaf, Cloud, Star, ChevronRight } from "lucide-react";
+import { useState, useRef, Suspense, useEffect } from "react";
+import Link from "next/link";
+import { reviews, getRandomReviews, Review } from "@/lib/data/reviews";
 
 type IntroStep = {
     title: string;
     description: string;
     icon: React.ElementType;
     glowColor: string;
+    badge?: string;
 };
 
 const introData: Record<string, { title: string; steps: IntroStep[] }> = {
@@ -16,10 +19,11 @@ const introData: Record<string, { title: string; steps: IntroStep[] }> = {
         title: "펫장례",
         steps: [
             {
-                title: "마지막 온기를 잇다",
+                title: "서울·경기·인천 전지역 30분",
                 description: "아이와 함께한 모든 빛나는 순간들이\n가장 아름답게 기억될 수 있도록.",
                 icon: Sparkles,
-                glowColor: "bg-amber-500/20"
+                glowColor: "bg-amber-500/20",
+                badge: "전지역 출발"
             },
             {
                 title: "가장 포근한 안식",
@@ -91,6 +95,17 @@ function IntroPageContent() {
     const data = introData[category] || introData["FUNERAL"];
     const [currentStep, setCurrentStep] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
+    const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
+    const [displayReviews] = useState<Review[]>(() => getRandomReviews(3));
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentReviewIndex((prev) => (prev + 1) % displayReviews.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [displayReviews.length]);
+
+    const currentReview = displayReviews[currentReviewIndex];
 
     const handleScroll = () => {
         if (!containerRef.current) return;
@@ -168,6 +183,11 @@ function IntroPageContent() {
                                 </div>
 
                                 <div className="text-center space-y-5 max-w-[320px] mx-auto">
+                                    {step.badge && (
+                                        <span className="inline-block px-4 py-1.5 bg-foon-lime/20 border border-foon-lime/30 rounded-full text-foon-lime text-xs font-medium">
+                                            {step.badge}
+                                        </span>
+                                    )}
                                     <h2 className="text-3xl font-extrabold tracking-tight text-white/90 text-balance">
                                         {step.title}
                                     </h2>
@@ -183,6 +203,43 @@ function IntroPageContent() {
             </div>
 
             <div className="absolute bottom-0 left-0 right-0 p-6 pb-10 bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/80 to-transparent z-50">
+                <Link
+                    href="/reviews"
+                    className="block mb-3 p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-colors"
+                >
+                    <div className="flex items-center gap-3">
+                        <div className="flex-shrink-0">
+                            <div className="w-10 h-10 rounded-full bg-foon-lime/20 flex items-center justify-center">
+                                <span className="text-lg">💬</span>
+                            </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-1 mb-1">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className="w-3 h-3 text-foon-lime fill-foon-lime" />
+                                ))}
+                            </div>
+                            <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
+                                "{currentReview.content}"
+                            </p>
+                            <p className="text-gray-500 text-xs mt-1">
+                                {currentReview.name} · {currentReview.petType} · {currentReview.serviceType}
+                            </p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    </div>
+                    <div className="flex justify-center gap-1.5 mt-3">
+                        {displayReviews.map((_, i) => (
+                            <div
+                                key={i}
+                                className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                                    i === currentReviewIndex ? "bg-foon-lime" : "bg-white/20"
+                                }`}
+                            />
+                        ))}
+                    </div>
+                </Link>
+
                 <button
                     onClick={handleNext}
                     className={`w-full py-5 rounded-[2rem] font-bold text-lg flex items-center justify-center gap-3 transition-all duration-500 active:scale-95 border ${

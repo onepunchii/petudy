@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Calendar, User } from "lucide-react";
+import { Home, Calendar, User, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function BottomNav() {
@@ -19,6 +19,7 @@ export function BottomNav() {
     const tabs = [
         { name: "홈", href: "/", icon: Home },
         { name: "예약하기", href: "/booking", icon: Calendar },
+        { name: "추억상자", href: "/memorial", icon: Heart },
         { name: "내 정보", href: "/mypage", icon: User },
     ];
 

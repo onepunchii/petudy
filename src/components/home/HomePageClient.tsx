@@ -85,12 +85,12 @@ export default function HomePageClient() {
                 </Link>
 
                 <Link
-                    href="/intro?category=CHECKUP"
+                    href="/memorial-shared"
                     className="bg-[#161618] rounded-[2rem] p-6 flex flex-col justify-between border border-white/5 hover:bg-[#1C1C1E] transition-all group"
                 >
-                    <div className="w-12 h-12 bg-[#252527] rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-12 transition-transform">🩺</div>
+                    <div className="w-12 h-12 bg-[#252527] rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🌸</div>
                     <div className="text-right">
-                        <span className="font-bold text-gray-300 text-lg">건강검진</span>
+                        <span className="font-bold text-gray-300 text-lg">별로간 아이</span>
                     </div>
                 </Link>
 

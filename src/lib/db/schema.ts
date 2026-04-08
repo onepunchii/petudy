@@ -333,9 +333,81 @@ export const pollCommentsRelations = relations(pollComments, ({ one }) => ({
 export const aiKnowledge = pgTable("ai_knowledge", {
     id: serial("id").primaryKey(),
     content: text("content").notNull(), // 실제 텍스트 내용
-    embedding: vector("embedding", { dimensions: 768 }), // Gemini 1.5 Flash Embedding (768)
+    embedding: vector("embedding", { dimensions: 1536 }), // OpenAI text-embedding-3-small (1536)
     metadata: jsonb("metadata"), // 데이터 출처, 태그 등
     createdAt: timestamp("created_at").defaultNow(),
 }, (table) => ({
     embeddingIndex: index("embedding_index").using("hnsw", table.embedding.op("vector_cosine_ops")),
+}));
+
+// ====================================================================
+// NEW: Memorial / Memory 관련 테이블
+// ====================================================================
+
+// 1. 편지 테이블 (Letters)
+export const letters = pgTable("letters", {
+    id: uuid("id").defaultRandom().primaryKey(),
+    userId: uuid("user_id").references(() => users.id, { onDelete: "cascade" }).notNull(),
+    petId: uuid("pet_id").references(() => pets.id, { onDelete: "cascade" }).notNull(),
+    content: text("content").notNull(),
+    occasionType: text("occasion_type").notNull().default("기타"), // '생일', '기념일', '장례', '기타'
+    isSent: boolean("is_sent").default(false),
+    createdAt: timestamp("created_at").defaultNow(),
+});
+
+// 2. 추억 사진 테이블 (Memories)
+export const memories = pgTable("memories", {
+    id: uuid("id").defaultRandom().primaryKey(),
+    userId: uuid("user_id").references(() => users.id, { onDelete: "cascade" }).notNull(),
+    petId: uuid("pet_id").references(() => pets.id, { onDelete: "cascade" }).notNull(),
+    photoUrl: text("photo_url").notNull(),
+    caption: text("caption"),
+    createdAt: timestamp("created_at").defaultNow(),
+});
+
+// 3. 부고장 테이블 (Obituaries)
+export const obituaries = pgTable("obituaries", {
+    id: uuid("id").defaultRandom().primaryKey(),
+    userId: uuid("user_id").references(() => users.id, { onDelete: "cascade" }).notNull(),
+    petId: uuid("pet_id").references(() => pets.id, { onDelete: "cascade" }).notNull(),
+    shareToken: text("share_token").notNull().unique(), // 공개 링크용 고유 토큰
+    title: text("title").notNull(), // 부고장 제목
+    content: text("content").notNull(), // 부고장 본문
+    createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Relations for Letters
+export const lettersRelations = relations(letters, ({ one }) => ({
+    user: one(users, {
+        fields: [letters.userId],
+        references: [users.id],
+    }),
+    pet: one(pets, {
+        fields: [letters.petId],
+        references: [pets.id],
+    }),
+}));
+
+// Relations for Memories
+export const memoriesRelations = relations(memories, ({ one }) => ({
+    user: one(users, {
+        fields: [memories.userId],
+        references: [users.id],
+    }),
+    pet: one(pets, {
+        fields: [memories.petId],
+        references: [pets.id],
+    }),
+}));
+
+// Relations for Obituaries
+export const obituariesRelations = relations(obituaries, ({ one }) => ({
+    user: one(users, {
+        fields: [obituaries.userId],
+        references: [users.id],
+    }),
+    pet: one(pets, {
+        fields: [obituaries.petId],
+        references: [pets.id],
+    }),
 }));

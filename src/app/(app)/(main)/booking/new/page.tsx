@@ -59,10 +59,18 @@ function BranchCard({
     const cardRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        let intervalId: NodeJS.Timeout;
+        
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
+                        setImageIndex(0);
+                        
+                        intervalId = setInterval(() => {
+                            setImageIndex((prev) => (prev + 1) % branch.images.length);
+                        }, 3000);
+                        
                         const handleScroll = () => {
                             if (!cardRef.current) return;
                             
@@ -80,7 +88,12 @@ function BranchCard({
                         };
 
                         window.addEventListener("scroll", handleScroll);
-                        return () => window.removeEventListener("scroll", handleScroll);
+                        return () => {
+                            window.removeEventListener("scroll", handleScroll);
+                            if (intervalId) clearInterval(intervalId);
+                        };
+                    } else {
+                        if (intervalId) clearInterval(intervalId);
                     }
                 });
             },
@@ -88,7 +101,10 @@ function BranchCard({
         );
 
         if (cardRef.current) observer.observe(cardRef.current);
-        return () => observer.disconnect();
+        return () => {
+            observer.disconnect();
+            if (intervalId) clearInterval(intervalId);
+        };
     }, [branch.images.length]);
 
     return (

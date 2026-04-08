@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { askAiCounselor } from "@/actions/consult";
 import { initRagDatabase } from "@/actions/init-db";
+import { populate21gramData } from "@/actions/populate-21gram";
 
 interface Message {
     role: "user" | "ai";
@@ -20,9 +21,15 @@ export default function ConsultPage() {
 
     // DB 초기화 함수 (관리자용 임시)
     const handleInitDB = async () => {
-        const res = await initRagDatabase();
-        if (res.success) alert(res.message);
-        else alert("Error: " + res.error);
+        if (!confirm("RAG DB를 초기화하고 21그램 데이터를 populates하시겠습니까?")) return;
+        const initRes = await initRagDatabase();
+        if (!initRes.success) {
+            alert("DB 초기화 실패: " + initRes.error);
+            return;
+        }
+        const popRes = await populate21gramData();
+        if (popRes.success) alert("DB 초기화 및 21그램 데이터 population 완료!");
+        else alert("Population 실패: " + popRes.error);
     };
 
     // 자동 스크롤
