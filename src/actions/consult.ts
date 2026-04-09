@@ -5,12 +5,19 @@ import { db } from "@/lib/db";
 import { aiKnowledge } from "@/lib/db/schema";
 import { sql } from "drizzle-orm";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-});
+function getOpenAIClient() {
+  const apiKey = process.env.OPENAI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("Missing OPENAI_API_KEY environment variable");
+  }
+
+  return new OpenAI({ apiKey });
+}
 
 export async function askAiCounselor(message: string, history: { role: string; content: string }[]) {
   try {
+    const openai = getOpenAIClient();
     const embeddingResponse = await openai.embeddings.create({
       model: "text-embedding-3-small",
       input: message,

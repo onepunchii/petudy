@@ -5,9 +5,15 @@ import { db } from "@/lib/db";
 import { aiKnowledge } from "@/lib/db/schema";
 import { sql } from "drizzle-orm";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-});
+function getOpenAIClient() {
+  const apiKey = process.env.OPENAI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("Missing OPENAI_API_KEY environment variable");
+  }
+
+  return new OpenAI({ apiKey });
+}
 
 const gram21Data = [
   {
@@ -134,6 +140,7 @@ const gram21Data = [
 
 export async function populate21gramData() {
   try {
+    const openai = getOpenAIClient();
     console.log(`Populating ${gram21Data.length} knowledge chunks...`);
 
     for (let i = 0; i < gram21Data.length; i++) {
