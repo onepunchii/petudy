@@ -411,3 +411,22 @@ export const obituariesRelations = relations(obituaries, ({ one }) => ({
         references: [pets.id],
     }),
 }));
+
+// ====================================================================
+// 에이전시 사이트 상담 접수 (po-on agency site leads)
+// 적용: npx drizzle-kit generate && npx drizzle-kit migrate  (또는 push)
+// ====================================================================
+export const agencyLeads = pgTable('agency_leads', {
+    id: uuid('id').defaultRandom().primaryKey(),
+    service: text('service').notNull(),          // funeral | grooming | ...
+    regionSido: text('region_sido'),             // seoul | gyeonggi
+    regionSlug: text('region_slug'),             // gwangjin ...
+    dong: text('dong'),                          // 보호자가 입력한 동네
+    name: text('name'),
+    phone: text('phone').notNull(),
+    petInfo: text('pet_info'),                   // 종/체중 등 자유 입력
+    message: text('message'),
+    sourcePath: text('source_path'),             // 접수한 페이지 경로 (SEO 성과 측정)
+    status: text('status').default('new').notNull(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+});

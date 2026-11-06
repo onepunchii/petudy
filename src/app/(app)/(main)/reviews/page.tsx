@@ -8,7 +8,7 @@ export default function ReviewsPage() {
     return (
         <div className="min-h-screen bg-[#0A0A0B]">
             <header className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                <Link href="/" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
+                <Link href="/app" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
                     <ChevronLeft className="w-6 h-6" />
                 </Link>
                 <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-white">이용 후기</h1>

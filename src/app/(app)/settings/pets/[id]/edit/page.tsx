@@ -21,7 +21,7 @@ export default async function EditPetPage({ params }: EditPetPageProps) {
             {/* Header */}
             <div className="relative flex items-center justify-center h-[52px] bg-bg-main sticky top-0 z-50">
                 <Link
-                    href="/"
+                    href="/app"
                     className="absolute left-4 w-6 h-6 flex items-center justify-center"
                 >
                     <MoveLeft className="w-5 h-5 text-white" />

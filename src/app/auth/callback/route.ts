@@ -8,7 +8,7 @@ export async function GET(request: Request) {
     const origin = (new URL(request.url)).origin;
     const code = searchParams.get("code");
     // if "next" is in param, use it as the redirect URL
-    const next = searchParams.get("next") ?? "/"; // default to home
+    const next = searchParams.get("next") ?? "/app"; // default to app home
 
     if (code) {
         const supabase = await createClient();

@@ -114,7 +114,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
             // Invalidate cache to force refresh on Home Page
             await queryClient.invalidateQueries({ queryKey: ["pets"] });
 
-            router.push("/");
+            router.push("/app");
             router.refresh();
         } catch (error) {
             console.error(error);

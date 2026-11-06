@@ -16,6 +16,22 @@
   --color-bg-card: #1E1E20;
   --color-bg-input: #2C2C2E;
 
+  /* po-on 에이전시 사이트 (light) — (site) 라우트 그룹 전용 토큰 */
+  --color-paper: #F7F5F0;
+  --color-paper-2: #EFEBE3;
+  --color-ink: #1B1A17;
+  --color-ink-2: #4B4842;
+  --color-ink-3: #807B72;
+  --color-line: #E4DFD5;
+  --color-pine: #1F4A3E;
+  --color-pine-2: #2D6656;
+  --color-pine-soft: #E2ECE7;
+  --color-clay: #C2643A;
+  --color-clay-soft: #F6E6DC;
+  --color-dusk: #36405A;
+  --color-dusk-soft: #E5E8F0;
+  --font-site: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+
   /* Apple System Font Stack */
   --font-sans: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
@@ -56,3 +72,26 @@
     display: none;
   }
 }
+/* ───────── po-on agency site ───────── */
+.site {
+  font-family: var(--font-site);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+.site h1, .site h2, .site h3 { letter-spacing: -0.025em; }
+.site ::selection { background: var(--color-pine); color: #fff; }
+.site .prose-site h2 { font-size: 1.375rem; font-weight: 700; margin: 2.25rem 0 0.75rem; }
+.site .prose-site h3 { font-size: 1.125rem; font-weight: 700; margin: 1.75rem 0 0.5rem; }
+.site .prose-site p { margin: 0.75rem 0; line-height: 1.85; color: var(--color-ink-2); }
+.site .prose-site ul, .site .prose-site ol { margin: 0.75rem 0; padding-left: 1.25rem; color: var(--color-ink-2); line-height: 1.85; }
+.site .prose-site ul { list-style: disc; }
+.site .prose-site ol { list-style: decimal; }
+.site .prose-site strong { color: var(--color-ink); }
+.site details > summary { list-style: none; }
+.site details > summary::-webkit-details-marker { display: none; }
+@keyframes site-pulse { 0% { transform: scale(.6); opacity: .7 } 100% { transform: scale(2.4); opacity: 0 } }
+.site .pin-pulse { animation: site-pulse 2.2s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@media (prefers-reduced-motion: reduce) { .site .pin-pulse { animation: none; } }

@@ -17,7 +17,7 @@ export function BottomNav() {
     if (pathname.startsWith("/booking/new") || pathname.startsWith("/mbti") || pathname.startsWith("/intro")) return null;
 
     const tabs = [
-        { name: "홈", href: "/", icon: Home },
+        { name: "홈", href: "/app", icon: Home },
         { name: "예약하기", href: "/booking", icon: Calendar },
         { name: "추억상자", href: "/memorial", icon: Heart },
         { name: "내 정보", href: "/mypage", icon: User },

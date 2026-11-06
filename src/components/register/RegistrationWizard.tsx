@@ -252,7 +252,7 @@ export default function RegistrationWizard({
     if (isCompleted) {
         return (
             <RegistrationSuccess3D
-                onComplete={() => router.push("/")}
+                onComplete={() => router.push("/app")}
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 formData={formData as any}
                 petId={createdPetId || petId}
@@ -344,7 +344,7 @@ export default function RegistrationWizard({
             <header className="px-4 py-2 flex items-center justify-between sticky top-0 z-10 w-full max-w-[430px] mx-auto">
                 <div className="flex items-center gap-2">
                     {isFirstStep ? (
-                        <Link href="/">
+                        <Link href="/app">
                             <X className="w-6 h-6 text-gray-400 hover:text-white transition-colors" />
                         </Link>
                     ) : (
