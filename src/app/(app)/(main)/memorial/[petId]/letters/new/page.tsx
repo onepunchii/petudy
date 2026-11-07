@@ -1,10 +1,11 @@
 "use client";
 
-import { ChevronLeft, Send } from "lucide-react";
-import Link from "next/link";
+import { Send } from "lucide-react";
 import { useState } from "react";
 import { createLetter } from "@/actions/memorial";
 import { useRouter } from "next/navigation";
+import { APP_ICON_STROKE, AppBody, AppTopBar, appButtonClass, appChipClass, appTextareaClass } from "@/components/app/ui";
+import { cn } from "@/lib/utils";
 
 const occasions = ["생일", "기념일", "장례", "기타"];
 
@@ -23,35 +24,40 @@ export default function NewLetterPage() {
         const result = await createLetter("1", "user-id", content, occasion);
         setSaving(false);
         if (result.success) {
-            router.push("/memorial/1/letters");
+            // 저장 후 뒤로 가기가 빈 작성 화면으로 돌아오지 않도록 작성 화면 기록을 목록으로 바꿉니다
+            router.replace("/memorial/1/letters");
         } else {
             alert("저장에 실패했습니다: " + result.error);
         }
     };
 
     return (
-        <div className="min-h-screen bg-[#0A0A0B]">
-            <header className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                <Link href="/memorial/1/letters" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
-                    <ChevronLeft className="w-6 h-6" />
-                </Link>
-                <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-white">편지 쓰기</h1>
-                <button onClick={handleSave} disabled={saving} className="ml-auto p-2 text-foon-lime disabled:opacity-50">
-                    <Send className="w-6 h-6" />
-                </button>
-            </header>
+        <div className="min-h-full">
+            <AppTopBar
+                back="/memorial/1/letters"
+                title="편지 쓰기"
+                action={
+                    <button
+                        type="button"
+                        onClick={handleSave}
+                        disabled={saving}
+                        aria-label="편지 보내기"
+                        className={appButtonClass({ variant: "onNight", size: "sm", className: "w-10 px-0" })}
+                    >
+                        <Send className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                    </button>
+                }
+            />
 
-            <main className="p-4 max-w-[480px] mx-auto space-y-4">
-                <div className="flex gap-2 overflow-x-auto pb-2">
+            <AppBody className="space-y-4">
+                <div className="scrollbar-hide -mx-5 flex gap-2 overflow-x-auto px-5 pb-1">
                     {occasions.map((occ) => (
                         <button
                             key={occ}
+                            type="button"
                             onClick={() => setOccasion(occ)}
-                            className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
-                                occasion === occ
-                                    ? "bg-foon-lime text-bg-main font-medium"
-                                    : "bg-[#1e1e20] text-gray-300 border border-white/10"
-                            }`}
+                            aria-pressed={occasion === occ}
+                            className={appChipClass(occasion === occ, "shrink-0 whitespace-nowrap")}
                         >
                             {occ}
                         </button>
@@ -62,9 +68,10 @@ export default function NewLetterPage() {
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     placeholder="떠나보낸 아이에게 편지를 써보세요..."
-                    className="w-full h-64 bg-[#1e1e20] border border-white/10 rounded-2xl p-4 text-white placeholder-gray-500 resize-none focus:outline-none focus:border-foon-lime/50"
+                    aria-label="편지 내용"
+                    className={cn(appTextareaClass, "h-64")}
                 />
-            </main>
+            </AppBody>
         </div>
     );
 }

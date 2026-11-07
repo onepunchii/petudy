@@ -1,0 +1,152 @@
+{
+  "id": "pf-42a94f10",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장을 원칙으로 진행",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "요청 시 전 과정 참관, 수·분골 후 유골 확인",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품에 염습 포함, 수의는 관·요람 상품에",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "양주점에서 봉안당 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/yangju"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "지점 서비스 목록에 수목장 없음",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/yangju"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "블리스 스톤 '루미' 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/yangju"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "전용 차량 편도 무료, 사전 예약 필요",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "대표번호 24시간 접수, 지점은 02:00까지 운영",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "지점 안내에 20kg 이하 동물만 표기",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/yangju"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 전용 장례, 1kg 이하 소동물 상품 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/yangju"
+    }
+  },
+  "extras": [
+    {
+      "label": "산골장",
+      "note": "원내 산골장 운영, 위치 이전 공지 있음",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/yangju"
+    },
+    {
+      "label": "비동행 장례",
+      "note": "차량 운구 시 보호자 동행·비동행 선택 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    {
+      "label": "장례 증명서",
+      "note": "기본 장례 추모 키트에 장례 증명서 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    {
+      "label": "생화 장식",
+      "note": "생화 장식 추가 5만 원, 계절별 구성 변동",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    }
+  ],
+  "hours": {
+    "text": "매일 08:00~02:00, 마지막 장례 예약 00:00",
+    "sourceUrl": "https://fourpaws.co.kr/service/store/yangju"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습, 추모, 개별 화장, 추모 키트, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 기본 장례 1kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모, 개별 화장, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "10kg 초과 추가 요금",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "용품 사이즈 변경 시 별도 추가",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고양이 전용 장례",
+      "amount": "55만 원",
+      "includes": "기본 장례에 관, 기본 유골함, 작은 꽃다발 추가, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "관 장례 기본형 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 장례에 오동나무 관, 인견 수의 세트, 작은 꽃다발 추가",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 기본형 10kg 이하",
+      "amount": "60만 원",
+      "includes": "기본 장례에 요람 관, 인견 수의, 작은 꽃다발 추가",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "올인원 패키지 10kg 이하",
+      "amount": "140만 원",
+      "includes": "기본 장례에 관, 수의 세트, 블리스 스톤 제작, 꽃다발 추가",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "차량 지원 편도",
+      "amount": "무료",
+      "includes": "출발지에서 장례식장까지, 사전 예약 필요",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "포포즈 반려동물 장례식장 경기 양주점은 매일 08:00부터 02:00까지 운영하며 개별 화장과 참관을 안내합니다. 10kg 이하 기본 장례는 30만 원이고 봉안당과 산골장을 운영합니다.",
+  "cautions": [
+    "지점 안내에 20kg 이하 동물만 표기됨",
+    "가격은 브랜드 공통 요금표 기준이며 변동 가능"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "pf-1b622bc3",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [],
+  "hours": null,
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [],
+  "summary": "마스꼬따 휴㈜는 김포시 통진읍에 등록된 동물장묘업체입니다. 등록된 홈페이지 주소가 연결되지 않아 서비스와 가격 정보는 확인되지 않았습니다.",
+  "cautions": [
+    "등록된 홈페이지 주소가 연결되지 않음",
+    "서비스와 가격은 전화로 확인 필요"
+  ]
+}

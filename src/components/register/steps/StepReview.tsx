@@ -1,4 +1,5 @@
 import React from "react";
+import { PassCard } from "@/components/site/PassCard";
 
 interface StepReviewProps {
     formData: {
@@ -48,7 +49,7 @@ export default function StepReview({ formData }: StepReviewProps) {
         { label: "품종", value: formData.breed || "-" },
         {
             label: "성별",
-            value: `${formData.gender === "male" ? "왕자님" : "공주님"} ${formData.neuter ? "(중성화 O)" : "(중성화 X)"}`
+            value: `${formData.gender === "male" ? "왕자님" : "공주님"} ${formData.neuter === true ? "(중성화 O)" : formData.neuter === false ? "(중성화 X)" : ""}`.trim()
         },
         { label: "생일", value: formatDate(formData.birth) },
         { label: "입양일", value: formatDate(formData.adoptionDate) },
@@ -59,25 +60,33 @@ export default function StepReview({ formData }: StepReviewProps) {
     ];
 
     return (
-        <div className="space-y-6 animate-fade-in-up">
-            <h2 className="text-2xl font-bold mb-6 text-white text-center">
+        <div className="flex flex-col">
+            <h2 className="mb-6 text-[24px] font-bold leading-[1.35] text-ink">
                 입력한 내용이 맞나요?
             </h2>
 
-            <div className="bg-bg-input p-6 rounded-2xl shadow-inner border border-[#333] space-y-3">
-                {details.map((item, idx) => (
-                    <div key={idx} className="flex justify-between border-b border-[#444] pb-2 last:border-0">
-                        <span className="text-gray-500 text-xs font-medium">{item.label}</span>
-                        <span className="font-medium text-white text-right max-w-[60%] break-keep text-sm">
-                            {item.value}
-                        </span>
-                    </div>
-                ))}
-            </div>
-
-            <p className="text-center text-gray-500 text-xs mt-4">
-                * 등록 후에도 언제든 수정할 수 있어요.
-            </p>
+            {/* 펫패스 탑승권: 위는 입력한 내용, 절취선 아래는 안내 */}
+            <PassCard
+                stub={
+                    <p className="text-center text-[13px] text-ink-3">
+                        * 등록 후에도 언제든 수정할 수 있어요.
+                    </p>
+                }
+                stubPosition="bottom"
+                mainClassName="px-5 py-2 sm:px-6 sm:py-2"
+                stubClassName="px-5 py-4 sm:p-4"
+            >
+                <dl className="divide-y divide-line">
+                    {details.map((item, idx) => (
+                        <div key={idx} className="flex items-start justify-between gap-4 py-3">
+                            <dt className="shrink-0 text-[14px] text-ink-3">{item.label}</dt>
+                            <dd className="max-w-[65%] break-keep text-right text-[15px] font-semibold text-ink">
+                                {item.value}
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
+            </PassCard>
         </div>
     );
 }

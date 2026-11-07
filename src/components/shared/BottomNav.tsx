@@ -1,57 +1,63 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Calendar, User, Heart } from "lucide-react";
+import { CalendarDays, Home, Sparkles, User } from "lucide-react";
+import { APP_ICON_STROKE } from "@/components/app/tokens";
 import { cn } from "@/lib/utils";
+
+/**
+ * 앱 하단 탭. 사이트 모바일 하단 바(MobileCallBar)와 같은 밤색 플로팅 알약입니다.
+ * 활성 탭은 라임 알약 안에 아이콘 (추억상자 화면에서는 라임 대신 흰색: 떠난 뒤의 화면은 차분하게).
+ */
+const TABS = [
+    { name: "홈", href: "/app", icon: Home },
+    { name: "내 상담", href: "/booking", icon: CalendarDays },
+    { name: "추억상자", href: "/memorial", icon: Sparkles },
+    { name: "내 정보", href: "/mypage", icon: User },
+] as const;
 
 export function BottomNav() {
     const pathname = usePathname();
-    const [isVisible, setIsVisible] = useState(true);
-
-    useEffect(() => {
-        setIsVisible(true);
-    }, [pathname]);
 
     if (pathname.startsWith("/booking/new") || pathname.startsWith("/mbti") || pathname.startsWith("/intro")) return null;
 
-    const tabs = [
-        { name: "홈", href: "/app", icon: Home },
-        { name: "예약하기", href: "/booking", icon: Calendar },
-        { name: "추억상자", href: "/memorial", icon: Heart },
-        { name: "내 정보", href: "/mypage", icon: User },
-    ];
+    const calm = pathname.startsWith("/memorial");
 
     return (
         <nav
-            className={cn(
-                "fixed bottom-6 left-3 right-3 z-50 bg-bg-card/90 backdrop-blur-md rounded-3xl border border-[#333] shadow-2xl p-2 px-4 transition-transform duration-300 max-w-[480px] mx-auto",
-                !isVisible && "translate-y-[200%]"
-            )}
+            aria-label="앱 메뉴"
+            className="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3"
+            style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}
         >
-            <div className="flex justify-between items-center h-14 w-full max-w-[480px] mx-auto">
-                {tabs.map((tab) => {
-                    const isActive = pathname === tab.href;
+            <ul className="pointer-events-auto mx-auto flex max-w-[480px] items-stretch gap-1 rounded-full bg-night/90 p-1.5 shadow-[0_12px_32px_-8px_rgb(11_16_32/0.5)] ring-1 ring-white/10 backdrop-blur-md">
+                {TABS.map((tab) => {
+                    // 홈(/app)은 정확히 일치할 때만, 나머지 탭은 하위 경로(/memorial/123 등)에서도 활성
+                    const isActive = tab.href === "/app" ? pathname === "/app" : pathname.startsWith(tab.href);
                     return (
-                        <Link
-                            key={tab.name}
-                            href={tab.href}
-                            className={cn(
-                                "flex flex-col items-center justify-center w-full h-full space-y-1 transition-all relative py-2",
-                                isActive ? "text-foon-lime scale-105" : "text-gray-500 hover:text-gray-300"
-                            )}
-                        >
-                            {isActive && (
-                                <div className="absolute -top-1 w-8 h-8 bg-foon-lime rounded-full blur-[15px] opacity-20 pointer-events-none"></div>
-                            )}
-
-                            <tab.icon size={24} strokeWidth={isActive ? 2.5 : 2} className="relative z-10" />
-                            <span className="text-[10px] font-medium relative z-10">{tab.name}</span>
-                        </Link>
+                        <li key={tab.href} className="flex-1">
+                            <Link
+                                href={tab.href}
+                                aria-current={isActive ? "page" : undefined}
+                                className={cn(
+                                    "flex h-14 flex-col items-center justify-center gap-1 rounded-full text-[11px] font-semibold transition-colors active:translate-y-px",
+                                    isActive ? "text-star" : "text-star-3 hover:text-star-2",
+                                )}
+                            >
+                                <span
+                                    className={cn(
+                                        "flex h-7 w-12 items-center justify-center rounded-full transition-colors",
+                                        isActive && (calm ? "bg-star text-ink" : "bg-lime text-ink"),
+                                    )}
+                                >
+                                    <tab.icon className="h-[19px] w-[19px]" strokeWidth={isActive ? 2 : APP_ICON_STROKE} aria-hidden />
+                                </span>
+                                {tab.name}
+                            </Link>
+                        </li>
                     );
                 })}
-            </div>
+            </ul>
         </nav>
     );
 }

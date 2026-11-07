@@ -3,8 +3,12 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useQueryClient } from "@tanstack/react-query";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { PetFormData } from "@/actions/pet";
+import type { PetActionResult, PetFormData } from "@/actions/pet";
+import { APP_ICON_STROKE, AppBody, AppBottomAction, AppButton, AppProgress, AppTopBar, appBackButtonClass } from "@/components/app/ui";
+import { petDatesError, weightError } from "@/lib/pet-rules";
+import { cn } from "@/lib/utils";
 
 // Components
 import RegistrationSuccess3D from "./RegistrationSuccess3D";
@@ -50,6 +54,7 @@ export default function RegistrationWizard({
     petId
 }: RegistrationWizardProps) {
     const router = useRouter();
+    const queryClient = useQueryClient();
 
     // -------------------------------------------------------------------------
     // 1. State Management
@@ -67,6 +72,8 @@ export default function RegistrationWizard({
     const [openDateField, setOpenDateField] = useState<"birth" | "adoptionDate" | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
+    /** 저장 실패 문구 (버튼 위에 보여 줍니다). auth 면 로그인 링크를 함께 보여 줍니다 */
+    const [submitError, setSubmitError] = useState<{ message: string; needsLogin: boolean } | null>(null);
 
     // State for Breed Selection Drawer (Lifted up to control footer visibility)
     const [isBreedDrawerOpen, setIsBreedDrawerOpen] = useState(false);
@@ -143,7 +150,8 @@ export default function RegistrationWizard({
             species: data.species || prev.species,
             breed: data.breed || prev.breed,
             gender: data.gender || prev.gender,
-            neuter: data.neuter === "yes" ? true : data.neuter === "no" ? false : prev.neuter, // Convert imported string to boolean
+            // 등록 정보의 중성화 여부는 true/false 로 옵니다. 알 수 없으면(null) 지금 값을 그대로 둡니다
+            neuter: typeof data.neuter === "boolean" ? data.neuter : prev.neuter,
         }));
         setIsImportModalOpen(false);
         alert(`동물등록번호(${data.regNumber}) 정보가 입력되었습니다!`);
@@ -154,6 +162,10 @@ export default function RegistrationWizard({
             setFormData(prev => ({ ...prev, [openDateField]: date }));
             setOpenDateField(null);
         }
+    };
+
+    const handleDateClear = (field: "birth" | "adoptionDate") => {
+        setFormData(prev => ({ ...prev, [field]: null }));
     };
 
     // -------------------------------------------------------------------------
@@ -168,30 +180,36 @@ export default function RegistrationWizard({
     };
 
     const handlePrev = () => {
+        setSubmitError(null);
         if (!isFirstStep) setCurrentStepIndex(prev => prev - 1);
     };
 
     const handleSubmit = async () => {
         setIsSubmitting(true);
+        setSubmitError(null);
         try {
-            // Photo Upload
-            let finalPhotoUrl = formData.photo;
+            // 사진 올리기 (한 번 올린 뒤 다시 시도할 때는 올린 주소를 그대로 씁니다)
+            let finalPhotoUrl = formData.photo || null;
             if (photoFile) {
                 const { uploadPetPhoto } = await import("@/actions/storage");
                 const formDataPhoto = new FormData();
                 formDataPhoto.append("file", photoFile);
                 const res = await uploadPetPhoto(formDataPhoto);
-                if (!res.success) throw new Error(res.error || "Upload failed");
+                if (!res.success) {
+                    setSubmitError({ message: res.error, needsLogin: res.code === "auth" });
+                    return;
+                }
                 finalPhotoUrl = res.url;
+                setPhotoFile(null);
+                setFormData(prev => ({ ...prev, photo: res.url }));
             }
 
-            // Payload Construction
-            const payload = {
-                name: formData.name,
+            const payload: PetFormData = {
+                name: formData.name ?? "",
                 species: formData.species || "dog",
                 breed: formData.breed || null,
-                gender: formData.gender,
-                neuter: formData.neuter, // Boolean
+                gender: formData.gender ?? "male",
+                neuter: formData.neuter ?? null,
                 birth: formData.birth || null,
                 weight: formData.weight || null,
                 color: formData.color || null,
@@ -202,27 +220,21 @@ export default function RegistrationWizard({
             };
 
             const { createPet, updatePet } = await import("@/actions/pet");
+            const result: PetActionResult = isEditMode && petId ? await updatePet(petId, payload) : await createPet(payload);
 
-            if (isEditMode && petId) {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                await updatePet(petId, payload as any);
-            } else {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                const result = await createPet(payload as any);
-                if (result && result.petId) {
-                    setCreatedPetId(result.petId);
-                }
+            if (!result.success) {
+                setSubmitError({ message: result.error, needsLogin: result.code === "auth" });
+                return;
             }
+            if (result.petId && !isEditMode) setCreatedPetId(result.petId);
 
-            // Update local state with the uploaded photo URL so the Success Screen can use it for OG generation
-            if (finalPhotoUrl) {
-                setFormData(prev => ({ ...prev, photo: finalPhotoUrl }));
-            }
-
+            // 홈·아이 선택 시트의 목록을 바로 새로 받습니다 (기본 캐시 60초를 기다리지 않음)
+            await queryClient.invalidateQueries({ queryKey: ["pets"] });
             setIsCompleted(true);
         } catch (error) {
+            // 네트워크 끊김 등 서버 액션 호출 자체가 실패한 경우
             console.error(error);
-            alert("처리 중 오류가 발생했습니다: " + (error as Error).message);
+            setSubmitError({ message: "연결이 불안정해요. 잠시 후 다시 시도해 주세요.", needsLogin: false });
         } finally {
             setIsSubmitting(false);
         }
@@ -231,12 +243,12 @@ export default function RegistrationWizard({
     // Validation
     const isStepValid = () => {
         switch (currentStepId) {
-            case "name": return !!formData.name;
+            case "name": return !!formData.name?.trim();
             case "species": return !!formData.species;
             case "breed": return !!formData.breed;
             case "gender": return !!formData.gender;
-            case "birth": return true; // Optional
-            case "weight": return !!formData.weight;
+            case "birth": return !petDatesError({ birth: formData.birth, adoptionDate: formData.adoptionDate }); // 선택 항목, 고르면 규칙 확인
+            case "weight": return !!formData.weight && !weightError(formData.weight);
             case "color": return !!formData.color;
             case "concern": return formData.concern && formData.concern.length > 0;
             case "photo": return true; // Optional
@@ -295,7 +307,14 @@ export default function RegistrationWizard({
                     />
                 );
             case "birth":
-                return <StepDate formData={{ ...formData, birth: formData.birth || undefined, adoptionDate: formData.adoptionDate || undefined }} onOpenPicker={setOpenDateField} />;
+                return (
+                    <StepDate
+                        formData={{ ...formData, birth: formData.birth || undefined, adoptionDate: formData.adoptionDate || undefined }}
+                        onOpenPicker={setOpenDateField}
+                        onClear={handleDateClear}
+                        error={petDatesError({ birth: formData.birth, adoptionDate: formData.adoptionDate })}
+                    />
+                );
             case "weight":
             case "color": // Added color case
                 return (
@@ -322,10 +341,7 @@ export default function RegistrationWizard({
     };
 
     return (
-        <div className="flex flex-col h-full w-full absolute inset-0 bg-bg-main touch-none text-white overflow-hidden">
-            {/* Ambient Background Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-foon-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
-
+        <div className="flex flex-1 flex-col bg-moon text-ink">
             {/* Modals */}
             <ImportRegistrationModal
                 isOpen={isImportModalOpen}
@@ -340,67 +356,59 @@ export default function RegistrationWizard({
                 initialDate={openDateField ? (formData[openDateField] || undefined) : undefined}
             />
 
-            {/* Header */}
-            <header className="px-4 py-2 flex items-center justify-between sticky top-0 z-10 w-full max-w-[430px] mx-auto">
-                <div className="flex items-center gap-2">
-                    {isFirstStep ? (
-                        <Link href="/app">
-                            <X className="w-6 h-6 text-gray-400 hover:text-white transition-colors" />
+            {/* Header: 첫 단계는 앱 홈으로 닫기(X), 이후 단계는 이전 단계로 + 진행 표시 */}
+            <AppTopBar
+                title={isEditMode ? "반려가족 수정" : "펫패스 만들기"}
+                leading={
+                    isFirstStep ? (
+                        <Link href="/app" aria-label="닫기" className={appBackButtonClass("onNight", "ml-0")}>
+                            <X className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         </Link>
-                    ) : (
-                        <button onClick={handlePrev} className="p-1 rounded-full hover:bg-white/10 transition-colors">
-                            <ChevronLeft className="w-6 h-6 text-gray-300" />
-                        </button>
-                    )}
-                </div>
-                {/* Progress Bar */}
-                <div className="flex gap-1">
-                    {STEP_IDS.map((id, i) => (
-                        <div
-                            key={id}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${i <= currentStepIndex ? "w-6 bg-foon-lime shadow-[0_0_10px_#A3DF46]" : "w-1.5 bg-[#333]"
-                                } `}
-                        />
-                    ))}
-                </div>
-                <div className="w-6" />
-            </header>
+                    ) : undefined
+                }
+                onBack={isFirstStep ? undefined : handlePrev}
+                backLabel="이전 단계"
+                action={
+                    <span className="shrink-0 pr-2 text-[13px] font-semibold tabular-nums text-star-3">
+                        {currentStepIndex + 1}/{STEP_IDS.length}
+                    </span>
+                }
+            >
+                <AppProgress value={(currentStepIndex + 1) / STEP_IDS.length} />
+            </AppTopBar>
 
             {/* Main Content */}
-            <main className="flex-1 px-6 flex flex-col justify-center max-w-[430px] mx-auto w-full pb-20 relative z-0">
-                <div className="p-8 rounded-[32px] bg-bg-card border border-[#333] shadow-lg animate-fade-in-up min-h-[400px]">
-                    {renderStepContent()}
-                </div>
-            </main>
+            <AppBody className="flex flex-1 flex-col pb-4 pt-8">{renderStepContent()}</AppBody>
 
             {/* Bottom Navigation - Hidden when Breed Drawer is Open */}
-            <div
-                className={`absolute bottom-0 w-full p-4 pb-10 flex justify-center z-50 transition-transform duration-300 ${isBreedDrawerOpen ? "translate-y-full" : "translate-y-0"
-                    }`}
+            <AppBottomAction
+                className={cn(
+                    "transition-transform duration-300 motion-reduce:transition-none",
+                    isBreedDrawerOpen ? "translate-y-full" : "translate-y-0",
+                )}
             >
-                <div className="w-full max-w-[430px] flex items-center justify-center gap-3">
+                {submitError && (
+                    <div role="alert" className="mb-3 rounded-xl bg-pass px-4 py-3 text-[14px] font-semibold leading-snug text-danger ring-1 ring-inset ring-danger/30">
+                        {submitError.message}
+                        {submitError.needsLogin && (
+                            <Link href="/login?next=%2Fregister" className="ml-2 font-bold text-ink underline underline-offset-2">
+                                로그인하기
+                            </Link>
+                        )}
+                    </div>
+                )}
+                <div className="flex items-center gap-3">
                     {!isFirstStep && (
-                        <button
-                            onClick={handlePrev}
-                            className="w-14 h-14 rounded-2xl bg-[#2C2C2E] border border-[#333] flex items-center justify-center text-gray-400 hover:bg-[#3A3A3D] transition-colors hover:text-white"
-                        >
-                            <ChevronLeft className="w-6 h-6" />
-                        </button>
+                        <AppButton variant="secondary" size="lg" onClick={handlePrev} aria-label="이전 단계" className="w-14 shrink-0 px-0">
+                            <ChevronLeft className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                        </AppButton>
                     )}
-                    <button
-                        onClick={handleNext}
-                        disabled={!isStepValid() || isSubmitting}
-                        className={`h-14 rounded-2xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2 flex-1 ${isStepValid()
-                            ? "bg-foon-lime text-bg-main shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-[0.98]"
-                            : "bg-[#2C2C2E] text-gray-600 border border-[#333] cursor-not-allowed"
-                            } `}
-                    >
+                    <AppButton variant="accent" size="lg" onClick={handleNext} disabled={!isStepValid() || isSubmitting} className="flex-1 font-bold">
                         {isSubmitting ? "처리중..." : isLastStep ? "등록 완료" : "다음"}
-                        {!isLastStep && <ChevronRight className="w-5 h-5" />}
-                    </button>
+                        {!isLastStep && <ChevronRight className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />}
+                    </AppButton>
                 </div>
-            </div>
+            </AppBottomAction>
         </div>
     );
 }
-

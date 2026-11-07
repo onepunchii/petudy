@@ -1,0 +1,148 @@
+{
+  "id": "pf-7be7f0de",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례를 단독 화장 원칙으로 진행",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "단독 화장 원칙으로 안내",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": "화장 후 수습한 유골을 보호자가 확인",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "기본 장례에 염습 포함, 수의는 상위 상품 구성",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안당 운영, 이용 시간 매일 08:00~22:00",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "지점 서비스 목록에 수목장 미표기",
+      "sourceUrl": "https://fourpaws.co.kr/stores"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "블리스 스톤 퓨어 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": "브랜드 공통 동행 차량 지원, 지점 가능 여부 문의",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 상담·예약, 장례는 08:00~24:00",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "60kg 이하 장례 가능",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 전용 장례와 1kg 이하 소동물 장례",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae"
+    }
+  },
+  "extras": [
+    {
+      "label": "산골장",
+      "note": "산골장 운영, 이용료 5만 원",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae"
+    },
+    {
+      "label": "당일 예약",
+      "note": "모든 장례 예약제, 당일 예약 가능",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    {
+      "label": "생화 장식",
+      "note": "생화 장식 추가 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae"
+    }
+  ],
+  "hours": {
+    "text": "매일 08:00~24:00, 마지막 장례 예약 22:00",
+    "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습, 추모, 개별 화장, 수분골, 추모 키트, 기본 유골함. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "관 장례 기본형 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 장례에 오동나무 관, 인견 수의, 작은 꽃다발. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 기본형 10kg 이하",
+      "amount": "60만 원",
+      "includes": "기본 장례에 요람 관, 인견 수의, 작은 꽃다발. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고양이 전용 장례",
+      "amount": "55만 원",
+      "includes": "기본 장례에 관, 기본 유골함, 작은 꽃다발. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 기본 장례 1kg 이하",
+      "amount": "25만 원",
+      "includes": "세부 구성 미표기. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimhae",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기준 무게 초과",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "일반동물 10kg 초과분",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "산골장",
+      "amount": "5만 원",
+      "includes": "VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/faq",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "블리스 스톤 전량 제작",
+      "amount": "35만 원, 초과 1kg당 2만 원 추가",
+      "includes": "5kg 기준",
+      "sourceUrl": "https://fourpaws.co.kr/faq",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "포포즈 반려동물 장례식장 부산점은 김해시 한림면 안하로의 시설로 매일 08:00~24:00 장례를 진행합니다. 단독 화장 원칙이며 기본 장례는 10kg 이하 30만 원입니다.",
+  "cautions": [
+    "공식 사이트는 이 시설을 김해점으로 표기",
+    "기장군에 있는 포포즈 부산점과는 다른 시설",
+    "차량 지원 등 브랜드 공통 서비스는 지점 문의"
+  ]
+}

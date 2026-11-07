@@ -1,0 +1,158 @@
+{
+  "id": "pf-58b54cd2",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례를 개별 화장으로 진행",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 장례를 개별 화장 원칙으로 진행",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "참관실에서 화장로 진입과 유골 확인 가능",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품 염습 포함, 수의는 장례Ⅱ·소풍 장례",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안당 운영, 방문 09:00~19:00",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "세종·대전점 서비스 목록에 수목장 없음",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "루세떼(유골 보석) 상담·제작",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "운구 서비스 운영, 세종 출발 요금은 문의",
+      "sourceUrl": "https://21gram.co.kr/hearse2"
+    },
+    "allDay": {
+      "status": "no",
+      "note": "운영 09~22시, 전화 상담 05~24시",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "15kg 이상 대형 동물 요금 별도 게시",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "일반·소동물 구분 요금, 일부 상품은 상담",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자가 동행하지 않는 장례 가능",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    {
+      "label": "냉장 안치",
+      "note": "염습 후 전용 냉장시설 안치, 최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "산골 대행",
+      "note": "장례 후 유골 산골 대행",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "단독 추모실",
+      "note": "모든 상품에 단독 추모실과 추모 예식 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    }
+  ],
+  "hours": {
+    "text": "매일 09:00~22:00, 마지막 예약 19:00, 상담 05~24시",
+    "sourceUrl": "https://21gram.co.kr/branch"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 15kg 미만",
+      "amount": "35만 원",
+      "includes": "염습, 개별 화장, 단독 추모실, 추모 예식, 백자 유골함, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 15kg 이상",
+      "amount": "65만 원",
+      "includes": "베이직 장례와 같은 구성, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅰ 15kg 미만",
+      "amount": "70만 원",
+      "includes": "베이직 구성에 요람, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 15kg 미만",
+      "amount": "75만 원",
+      "includes": "베이직 구성에 오동나무 관, 수의, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 소동물",
+      "amount": "65만 원",
+      "includes": "상담 후 이용, 베이직 구성에 오동나무 관, 수의, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅰ 15kg 이상",
+      "amount": "110만 원",
+      "includes": "베이직 구성에 요람, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 15kg 이상",
+      "amount": "120만 원",
+      "includes": "베이직 구성에 오동나무 관, 수의, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "냉장 안치",
+      "amount": "1일 3만 5천 원",
+      "includes": "최대 1주일, 개별 바디백",
+      "sourceUrl": "https://21gram.co.kr/254",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [
+    {
+      "text": "한국영상대학교에서 약 1.2km 이내",
+      "sourceUrl": "https://21gram.co.kr/"
+    }
+  ],
+  "summary": "21그램 반려동물장례식장 세종점은 모든 장례를 개별 화장으로 진행하며 참관실과 봉안당을 운영합니다. 베이직 장례는 15kg 미만 35만 원입니다.",
+  "cautions": [
+    "가격은 브랜드 공통 요금이며 변동될 수 있음",
+    "홈페이지 지점명은 21그램 세종·대전점",
+    "홈페이지 주소는 장군면 정동길 76, 방문 전 확인"
+  ]
+}

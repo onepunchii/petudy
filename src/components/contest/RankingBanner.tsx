@@ -21,7 +21,7 @@ export function RankingBanner({ topEntries }: RankingBannerProps) {
                     <Crown className="w-5 h-5 text-foon-lime fill-current drop-shadow-[0_0_8px_rgba(163,223,70,0.6)]" />
                     실시간 랭킹
                 </h2>
-                <p className="text-xs text-gray-400 mt-1">현재 가장 인기있는 펫터디 모델 후보들이에요!</p>
+                <p className="text-xs text-gray-400 mt-1">현재 가장 인기있는 포온 모델 후보들이에요!</p>
             </div>
 
             <div className="flex justify-center items-end gap-3 max-w-md mx-auto">

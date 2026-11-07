@@ -1,0 +1,148 @@
+{
+  "id": "pf-680a6dee",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례 구성에 개별 화장 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": "요금표상 모두 개별 화장, 합동 화장 안내 없음",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "청주점에 참관실 있음",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습은 모든 구성에, 수의는 상위 구성에 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "청주점 봉안당 1~3 운영, 1년 단위 요금",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "청주점에 수목장 운영",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "청주점 서비스에 루세떼 상담 표기",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "펫택시 연계 편도 운구, 청주시 출발 6만 원",
+      "sourceUrl": "https://21gram.co.kr/hearse2"
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": "장례 예약 21시 마감, 채팅 상담만 24시간",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "15kg 이상 대형 동물 요금 공시",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "소동물 요금 구분 공시",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자 없이 운구와 장례 진행",
+      "sourceUrl": "https://21gram.co.kr/hearse2"
+    },
+    {
+      "label": "냉장 안치",
+      "note": "1일 3만 5천 원, 최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "산골 대행",
+      "note": "산골 대행 6만 원",
+      "sourceUrl": "https://21gram.co.kr/254"
+    }
+  ],
+  "hours": {
+    "text": "청주점 매일 09:00~24:00, 마지막 예약 21시",
+    "sourceUrl": "https://21gram.co.kr/branch"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 15kg 미만",
+      "amount": "35만 원",
+      "includes": "염습, 개별 화장, 단독 추모실, 추모 예식, 백자 유골함, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 15kg 이상",
+      "amount": "65만 원",
+      "includes": "베이직과 같은 구성, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅰ 15kg 미만",
+      "amount": "70만 원",
+      "includes": "베이직 구성에 요람, 꽃다발 추가, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 15kg 미만",
+      "amount": "75만 원",
+      "includes": "베이직 구성에 오동나무 관, 수의, 꽃다발 추가, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1년",
+      "amount": "신규 20만~50만 원",
+      "includes": "봉안당 1~3 구역별 상이, 연장 시 30% 할인",
+      "sourceUrl": "https://21gram.co.kr/charnel",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수목장 1년",
+      "amount": "50만 원",
+      "includes": "신규와 연장 같은 금액",
+      "sourceUrl": "https://21gram.co.kr/charnel",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 편도, 청주시 출발",
+      "amount": "6만 원",
+      "includes": "펫택시 운행, 귀가는 일반 택시 호출",
+      "sourceUrl": "https://21gram.co.kr/hearse2",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "냉장 안치",
+      "amount": "1일 3만 5천 원",
+      "includes": "최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [],
+  "summary": "우바스는 현재 21그램 청주점으로 운영되는 것으로 보이며 개별 화장, 참관실, 봉안당, 수목장을 갖추고 있습니다. 15kg 미만 베이직 장례는 35만 원입니다.",
+  "cautions": [
+    "현재 21그램 청주점 이름으로 운영, 상호 확인 필요",
+    "공식 목록 전화번호와 현재 대표번호가 다름",
+    "가격은 21그램 공통 요금이며 변동될 수 있음"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "pf-7b14bd48",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장을 원칙으로 진행",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "요청 시 장례 전 과정 참관 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "기본 장례에 염습 포함, 수의는 관·요람 상품에",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "경기 광주점에서 봉안당 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "지점 안내에 수목장 표기 없음",
+      "sourceUrl": "https://fourpaws.co.kr/stores"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골로 블리스 스톤 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "전용 차량 편도 무료, 사전 예약 필요",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "매일 24시간 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "100kg 이하 가능, 10kg 초과분은 kg당 추가",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 전용 장례, 1kg 이하 소동물 상품 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+    }
+  },
+  "extras": [
+    {
+      "label": "산골장",
+      "note": "경기 광주점에서 산골장 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+    },
+    {
+      "label": "비동행 장례",
+      "note": "보호자 없이 운구하는 비동행 장례 문의 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    {
+      "label": "장례 증명서",
+      "note": "기본 장례 추모 키트에 장례 증명서 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+    },
+    {
+      "label": "야외 추모 공간",
+      "note": "이름과 메시지 명패를 거는 '기억 머문 담' 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/outdoor/memory"
+    },
+    {
+      "label": "생화 장식",
+      "note": "장례지도사가 준비하는 생화 장식, 5만 원",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    }
+  ],
+  "hours": {
+    "text": "매일 00:00~24:00, 24시간 운영",
+    "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습, 단독 추모, 개별 화장, 추모 키트, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 기본 장례 1kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모, 개별 화장, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "10kg 초과 추가 요금",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "일반동물 기준 10kg 초과분",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고양이 전용 장례",
+      "amount": "55만 원",
+      "includes": "기본 장례에 관, 기본 유골함, 작은 꽃다발 추가, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "관 장례 기본형 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 장례에 오동나무 관, 인견 수의 세트, 작은 꽃다발 추가",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gyeonggi-gwangju",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "블리스 스톤 전량 10kg 기준",
+      "amount": "40만 원",
+      "includes": "기본 스톤함 제공, 기준 초과 시 1kg당 2만 원",
+      "sourceUrl": "https://fourpaws.co.kr/service/stone/common",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1년",
+      "amount": "10만~80만 원",
+      "includes": "전 지점 공통 범위, 지점과 구획에 따라 다름",
+      "sourceUrl": "https://fourpaws.co.kr/service/hall",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "산골장",
+      "amount": "5만 원",
+      "includes": "전 지점 공통 요금",
+      "sourceUrl": "https://fourpaws.co.kr/service/outdoor/sanggol",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "포포즈 반려동물 장례식장 경기 광주점은 24시간 운영하며 개별 화장과 요청 시 전 과정 참관을 안내합니다. 10kg 이하 기본 장례는 30만 원이고 봉안당과 산골장을 운영합니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "무료 차량 지원은 편도이며 사전 예약 필요",
+    "봉안당 요금은 전 지점 공통 범위로만 게시"
+  ]
+}

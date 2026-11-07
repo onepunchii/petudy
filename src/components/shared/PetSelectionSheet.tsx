@@ -2,11 +2,14 @@
 
 import { useEffect, useState, useRef } from "react";
 import { createPortal } from "react-dom";
-import { Plus, Check, Pencil, Trash2, IdCard, ArrowUpDown, GripVertical, Star, X, Home } from "lucide-react";
+import { Plus, Check, Pencil, Trash2, IdCard, GripVertical, Star, Mars, Venus, PawPrint } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Pet, deletePet, PetFormData } from "@/actions/pet";
+import { useQueryClient } from "@tanstack/react-query";
+import { Pet, deletePet } from "@/actions/pet";
 import Link from "next/link";
 import RegistrationSuccess3D from "@/components/register/RegistrationSuccess3D";
+import { APP_ICON_STROKE, AppButton, AppEmpty, SheetHeader, SheetPanel, appButtonClass, appOptionClass, dialogPanelClass, sheetBackdropClass } from "@/components/app/ui";
+import { cn } from "@/lib/utils";
 import {
     DndContext,
     closestCenter,
@@ -39,6 +42,10 @@ const CONCERN_LABELS: Record<string, string> = {
     behavior: "행동 / 분리불안",
     none: "건강함"
 };
+
+/** 카드 오른쪽 위 동그란 아이콘 버튼 (펫 패스, 수정, 삭제) */
+const iconButtonClass =
+    "flex h-10 w-10 items-center justify-center rounded-full bg-paper-2 text-ink-2 transition-colors active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 interface PetSelectionSheetProps {
     isOpen: boolean;
@@ -83,48 +90,66 @@ function SortablePetItem({
         zIndex: isDragging ? 10 : 1, // Elevate when dragging
     };
 
+    // 선택된 아이 = 남색 테두리 2px + 체크 (순서 바꾸기 중에는 표시하지 않음)
+    const showSelected = isSelected && !isEditMode;
+
     return (
         <div
             ref={setNodeRef}
             style={style}
             onClick={() => !isEditMode && onSelect()} // Allow selection on click
-            className={`bg-[#252527] rounded-[24px] p-4 shadow-lg border relative group transition-all touch-manipulation
-            ${isSelected && !isEditMode ? 'border-foon-lime/50 ring-1 ring-foon-lime/20' : 'border-[#333] hover:border-gray-500'}
-            ${isDragging ? 'opacity-80 scale-105 shadow-2xl bg-[#2D2D30]' : ''}
-            ${!isEditMode ? 'cursor-pointer hover:bg-[#2a2a2c]' : ''}`} // Add cursor pointer
+            className={cn(
+                appOptionClass(showSelected, "group relative touch-manipulation"),
+                isDragging && "opacity-80 shadow-[0_18px_36px_-14px_rgb(31_39_66/0.35)]",
+                !isEditMode && "cursor-pointer",
+            )}
         >
             {/* Top Part: Info (Allow pointer events for Avatar click) */}
-            <div className="flex items-start justify-between mb-4 relative z-10 bg-transparent">
-                <div className="flex items-center gap-4">
+            <div className={cn("relative z-10 mb-3 flex items-start justify-between", isEditMode ? "pr-12" : "pr-[132px]")}>
+                <div className="flex min-w-0 items-center gap-3.5">
                     {/* Avatar - Click to View Card */}
                     <div
-                        className="relative"
+                        className="relative shrink-0"
                     >
-                        <div className="w-12 h-12 rounded-full bg-[#333] flex-shrink-0 border border-[#444] overflow-hidden relative shadow-md">
+                        <div className="relative h-12 w-12 overflow-hidden rounded-full bg-paper-2 ring-1 ring-line">
                             {pet.photo_url ? (
-                                <img src={pet.photo_url} alt={pet.name} className="w-full h-full object-cover" />
+                                <img src={pet.photo_url} alt={pet.name} className="h-full w-full object-cover" />
                             ) : (
-                                <div className="w-full h-full flex items-center justify-center text-xl">🐶</div>
+                                <div className="flex h-full w-full items-center justify-center text-ink-3">
+                                    <PawPrint className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                </div>
                             )}
                         </div>
                         {/* Star Badge (Moved Inside here) */}
                         {index === 0 && !isEditMode && (
-                            <div className="absolute -top-1.5 -left-1.5 z-20 bg-yellow-400 text-bg-main w-5 h-5 rounded-full flex items-center justify-center shadow-md border-[1.5px] border-[#252527]">
-                                <Star className="w-3 h-3 fill-current stroke-[3]" />
+                            <div className="absolute -left-1 -top-1 z-20 flex h-5 w-5 items-center justify-center rounded-full bg-night text-star ring-2 ring-pass">
+                                <Star className="h-2.5 w-2.5 fill-current" strokeWidth={2.5} aria-hidden />
                             </div>
                         )}
                     </div>
 
                     {/* Text Info */}
-                    <div>
-                        <div className="flex items-center gap-2 mb-0.5">
-                            <div className={`w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold ${pet.gender === "male" ? "bg-blue-500/20 text-blue-400" : "bg-pink-500/20 text-pink-400"}`}>
-                                {pet.gender === "male" ? "♂" : "♀"}
-                            </div>
-                            <span className="text-base font-black text-white tracking-tight">{pet.name}</span>
-                            {isSelected && !isEditMode && <Check className="w-4 h-4 text-foon-lime" />}
+                    <div className="min-w-0">
+                        <div className="mb-0.5 flex items-center gap-1.5">
+                            <span
+                                role="img"
+                                aria-label={pet.gender === "male" ? "남아" : "여아"}
+                                className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-paper-2 text-ink-2"
+                            >
+                                {pet.gender === "male" ? (
+                                    <Mars className="h-3 w-3" strokeWidth={2.25} aria-hidden />
+                                ) : (
+                                    <Venus className="h-3 w-3" strokeWidth={2.25} aria-hidden />
+                                )}
+                            </span>
+                            <span className="truncate text-[16px] font-bold tracking-tight text-ink">{pet.name}</span>
+                            {showSelected && (
+                                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-night text-star">
+                                    <Check className="h-3 w-3" strokeWidth={3} aria-hidden />
+                                </span>
+                            )}
                         </div>
-                        <div className="text-gray-400 text-[11px] font-medium tracking-tight">
+                        <div className="truncate text-[13px] text-ink-3">
                             {pet.breed || "믹스"} · {calculateAge(pet.birth_date)}
                         </div>
                     </div>
@@ -132,15 +157,15 @@ function SortablePetItem({
             </div>
 
             {/* Right Side: Actions + Drag Handle (MOVED OUTSIDE: Explicitly Interactive & High Z-Index) */}
-            <div className="absolute top-4 right-4 flex items-center gap-1.5 z-30 h-8" onClick={(e) => e.stopPropagation()}>
+            <div className="absolute right-3 top-3 z-30 flex h-10 items-center gap-1" onClick={(e) => e.stopPropagation()}>
                 {isEditMode ? (
                     /* Drag Handle - Only Visible in Edit Mode */
                     <div
                         {...attributes}
                         {...listeners}
-                        className="w-10 h-10 -mr-2 rounded-full flex items-center justify-center cursor-grab active:cursor-grabbing text-gray-400 hover:text-white hover:bg-[#333] transition-colors touch-none animate-in fade-in zoom-in duration-200"
+                        className="flex h-10 w-10 cursor-grab touch-none items-center justify-center rounded-full text-ink-3 transition-colors hover:bg-paper-2 hover:text-ink active:cursor-grabbing"
                     >
-                        <GripVertical className="w-6 h-6" />
+                        <GripVertical className="h-6 w-6" strokeWidth={APP_ICON_STROKE} />
                     </div>
                 ) : (
                     /* Standard Actions - Hidden in Edit Mode */
@@ -153,19 +178,21 @@ function SortablePetItem({
                                 e.stopPropagation();
                                 onViewPass(pet);
                             }}
-                            className="w-8 h-8 rounded-full bg-[#333] border border-[#444] flex items-center justify-center text-gray-400 hover:text-foon-lime hover:border-foon-lime/30 transition-colors active:scale-90"
+                            className={cn(iconButtonClass, "hover:bg-line hover:text-ink")}
                             title="펫 패스 보기"
+                            aria-label="펫 패스 보기"
                         >
-                            <IdCard className="w-4 h-4" />
+                            <IdCard className="h-4 w-4" strokeWidth={APP_ICON_STROKE} />
                         </button>
 
                         <Link
                             href={`/settings/pets/${pet.id}/edit`}
                             onClick={(e) => e.stopPropagation()}
-                            className="w-8 h-8 rounded-full bg-[#333] border border-[#444] flex items-center justify-center text-gray-400 hover:text-white transition-colors active:scale-90"
+                            className={cn(iconButtonClass, "hover:bg-line hover:text-ink")}
                             title="수정하기"
+                            aria-label="수정하기"
                         >
-                            <Pencil className="w-3.5 h-3.5" />
+                            <Pencil className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} />
                         </Link>
                         <button
                             type="button"
@@ -174,28 +201,29 @@ function SortablePetItem({
                                 e.stopPropagation();
                                 onDelete();
                             }}
-                            className="w-8 h-8 rounded-full bg-[#333] border border-[#444] flex items-center justify-center text-gray-400 hover:text-red-400 hover:border-red-400/30 transition-colors active:scale-90"
+                            className={cn(iconButtonClass, "hover:bg-danger/10 hover:text-danger")}
                             title="삭제하기"
+                            aria-label="삭제하기"
                         >
-                            <Trash2 className="w-3.5 h-3.5" />
+                            <Trash2 className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} />
                         </button>
                     </>
                 )}
             </div>
 
             {/* Concerns Tags */}
-            <div className="flex flex-wrap gap-1.5 relative z-10 pointer-events-none">
+            <div className="pointer-events-none relative z-10 flex flex-wrap gap-1.5">
                 {pet.concerns && pet.concerns.length > 0 ? (
                     pet.concerns.slice(0, 3).map((concern, idx) => (
-                        <span key={idx} className="px-2 py-0.5 rounded-[6px] bg-[#333] text-gray-400 text-[10px] font-medium border border-transparent">
+                        <span key={idx} className="rounded-full bg-paper-2 px-2.5 py-1 text-[13px] font-medium leading-none text-ink-2">
                             {CONCERN_LABELS[concern] || concern}
                         </span>
                     ))
                 ) : (
-                    <span className="text-gray-600 text-[10px]">등록된 고민 없음</span>
+                    <span className="text-[13px] text-ink-3">등록된 고민 없음</span>
                 )}
                 {pet.concerns && pet.concerns.length > 3 && (
-                    <span className="px-2 py-0.5 rounded-[6px] bg-[#333] text-gray-400 text-[10px]">+{pet.concerns.length - 3}</span>
+                    <span className="rounded-full bg-paper-2 px-2.5 py-1 text-[13px] font-medium leading-none tabular-nums text-ink-2">+{pet.concerns.length - 3}</span>
                 )}
             </div>
         </div>
@@ -204,6 +232,7 @@ function SortablePetItem({
 
 export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets: initialPets, onSelectPet }: PetSelectionSheetProps) {
     const router = useRouter();
+    const queryClient = useQueryClient();
     const [shouldRender, setShouldRender] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -285,13 +314,20 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
     const handleDelete = async () => {
         if (!deletingPetId) return;
         try {
-            await deletePet(deletingPetId);
+            const result = await deletePet(deletingPetId);
+            if (!result.success) {
+                alert(result.error);
+                setDeletingPetId(null);
+                return;
+            }
             setPets((prev) => prev.filter((p) => p.id !== deletingPetId));
             setDeletingPetId(null);
+            // 홈 인사말·아이 목록이 지운 아이를 계속 보여 주지 않도록 캐시를 바로 비웁니다
+            await queryClient.invalidateQueries({ queryKey: ["pets"] });
             router.refresh(); // Refresh server components
         } catch (error) {
             console.error("Failed to delete pet:", error);
-            alert("반려동물 삭제에 실패했습니다.");
+            alert("삭제하지 못했어요. 잠시 후 다시 시도해 주세요.");
             setDeletingPetId(null);
         }
     };
@@ -341,16 +377,18 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
     if (!shouldRender || !isMounted) return null;
 
     return createPortal(
-        <div className="fixed inset-0 z-[60] flex items-end justify-center pointer-events-auto">
+        // 포털은 body 아래에 붙으므로 .app 범위(글꼴·토큰)를 다시 씌웁니다
+        <div className="app pointer-events-auto fixed inset-0 z-[60]">
             {/* Backdrop */}
             <div
-                className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"}`}
+                className={cn(sheetBackdropClass, "transition-opacity duration-500 ease-in-out motion-reduce:transition-none", isVisible ? "opacity-100" : "opacity-0")}
                 onClick={onClose}
             />
 
             {/* Sheet Container */}
-            <div
-                className={`w-full max-w-[512px] bg-[#1c1c1e] rounded-t-[32px] pt-4 flex flex-col max-h-[85vh] shadow-[0_-10px_40px_rgba(0,0,0,0.6)] z-[70]`}
+            <SheetPanel
+                aria-label="반려동물 선택"
+                className="flex max-h-[85vh] flex-col"
                 style={{
                     transform: isSheetDragging ? `translateY(${dragOffset}px)` : isVisible ? "translateY(0)" : "translateY(100%)",
                     transition: isSheetDragging ? 'none' : 'transform 0.5s cubic-bezier(0.32, 0.72, 0, 1)'
@@ -358,34 +396,32 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
             >
                 {/* Drag Handle Area */}
                 <div
-                    className="w-full flex justify-center py-3 touch-none cursor-grab active:cursor-grabbing"
+                    className="w-full shrink-0 cursor-grab touch-none pb-3 active:cursor-grabbing"
                     onPointerDown={handleDragStart}
                     onPointerMove={handleDragMove}
                     onPointerUp={handleDragEndSheet}
                     onPointerCancel={handleDragEndSheet}
                 >
-                    <div className="w-10 h-1 rounded-full bg-gray-600/50" />
+                    <SheetHeader />
                 </div>
 
                 {/* Header */}
-                <div className="px-6 pb-4 flex justify-between items-center bg-[#1c1c1e] z-10 sticky top-0">
-                    <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <div className="flex shrink-0 items-center justify-between gap-3 px-5 pb-4">
+                    <h2 className="flex items-baseline gap-1.5 text-[18px] font-bold text-ink">
                         반려동물 선택
-                        <span className="text-foon-lime text-sm font-normal">({pets.length})</span>
+                        <span className="text-[15px] font-semibold tabular-nums text-ink-3">({pets.length})</span>
                     </h2>
                     <button
+                        type="button"
                         onClick={() => setIsEditMode(!isEditMode)}
-                        className={`text-sm px-3 py-1.5 rounded-full border transition-all ${isEditMode
-                            ? "bg-foon-lime text-bg-main border-foon-lime font-bold"
-                            : "text-gray-400 border-gray-600 hover:text-white hover:border-white"
-                            }`}
+                        className={appButtonClass({ variant: isEditMode ? "primary" : "secondary", size: "sm" })}
                     >
                         {isEditMode ? "완료" : "순서 바꾸기"}
                     </button>
                 </div>
 
                 {/* Pet List - Scrollable with Sortable Context */}
-                <div className="flex-1 overflow-y-auto custom-scrollbar mb-6 p-2 mx-4" onTouchStart={(e) => e.stopPropagation()}>
+                <div className="flex-1 overflow-y-auto overscroll-contain px-5 pb-4 pt-1" onTouchStart={(e) => e.stopPropagation()}>
                     <DndContext
                         sensors={sensors}
                         collisionDetection={closestCenter}
@@ -395,7 +431,7 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
                             items={pets.map(p => p.id)}
                             strategy={verticalListSortingStrategy}
                         >
-                            <div className="space-y-4 pb-2">
+                            <div className="space-y-3">
                                 {pets.length > 0 ? (
                                     pets.map((pet, index) => (
                                         <SortablePetItem
@@ -411,9 +447,11 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
                                         />
                                     ))
                                 ) : (
-                                    <div className="text-center py-8 text-gray-500 text-sm">
-                                        등록된 반려동물이 없습니다.
-                                    </div>
+                                    <AppEmpty
+                                        className="py-8"
+                                        icon={<PawPrint className="h-7 w-7" strokeWidth={APP_ICON_STROKE} aria-hidden />}
+                                        title="등록된 반려동물이 없습니다."
+                                    />
                                 )}
                             </div>
                         </SortableContext>
@@ -422,56 +460,58 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
 
                 {/* Add New Pet Button - Hidden in Edit Mode */}
                 {!isEditMode && (
-                    <div className="px-4 w-full mb-8 shrink-0">
-                        <button
+                    <div className="w-full shrink-0 px-5 pt-1">
+                        <AppButton
+                            variant="secondary"
+                            size="lg"
+                            block
                             onClick={() => router.push("/register")}
-                            className="w-full py-4 rounded-2xl border border-dashed border-[#444] text-gray-400 font-bold flex items-center justify-center gap-2 hover:bg-[#222] hover:text-foon-lime hover:border-foon-lime/50 transition-all active:scale-[0.99] group animate-in fade-in slide-in-from-bottom-2 duration-300"
                             onTouchStart={(e) => e.stopPropagation()}
                         >
-                            <div className="w-5 h-5 rounded-full border border-current flex items-center justify-center group-hover:bg-foon-lime group-hover:border-foon-lime group-hover:text-bg-main transition-colors">
-                                <Plus className="w-3 h-3" />
-                            </div>
+                            <Plus className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
                             새로운 아이 등록하기
-                        </button>
+                        </AppButton>
                     </div>
                 )}
-            </div>
+            </SheetPanel>
 
             {/* Delete Confirmation Modal */}
             {
                 deletingPetId && (
-                    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 backdrop-blur-sm animate-in fade-in duration-200" onClick={(e) => e.stopPropagation()}>
-                        <div className="bg-[#1E1E20] border border-[#333] p-6 rounded-2xl w-[90%] max-w-[320px] text-center shadow-2xl scale-100 animate-in zoom-in-95 duration-200">
-                            <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4 text-red-500">
-                                <Trash2 className="w-6 h-6" />
+                    <div className={cn(sheetBackdropClass, "z-[80] flex items-center justify-center px-6")} onClick={(e) => e.stopPropagation()}>
+                        <div role="alertdialog" aria-modal="true" aria-labelledby="pet-delete-title" className={cn(dialogPanelClass, "max-w-[340px] text-center")}>
+                            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-danger/10 text-danger">
+                                <Trash2 className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
                             </div>
-                            <h3 className="text-lg font-bold text-white mb-2">정말 삭제하시겠습니까?</h3>
-                            <p className="text-gray-400 text-sm mb-6 break-keep">
+                            <h3 id="pet-delete-title" className="mb-2 text-[18px] font-bold text-ink">정말 삭제하시겠습니까?</h3>
+                            <p className="mb-6 text-[15px] leading-relaxed text-ink-2">
                                 삭제된 데이터는 복구할 수 없습니다.<br />
                                 신중하게 결정해주세요.
                             </p>
                             <div className="flex gap-3">
-                                <button
+                                <AppButton
+                                    variant="secondary"
+                                    className="flex-1"
                                     onClick={() => setDeletingPetId(null)}
-                                    className="flex-1 py-3 rounded-xl bg-[#333] text-gray-300 font-bold hover:bg-[#444] transition-colors"
                                 >
                                     취소
-                                </button>
-                                <button
+                                </AppButton>
+                                <AppButton
+                                    variant="danger"
+                                    className="flex-1"
                                     onClick={handleDelete}
-                                    className="flex-1 py-3 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-900/20"
                                 >
                                     삭제하기
-                                </button>
+                                </AppButton>
                             </div>
                         </div>
                     </div>
                 )
             }
 
-            {/* Pet Pass Viewer Modal */}
+            {/* Pet Pass Viewer Modal (3D 펫 패스: 짧은 전체 화면 연출이라 밤 바탕) */}
             {viewingPet && (
-                <div className="fixed inset-0 z-[100] bg-bg-main animate-in fade-in duration-300">
+                <div className="fixed inset-0 z-[100] bg-night">
                     <RegistrationSuccess3D
                         formData={getPetPassFormData(viewingPet)}
                         petId={viewingPet.id}

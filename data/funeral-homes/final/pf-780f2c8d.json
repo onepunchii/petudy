@@ -1,0 +1,115 @@
+{
+  "id": "pf-780f2c8d",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례를 개별 화장으로 진행",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "합동 화장은 하지 않는다고 안내",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "화장과 유골 수습까지 참관 가능",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 기본, 수의·관은 선택 시 입관",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "1년 단위 계약, 방문 10:00~18:00",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/ossuary.html"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "장례 후 수목장 안치 선택 가능",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/pay.html"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골분 스톤 제작, 약 3시간 소요",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "차량이 없을 때 픽업 이용, 요금 미표기",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/pay.html"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 상담 전화, 야간 장례는 미표기",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "체중 상한·대형견 안내 없음",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/ware.html"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "단독 추모실",
+      "note": "단독 추모실 예식, 사진·영상 상영 준비",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    {
+      "label": "장례증명서",
+      "note": "장례 후 장례증명서 발급",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+    },
+    {
+      "label": "유골 이전 안치",
+      "note": "다른 곳에 보관하던 유골도 옮겨 안치",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/ossuary.html"
+    }
+  ],
+  "hours": {
+    "text": "24시간 상담 전화, 장례는 예약제(시간대 미표기)",
+    "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/process.html"
+  },
+  "prices": [
+    {
+      "label": "화장 비용",
+      "amount": "15만 원부터",
+      "includes": "체중 기준과 포함 항목은 미표기",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/pay.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 스톤 제작",
+      "amount": "15만 원부터",
+      "includes": "체중 기준 미표기",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/pay.html",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [
+    {
+      "text": "김천IC에서 약 12분, 추풍령IC에서 약 5분",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/way.html"
+    },
+    {
+      "text": "김천시 추모공원에서 약 700m, 4차선 대로변",
+      "sourceUrl": "https://gbpet.co.kr/theme/FT_WEB20/sub/way.html"
+    }
+  ],
+  "summary": "경북반려동물장례식장은 모든 장례를 개별 화장으로 진행하며 봉안당과 수목장을 운영합니다. 24시간 상담 전화를 받고 화장 비용은 15만 원부터입니다.",
+  "cautions": [
+    "장례 구성별 금액은 홈페이지에 미표기",
+    "요금의 VAT 포함 여부는 홈페이지에 미표기",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

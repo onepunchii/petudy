@@ -1,13 +1,12 @@
 "use client";
 
-import { ChevronLeft, Copy, Check } from "lucide-react";
-import Link from "next/link";
+import { Copy, Check } from "lucide-react";
 import { useState } from "react";
 import { createObituary } from "@/actions/memorial";
-import { useRouter } from "next/navigation";
+import { APP_ICON_STROKE, AppBody, AppButton, AppTopBar, appInputClass, appTextareaClass } from "@/components/app/ui";
+import { cn } from "@/lib/utils";
 
 export default function ObituaryPage() {
-    const router = useRouter();
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [shareToken, setShareToken] = useState<string | null>(null);
@@ -34,57 +33,53 @@ export default function ObituaryPage() {
     };
 
     return (
-        <div className="min-h-screen bg-[#0A0A0B]">
-            <header className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                <Link href="/memorial" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
-                    <ChevronLeft className="w-6 h-6" />
-                </Link>
-                <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-white">부고장</h1>
-            </header>
+        <div className="min-h-full">
+            <AppTopBar back="/memorial" title="부고장" />
 
-            <main className="p-4 max-w-[480px] mx-auto space-y-4">
+            <AppBody className="space-y-4">
                 <input
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="부고장 제목을 입력하세요"
-                    className="w-full bg-[#1e1e20] border border-white/10 rounded-2xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-foon-lime/50"
+                    aria-label="부고장 제목"
+                    className={appInputClass}
                 />
 
                 <textarea
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     placeholder="故소중한 반려동물 이름을 기리며..."
-                    className="w-full h-48 bg-[#1e1e20] border border-white/10 rounded-2xl p-4 text-white placeholder-gray-500 resize-none focus:outline-none focus:border-foon-lime/50"
+                    aria-label="부고장 내용"
+                    className={cn(appTextareaClass, "h-48")}
                 />
 
                 {shareToken ? (
-                    <div className="p-4 bg-foon-lime/10 border border-foon-lime/30 rounded-2xl">
-                        <p className="text-foon-lime text-sm mb-2">링크가 클립보드에 복사되었습니다!</p>
-                        <p className="text-gray-400 text-xs">원하는 곳에 붙여넣기 하여 공유해주세요.</p>
+                    <div role="status" className="flex gap-3 rounded-[20px] bg-pine-soft p-4">
+                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-pine" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                        <div className="min-w-0">
+                            <p className="text-[15px] font-semibold text-ink">링크가 클립보드에 복사되었습니다!</p>
+                            <p className="mt-1 text-[13.5px] leading-relaxed text-ink-2">원하는 곳에 붙여넣기 하여 공유해주세요.</p>
+                        </div>
                     </div>
                 ) : (
-                    <button
-                        onClick={handleCreateAndCopy}
-                        disabled={saving}
-                        className="w-full flex items-center justify-center gap-2 py-3.5 bg-foon-lime rounded-2xl text-bg-main font-medium hover:bg-[#bbf080] disabled:opacity-50 transition-colors"
-                    >
+                    <AppButton variant="primary" size="lg" block onClick={handleCreateAndCopy} disabled={saving}>
                         {saving ? (
-                            <div className="w-5 h-5 border-2 border-bg-main border-t-transparent rounded-full animate-spin" />
+                            <span className="h-5 w-5 animate-spin rounded-full border-2 border-star border-t-transparent" aria-hidden />
                         ) : copied ? (
                             <>
-                                <Check className="w-5 h-5" />
+                                <Check className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
                                 복사됨!
                             </>
                         ) : (
                             <>
-                                <Copy className="w-5 h-5" />
+                                <Copy className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
                                 링크 복사하기
                             </>
                         )}
-                    </button>
+                    </AppButton>
                 )}
-            </main>
+            </AppBody>
         </div>
     );
 }

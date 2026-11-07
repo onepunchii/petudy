@@ -1,0 +1,134 @@
+{
+  "id": "pf-36382213",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별(단독) 화장으로 진행",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "보호자 참관 하에 화장 진행",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습·수의 단계 있음, 선택 사항별 상이",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": "자체 봉안당 언급 없음, 봉안 연계만 안내",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모리얼 스톤 제작, 추가 비용",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "보호자 있는 곳으로 찾아가는 픽업",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "상담·픽업 24시간 연중무휴",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "요금표가 30kg까지 공시, 상한 미표기",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물 요금 별도 공시",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    }
+  },
+  "extras": [
+    {
+      "label": "이동식 장례",
+      "note": "규제특례 승인 기반 찾아가는 이동식 장례",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    {
+      "label": "단독 추모 공간",
+      "note": "1:1 예약제 독립형 추모 공간",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    },
+    {
+      "label": "출장 권역",
+      "note": "울산·경주·포항·양산·부산 등 권역 안내",
+      "sourceUrl": "https://gentlepet.co.kr/"
+    }
+  ],
+  "hours": {
+    "text": "상담·픽업 24시간 연중무휴, 시설 운영시간 미표기",
+    "sourceUrl": "https://gentlepet.co.kr/"
+  },
+  "prices": [
+    {
+      "label": "소동물 1kg 미만",
+      "amount": "15만 원",
+      "includes": "화장, 단독 추모실, 사진액자, 한지싸개, 기본 유골함",
+      "sourceUrl": "https://gentlepet.co.kr/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 1~5kg",
+      "amount": "20만 원",
+      "includes": "화장, 단독 추모실, 사진액자, 한지싸개, 기본 유골함",
+      "sourceUrl": "https://gentlepet.co.kr/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 6~9kg",
+      "amount": "21만~24만 원",
+      "includes": "1kg당 1만 원씩 증가",
+      "sourceUrl": "https://gentlepet.co.kr/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 10~19kg",
+      "amount": "28만~37만 원",
+      "includes": "10kg 28만 원부터 1kg당 1만 원 증가",
+      "sourceUrl": "https://gentlepet.co.kr/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 20~30kg",
+      "amount": "40만~50만 원",
+      "includes": "20kg 40만 원부터 1kg당 1만 원 증가",
+      "sourceUrl": "https://gentlepet.co.kr/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 스톤 제작",
+      "amount": "30만 원 추가",
+      "includes": "요금 계산기에서 선택 시 가산",
+      "sourceUrl": "https://gentlepet.co.kr/",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [],
+  "summary": "(주)젠틀펫은 보호자에게 찾아가는 이동식 장례를 안내하며 개별 화장과 보호자 참관으로 진행합니다. 기본 화장은 1~5kg 20만 원이고 상담·픽업은 24시간 받습니다.",
+  "cautions": [
+    "등록 주소(북구 진장동)는 홈페이지에서 미확인",
+    "등록된 옛 홈페이지는 종료, 현재 사이트 기준 정보",
+    "픽업 비용과 부가세 포함 여부는 미표기"
+  ]
+}

@@ -16,20 +16,40 @@
   --color-bg-card: #1E1E20;
   --color-bg-input: #2C2C2E;
 
-  /* po-on 에이전시 사이트 (light) — (site) 라우트 그룹 전용 토큰 */
-  --color-paper: #F7F5F0;
-  --color-paper-2: #EFEBE3;
-  --color-ink: #1B1A17;
-  --color-ink-2: #4B4842;
-  --color-ink-3: #807B72;
-  --color-line: #E4DFD5;
-  --color-pine: #1F4A3E;
-  --color-pine-2: #2D6656;
-  --color-pine-soft: #E2ECE7;
-  --color-clay: #C2643A;
-  --color-clay-soft: #F6E6DC;
-  --color-dusk: #36405A;
-  --color-dusk-soft: #E5E8F0;
+  /*
+    po-on 에이전시 사이트 토큰 ((site) 라우트 그룹 전용)
+    기준: docs/BRAND_SPACE_CONCEPT.md 5장 "먼저 떠나는 여행" 팔레트.
+    화면 구성은 히어로(night) -> 본문(moon) 한 번만 전환합니다.
+  */
+  /* 밤 (히어로, 헤더, 하단 바) */
+  --color-night: #0B1020;
+  --color-night-2: #141A2E;   /* 밤 위 카드 */
+  --color-night-3: #1F2742;   /* 밤 위 칩, 입력 */
+  --color-star: #EEF1F6;      /* 밤 위 제목 글자 (night 대비 16.7:1) */
+  --color-star-2: #B4BCCB;    /* 밤 위 본문 글자 (night 9.9:1) */
+  --color-star-3: #8C95A8;    /* 밤 위 캡션 (night 6.3:1, night-2 5.7:1) */
+  /* 달빛 (본문) */
+  --color-moon: #EEF1F5;      /* 본문 바탕 */
+  --color-pass: #FCFCFD;      /* 본문 카드 (탑승권) */
+  /* 유일한 강조색. 버튼 배경, 활성 표시 전용. 글자색 금지. 장례·가이드 페이지 금지 */
+  --color-lime: #A3DF46;      /* 앱 foon-lime 과 같은 값 */
+  --color-lime-2: #B6E86A;    /* lime 버튼 hover */
+  --color-danger: #B3261E;    /* 폼 오류·필수 표시 (pass 6.4:1, moon 5.8:1) */
+
+  /* 기존 이름 유지, 값만 새 팔레트로 재매핑 (사이트 전역에서 수백 번 사용 중) */
+  --color-paper: #EEF1F5;     /* = moon */
+  --color-paper-2: #E3E8EF;
+  --color-ink: #10131A;
+  --color-ink-2: #454C5A;
+  --color-ink-3: #5F6674;     /* moon 5.1:1, paper-2 4.7:1 */
+  --color-line: #DCE1E9;
+  --color-pine: #26345F;      /* 밝은 면 위 링크·강조 글자, 남색 버튼 (moon 10.7:1) */
+  --color-pine-2: #33427A;    /* pine 버튼 hover */
+  --color-pine-soft: #DFE5EF; /* 차가운 연한 안내 면 */
+  --color-clay: #2F3B66;      /* 저녁 남색. 미용 톤 (moon 9.6:1, 흰 글자 10.8:1) */
+  --color-clay-soft: #E4E8F1;
+  --color-dusk: #1F2742;      /* = night-3. 장례 톤 (moon 13:1) */
+  --color-dusk-soft: #E2E6EF;
   --font-site: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 
   /* Apple System Font Stack */
@@ -76,22 +96,190 @@
 .site {
   font-family: var(--font-site);
   color: var(--color-ink);
-  background: var(--color-paper);
+  background: var(--color-moon);
   word-break: keep-all;
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
 }
-.site h1, .site h2, .site h3 { letter-spacing: -0.025em; }
-.site ::selection { background: var(--color-pine); color: #fff; }
-.site .prose-site h2 { font-size: 1.375rem; font-weight: 700; margin: 2.25rem 0 0.75rem; }
-.site .prose-site h3 { font-size: 1.125rem; font-weight: 700; margin: 1.75rem 0 0.5rem; }
-.site .prose-site p { margin: 0.75rem 0; line-height: 1.85; color: var(--color-ink-2); }
-.site .prose-site ul, .site .prose-site ol { margin: 0.75rem 0; padding-left: 1.25rem; color: var(--color-ink-2); line-height: 1.85; }
-.site .prose-site ul { list-style: disc; }
-.site .prose-site ol { list-style: decimal; }
-.site .prose-site strong { color: var(--color-ink); }
-.site details > summary { list-style: none; }
-.site details > summary::-webkit-details-marker { display: none; }
+:is(.site, .app) :is(h1, h2, h3) { letter-spacing: -0.025em; }
+:is(.site, .app) ::selection { background: var(--color-night-3); color: var(--color-star); }
+
+/* ───────── 포온 앱 ((app) 라우트 그룹) ─────────
+   사이트와 같은 토큰·글꼴·탑승권 카드를 씁니다(docs/BRAND_SPACE_CONCEPT.md 8장).
+   화면 구성: 위쪽 밤(AppHero/AppTopBar) -> 아래 달빛 본문. 하단 탭은 밤색 플로팅 바. */
+.app {
+  font-family: var(--font-site);
+  color: var(--color-ink);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 종이 결: 화면에 고정된 가상요소 한 장으로만 (스크롤 컨테이너에 붙이지 않음) */
+.site-grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .06 0 0 0 0 .07 0 0 0 0 .1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media print { .site-grain::after { display: none; } }
+
+/* 히어로 별: 두 겹의 작은 점이 아주 느리게 밝아졌다 어두워짐. 아래로 갈수록 흐려짐 */
+:is(.site, .app) .site-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 95%);
+  mask-image: linear-gradient(to bottom, #000 35%, transparent 95%);
+}
+:is(.site, .app) .site-stars::before,
+:is(.site, .app) .site-stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  will-change: opacity;
+}
+:is(.site, .app) .site-stars::before {
+  background-image:
+    radial-gradient(1.1px 1.1px at 14% 22%, rgb(238 241 246 / .95) 50%, transparent 100%),
+    radial-gradient(1px 1px at 41% 68%, rgb(238 241 246 / .7) 50%, transparent 100%),
+    radial-gradient(1.6px 1.6px at 66% 31%, rgb(238 241 246 / .9) 50%, transparent 100%),
+    radial-gradient(1px 1px at 87% 57%, rgb(238 241 246 / .6) 50%, transparent 100%),
+    radial-gradient(1px 1px at 53% 91%, rgb(238 241 246 / .55) 50%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 27% 84%, rgb(238 241 246 / .65) 50%, transparent 100%);
+  background-size: 290px 230px;
+  animation: site-twinkle 11s ease-in-out infinite alternate;
+}
+:is(.site, .app) .site-stars::after {
+  background-image:
+    radial-gradient(1px 1px at 8% 61%, rgb(238 241 246 / .8) 50%, transparent 100%),
+    radial-gradient(1.4px 1.4px at 33% 12%, rgb(238 241 246 / .85) 50%, transparent 100%),
+    radial-gradient(1px 1px at 58% 47%, rgb(238 241 246 / .6) 50%, transparent 100%),
+    radial-gradient(1.8px 1.8px at 79% 19%, rgb(238 241 246 / .75) 50%, transparent 100%),
+    radial-gradient(1px 1px at 92% 83%, rgb(238 241 246 / .5) 50%, transparent 100%);
+  background-size: 430px 340px;
+  background-position: 70px 40px;
+  opacity: .6;
+  animation: site-twinkle 17s ease-in-out -6s infinite alternate;
+}
+@keyframes site-twinkle { from { opacity: .3; } to { opacity: .95; } }
+
+/* 탑승권 카드 (PassCard). 절취선 양 끝의 반원 홈은 mask 로 실제로 뚫습니다 */
+:is(.site, .app) .pass {
+  --pass-r: 11px;
+  --pass-radius: 20px;
+  --pass-bg: var(--color-pass);
+  --pass-perf: #C9D0DB;
+  --pass-cut: transparent var(--pass-r), #000 calc(var(--pass-r) + .5px);
+  --pass-m-right: radial-gradient(circle at 100% 0, var(--pass-cut)) top / 100% 51% no-repeat, radial-gradient(circle at 100% 100%, var(--pass-cut)) bottom / 100% 51% no-repeat;
+  --pass-m-left: radial-gradient(circle at 0 0, var(--pass-cut)) top / 100% 51% no-repeat, radial-gradient(circle at 0 100%, var(--pass-cut)) bottom / 100% 51% no-repeat;
+  --pass-m-bottom: radial-gradient(circle at 0 100%, var(--pass-cut)) left / 51% 100% no-repeat, radial-gradient(circle at 100% 100%, var(--pass-cut)) right / 51% 100% no-repeat;
+  --pass-m-top: radial-gradient(circle at 0 0, var(--pass-cut)) left / 51% 100% no-repeat, radial-gradient(circle at 100% 0, var(--pass-cut)) right / 51% 100% no-repeat;
+  display: grid;
+  color: var(--color-ink);
+  /* mask 가 box-shadow 를 자르므로 그림자는 바깥 요소의 drop-shadow 로 */
+  filter: drop-shadow(0 1px 1px rgb(31 39 66 / .06)) drop-shadow(0 14px 28px rgb(31 39 66 / .08));
+}
+:is(.site, .app) .pass[data-radius="tile"] { --pass-radius: 28px; --pass-r: 13px; }
+:is(.site, .app) .pass[data-tone="night"] {
+  --pass-bg: var(--color-night-2);
+  --pass-perf: rgb(238 241 246 / .18);
+  color: var(--color-star);
+  filter: none;
+}
+:is(.site, .app) .pass > .pass-main,
+:is(.site, .app) .pass > .pass-stub { background: var(--pass-bg); min-width: 0; }
+:is(.site, .app) .pass > .pass-stub { position: relative; }
+:is(.site, .app) .pass > .pass-stub::before { content: ""; position: absolute; pointer-events: none; }
+:is(.site, .app) .pass:not([data-stub]) > .pass-main { border-radius: var(--pass-radius); }
+
+/* 절취선 오른쪽 (stub 이 오른쪽) */
+:is(.site, .app) .pass[data-stub="right"] { grid-template-columns: minmax(0, 1fr) auto; }
+:is(.site, .app) .pass[data-stub="right"] > .pass-main {
+  border-radius: var(--pass-radius) 0 0 var(--pass-radius);
+  -webkit-mask: var(--pass-m-right); mask: var(--pass-m-right);
+}
+:is(.site, .app) .pass[data-stub="right"] > .pass-stub {
+  border-radius: 0 var(--pass-radius) var(--pass-radius) 0;
+  -webkit-mask: var(--pass-m-left); mask: var(--pass-m-left);
+}
+:is(.site, .app) .pass[data-stub="right"] > .pass-stub::before {
+  left: 0; top: calc(var(--pass-r) + 6px); bottom: calc(var(--pass-r) + 6px); width: 1.5px;
+  background: linear-gradient(to bottom, var(--pass-perf) 55%, transparent 0) 0 0 / 1.5px 9px repeat-y;
+}
+
+/* 절취선 아래쪽 (stub 이 아래). auto 는 모바일에서 아래, sm 이상에서 오른쪽 */
+:is(.site, .app) .pass[data-stub="bottom"],
+:is(.site, .app) .pass[data-stub="auto"] { grid-template-rows: auto auto; }
+:is(.site, .app) .pass[data-stub="bottom"] > .pass-main,
+:is(.site, .app) .pass[data-stub="auto"] > .pass-main {
+  border-radius: var(--pass-radius) var(--pass-radius) 0 0;
+  -webkit-mask: var(--pass-m-bottom); mask: var(--pass-m-bottom);
+}
+:is(.site, .app) .pass[data-stub="bottom"] > .pass-stub,
+:is(.site, .app) .pass[data-stub="auto"] > .pass-stub {
+  border-radius: 0 0 var(--pass-radius) var(--pass-radius);
+  -webkit-mask: var(--pass-m-top); mask: var(--pass-m-top);
+}
+:is(.site, .app) .pass[data-stub="bottom"] > .pass-stub::before,
+:is(.site, .app) .pass[data-stub="auto"] > .pass-stub::before {
+  top: 0; left: calc(var(--pass-r) + 6px); right: calc(var(--pass-r) + 6px); height: 1.5px;
+  background: linear-gradient(to right, var(--pass-perf) 55%, transparent 0) 0 0 / 9px 1.5px repeat-x;
+}
+@media (min-width: 640px) {
+  :is(.site, .app) .pass[data-stub="auto"] { grid-template-rows: none; grid-template-columns: minmax(0, 1fr) auto; }
+  :is(.site, .app) .pass[data-stub="auto"] > .pass-main {
+    border-radius: var(--pass-radius) 0 0 var(--pass-radius);
+    -webkit-mask: var(--pass-m-right); mask: var(--pass-m-right);
+  }
+  :is(.site, .app) .pass[data-stub="auto"] > .pass-stub {
+    border-radius: 0 var(--pass-radius) var(--pass-radius) 0;
+    -webkit-mask: var(--pass-m-left); mask: var(--pass-m-left);
+  }
+  :is(.site, .app) .pass[data-stub="auto"] > .pass-stub::before {
+    left: 0; right: auto; top: calc(var(--pass-r) + 6px); bottom: calc(var(--pass-r) + 6px); width: 1.5px; height: auto;
+    background: linear-gradient(to bottom, var(--pass-perf) 55%, transparent 0) 0 0 / 1.5px 9px repeat-y;
+  }
+}
+
+/* 카드 위로 마우스를 올리면 살짝 떠오름 (PassCard href, .site-lift) */
+:is(.site, .app) .pass[data-interactive],
+:is(.site, .app) .site-lift { transition: transform .35s cubic-bezier(.16, 1, .3, 1); }
+:is(.site, .app) .pass[data-interactive]:hover,
+:is(.site, .app) .site-lift:hover { transform: translateY(-3px); }
+
+/* 섹션 진입 시 한 번 올라오며 나타남 (Reveal). JS 가 화면 밖 요소에만 wait 를 붙임 */
+:is(.site, .app) .site-reveal[data-reveal="wait"] { opacity: 0; transform: translateY(18px); }
+:is(.site, .app) .site-reveal[data-reveal="in"] {
+  opacity: 1;
+  transform: none;
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1) var(--reveal-delay, 0ms), transform .7s cubic-bezier(.16, 1, .3, 1) var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.site, .app) .site-stars::before,
+  :is(.site, .app) .site-stars::after { animation: none; }
+  :is(.site, .app) .pass[data-interactive],
+  :is(.site, .app) .site-lift { transition: none; }
+  :is(.site, .app) .pass[data-interactive]:hover,
+  :is(.site, .app) .site-lift:hover { transform: none; }
+  :is(.site, .app) .site-reveal[data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+:is(.site, .app) .prose-site h2 { font-size: 1.375rem; font-weight: 700; margin: 2.25rem 0 0.75rem; }
+:is(.site, .app) .prose-site h3 { font-size: 1.125rem; font-weight: 700; margin: 1.75rem 0 0.5rem; }
+:is(.site, .app) .prose-site p { margin: 0.75rem 0; line-height: 1.85; color: var(--color-ink-2); }
+:is(.site, .app) .prose-site ul, :is(.site, .app) .prose-site ol { margin: 0.75rem 0; padding-left: 1.25rem; color: var(--color-ink-2); line-height: 1.85; }
+:is(.site, .app) .prose-site ul { list-style: disc; }
+:is(.site, .app) .prose-site ol { list-style: decimal; }
+:is(.site, .app) .prose-site strong { color: var(--color-ink); }
+:is(.site, .app) details > summary { list-style: none; }
+:is(.site, .app) details > summary::-webkit-details-marker { display: none; }
 @keyframes site-pulse { 0% { transform: scale(.6); opacity: .7 } 100% { transform: scale(2.4); opacity: 0 } }
-.site .pin-pulse { animation: site-pulse 2.2s ease-out infinite; transform-origin: center; transform-box: fill-box; }
-@media (prefers-reduced-motion: reduce) { .site .pin-pulse { animation: none; } }
+:is(.site, .app) .pin-pulse { animation: site-pulse 2.2s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@media (prefers-reduced-motion: reduce) { :is(.site, .app) .pin-pulse { animation: none; } }

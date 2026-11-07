@@ -1,0 +1,147 @@
+{
+  "id": "pf-0cd590a1",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "단독(개별) 화장으로만 진행",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet01&wr_id=1"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "합동 화장은 하지 않는다고 명시",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet01&wr_id=1"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "단독 참관실에서 화장 참관, 염습 참관도 가능",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet01&wr_id=1"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "기본 장례에 염습 포함, 수의·관은 추가 선택",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "1칸 일반형·2칸 가족형, 외부 유골함 이전 가능",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet03&wr_id=1"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "오브제 스톤·크리스탈 제작, 제작 참관 가능",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_stone01&wr_id=2"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "의전차량 픽업과 대행 운구, 지역별 요금 게시",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet05&wr_id=1"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 연중무휴 운영·예약",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet01&wr_id=1"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "5kg 미만 요금만 게시, 대형견 언급 없음",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "종교별 추모실",
+      "note": "종교별 개별 추모실, 추모 시간 제한 없음",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_introduction03&wr_id=1"
+    },
+    {
+      "label": "화장 증명서",
+      "note": "장례 후 화장 증명서 발급 안내",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet01&wr_id=1"
+    },
+    {
+      "label": "대행 운구",
+      "note": "보호자 대신 운구하는 대행 서비스, 픽업과 같은 요금",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet05&wr_id=1"
+    }
+  ],
+  "hours": {
+    "text": "24시간 365일 연중무휴",
+    "sourceUrl": "https://www.petlosscare.co.kr/"
+  },
+  "prices": [
+    {
+      "label": "스탠다드 장례 5kg 미만",
+      "amount": "25만 원",
+      "includes": "염습, 종교별 추모식, 개별 화장, 기본 유골함. 수의·관 별도. VAT 별도",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "상위 장례 상품",
+      "amount": "별도 문의",
+      "includes": null,
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "스탠다드 장례와 오브제 스톤",
+      "amount": "59만 원",
+      "includes": "스탠다드 장례에 오브제 스톤 포함. VAT 별도",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "오브제 스톤",
+      "amount": "39만 원",
+      "includes": "순수 유골분 스톤, 유골량 40g 기준. VAT 별도",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1칸 일반형 1년",
+      "amount": "20만~30만 원",
+      "includes": "단별 상이, 관리비 없음, 2년 재계약 시 10% 할인",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 2칸 가족형 1년",
+      "amount": "36만~54만 원",
+      "includes": "단별 상이, 가족 반려동물 함께 안치",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet02&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "픽업 김해·김해공항",
+      "amount": "무료",
+      "includes": "의전차량 픽업, 일부 지역 제외",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet05&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "픽업·대행 부산·창원 등",
+      "amount": "편도 3만 원, 왕복 6만 원",
+      "includes": "장유·진영·진례, 밀양·양산·창원, 부산 전 지역",
+      "sourceUrl": "https://www.petlosscare.co.kr/bbs/board.php?bo_table=yp_pet05&wr_id=1",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "펫로스 케어는 김해시 상동면의 반려동물 장례식장으로 합동 화장 없이 단독 화장만 진행합니다. 24시간 운영하며 스탠다드 장례는 5kg 미만 25만 원(VAT 별도)입니다.",
+  "cautions": [
+    "5kg 이상 요금은 홈페이지에 미게시",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

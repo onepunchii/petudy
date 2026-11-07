@@ -1,0 +1,127 @@
+{
+  "id": "pf-759f116d",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "보호자 참관 하에 단독 화장",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1211?mcode=1211"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "화장과 스톤 제작 과정 참관 가능",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1211?mcode=1211"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 후 수의 착용·입관, 상품별 수의 구성",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1211?mcode=1211"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "24시간 개방 봉안당 운영",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1213?mcode=1213"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "자연장지 운영, 수목장 형태인지 명시 없음",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1213?mcode=1213"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "자체 공방에서 순수 유골 스톤 제작",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1215?mcode=1215"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": "안내에 방문접수·출장 항목만 표시",
+      "sourceUrl": "https://hanbyul0042.page24.app/blank/1112?mcode=1112"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "365일 24시간 운영, 야간 연락처 안내",
+      "sourceUrl": "https://hanbyul0042.page24.app/blank/1112?mcode=1112"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "5kg 초과 시 1kg당 1만 원 추가, 상한 미표기",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1212?mcode=1212"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 이하 앵무새·햄스터 화장 상품",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1212?mcode=1212"
+    }
+  },
+  "extras": [
+    {
+      "label": "단독 추모실",
+      "note": "종교별 예식이 가능한 단독 추모실",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1213?mcode=1213"
+    },
+    {
+      "label": "자연장지",
+      "note": "자연장지 운영, 세부 형태는 미표기",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1213?mcode=1213"
+    },
+    {
+      "label": "100% 예약제",
+      "note": "모든 장례를 예약제로 운영",
+      "sourceUrl": "https://hanbyul0042.page24.app/blank/1113?mcode=1113"
+    }
+  ],
+  "hours": {
+    "text": "365일 24시간",
+    "sourceUrl": "https://hanbyul0042.page24.app/blank/1112?mcode=1112"
+  },
+  "prices": [
+    {
+      "label": "소동물 화장 1kg 이하",
+      "amount": "20만 원",
+      "includes": "염습, 추모식, 화장. 앵무새·햄스터 대상",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1212?mcode=1212",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 5kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 추모식, 화장, 목함. 초과 시 1kg당 1만 원 추가",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1212?mcode=1212",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본장례",
+      "amount": "45 (단위 미표기)",
+      "includes": "염습, 입관식, 추모식, 화장, 오픈관, 삼베 이불, 꽃장식, 목함",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1212?mcode=1212",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "한별리멤버 스톤",
+      "amount": "35만 원",
+      "includes": "순수 유골 스톤, 5kg 기준 25알 제작",
+      "sourceUrl": "https://hanbyul0042.page24.app/doc/1215?mcode=1215",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 200000,
+  "parking": {
+    "text": "오시는 길 안내에 주차 가능 표시",
+    "sourceUrl": "https://hanbyul0042.page24.app/blank/1112?mcode=1112"
+  },
+  "access": [
+    {
+      "text": "한별도그파크와 같은 부지",
+      "sourceUrl": "https://hanbyul0042.page24.app/blank/1112?mcode=1112"
+    }
+  ],
+  "summary": "한별 리멤버파크는 함안군 법수면의 반려동물 장례식장으로 365일 24시간 운영합니다. 단독 화장과 봉안당을 운영하며 5kg 이하 화장은 25만 원입니다.",
+  "cautions": [
+    "패키지 장례 금액은 홈페이지에 단위 없이 표기",
+    "가격은 홈페이지 기준, VAT 포함 여부 미표기"
+  ]
+}

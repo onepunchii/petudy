@@ -1,0 +1,75 @@
+{
+  "id": "pf-11eb69c4",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": "지도 정보끼리 영업시간이 서로 다름",
+      "sourceUrl": "https://place.map.kakao.com/1576886717"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [],
+  "hours": {
+    "text": "지도 정보마다 다름(24시간 또는 09:00 시작), 미확인",
+    "sourceUrl": "https://place.map.kakao.com/1576886717"
+  },
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [],
+  "summary": "서래안 펫타운은 공식 홈페이지가 확인되지 않아 서비스와 요금 정보가 없습니다. 운영시간도 지도 정보마다 달라 방문 전 확인이 필요합니다.",
+  "cautions": [
+    "공식 홈페이지가 없어 서비스·요금 확인 안 됨",
+    "공식 목록에 전화번호가 공개돼 있지 않음",
+    "공식 등록 유형은 장례식장만, 화장 시설은 미확인"
+  ]
+}

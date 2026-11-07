@@ -1,0 +1,162 @@
+{
+  "id": "pf-3baf80ed",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장 원칙, 화장 후 유골 직접 확인",
+      "sourceUrl": "https://haneulsopoong.com/bbs/faq.php"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "개별 화장 원칙으로 안내",
+      "sourceUrl": "https://haneulsopoong.com/bbs/faq.php"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "단독 참관실에서 전체 절차 참관 가능",
+      "sourceUrl": "https://haneulsopoong.com/bbs/faq.php"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품에 염습 포함, 상위 상품에 수의",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "자체 빌리지 봉안당 운영",
+      "sourceUrl": "https://haneulsopoong.com/page/village.html"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "자체 에퀴녹스 수목장 운영",
+      "sourceUrl": "https://haneulsopoong.com/page/equinox.html"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "리본 스톤 당일 제작, 공정 참관 가능",
+      "sourceUrl": "https://haneulsopoong.com/page/reborn.html"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "편도 기준 차량 지원, 거리별 운임",
+      "sourceUrl": "https://haneulsopoong.com/page/support02.html"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "상담 24시간, 장례는 도착 기준 08:00~21:00",
+      "sourceUrl": "https://haneulsopoong.com/bbs/faq.php"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "대형견 장례 가능, 10kg 이상은 비용 별도",
+      "sourceUrl": "https://haneulsopoong.com/bbs/faq.php"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물·특수동물 전용 절차",
+      "sourceUrl": "https://haneulsopoong.com/bbs/faq.php"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자가 동행하지 않는 장례 위탁 운영",
+      "sourceUrl": "https://haneulsopoong.com/page/support03.html"
+    },
+    {
+      "label": "임시 안치",
+      "note": "냉장 임시 안치, 1일 3만 원, 최대 7일",
+      "sourceUrl": "https://haneulsopoong.com/page/support01.html"
+    },
+    {
+      "label": "단독 추모실",
+      "note": "단독 추모실을 시간 제한 없이 이용",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html"
+    },
+    {
+      "label": "사전 방문",
+      "note": "전화 예약으로 사전 방문 프로그램 운영",
+      "sourceUrl": "https://haneulsopoong.com/page/partner03.html"
+    }
+  ],
+  "hours": {
+    "text": "장례 08:00~21:00 예약, 상담 24시간 연중무휴",
+    "sourceUrl": "https://haneulsopoong.com/bbs/faq.php"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 10kg 기준",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모실, 개별 화장, 단독 참관실, 기본 유골함",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "하늘 장례 10kg 기준",
+      "amount": "45만 원",
+      "includes": "기본 장례에 수의, 오동나무 관 추가",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소풍 장례 10kg 기준",
+      "amount": "75만 원",
+      "includes": "기본 장례에 상위 수의·오동나무 관·보존 유골함",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "하늘 에퀴녹스 수목 장례",
+      "amount": "65만 원",
+      "includes": "기본 장례, 하늘 수목장 1년 안장, 수목 전용 목함",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "리본 스톤 단독 제작",
+      "amount": "35만 원",
+      "includes": "유골 최대 130g, 초과 시 추가 비용",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수목장 하늘구역 1년",
+      "amount": "40만 원",
+      "includes": "1위 신규 기준, 3년 95만 원, 5년 150만 원",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "빌리지 봉안당 하늘 1위 1년",
+      "amount": "20만~30만 원",
+      "includes": "단별 상이, 신규 안치 기준",
+      "sourceUrl": "https://haneulsopoong.com/page/cost.html",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "임시 안치",
+      "amount": "1일 3만 원",
+      "includes": "냉장 안치, 최대 7일",
+      "sourceUrl": "https://haneulsopoong.com/page/support01.html",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [
+    {
+      "text": "내비게이션에 자소삼거리를 검색하도록 안내",
+      "sourceUrl": "https://haneulsopoong.com/page/partner05.html"
+    },
+    {
+      "text": "창원·마산·진해·통영에서 30분 이내",
+      "sourceUrl": "https://haneulsopoong.com/page/partner05.html"
+    }
+  ],
+  "summary": "하늘소풍은 고성군 회화면의 반려동물 장례식장으로 봉안당과 에퀴녹스 수목장을 함께 운영합니다. 개별 화장 원칙이며 기본 장례는 10kg 기준 25만 원입니다.",
+  "cautions": [
+    "가격표 안에서 VAT 포함 여부가 서로 다르게 표기",
+    "등록 홈페이지 주소는 접속 불가, 새 사이트 기준",
+    "1kg 미만과 10kg 이상은 비용 별도 문의"
+  ]
+}

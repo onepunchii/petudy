@@ -1,0 +1,162 @@
+{
+  "id": "pf-683b2e66",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별·단독 화장 원칙",
+      "sourceUrl": "https://www.arium.kr/service"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "개별·단독 화장만 안내",
+      "sourceUrl": "https://www.arium.kr/service"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "염습부터 화장까지 전 과정 참관",
+      "sourceUrl": "https://www.arium.kr/service"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 무료 포함, 수의는 패키지나 용품 선택",
+      "sourceUrl": "https://www.arium.kr/expense"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "1년 단위 안치, 방문 08:00~19:00",
+      "sourceUrl": "https://www.arium.kr/moment"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "무지개정원 메뉴만 있고 내용 미확인",
+      "sourceUrl": "https://www.arium.kr/moment"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "루세떼 제작, 약 4~5시간 소요",
+      "sourceUrl": "https://www.arium.kr/expense"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "편도 차량 운구, 비용 별도",
+      "sourceUrl": "https://www.arium.kr/information"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "상담 24시간, 장례 운영은 08:00~20:00",
+      "sourceUrl": "https://www.arium.kr/arium/location"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "50kg 이상까지 구간 요금 공시",
+      "sourceUrl": "https://www.arium.kr/expense"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물 요금과 장례 안내",
+      "sourceUrl": "https://www.arium.kr/expense"
+    }
+  },
+  "extras": [
+    {
+      "label": "냉장 안치",
+      "note": "무료, 운영시간(08:00~20:00) 안에서만",
+      "sourceUrl": "https://www.arium.kr/information"
+    },
+    {
+      "label": "장례확인서",
+      "note": "장례 진행 확인서 발급",
+      "sourceUrl": "https://www.arium.kr/service"
+    },
+    {
+      "label": "사진 전송",
+      "note": "참관이 어려우면 장례 과정을 사진으로 전송",
+      "sourceUrl": "https://www.arium.kr/information"
+    },
+    {
+      "label": "펫로스 상담",
+      "note": "매주 화요일 2층 힐링센터 심리상담",
+      "sourceUrl": "https://www.arium.kr/moment"
+    },
+    {
+      "label": "생화 장식",
+      "note": "별도 비용 10만~15만 원",
+      "sourceUrl": "https://www.arium.kr/information"
+    }
+  ],
+  "hours": {
+    "text": "운영 08:00~20:00, 예약 19시 전까지, 상담 24시간",
+    "sourceUrl": "https://www.arium.kr/arium/location"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 1kg 미만 소동물",
+      "amount": "18만 원",
+      "includes": "염습, 단독 추모실, 단독 화장, 백자 유골함, 장례증명서. VAT 포함",
+      "sourceUrl": "https://www.arium.kr/expense",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 15kg 미만",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모실, 단독 화장, 백자 유골함, 장례증명서. VAT 포함",
+      "sourceUrl": "https://www.arium.kr/expense",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 15~30kg 미만",
+      "amount": "40만 원",
+      "includes": "염습, 단독 추모실, 단독 화장, 백자 유골함, 장례증명서. VAT 포함",
+      "sourceUrl": "https://www.arium.kr/expense",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 30~50kg 미만",
+      "amount": "50만 원",
+      "includes": "염습, 단독 추모실, 단독 화장, 백자 유골함, 장례증명서. VAT 포함",
+      "sourceUrl": "https://www.arium.kr/expense",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 50kg 이상",
+      "amount": "100만 원",
+      "includes": "염습, 단독 추모실, 단독 화장, 백자 유골함, 장례증명서. VAT 포함",
+      "sourceUrl": "https://www.arium.kr/expense",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 장례 패키지 10kg 미만",
+      "amount": "45만 원",
+      "includes": "기본 장례에 오동나무관, 수의, 호두나무 유골함, 액자 추가",
+      "sourceUrl": "https://www.arium.kr/expense",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "스탠다드 패키지 10kg 미만",
+      "amount": "55만 원",
+      "includes": "기본 장례에 오동나무관, 아리움 유골함, 액자 추가",
+      "sourceUrl": "https://www.arium.kr/expense",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 일반 1·6단 1년",
+      "amount": "15만 원",
+      "includes": "VAT 포함, 추가 관리비 없음",
+      "sourceUrl": "https://www.arium.kr/moment",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 180000,
+  "parking": null,
+  "access": [
+    {
+      "text": "전북도청·서전주IC에서 약 5분 거리",
+      "sourceUrl": "https://www.arium.kr/arium/location"
+    }
+  ],
+  "summary": "전주 반려동물 장례식장 아리움은 개별 화장과 전 과정 참관, 봉안당을 안내합니다. 08:00~20:00 운영하며 15kg 미만 기본 장례는 25만 원입니다.",
+  "cautions": [
+    "장례 예약은 19시 전까지만 가능",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

@@ -11,6 +11,7 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ["/api/", "/auth/", "/login", "/mypage", "/settings/", "/register", "/booking", "/profile/"],
             },
         ],
+        // 사이트맵 인덱스 한 줄. 하위 사이트맵(/sitemap/{id}.xml)은 인덱스가 묶습니다
         sitemap: absoluteUrl("/sitemap.xml"),
         host: absoluteUrl("/"),
     };

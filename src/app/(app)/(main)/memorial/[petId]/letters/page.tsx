@@ -1,9 +1,11 @@
 "use client";
 
-import { ChevronLeft, Plus, Trash2 } from "lucide-react";
+import { Cake, Flower2, Heart, Mail, MessageCircle, Plus, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getLetters, deleteLetter } from "@/actions/memorial";
+import { APP_ICON_STROKE, AppBody, AppEmpty, AppLinkButton, AppTopBar, appCardClass, skeletonClass } from "@/components/app/ui";
+import { cn } from "@/lib/utils";
 
 interface Letter {
     id: string;
@@ -12,22 +14,34 @@ interface Letter {
     createdAt: Date;
 }
 
+/** 편지 종류 표시 아이콘 (예전 이모지 대신 lucide). 모르는 종류는 "기타"와 같게 */
+function OccasionIcon({ type, className }: { type: string; className?: string }) {
+    const props = { className, strokeWidth: APP_ICON_STROKE, "aria-hidden": true } as const;
+    switch (type) {
+        case "생일":
+            return <Cake {...props} />;
+        case "기념일":
+            return <Heart {...props} />;
+        case "장례":
+            return <Flower2 {...props} />;
+        default:
+            return <MessageCircle {...props} />;
+    }
+}
+
 export default function LettersPage() {
     const [letters, setLetters] = useState<Letter[]>([]);
     const [loading, setLoading] = useState(true);
 
+    // 처음 열 때 한 번 불러옵니다 (loading 은 처음부터 true)
     useEffect(() => {
-        loadLetters();
+        getLetters("1").then((result) => {
+            if (result.success && result.data) {
+                setLetters(result.data as Letter[]);
+            }
+            setLoading(false);
+        });
     }, []);
-
-    const loadLetters = async () => {
-        setLoading(true);
-        const result = await getLetters("1");
-        if (result.success && result.data) {
-            setLetters(result.data as any);
-        }
-        setLoading(false);
-    };
 
     const handleDelete = async (id: string) => {
         if (!confirm("정말 삭제하시겠습니까?")) return;
@@ -37,75 +51,76 @@ export default function LettersPage() {
         }
     };
 
-    const occasionEmoji: Record<string, string> = {
-        "생일": "🎂",
-        "기념일": "💝",
-        "장례": "🕯️",
-        "기타": "💭",
-    };
-
     return (
-        <div className="min-h-screen bg-[#0A0A0B]">
-            <header className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                <Link href="/memorial" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
-                    <ChevronLeft className="w-6 h-6" />
-                </Link>
-                <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-white">편지</h1>
-                <Link href="/memorial/1/letters/new" className="ml-auto p-2 text-foon-lime">
-                    <Plus className="w-6 h-6" />
-                </Link>
-            </header>
+        <div className="min-h-full">
+            <AppTopBar
+                back="/memorial"
+                title="편지"
+                action={
+                    <Link
+                        href="/memorial/1/letters/new"
+                        aria-label="편지 쓰기"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full text-star transition-colors hover:bg-white/10 active:translate-y-px"
+                    >
+                        <Plus className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                    </Link>
+                }
+            />
 
-            <main className="p-4 max-w-[480px] mx-auto">
+            <AppBody>
                 {loading ? (
-                    <div className="flex justify-center py-20">
-                        <div className="w-8 h-8 border-2 border-foon-lime border-t-transparent rounded-full animate-spin" />
+                    <div className="space-y-3" role="status" aria-live="polite">
+                        <div className={cn(skeletonClass, "h-[148px]")} aria-hidden />
+                        <div className={cn(skeletonClass, "h-[148px]")} aria-hidden />
+                        <span className="sr-only">편지를 불러오는 중이에요</span>
                     </div>
                 ) : letters.length === 0 ? (
-                    <div className="text-center py-20">
-                        <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#1e1e20] flex items-center justify-center">
-                            <span className="text-4xl">💌</span>
-                        </div>
-                        <h2 className="text-xl font-bold text-white mb-2">아직 작성된 편지가 없어요</h2>
-                        <p className="text-gray-400 text-sm mb-4">떠나보낸 아이에게 첫 번째 편지를 보내보세요</p>
-                        <Link
-                            href="/memorial/1/letters/new"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-foon-lime text-bg-main font-medium rounded-full"
-                        >
-                            <Plus className="w-5 h-5" />
-                            편지 쓰기
-                        </Link>
-                    </div>
+                    <AppEmpty
+                        icon={<Mail className="h-7 w-7" strokeWidth={APP_ICON_STROKE} aria-hidden />}
+                        title={
+                            <span role="heading" aria-level={2}>
+                                아직 작성된 편지가 없어요
+                            </span>
+                        }
+                        description="떠나보낸 아이에게 첫 번째 편지를 보내보세요"
+                        action={
+                            <AppLinkButton href="/memorial/1/letters/new" variant="primary">
+                                <Plus className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                편지 쓰기
+                            </AppLinkButton>
+                        }
+                    />
                 ) : (
                     <div className="space-y-3">
                         {letters.map((letter) => (
-                            <div key={letter.id} className="bg-[#1e1e20] rounded-2xl p-4 border border-white/5">
-                                <div className="flex items-center justify-between mb-2">
-                                    <span className="text-sm text-foon-lime">
-                                        {occasionEmoji[letter.occasionType] || "💭"} {letter.occasionType}
+                            <article key={letter.id} className={cn(appCardClass, "p-5")}>
+                                <div className="flex items-center justify-between gap-3">
+                                    <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-pine-soft px-3 text-[13px] font-semibold text-pine">
+                                        <OccasionIcon type={letter.occasionType} className="h-4 w-4" />
+                                        {letter.occasionType}
                                     </span>
                                     <button
+                                        type="button"
                                         onClick={() => handleDelete(letter.id)}
-                                        className="p-1.5 text-gray-500 hover:text-red-400 transition-colors"
+                                        aria-label="편지 삭제"
+                                        className="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-3 transition-colors hover:bg-paper-2 hover:text-danger"
                                     >
-                                        <Trash2 className="w-4 h-4" />
+                                        <Trash2 className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
                                     </button>
                                 </div>
-                                <p className="text-white text-sm leading-relaxed whitespace-pre-wrap">
-                                    {letter.content}
-                                </p>
-                                <p className="text-gray-500 text-xs mt-3">
+                                <p className="mt-3 whitespace-pre-wrap text-[15.5px] leading-[1.8] text-ink">{letter.content}</p>
+                                <p className="mt-4 text-[13px] text-ink-3">
                                     {new Date(letter.createdAt).toLocaleDateString("ko-KR", {
                                         year: "numeric",
                                         month: "long",
                                         day: "numeric",
                                     })}
                                 </p>
-                            </div>
+                            </article>
                         ))}
                     </div>
                 )}
-            </main>
+            </AppBody>
         </div>
     );
 }

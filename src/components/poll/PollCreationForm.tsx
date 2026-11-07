@@ -71,10 +71,10 @@ export default function PollCreationForm() {
             formData.append("file", webpFile);
 
             const res = await uploadPetPhoto(formData);
-            if (res.success && res.url) {
+            if (res.success) {
                 setUrl(res.url);
             } else {
-                alert(res.error || "이미지 업로드 실패");
+                alert(res.error);
             }
         } catch (error) {
             console.error("Upload failed:", error);

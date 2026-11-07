@@ -1,4 +1,7 @@
 import React from "react";
+import { appChipClass, appInputClass } from "@/components/app/ui";
+import { PET_WEIGHT_MAX, PET_WEIGHT_MIN, weightError } from "@/lib/pet-rules";
+import { cn } from "@/lib/utils";
 
 interface StepPhysicalProps {
     stepId: "weight" | "color";
@@ -10,80 +13,109 @@ interface StepPhysicalProps {
     onChange: (field: string, value: any) => void;
 }
 
+// 털 색 견본. 실제 털 색을 보여 주는 데이터라 브랜드 토큰이 아닌 색 값을 그대로 씁니다 (기타만 토큰)
 const PET_COLORS = [
-    { label: "흰색", bg: "bg-white" },
-    { label: "흰색 + 금색", bg: "bg-[linear-gradient(90deg,white_50%,#F5DEB3_50%)]" },
-    { label: "금색", bg: "bg-[#F5DEB3]" },
-    { label: "흰색 + 황색", bg: "bg-[linear-gradient(90deg,white_50%,#DAA520_50%)]" },
-    { label: "황색", bg: "bg-[#DAA520]" },
-    { label: "흰색 + 갈색", bg: "bg-[linear-gradient(90deg,white_50%,#8B4513_50%)]" },
-    { label: "갈색", bg: "bg-[#8B4513]" },
-    { label: "흰색 + 회색", bg: "bg-[linear-gradient(90deg,white_50%,#808080_50%)]" },
-    { label: "회색", bg: "bg-gray-500" },
-    { label: "흰색 + 검은색", bg: "bg-[linear-gradient(90deg,white_50%,black_50%)]" },
-    { label: "검은색", bg: "bg-black" },
-    { label: "검은색 + 금색", bg: "bg-[linear-gradient(90deg,black_50%,#F5DEB3_50%)]" },
-    { label: "기타", bg: "bg-[#4A4A4A]" },
+    { label: "흰색", swatch: "#FFFFFF" },
+    { label: "흰색 + 금색", swatch: "linear-gradient(90deg, #FFFFFF 50%, #F5DEB3 50%)" },
+    { label: "금색", swatch: "#F5DEB3" },
+    { label: "흰색 + 황색", swatch: "linear-gradient(90deg, #FFFFFF 50%, #DAA520 50%)" },
+    { label: "황색", swatch: "#DAA520" },
+    { label: "흰색 + 갈색", swatch: "linear-gradient(90deg, #FFFFFF 50%, #8B4513 50%)" },
+    { label: "갈색", swatch: "#8B4513" },
+    { label: "흰색 + 회색", swatch: "linear-gradient(90deg, #FFFFFF 50%, #808080 50%)" },
+    { label: "회색", swatch: "#6B7280" },
+    { label: "흰색 + 검은색", swatch: "linear-gradient(90deg, #FFFFFF 50%, #000000 50%)" },
+    { label: "검은색", swatch: "#000000" },
+    { label: "검은색 + 금색", swatch: "linear-gradient(90deg, #000000 50%, #F5DEB3 50%)" },
+    { label: "기타", swatch: "var(--color-ink-3)" },
 ];
+
+const stepTitleClass = "text-[24px] font-bold leading-[1.35] text-ink";
 
 export default function StepPhysical({ stepId, formData, onChange }: StepPhysicalProps) {
     if (stepId === "weight") {
+        const error = weightError(formData.weight);
         return (
-            <div className="space-y-4 animate-fade-in-up h-full flex flex-col justify-center">
-                <h2 className="text-2xl font-bold text-white mb-10 text-center">
+            <div className="flex flex-col">
+                <h2 id="step-weight-title" className={stepTitleClass}>
                     몸무게는 얼마나 나가나요?
                 </h2>
+                <p className="mb-8 mt-2 text-[14px] leading-relaxed text-ink-2">대략적인 값도 괜찮아요.</p>
                 <div className="relative">
                     <input
                         type="number"
                         inputMode="decimal"
+                        min={PET_WEIGHT_MIN}
+                        max={PET_WEIGHT_MAX}
+                        step="0.1"
                         value={formData.weight || ""}
                         onChange={(e) => onChange("weight", e.target.value)}
-                        className="w-full bg-bg-input border border-[#333] rounded-xl p-4 text-white text-lg focus:border-foon-lime focus:outline-none transition-colors pr-12 text-center"
+                        aria-labelledby="step-weight-title"
+                        aria-invalid={!!error}
+                        aria-describedby="step-weight-help"
+                        className={cn(
+                            appInputClass,
+                            "h-14 pr-14 text-[18px] font-semibold tabular-nums",
+                            error && "ring-2 ring-danger focus:ring-danger",
+                        )}
                         placeholder="0.0"
                         autoFocus
                     />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold">
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[16px] font-bold text-ink-3">
                         kg
                     </span>
                 </div>
+                <p
+                    id="step-weight-help"
+                    role={error ? "alert" : undefined}
+                    className={cn("mt-2 text-[14px] leading-snug", error ? "font-semibold text-danger" : "text-ink-3")}
+                >
+                    {error ?? `${PET_WEIGHT_MIN}kg ~ ${PET_WEIGHT_MAX}kg 사이로 적어 주세요`}
+                </p>
             </div>
         );
     }
 
     if (stepId === "color") {
         return (
-            <div className="space-y-4 animate-fade-in-up h-full flex flex-col justify-center">
-                <h2 className="text-2xl font-bold text-white mb-10 text-center">
-                    <span className="text-foon-lime">{formData.name}</span>(의) 털 색상은?
-                    <p className="text-xs text-center font-normal text-gray-400 mt-2">가장 비슷한 색상으로 선택해 주세요</p>
+            <div className="flex flex-col">
+                <h2 className={stepTitleClass}>
+                    <span className="text-pine">{formData.name}</span>(의) 털 색상은?
                 </h2>
+                <p className="mb-6 mt-2 text-[14px] text-ink-2">가장 비슷한 색상으로 선택해 주세요</p>
 
-                <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto pr-1 -mr-1 custom-scrollbar">
-                    {PET_COLORS.map((c) => (
-                        <button
-                            key={c.label}
-                            onClick={() => onChange("color", c.label)}
-                            className={`flex items-center gap-3 p-2 rounded-xl border transition-all ${formData.color === c.label
-                                ? "bg-foon-lime/20 border-foon-lime"
-                                : "bg-bg-input border-[#333] hover:bg-[#252527]"
-                                }`}
-                        >
-                            <div className={`w-6 h-6 rounded-full border border-gray-600 shrink-0 shadow-sm ${c.bg}`} />
-                            <span className={`text-xs font-bold ${formData.color === c.label ? "text-foon-lime" : "text-gray-400"}`}>
-                                {c.label}
-                            </span>
-                        </button>
-                    ))}
+                <div className="grid grid-cols-2 gap-2">
+                    {PET_COLORS.map((c) => {
+                        const selected = formData.color === c.label;
+                        return (
+                            <button
+                                key={c.label}
+                                type="button"
+                                onClick={() => onChange("color", c.label)}
+                                aria-pressed={selected}
+                                className={appChipClass(selected, "h-auto min-h-12 w-full justify-start gap-3 px-3 py-2")}
+                            >
+                                <span
+                                    className={cn("h-6 w-6 shrink-0 rounded-full ring-1 ring-inset", selected ? "ring-star/40" : "ring-ink/15")}
+                                    style={{ background: c.swatch }}
+                                    aria-hidden
+                                />
+                                <span className="min-w-0 text-left leading-snug">{c.label}</span>
+                            </button>
+                        );
+                    })}
                 </div>
                 {/* Fallback Input */}
-                <div className="mt-4 pt-4 border-t border-white/10">
-                    <p className="text-xs text-gray-400 mb-2 text-center">목록에 없다면 직접 입력해주세요</p>
+                <div className="mt-6 border-t border-line pt-6">
+                    <label htmlFor="step-color-custom" className="mb-2 block text-[14px] text-ink-2">
+                        목록에 없다면 직접 입력해주세요
+                    </label>
                     <input
+                        id="step-color-custom"
                         type="text"
                         value={formData.color || ""}
                         onChange={(e) => onChange("color", e.target.value)}
-                        className="w-full bg-bg-input border border-[#333] rounded-xl p-3 text-white text-md focus:border-foon-lime focus:outline-none transition-colors text-center"
+                        className={appInputClass}
                         placeholder="직접 입력"
                     />
                 </div>

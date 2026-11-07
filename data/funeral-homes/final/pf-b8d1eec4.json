@@ -1,0 +1,146 @@
+{
+  "id": "pf-b8d1eec4",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장만 진행",
+      "sourceUrl": "http://www.idreampet.co.kr/myboard/em_faq"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "합동 화장 미운영, 개별 화장만 진행",
+      "sourceUrl": "http://www.idreampet.co.kr/myboard/em_faq"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "전 과정 참관 가능, 유골 수습도 확인",
+      "sourceUrl": "http://www.idreampet.co.kr/myboard/em_faq"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "기본 장례에 염습 포함, 수의는 선택 품목",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page47"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "납골당 시설 보유",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page28"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "반려석(유골 스톤) 당일 제작, 참관 가능",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page30"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "운구 편도·왕복 가능, 요금은 거리별 문의",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "전화 상담 24시간, 장례는 예약제",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page25"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "체중 상한 표기 없음, 10kg 초과 kg당 추가",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "장례 대행",
+      "note": "보호자 없이 장례 대행, 진행 사진 제공",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49"
+    },
+    {
+      "label": "안치실 보관",
+      "note": "요청 시 추가 비용 없이 안치실 보관 가능",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page28"
+    },
+    {
+      "label": "장례증명서",
+      "note": "기본 장례 추모 키트에 장례증명서 포함",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49"
+    }
+  ],
+  "hours": {
+    "text": "전화 상담 24시간, 장례는 예약제(당일 문의 가능)",
+    "sourceUrl": "http://www.idreampet.co.kr/page/page25"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "25만 원",
+      "includes": "염습·개별 화장, 추모 키트, 기본 유골함, 부가세 포함",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "10kg 초과 체중 추가",
+      "amount": "1kg당 2만 원 추가",
+      "includes": "10kg 초과분, 부가세 포함",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수의·관 장례 패키지",
+      "amount": "45만 원",
+      "includes": "기본 구성에 삼베 수의, 오동나무관, 꽃장식, 액자",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 패키지",
+      "amount": "55만 원",
+      "includes": "기본 구성에 요람·목화솜 이불, 꽃장식, 액자",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "반려석 장례 패키지",
+      "amount": "120만 원",
+      "includes": "모시 수의, 오동나무관, 반려석 제작과 반려석함 포함",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "반려석(스톤) 제작",
+      "amount": "30만 원",
+      "includes": "유골 중량에 따라 추가 비용 가능",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page30",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "픽업 서비스",
+      "amount": "별도 문의",
+      "includes": "거리별 요금, 편도·왕복 가능",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page49",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [
+    {
+      "text": "인천 2호선 검단오류역 하차 후 연락 요청",
+      "sourceUrl": "http://www.idreampet.co.kr/page/page26"
+    }
+  ],
+  "summary": "아이드림펫은 모든 화장을 개별로 진행하며 참관과 반려석 제작이 가능합니다. 기본 장례는 10kg 이하 25만 원이고 장례는 예약제로 운영합니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "홈페이지 주소는 검단구로 표기, 행정구역 확인 필요",
+    "패키지 가격은 소형 기준, 크기별 추가 요금 가능"
+  ]
+}

@@ -1,9 +1,13 @@
 "use server";
 
+// 서버 액션은 UI 버튼이 없어도 외부에서 직접 호출할 수 있으므로, DROP TABLE 을 실행하는 이 액션은 운영 환경과 ALLOW_DB_ADMIN=1 이 아닌 환경에서 차단합니다.
+
 import { db } from "@/lib/db";
 import { sql } from "drizzle-orm";
 
 export async function initRagDatabase() {
+  if (process.env.NODE_ENV === "production" || process.env.ALLOW_DB_ADMIN !== "1") return { success: false, error: "forbidden" };
+
   try {
     await db.execute(sql`CREATE EXTENSION IF NOT EXISTS vector;`);
 

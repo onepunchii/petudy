@@ -1,7 +1,8 @@
 "use client";
 
-import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
+import { PawPrint } from "lucide-react";
+import { APP_ICON_STROKE, AppBody, AppHero, AppLinkButton, appCardClass } from "@/components/app/ui";
+import { cn } from "@/lib/utils";
 
 interface DepartedPet {
     id: string;
@@ -43,69 +44,55 @@ const departedPets: DepartedPet[] = [
 
 export default function MemorialSharedPage() {
     return (
-        <div className="min-h-screen bg-[#0A0A0B]">
-            <header className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                <Link href="/app" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
-                    <ChevronLeft className="w-6 h-6" />
-                </Link>
-                <div className="flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
-                    <span className="text-lg">🌸</span>
-                    <h1 className="text-lg font-bold text-white">별로간 아이들</h1>
-                </div>
-            </header>
-
-            <main className="p-4 max-w-[480px] mx-auto">
-                <div className="text-center mb-8 pt-4">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-foon-lime/10 flex items-center justify-center">
-                        <span className="text-4xl">🌸</span>
-                    </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                        이 세상 모든 이별은<br />
+        <div className="min-h-full">
+            <AppHero
+                back="/app"
+                title="별로간 아이들"
+                subtitle={
+                    <>
+                        이 세상 모든 이별은
+                        <br />
                         서로가 사랑했음을 증명해요
-                    </p>
-                </div>
+                    </>
+                }
+            />
 
-                <div className="space-y-4">
+            <AppBody>
+                {/* 아이 사진 자리를 가는 선으로 이어 별자리처럼 보이게 합니다 */}
+                <ol>
                     {departedPets.map((pet) => (
-                        <div
-                            key={pet.id}
-                            className="bg-[#1e1e20] rounded-2xl p-5 border border-white/5"
-                        >
-                            <div className="flex items-start gap-4">
-                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-foon-lime/20 to-amber-500/20 flex items-center justify-center flex-shrink-0">
-                                    {pet.image ? (
-                                        <img src={pet.image} alt={pet.name} className="w-full h-full rounded-full object-cover" />
-                                    ) : (
-                                        <span className="text-2xl">{pet.species === "dog" ? "🐕" : "🐈"}</span>
-                                    )}
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <h3 className="text-white font-bold">{pet.name}</h3>
-                                        <span className="text-xs text-gray-500">{pet.passedDate}</span>
-                                    </div>
-                                    <p className="text-gray-400 text-sm leading-relaxed italic">
-                                        "{pet.message}"
-                                    </p>
-                                </div>
+                        <li key={pet.id} className="group relative flex items-start gap-4 pb-4 last:pb-0">
+                            <span className="absolute bottom-0 left-7 top-14 w-px -translate-x-1/2 bg-line group-last:hidden" aria-hidden />
+                            <div
+                                role={pet.image ? undefined : "img"}
+                                aria-label={pet.image ? undefined : pet.species === "dog" ? "강아지" : "고양이"}
+                                className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-pass text-ink-3 ring-1 ring-inset ring-line"
+                            >
+                                {pet.image ? (
+                                    <img src={pet.image} alt={pet.name} className="h-full w-full rounded-full object-cover" />
+                                ) : (
+                                    <PawPrint className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                )}
                             </div>
-                        </div>
+                            <div className={cn(appCardClass, "min-w-0 flex-1 p-5")}>
+                                <div className="mb-1.5 flex items-baseline gap-2">
+                                    <h3 className="text-[16px] font-bold text-ink">{pet.name}</h3>
+                                    <span className="text-[13px] tabular-nums text-ink-3">{pet.passedDate}</span>
+                                </div>
+                                <p className="text-[14.5px] leading-[1.75] text-ink-2">&ldquo;{pet.message}&rdquo;</p>
+                            </div>
+                        </li>
                     ))}
-                </div>
+                </ol>
 
-                <div className="mt-8 p-6 bg-gradient-to-b from-foon-lime/5 to-transparent rounded-2xl text-center">
-                    <p className="text-foon-lime font-medium mb-2">포온은 함께했던 순간을 기억합니다</p>
-                    <p className="text-gray-500 text-xs">
-                        더 많은 이야기는 추억상자에서 만나보세요
-                    </p>
-                    <Link
-                        href="/memorial"
-                        className="inline-block mt-4 px-6 py-2.5 bg-foon-lime text-[#0A0A0B] rounded-full text-sm font-medium"
-                    >
+                <div className="mt-8 rounded-[28px] bg-pine-soft px-6 py-8 text-center">
+                    <p className="text-[16px] font-bold text-ink">포온은 함께했던 순간을 기억합니다</p>
+                    <p className="mt-2 text-[13.5px] text-ink-2">더 많은 이야기는 추억상자에서 만나보세요</p>
+                    <AppLinkButton href="/memorial" variant="primary" className="mt-5">
                         추억상자 가기
-                    </Link>
+                    </AppLinkButton>
                 </div>
-            </main>
+            </AppBody>
         </div>
     );
 }

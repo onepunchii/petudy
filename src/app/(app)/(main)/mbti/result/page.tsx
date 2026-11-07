@@ -6,6 +6,9 @@ import { PetPassCard, PetPassData } from "@/components/pet/PetPassCard";
 import { Share2, CheckCircle } from "lucide-react";
 import { MbtiType } from "@/components/shared/PetPassCard"; // Import MbtiType from shared
 import { getPets } from "@/actions/pet";
+import { APP_ICON_STROKE, AppBody, AppButton, AppHero, BRAND_ICON, skeletonClass } from "@/components/app/ui";
+import { Porthole } from "@/components/site/ui";
+import { cn } from "@/lib/utils";
 
 function MbtiResultContent() {
     const router = useRouter();
@@ -35,7 +38,7 @@ function MbtiResultContent() {
                         neuter: mainPet.neuter || false,
                         color: mainPet.color || "모름",
                         ownerName: "보호자", // TODO: Fetch from user profile (nickname field in users table)
-                        description: "우리 아이 멍BTI 검사가 완료되었습니다!\n이제 펫터디에서 맞춤형 서비스를 받아보세요.",
+                        description: "우리 아이 멍BTI 검사가 완료되었습니다!\n이제 포온에서 맞춤형 서비스를 받아보세요.",
                         stats: { // Mock stats for now as DB doesn't have them
                             size: 3,
                             shedding: 3,
@@ -90,57 +93,53 @@ function MbtiResultContent() {
     };
 
     return (
-        <div className="min-h-screen bg-bg-main flex flex-col pb-10 text-white relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="absolute top-0 right-0 w-full h-[500px] bg-foon-lime/5 blur-[120px] pointer-events-none" />
+        <div className="min-h-full bg-moon">
+            <AppHero
+                title="분석 완료!"
+                subtitle={
+                    <>
+                        우리 아이에게 딱 맞는 <span className="font-semibold text-star">뱃지</span>가 발급되었어요.
+                    </>
+                }
+                action={<Porthole src={BRAND_ICON.mbti} size={72} />}
+            />
 
-            <div className="flex-1 flex flex-col items-center justify-center p-6 space-y-8 relative z-10">
-                <div className="text-center">
-                    <h2 className="text-3xl font-bold text-white mb-2 leading-tight">분석 완료!</h2>
-                    <p className="text-gray-400 font-light">
-                        우리 아이에게 딱 맞는 <span className="text-foon-lime font-bold">뱃지</span>가 발급되었어요.
-                    </p>
-                </div>
-
-                {/* Card Display */}
-                <div className="transform transition-all duration-700 hover:scale-[1.02] shadow-2xl">
-                    {petData ? (
-                        <PetPassCard
-                            data={petData}
-                            mbtiType={type}
-                        />
-                    ) : (
-                        <div className="w-[400px] h-[640px] flex items-center justify-center bg-[#1f1f1f] rounded-[30px] animate-pulse">
-                            Loading...
-                        </div>
-                    )}
+            <AppBody className="flex flex-col items-center gap-8 pb-10">
+                {/* Card Display: 펫패스는 400px 고정이라 좁은 화면에서는 줄여 보여 줍니다 */}
+                <div className="flex w-full justify-center">
+                    <div className="w-[400px] shrink-0 origin-top max-[439px]:-mb-24 max-[439px]:scale-[0.85]">
+                        {petData ? (
+                            <PetPassCard
+                                data={petData}
+                                mbtiType={type}
+                            />
+                        ) : (
+                            <div className={cn(skeletonClass, "flex h-[640px] w-[400px] items-center justify-center rounded-[28px] text-[14px] text-ink-3")}>
+                                Loading...
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 {/* Actions */}
-                <div className="w-full space-y-3 max-w-sm">
-                    <button
-                        onClick={handleApplyBadge}
-                        className="w-full bg-foon-lime text-bg-main font-black text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(163,223,70,0.3)] hover:bg-[#bbf080] transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
-                    >
-                        <CheckCircle className="w-5 h-5" />
+                <div className="w-full max-w-sm space-y-3">
+                    <AppButton variant="accent" size="lg" block onClick={handleApplyBadge}>
+                        <CheckCircle className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         반려동물 등록증에 뱃지 달기
-                    </button>
-                    <button
-                        onClick={handleShare}
-                        className="w-full bg-bg-card text-gray-300 font-bold py-4 rounded-xl border border-[#333] hover:bg-[#252527] transition-all flex items-center justify-center gap-2"
-                    >
-                        <Share2 className="w-5 h-5" />
+                    </AppButton>
+                    <AppButton variant="secondary" size="lg" block onClick={handleShare}>
+                        <Share2 className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         결과 공유하기
-                    </button>
+                    </AppButton>
                 </div>
-            </div>
+            </AppBody>
         </div>
     );
 }
 
 export default function MbtiResultPage() {
     return (
-        <Suspense fallback={<div className="min-h-screen bg-bg-main" />}>
+        <Suspense fallback={<div className="min-h-screen bg-moon" />}>
             <MbtiResultContent />
         </Suspense>
     );

@@ -1,0 +1,148 @@
+{
+  "id": "pf-b0289077",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장을 원칙으로 안내",
+      "sourceUrl": "https://ariapet.kr/funeral-service"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "여러 아이를 함께 화장하지 않는다고 안내",
+      "sourceUrl": "https://ariapet.kr/funeral-service"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "보호자 참관 원칙, 스톤 제작도 참관 가능",
+      "sourceUrl": "https://ariapet.kr/funeral-service"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "일반장 이상에 염습과 한지 수의 포함",
+      "sourceUrl": "https://ariapet.kr/funeral-service"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "2021년 실내 봉안당 개원 표기",
+      "sourceUrl": "https://ariapet.kr/about"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "수목장 언급 없음, 산골장 공간은 소개",
+      "sourceUrl": "https://ariapet.kr/about"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골로 스톤 제작, 제작 과정 참관 가능",
+      "sourceUrl": "https://ariapet.kr/stone"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": "홈페이지에 픽업·운구 안내 없음",
+      "sourceUrl": "https://ariapet.kr/"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "대표전화 매일 24시간 상담 표기",
+      "sourceUrl": "https://ariapet.kr/"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "대형견 가능 여부 명시 없음",
+      "sourceUrl": "https://ariapet.kr/funeral-service"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 이하 요금 있음, 고양이 별도 안내 없음",
+      "sourceUrl": "https://ariapet.kr/funeral-service/sets/cmt8asxvd00126b01x8lohvln"
+    }
+  },
+  "extras": [
+    {
+      "label": "산골장",
+      "note": "야외 추모정원과 산골장 공간 소개",
+      "sourceUrl": "https://ariapet.kr/about"
+    },
+    {
+      "label": "개별 추모실",
+      "note": "모든 장례 세트에 개별 추모실 포함",
+      "sourceUrl": "https://ariapet.kr/funeral-service"
+    }
+  ],
+  "hours": {
+    "text": "홈페이지 표기 매일 24시간, 연중무휴",
+    "sourceUrl": "https://ariapet.kr/"
+  },
+  "prices": [
+    {
+      "label": "기본장 1kg 이하",
+      "amount": "15만 원",
+      "includes": "삼베 이불, 영정 액자, 기본 유골함, 개별 추모실, 개별 화장",
+      "sourceUrl": "https://ariapet.kr/funeral-service/sets/cmt8asxvd00126b01x8lohvln",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본장",
+      "amount": "25만 원부터",
+      "includes": "삼베 이불, 영정 액자, 기본 유골함, 개별 추모실, 개별 화장",
+      "sourceUrl": "https://ariapet.kr/funeral-service/sets/cmt8asxvd00126b01x8lohvln",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "일반장",
+      "amount": "45만 원부터",
+      "includes": "오동나무 관, 한지 수의, 염습, 일반 유골함, 개별 추모실, 개별 화장",
+      "sourceUrl": "https://ariapet.kr/funeral-service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "VIP장",
+      "amount": "60만 원부터",
+      "includes": "오동나무 관, 한지·삼베 수의, 염습, 기능성 유골함, 개별 화장",
+      "sourceUrl": "https://ariapet.kr/funeral-service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "VVIP(요람장)",
+      "amount": "70만 원부터",
+      "includes": "요람관, 순면 이불 세트, 기능성 유골함, 염습, 개별 화장",
+      "sourceUrl": "https://ariapet.kr/funeral-service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "VVIP장",
+      "amount": "75만 원부터",
+      "includes": "천사관, 한지·금사 수의, 기능성 유골함, 염습, 개별 화장",
+      "sourceUrl": "https://ariapet.kr/funeral-service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "스톤 제작",
+      "amount": "15만 원부터",
+      "includes": "유골 스톤 제작, 유골량 구간 미표기",
+      "sourceUrl": "https://ariapet.kr/stone",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": {
+    "text": "전용 주차장 30면, 무료",
+    "sourceUrl": "https://ariapet.kr/directions"
+  },
+  "access": [
+    {
+      "text": "중부고속도로 서이천 TG에서 약 1분 거리로 안내",
+      "sourceUrl": "https://ariapet.kr/directions"
+    },
+    {
+      "text": "서울·분당·성남에서 약 40분 안팎 소요로 안내",
+      "sourceUrl": "https://ariapet.kr/directions"
+    }
+  ],
+  "summary": "㈜아리아펫은 이천시 마장면의 장례식장으로, 개별 화장과 보호자 참관을 원칙으로 안내합니다. 기본장은 25만 원부터이며 실내 봉안당과 유골 스톤 제작을 운영합니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "1kg 초과 체중 구간별 요금은 홈페이지에 미표기",
+    "영업시간은 지도 서비스 표기와 다를 수 있음"
+  ]
+}

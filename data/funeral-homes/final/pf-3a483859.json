@@ -1,0 +1,75 @@
+{
+  "id": "pf-3a483859",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [],
+  "hours": {
+    "text": "네이버 지도 표기 매주 토요일 휴무, 그 외 미표기",
+    "sourceUrl": "https://map.naver.com/p/entry/place/1365780857"
+  },
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [],
+  "summary": "아이별은 동물장묘업 등록 현황에 장례식장으로 올라 있습니다. 공식 홈페이지가 빈 페이지라 서비스와 요금은 확인되지 않았습니다.",
+  "cautions": [
+    "공식 홈페이지 정보 없음, 방문 전 전화 확인 필요",
+    "리모델링 휴업 관련 미확인 글이 있어 확인 필요",
+    "영업시간은 지도 서비스 표기 기준"
+  ]
+}

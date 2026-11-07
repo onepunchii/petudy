@@ -1,0 +1,167 @@
+{
+  "id": "pf-8c7663d6",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장 원칙으로 운영",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "다른 가정과 합동 화장은 하지 않음",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "화장부터 수골·분골까지 참관 가능",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품 기본 염습, 수의는 용품 또는 동행장례",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "자체 봉안당 운영, 1년 단위 요금",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "장례 이용 시 수목장 무료 제공",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모리얼스톤 루미엘 제작",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "유료 차량 픽업, 사전 예약, 거리별 요금",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/specialservices"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "콜센터 24시간, 화장 운영 09~20시",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "20kg 이상 대형견 화장 가능",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이, 토끼, 햄스터, 앵무새 등 가능",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    }
+  },
+  "extras": [
+    {
+      "label": "무료 안치",
+      "note": "염습 후 전용 공간에 최대 14일 무료",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    {
+      "label": "감면 장례",
+      "note": "다묘가정·길고양이 보호자·기초수급자 대상",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    {
+      "label": "가족 합동 화장",
+      "note": "한 가정의 여러 아이를 함께 화장, 유골 개별 수습 불가",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+    },
+    {
+      "label": "화분장",
+      "note": "유골 화분장 서비스 운영",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/remembrance"
+    },
+    {
+      "label": "장례확인서",
+      "note": "실속장례부터 장례확인서 포함",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price"
+    }
+  ],
+  "hours": {
+    "text": "화장 운영 09:00~20:00, 콜센터 24시간",
+    "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq"
+  },
+  "prices": [
+    {
+      "label": "1004 실속장례 5kg 이하",
+      "amount": "15만 원(할인 전 17만 원)",
+      "includes": "기본 염습, 개별 화장, 전 과정 참관, 장례확인서, VAT 별도",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "1004 추모장례 5kg 이하",
+      "amount": "20만 원(할인 전 25만 원)",
+      "includes": "실속 구성에 테마 추모실, 발도장, 털보관함, 추모영상",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "1004 사랑장례 5kg 이하",
+      "amount": "25만 원(할인 전 30만 원)",
+      "includes": "추모장례 구성에 액자, 1004 유골함, 헌화",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "1004 동행장례 5kg 이하",
+      "amount": "35만 원(할인 전 40만 원)",
+      "includes": "사랑장례 구성에 버들나무관, 천연삼베이불",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "체중 추가",
+      "amount": "1kg 초과 시 1만 원씩 추가",
+      "includes": "5kg 이하 기준, 적용 기준 표기가 모호함",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "감면 장례(증빙 필요)",
+      "amount": "15만 원",
+      "includes": "다묘가정·길고양이 보호자·기초수급자, 염습, 개별 화장",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/myboard/st_faq",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼스톤 루미엘 5kg 이하",
+      "amount": "35만 원",
+      "includes": "유골 스톤 제작, VAT 별도",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1단 1년",
+      "amount": "20만 원",
+      "includes": "2년 이상 25% 할인",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/price",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [
+    {
+      "text": "서순천IC에서 구례 방향 오른쪽 출구로 진입",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/directions"
+    },
+    {
+      "text": "입구는 GS칼텍스 주유소와 대영카센터 사이",
+      "sourceUrl": "http://www.xn--1004-eo1q79rwf18ur5bj53awmmca.com/page/directions"
+    }
+  ],
+  "summary": "전남순천1004반려동물장례식장은 개별 화장과 전 과정 참관, 봉안당을 운영합니다. 실속장례는 5kg 이하 할인가 15만 원이며 부가세는 별도입니다.",
+  "cautions": [
+    "가격은 부가세 별도이며 변동될 수 있음",
+    "체중 추가 요금 기준이 모호해 상담 필요",
+    "봉안당은 1월 1일, 설·추석 연휴, 12월 31일 휴무"
+  ]
+}

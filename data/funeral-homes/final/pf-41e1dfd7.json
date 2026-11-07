@@ -1,0 +1,72 @@
+{
+  "id": "pf-41e1dfd7",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "사이트 설명 문구에 봉안 서비스 표기",
+      "sourceUrl": "http://www.withangel.net/"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": "2015년 공지에 반려석 제작 안내, 현재 미확인",
+      "sourceUrl": "http://www.withangel.net/list/view.php?id=qna&no=216"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": "2014년 공지에 24시간 상담 안내, 현재 미확인",
+      "sourceUrl": "http://www.withangel.net/list/view.php?id=qna&no=153"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "사이트 제목·설명에 고양이 장례 표기",
+      "sourceUrl": "http://www.withangel.net/"
+    }
+  },
+  "extras": [],
+  "hours": null,
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [],
+  "summary": "위드엔젤은 홈페이지 설명에 고양이 장례와 봉안 서비스를 표기합니다. 본문이 이미지로 되어 있어 요금과 운영시간은 전화 확인이 필요합니다.",
+  "cautions": [
+    "홈페이지 본문이 이미지라 서비스·요금 확인 안 됨",
+    "공지 대부분이 오래된 글이라 현재와 다를 수 있음",
+    "공식 목록 주소의 대슬면은 대술면 오기로 보임"
+  ]
+}

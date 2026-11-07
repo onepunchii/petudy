@@ -1,0 +1,152 @@
+{
+  "id": "pf-5ad19884",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "단독 추모실과 개별 화장을 원칙으로 표기",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "오픈형 화장시설, 화장 전 과정 참관 가능",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551604"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "러브펫 장례 이상에 염습·수의 포함",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안당 운영, 타 업체 장례 후 안치 가능",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551607"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "수목장함 용품만 있고 시설 언급 없음",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골 스톤 제작, 제작 과정 참관 가능",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551598"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "방문 픽업 예약 가능, 요금 미기재",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-1327131"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "전화 상담 24시간, 운영 08~23시",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/index.html"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "50kg 이상 대형견까지 화장 가능 안내",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551604"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "2kg 이하 소동물 상품, 고양이 언급 없음",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596"
+    }
+  },
+  "extras": [
+    {
+      "label": "산골",
+      "note": "장례 후 산골 가능",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-1327131"
+    },
+    {
+      "label": "임시 안치",
+      "note": "전용 안치실에서 예약일까지, 1일 1만 원",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551604"
+    }
+  ],
+  "hours": {
+    "text": "오전 8시~오후 11시, 전화 상담 24시간",
+    "sourceUrl": "https://xn--vl2b25ip8u.net/index.html"
+  },
+  "prices": [
+    {
+      "label": "소동물 장례 2kg 이하",
+      "amount": "15만 원",
+      "includes": "일반 장례와 같은 구성. VAT 포함",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "일반 장례 5kg 이하",
+      "amount": "20만 원",
+      "includes": "영정사진, 단독 추모실, 개별 화장, 기본 유골함, 장례확인서. VAT 포함",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "러브펫 장례 5kg 이하",
+      "amount": "55만 원",
+      "includes": "일반 장례, 염습, 삼베 수의, 오동나무 관, 추모액자. VAT 포함",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "일반 스톤 장례 5kg 이하",
+      "amount": "55만 원",
+      "includes": "일반 장례, 스톤 제작, 아크릴 보관함, 추모액자. VAT 포함",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "러브펫 스톤 장례 5kg 이하",
+      "amount": "100만 원",
+      "includes": "러브펫 장례, 스톤 제작, 호두나무 보관함. VAT 포함",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 스톤 5kg 기준",
+      "amount": "35만 원",
+      "includes": "스톤 제작비, 주얼리는 별도 상담",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551598",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1년",
+      "amount": "신규 30만~50만 원",
+      "includes": "봉안당 1·2 구분, 1년 단위 재계약. VAT 포함",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551596",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "임시 안치",
+      "amount": "1일 1만 원",
+      "includes": "전용 안치실 이용",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551604",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [
+    {
+      "text": "중부고속도로 광주IC에서 338번 지방도 경유 안내",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551606"
+    },
+    {
+      "text": "광주시보건소·경안동사무소 앞 하차 후 택시 약 10분",
+      "sourceUrl": "https://xn--vl2b25ip8u.net/kwa-9551606"
+    }
+  ],
+  "summary": "러브펫은 광주시에서 오전 8시부터 오후 11시까지 운영하며 전화 상담은 24시간 받습니다. 개별 화장과 참관을 안내하며 일반 장례는 5kg 이하 20만 원입니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "5kg 초과 추가 요금은 홈페이지에 미표기",
+    "예약제 운영, 방문 시간 표기가 페이지마다 다름"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "pf-7a270503",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 패키지에 개별 화장 포함",
+      "sourceUrl": "https://www.petmun.com/price"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 패키지가 개별 화장",
+      "sourceUrl": "https://www.petmun.com/price"
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": "영상·사진으로 안내, 현장 참관은 사전 상담",
+      "sourceUrl": "https://www.petmun.com/faq"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "장례 차량 안에서 염습, 수의는 일부 패키지",
+      "sourceUrl": "https://www.petmun.com/price"
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": "자체 봉안당 언급 없음, 연계 시설 안치 안내",
+      "sourceUrl": "https://www.petmun.com/faq"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모아스톤 제작 패키지 운영",
+      "sourceUrl": "https://www.petmun.com/memoastone"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "운구 서비스만 따로 이용 가능",
+      "sourceUrl": "https://www.petmun.com/service"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "사이트에 24시간 연중무휴 표기",
+      "sourceUrl": "https://www.petmun.com/"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "최대 체중 미기재",
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물 전용 패키지 운영",
+      "sourceUrl": "https://www.petmun.com/price"
+    }
+  },
+  "extras": [
+    {
+      "label": "이동식 장례",
+      "note": "장례 차량이 보호자가 있는 곳으로 방문",
+      "sourceUrl": "https://www.petmun.com/service"
+    },
+    {
+      "label": "임시 안치",
+      "note": "냉장 설비로 최대 24시간 안치",
+      "sourceUrl": "https://www.petmun.com/faq"
+    }
+  ],
+  "hours": {
+    "text": "24시간 연중무휴 표기, 평일 시간 표기는 불일치",
+    "sourceUrl": "https://www.petmun.com/"
+  },
+  "prices": [
+    {
+      "label": "베이직 패키지 기준 5kg",
+      "amount": "22만 원",
+      "includes": "장례 예식, 개별 화장, 국화꽃, 베이직 유골함, VAT 별도",
+      "sourceUrl": "https://www.petmun.com/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 베이직 1kg 미만",
+      "amount": "14만 원",
+      "includes": "장례 예식, 개별 화장, 베이직 유골함, VAT 별도",
+      "sourceUrl": "https://www.petmun.com/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "5kg 초과 체중 추가",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "서비스 기준 체중 5kg",
+      "sourceUrl": "https://www.petmun.com/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "플러스 패키지 기준 5kg",
+      "amount": "32만 원",
+      "includes": "베이직 구성에 유골수의, 오동나무관 또는 수의 택1",
+      "sourceUrl": "https://www.petmun.com/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "스탠다드 패키지 기준 5kg",
+      "amount": "60만 원",
+      "includes": "장례 예식, 개별 화장, 수의보, 국화꽃, 메모아 유골함",
+      "sourceUrl": "https://www.petmun.com/price",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모아 스톤 패키지 기준 5kg",
+      "amount": "80만 원",
+      "includes": "장례 예식, 개별 화장, 수의, 미니 꽃다발, 메모아 스톤",
+      "sourceUrl": "https://www.petmun.com/price",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 140000,
+  "parking": null,
+  "access": [],
+  "summary": "펫문은 공식 목록에 화장시설로 등록되어 있고, 홈페이지에는 장례 차량이 보호자를 찾아가는 이동식 장례로 안내되어 있습니다. 모든 패키지에 개별 화장이 포함되며, 베이직 패키지는 5kg 기준 22만 원(부가세 별도)입니다.",
+  "cautions": [
+    "가격은 부가세 별도이며 변동될 수 있음",
+    "화장은 힐링센터 또는 제휴 시설에서 진행",
+    "운영시간 표기가 사이트 안에서 서로 다름"
+  ]
+}

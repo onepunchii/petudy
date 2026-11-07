@@ -1,15 +1,31 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import { NATIONAL_FUNERAL_COUNT, GYEONGGI_FUNERAL_COUNT } from "@/lib/site/facilities";
 import { SIDO } from "@/lib/site/regions";
 import { SERVICES, getService } from "@/lib/site/services";
+import { funeralOgAlt, funeralServiceCard } from "@/lib/site/og-cards-funeral";
 import { breadcrumbLd, faqLd, serviceLd } from "@/lib/site/schema";
+import { metaWithImage } from "@/lib/site/seo";
 import { FacilityTable } from "@/components/site/FacilityTable";
 import { LeadForm } from "@/components/site/LeadForm";
+import { PassCard } from "@/components/site/PassCard";
+import { Reveal } from "@/components/site/Reveal";
 import { ServiceHero } from "@/components/site/ServiceHero";
-import { ConsultSection, GuideCards, LicenseNote, PriceSection, ProcessSection, RegionLinkGrid, guidesBySlugs } from "@/components/site/sections";
-import { Container, FaqList, JsonLd, SectionTitle } from "@/components/site/ui";
+import {
+    ConsultSection,
+    GuideCards,
+    HUB_SCENARIOS,
+    LicenseNote,
+    PriceSection,
+    ProcessSection,
+    RegionLinkGrid,
+    ScenarioSection,
+    guidesBySlugs,
+    serviceIconSrc,
+} from "@/components/site/sections";
+import { Container, FaqList, ICON_STROKE, JsonLd, PillLink, SectionTitle } from "@/components/site/ui";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => SERVICES.map((s) => ({ service: s.slug }));
@@ -25,15 +41,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             : s.slug === "grooming"
               ? "애견미용 · 강아지·고양이 미용실 동네별 연결 (서울·경기)"
               : `${s.name} · 오픈 준비중`;
+    const description =
+        s.slug === "funeral"
+            ? "서울·경기 반려동물 장례식장 24시간 상담. 서울에는 고정식 화장 시설이 없어 출발 동네 기준으로 가까운 경기·인천 허가 장례식장, 픽업, 체중별 비용을 먼저 안내합니다."
+            : s.slug === "grooming"
+              ? "서울·경기 동네별 애견미용 연결. 산책 동선에서 가까운 등록 미용업체 중 1:1 미용, 예민·노령견, 고양이 미용이 가능한 곳을 골라 예약까지 연결합니다."
+              : s.intro;
+    const keywords = [s.keyword, ...s.altKeywords];
+    // 장례: 정사각형 대표 이미지(/og/funeral/square.png)로 네이버·구글 썸네일 신호
+    if (s.slug === "funeral") {
+        return metaWithImage({ title, description, keywords, path: `/${s.slug}`, imageAlt: funeralOgAlt(funeralServiceCard()), noindex: s.status !== "live" });
+    }
     return {
         title,
-        description:
-            s.slug === "funeral"
-                ? "서울·경기 반려동물 장례식장 24시간 상담. 서울에는 화장 시설이 없어 출발 동네 기준으로 가까운 경기·인천 허가 장례식장, 픽업, 체중별 비용을 먼저 안내합니다."
-                : s.slug === "grooming"
-                  ? "서울·경기 동네별 애견미용 연결. 산책 동선에서 가까운 등록 미용업체 중 1:1 미용, 예민·노령견, 고양이 미용이 가능한 곳을 골라 예약까지 연결합니다."
-                  : s.intro,
-        keywords: [s.keyword, ...s.altKeywords],
+        description,
+        keywords,
         alternates: { canonical: `/${s.slug}` },
         robots: s.status === "live" ? undefined : { index: false, follow: true },
         openGraph: { title, url: `/${s.slug}` },
@@ -50,31 +72,55 @@ export default async function ServiceHubPage({ params }: Props) {
     ];
 
     if (service.status === "soon") {
+        const icon = serviceIconSrc(service.slug);
         return (
             <>
                 <ServiceHero
                     service={service}
                     crumbs={crumbs}
-                    title={<>{service.name}<br /><span className="opacity-70">곧 우리 동네에서 연결합니다</span></>}
+                    title={
+                        <>
+                            {service.name}
+                            <br />
+                            <span className="text-star-2">곧 우리 동네에서 연결합니다</span>
+                        </>
+                    }
+                    subtitle={service.tagline}
                     lead={service.intro}
                     aside={<LeadForm service={service.slug} compact />}
                 />
                 <ProcessSection service={service} />
-                <section className="pb-8">
-                    <Container className="grid gap-4 lg:grid-cols-2">
+                <Reveal as="section" className="pb-20 sm:pb-24">
+                    <Container className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-14">
                         <LicenseNote service={service} />
-                        <Link href="/partners" className="flex flex-col justify-center rounded-3xl bg-white p-6 ring-1 ring-line hover:ring-ink/20">
-                            <p className="text-[15px] font-bold text-ink">{service.short} 업체를 운영하고 계신가요?</p>
-                            <p className="mt-1.5 text-[14px] text-ink-2">동네 보호자님과 연결될 제휴 업체를 모집하고 있습니다 →</p>
-                        </Link>
+                        <PassCard
+                            href="/partners"
+                            radius="tile"
+                            stub={
+                                icon ? (
+                                    <Image src={icon} alt="" width={160} height={160} className="mx-auto h-20 w-20 mix-blend-multiply" />
+                                ) : (
+                                    <ArrowRight className="mx-auto h-5 w-5 text-ink-3" strokeWidth={ICON_STROKE} aria-hidden />
+                                )
+                            }
+                            stubClassName="items-center"
+                        >
+                            <p className="text-[17px] font-bold text-ink">{service.short} 업체를 운영하고 계신가요?</p>
+                            <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">동네 보호자님과 연결될 제휴 업체를 모집하고 있습니다.</p>
+                            <span className="mt-4 inline-flex items-center gap-1 text-[14.5px] font-semibold text-ink underline decoration-ink/30 underline-offset-4 group-hover:decoration-ink">
+                                제휴 안내 보기
+                                <ArrowRight className="h-4 w-4" strokeWidth={ICON_STROKE} aria-hidden />
+                            </span>
+                        </PassCard>
                     </Container>
-                </section>
+                </Reveal>
             </>
         );
     }
 
     const isFuneral = service.slug === "funeral";
     const guides = guidesBySlugs(service.guideSlugs);
+    const scenarios = HUB_SCENARIOS[service.slug] ?? [];
 
     return (
         <>
@@ -90,11 +136,21 @@ export default async function ServiceHubPage({ params }: Props) {
                 crumbs={crumbs}
                 title={
                     isFuneral ? (
-                        <>반려동물 장례식장,<br />우리 동네에서 가장 가까운 곳으로</>
+                        <>
+                            반려동물 장례식장,
+                            <br />
+                            우리 동네에서 가장 가까운 곳으로
+                        </>
                     ) : (
-                        <>애견미용,<br />산책길에서 가까운 미용실로</>
+                        <>
+                            애견미용,
+                            <br />
+                            산책길에서 가까운 미용실로
+                        </>
                     )
                 }
+                // 미용 부제는 바로 아래 lead(service.intro)의 "견종·성향에 맞춰 예약까지 연결"을 되풀이하지 않도록
+                subtitle={isFuneral ? "아이가 먼저 떠나는 여행, 마지막 인사까지 곁에서 함께 준비합니다" : "자주 다녀야 하는 곳이라, 오가기 편한 곳부터 찾습니다"}
                 lead={service.intro}
                 chips={
                     isFuneral
@@ -103,67 +159,72 @@ export default async function ServiceHubPage({ params }: Props) {
                 }
             />
 
+            {/* 미용: 상황 → 가격 / 장례: 비용 → 허가 업체 표 */}
+            {!isFuneral && <ScenarioSection service={service} scenarios={scenarios} title="지금 상황에 맞춰 안내합니다" featured={1} />}
+
+            <PriceSection service={service} showLicense={!isFuneral} />
+
             {isFuneral && (
-                <section className="py-16 sm:py-20">
-                    <Container className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+                <Reveal as="section" className="py-16 sm:py-20">
+                    <Container className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
                         <div>
                             <SectionTitle
-                                eyebrow="알고 계셨나요"
-                                title={<>서울에는 반려동물<br />화장 시설이 없습니다</>}
-                                lead={`용도지역·거리 제한 때문에 서울에는 고정식 반려동물 화장 시설이 없습니다. 전국 허가 동물장묘업체 ${NATIONAL_FUNERAL_COUNT}곳 중 ${GYEONGGI_FUNERAL_COUNT}곳이 경기도에 있어, 서울 보호자님 대부분이 경기도·인천으로 이동해 장례를 치릅니다. 그래서 '어디서 출발하느냐'에 따라 가까운 곳이 달라집니다.`}
+                                title={
+                                    <>
+                                        서울에는 고정식
+                                        <br />
+                                        반려동물 화장 시설이 없습니다
+                                    </>
+                                }
+                                lead={`용도지역·거리 제한 때문에 서울에는 고정식 반려동물 화장 시설이 없습니다. 전국 허가 동물장묘업체 ${NATIONAL_FUNERAL_COUNT}곳 중 ${GYEONGGI_FUNERAL_COUNT}곳이 경기도에 있어, 서울 보호자님 대부분이 경기도·인천으로 이동해 장례를 치릅니다. 그래서 어디서 출발하느냐에 따라 가까운 곳이 달라집니다.`}
                             />
-                            <div className="mt-8">
-                                <LicenseNote service={service} />
-                            </div>
-                            <Link href="/guide/pet-death-first-steps" className="mt-4 block rounded-3xl bg-dusk-soft p-6 hover:bg-dusk-soft/70">
-                                <p className="text-[15px] font-bold text-dusk">방금 아이가 떠났다면</p>
-                                <p className="mt-1.5 text-[14px] leading-relaxed text-ink-2">몸을 바르게 눕히고 수건으로 감싼 뒤 시원한 곳에 두세요. 바로 해야 할 일을 순서대로 정리했습니다 →</p>
-                            </Link>
+                            <LicenseNote service={service} className="mt-10 border-t border-line pt-8" />
+                            <PassCard href="/guide/pet-death-first-steps" className="mt-10">
+                                <p className="text-[17px] font-bold text-ink">방금 아이가 떠났다면</p>
+                                <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">
+                                    몸을 바르게 눕히고 수건으로 감싼 뒤 시원한 곳에 두세요. 바로 해야 할 일을 순서대로 정리했습니다.
+                                </p>
+                                <span className="mt-4 inline-flex items-center gap-1 text-[14.5px] font-semibold text-ink underline decoration-ink/30 underline-offset-4 group-hover:decoration-ink">
+                                    순서대로 보기
+                                    <ArrowRight className="h-4 w-4" strokeWidth={ICON_STROKE} aria-hidden />
+                                </span>
+                            </PassCard>
                         </div>
-                        <FacilityTable />
+                        <FacilityTable className="lg:mt-1" />
                     </Container>
-                </section>
-            )}
-
-            {!isFuneral && (
-                <section className="pt-16">
-                    <Container>
-                        <LicenseNote service={service} />
-                    </Container>
-                </section>
+                </Reveal>
             )}
 
             <ProcessSection service={service} />
-            <PriceSection service={service} />
 
-            <section id="regions" className="scroll-mt-20 bg-white py-16 sm:py-24">
+            <Reveal as="section" id="regions" className="scroll-mt-20 py-16 sm:py-20">
                 <Container>
                     <SectionTitle
-                        eyebrow="지역별 안내"
                         title={`우리 동네 ${service.short} 안내`}
                         lead={`구·시를 선택하면 그 지역 생활권과 동네 기준으로 ${isFuneral ? "가까운 허가 장례식장 방면과 이동 방법" : "가까운 미용실"}을 안내합니다.`}
                     />
-                    <div className="mt-6 flex flex-wrap gap-2">
+                    <div className="mt-6 flex flex-wrap gap-2.5">
                         {(["seoul", "gyeonggi"] as const).map((sido) => (
-                            <Link key={sido} href={`/${service.slug}/${sido}`} className="rounded-full bg-paper px-4 py-2 text-[14px] font-semibold text-ink ring-1 ring-line hover:ring-ink/30">
-                                {SIDO[sido].short} {service.keyword} 전체 →
-                            </Link>
+                            <PillLink key={sido} href={`/${service.slug}/${sido}`} size="sm">
+                                {SIDO[sido].short} {service.keyword} 전체
+                                <ArrowRight className="h-3.5 w-3.5" strokeWidth={ICON_STROKE} aria-hidden />
+                            </PillLink>
                         ))}
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-12">
                         <RegionLinkGrid hrefFor={(r) => `/${service.slug}/${r.sido}/${r.slug}`} labelFor={(r) => `${r.name} ${service.short}`} />
                     </div>
                 </Container>
-            </section>
+            </Reveal>
 
             <GuideCards guides={guides} title={isFuneral ? "장례를 앞둔 보호자님께" : "미용 전에 알아두세요"} />
 
-            <section className="py-16 sm:py-20">
-                <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-                    <SectionTitle eyebrow="자주 묻는 질문" title={`${service.name} FAQ`} />
+            <Reveal as="section" className="py-16 sm:py-20">
+                <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
+                    <SectionTitle title={`${service.name} 자주 묻는 질문`} />
                     <FaqList faqs={service.faqs} />
                 </Container>
-            </section>
+            </Reveal>
 
             <ConsultSection service={service} />
         </>

@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "MAPS - 모빌리티 올펫 서비스",
+    title: "포온 - 반려동물 서비스",
     description: "미래지향적인 모빌리티와 편안함을 경험하세요. 반려동물 장례부터 미용까지, 가장 완벽한 파트너가 되어 드립니다.",
 };
 

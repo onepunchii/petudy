@@ -1,9 +1,10 @@
 "use client";
 
-import { ChevronLeft, Plus, Trash2, Upload } from "lucide-react";
-import Link from "next/link";
+import { Camera, Plus, Trash2, Upload } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { getMemories, deleteMemory, createMemory } from "@/actions/memorial";
+import { APP_ICON_STROKE, AppBody, AppButton, AppEmpty, AppTopBar, skeletonClass } from "@/components/app/ui";
+import { cn } from "@/lib/utils";
 
 interface Memory {
     id: string;
@@ -18,18 +19,23 @@ export default function PhotosPage() {
     const [uploading, setUploading] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        loadMemories();
-    }, []);
-
-    const loadMemories = async () => {
-        setLoading(true);
-        const result = await getMemories("1");
+    const applyMemories = (result: Awaited<ReturnType<typeof getMemories>>) => {
         if (result.success && result.data) {
-            setMemories(result.data as any);
+            setMemories(result.data as Memory[]);
         }
         setLoading(false);
     };
+
+    // 사진을 올린 뒤 다시 불러올 때
+    const loadMemories = async () => {
+        setLoading(true);
+        applyMemories(await getMemories("1"));
+    };
+
+    // 처음 열 때 한 번 불러옵니다 (loading 은 처음부터 true)
+    useEffect(() => {
+        getMemories("1").then(applyMemories);
+    }, []);
 
     const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -65,60 +71,75 @@ export default function PhotosPage() {
     };
 
     return (
-        <div className="min-h-screen bg-[#0A0A0B]">
-            <header className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                <Link href="/memorial" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
-                    <ChevronLeft className="w-6 h-6" />
-                </Link>
-                <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-white">사진</h1>
-                <button onClick={() => fileInputRef.current?.click()} disabled={uploading} className="ml-auto p-2 text-foon-lime disabled:opacity-50">
-                    {uploading ? (
-                        <div className="w-6 h-6 border-2 border-foon-lime border-t-transparent rounded-full animate-spin" />
-                    ) : (
-                        <Plus className="w-6 h-6" />
-                    )}
-                </button>
-                <input ref={fileInputRef} type="file" accept="image/*" onChange={handleUpload} className="hidden" />
-            </header>
+        <div className="min-h-full">
+            <AppTopBar
+                back="/memorial"
+                title="사진"
+                action={
+                    <>
+                        <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            disabled={uploading}
+                            aria-label="사진 추가"
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-star transition-colors hover:bg-white/10 active:translate-y-px disabled:opacity-50"
+                        >
+                            {uploading ? (
+                                <span className="h-5 w-5 animate-spin rounded-full border-2 border-star border-t-transparent" aria-hidden />
+                            ) : (
+                                <Plus className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            )}
+                        </button>
+                        <input ref={fileInputRef} type="file" accept="image/*" onChange={handleUpload} className="hidden" />
+                    </>
+                }
+            />
 
-            <main className="p-4 max-w-[480px] mx-auto">
+            <AppBody>
                 {loading ? (
-                    <div className="flex justify-center py-20">
-                        <div className="w-8 h-8 border-2 border-foon-lime border-t-transparent rounded-full animate-spin" />
+                    <div className="grid grid-cols-2 gap-3" role="status" aria-live="polite">
+                        <div className={cn(skeletonClass, "aspect-square")} aria-hidden />
+                        <div className={cn(skeletonClass, "aspect-square")} aria-hidden />
+                        <div className={cn(skeletonClass, "aspect-square")} aria-hidden />
+                        <div className={cn(skeletonClass, "aspect-square")} aria-hidden />
+                        <span className="sr-only">사진을 불러오는 중이에요</span>
                     </div>
                 ) : memories.length === 0 ? (
-                    <div className="text-center py-20">
-                        <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#1e1e20] flex items-center justify-center">
-                            <span className="text-4xl">📷</span>
-                        </div>
-                        <h2 className="text-xl font-bold text-white mb-2">아직 등록된 사진이 없어요</h2>
-                        <p className="text-gray-400 text-sm mb-4">추억이 될 사진을 등록해주세요</p>
-                        <button
-                            onClick={() => fileInputRef.current?.click()}
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-foon-lime text-bg-main font-medium rounded-full"
-                        >
-                            <Upload className="w-5 h-5" />
-                            사진 추가
-                        </button>
-                    </div>
+                    <AppEmpty
+                        icon={<Camera className="h-7 w-7" strokeWidth={APP_ICON_STROKE} aria-hidden />}
+                        title={
+                            <span role="heading" aria-level={2}>
+                                아직 등록된 사진이 없어요
+                            </span>
+                        }
+                        description="추억이 될 사진을 등록해주세요"
+                        action={
+                            <AppButton variant="primary" onClick={() => fileInputRef.current?.click()}>
+                                <Upload className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                사진 추가
+                            </AppButton>
+                        }
+                    />
                 ) : (
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-2 gap-3">
                         {memories.map((memory) => (
-                            <div key={memory.id} className="relative aspect-square bg-[#1e1e20] rounded-xl overflow-hidden group">
-                                <img src={memory.photoUrl} alt="" className="w-full h-full object-cover" />
-                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div key={memory.id} className="group relative aspect-square overflow-hidden rounded-[20px] bg-paper-2 ring-1 ring-inset ring-line/70">
+                                <img src={memory.photoUrl} alt="" className="h-full w-full object-cover" />
+                                <div className="absolute inset-0 flex items-center justify-center bg-night/50 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100 motion-reduce:transition-none">
                                     <button
+                                        type="button"
                                         onClick={() => handleDelete(memory.id)}
-                                        className="p-2 bg-red-500/20 rounded-full text-red-400"
+                                        aria-label="사진 삭제"
+                                        className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-pass text-danger shadow-[0_8px_20px_-8px_rgb(11_16_32/0.5)] transition-transform active:translate-y-px"
                                     >
-                                        <Trash2 className="w-5 h-5" />
+                                        <Trash2 className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
                                     </button>
                                 </div>
                             </div>
                         ))}
                     </div>
                 )}
-            </main>
+            </AppBody>
         </div>
     );
 }

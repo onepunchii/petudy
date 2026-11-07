@@ -27,13 +27,17 @@ export const websiteLd = () => ({
     publisher: { "@id": absoluteUrl("/#org") },
 });
 
+/**
+ * 경로(BreadcrumbList). 네이버 가이드는 "홈", "top" 같은 일반 단어를 name 으로 쓰지 말라고 하므로
+ * 첫 항목이 홈("/")이면 JSON-LD 에서만 사이트 이름("포온")으로 바꿉니다. 화면의 경로 표시는 그대로입니다.
+ */
 export const breadcrumbLd = (items: { name: string; href: string }[]) => ({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: items.map((it, i) => ({
         "@type": "ListItem",
         position: i + 1,
-        name: it.name,
+        name: i === 0 && it.href === "/" ? SITE.name : it.name,
         item: absoluteUrl(it.href),
     })),
 });
@@ -62,11 +66,13 @@ export const serviceLd = (opts: { name: string; description: string; path: strin
     ],
 });
 
-export const articleLd = (opts: { title: string; description: string; path: string; updated: string }) => ({
+/** image: 대표 이미지(og:image 와 같은 그림). 경로를 주면 절대 URL 로 바꿉니다 */
+export const articleLd = (opts: { title: string; description: string; path: string; updated: string; image?: string }) => ({
     "@context": "https://schema.org",
     "@type": "Article",
     headline: opts.title,
     description: opts.description,
+    ...(opts.image ? { image: [/^https?:\/\//.test(opts.image) ? opts.image : absoluteUrl(opts.image)] } : {}),
     dateModified: opts.updated,
     datePublished: opts.updated,
     mainEntityOfPage: absoluteUrl(opts.path),

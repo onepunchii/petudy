@@ -1,0 +1,148 @@
+{
+  "id": "pf-2824abc9",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장을 원칙으로 안내",
+      "sourceUrl": "https://ansky4428.kr/FrequentlyAkedQuestions"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "어떤 경우에도 합동 화장 안 함",
+      "sourceUrl": "https://ansky4428.kr/FrequentlyAkedQuestions"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "단독 참관실에서 전 과정 참관 가능",
+      "sourceUrl": "https://ansky4428.kr/FuneralProcedures"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "스카이 장례 이상에 염습·수의 포함",
+      "sourceUrl": "https://ansky4428.kr/FuneralService"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안당 운영, 타 업체 장례 유골도 안치",
+      "sourceUrl": "https://ansky4428.kr/CharnelHouse"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "수목함 상품만 안내, 시설 운영 미기재",
+      "sourceUrl": "https://ansky4428.kr/FuneralService"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모리얼 스톤 제작, 제작 과정 참관 가능",
+      "sourceUrl": "https://ansky4428.kr/StoneFuneralService"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "출발지에서 편도 운구, 지역별 요금",
+      "sourceUrl": "https://ansky4428.kr/hearseservice"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 연중무휴, 23~06시는 전화 예약 후",
+      "sourceUrl": "https://ansky4428.kr/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "체중 제한 없음, 100kg까지 화장 가능 안내",
+      "sourceUrl": "https://ansky4428.kr/FuneralProcedures"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이는 일반 요금, 1kg 미만 소동물 별도",
+      "sourceUrl": "https://ansky4428.kr/FuneralService"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "비동행 장례 메뉴 운영, 세부는 이미지 게시",
+      "sourceUrl": "https://ansky4428.kr/40"
+    },
+    {
+      "label": "영안실 안치",
+      "note": "장례 당일까지 안치, 1일 3만 원",
+      "sourceUrl": "https://ansky4428.kr/AdditionalService"
+    },
+    {
+      "label": "장례 확인서",
+      "note": "기본 장례 구성에 포함",
+      "sourceUrl": "https://ansky4428.kr/FuneralService"
+    }
+  ],
+  "hours": {
+    "text": "24시간 연중무휴, 23~06시 방문은 전화 예약 후",
+    "sourceUrl": "https://ansky4428.kr/Branchandfacilities"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 소동물(1kg 미만)",
+      "amount": "20만 원",
+      "includes": "단독 추모실, 개별 화장, 장례 확인서, 추모 키트, 기본 유골함. VAT 포함",
+      "sourceUrl": "https://ansky4428.kr/FuneralService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 10kg 미만",
+      "amount": "25만 원",
+      "includes": "소동물 기본 장례와 같은 구성, 염습·수의 미포함. VAT 포함",
+      "sourceUrl": "https://ansky4428.kr/FuneralService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "체중 추가 요금",
+      "amount": "1kg당 1만~1만 5천 원 추가",
+      "includes": "10~20kg 1kg당 1만 원, 20kg 초과 1kg당 1만 5천 원",
+      "sourceUrl": "https://ansky4428.kr/FuneralService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "스카이 장례 10kg 미만",
+      "amount": "50만 원",
+      "includes": "기본 구성, 염습, 고급 수의, 고급 관, 백자 유골함, 원목 액자",
+      "sourceUrl": "https://ansky4428.kr/FuneralService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 10kg 미만",
+      "amount": "70만 원",
+      "includes": "기본 구성, 염습, 이불 세트, 요람, 생화 소량, 원목 액자",
+      "sourceUrl": "https://ansky4428.kr/FuneralService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 스톤 장례 10kg 미만",
+      "amount": "60만 원",
+      "includes": "장례와 메모리얼 스톤 제작, 유리 스톤함. 소동물 30만 원",
+      "sourceUrl": "https://ansky4428.kr/StoneFuneralService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1년",
+      "amount": "신규 15만~30만 원",
+      "includes": "단 위치별 요금, 재계약 10만~20만 원, VAT 별도 표기",
+      "sourceUrl": "https://ansky4428.kr/CharnelHouse",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구(편도)",
+      "amount": "5만~8만 원",
+      "includes": "서울·경기 출발 지역별 요금",
+      "sourceUrl": "https://ansky4428.kr/hearseservice",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 200000,
+  "parking": null,
+  "access": [],
+  "summary": "하늘강아지 반려동물 장례식장은 광주시 초월읍에서 24시간 연중무휴로 운영합니다. 합동 화장 없이 개별 화장으로 진행하며 기본 장례는 10kg 미만 25만 원입니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "기본 장례에는 염습과 수의가 포함되지 않음",
+    "스톤 장례의 VAT 포함 여부 표기가 엇갈림"
+  ]
+}

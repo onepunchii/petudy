@@ -1,0 +1,141 @@
+{
+  "id": "pf-16bd5923",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례 구성에 개별 화장 포함",
+      "sourceUrl": "https://petforest.co.kr/funeral"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "화장 과정을 보호자가 직접 확인 가능",
+      "sourceUrl": "https://petforest.co.kr/funeral"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 공통 포함, 수의는 상위 구성에 포함",
+      "sourceUrl": "https://petforest.co.kr/funeral"
+    },
+    "columbarium": {
+      "status": "no",
+      "note": "봉안당은 광주점·김포점만 운영",
+      "sourceUrl": "https://petforest.co.kr/charnel-house"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "루세떼·모니떼 제작 지점에 포함",
+      "sourceUrl": "https://petforest.co.kr/branch/branch-3"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "편도 운구 차량 서비스 운영",
+      "sourceUrl": "https://petforest.co.kr/funeral/transportation"
+    },
+    "allDay": {
+      "status": "no",
+      "note": "운영 09~21시, 예약 전화 07~23시",
+      "sourceUrl": "https://petforest.co.kr/branch/branch-3"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "공개 요금은 10kg 미만 기준만 있음",
+      "sourceUrl": "https://petforest.co.kr/funeral"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "소동물 맞춤 장례(리틀포레스트) 운영",
+      "sourceUrl": "https://petforest.co.kr/funeral"
+    }
+  },
+  "extras": [
+    {
+      "label": "냉장 안치",
+      "note": "장례 당일까지 냉장 안치실 보관",
+      "sourceUrl": "https://petforest.co.kr/branch/branch-3"
+    },
+    {
+      "label": "비동행 장례",
+      "note": "보호자 없이 진행하는 비동행 장례 운영",
+      "sourceUrl": "https://petforest.co.kr/funeral/transportation"
+    },
+    {
+      "label": "꽃다발",
+      "note": "계절 꽃다발, 예약 시 신청 필요",
+      "sourceUrl": "https://petforest.co.kr/funeral"
+    }
+  ],
+  "hours": {
+    "text": "09:00~21:00 운영, 예약 전화 07:00~23:00",
+    "sourceUrl": "https://petforest.co.kr/branch/branch-3"
+  },
+  "prices": [
+    {
+      "label": "스탠다드 장례 10kg 미만",
+      "amount": "35만 원",
+      "includes": "공통 장례 서비스, 기본 유골함, 보자기, VAT 포함",
+      "sourceUrl": "https://petforest.co.kr/funeral",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "포레스트 장례 10kg 미만",
+      "amount": "70만 원",
+      "includes": "공통 서비스에 수의·오동나무관, 유골함·액자 등",
+      "sourceUrl": "https://petforest.co.kr/funeral",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "스탠다드 루세떼 장례",
+      "amount": "100만 원",
+      "includes": "스탠다드 장례에 루세떼 제작, 유리병·보증서",
+      "sourceUrl": "https://petforest.co.kr/funeral",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "포레스트 루세떼 장례",
+      "amount": "135만 원",
+      "includes": "포레스트 계열 용품에 루세떼 제작, VAT 포함",
+      "sourceUrl": "https://petforest.co.kr/funeral",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "임시 안치",
+      "amount": "1일 3만 원",
+      "includes": "VAT 포함",
+      "sourceUrl": "https://petforest.co.kr/funeral",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 편도(서울 출발)",
+      "amount": "6만~10만 원",
+      "includes": "출발 구에 따라 3단계, VAT 포함",
+      "sourceUrl": "https://petforest.co.kr/funeral/transportation",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 편도(경기 출발)",
+      "amount": "4만~12만 원",
+      "includes": "출발 지역에 따라 5단계, VAT 포함",
+      "sourceUrl": "https://petforest.co.kr/funeral/transportation",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [],
+  "summary": "펫포레스트 반려동물장례식장 남양주점은 개별 화장과 보호자 참관으로 장례를 진행합니다. 스탠다드 장례는 10kg 미만 35만 원이고 오전 9시부터 오후 9시까지 운영합니다.",
+  "cautions": [
+    "가격은 브랜드 공통 요금이며 변동될 수 있음",
+    "봉안당은 이 지점에 없고 광주점·김포점 운영",
+    "10kg 이상 요금은 홈페이지에 미표기"
+  ]
+}

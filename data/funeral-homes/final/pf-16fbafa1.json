@@ -1,0 +1,78 @@
+{
+  "id": "pf-16fbafa1",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "수원시 협약 안내에 봉안비 할인 명시",
+      "sourceUrl": "https://www.suwon.go.kr/sw-www/sw-animal/sw-animal-02/sw-animal-02-06.jsp"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "수원시 협약 할인",
+      "note": "수원시민 화장비, 봉안비 각 10% 할인",
+      "sourceUrl": "https://www.suwon.go.kr/sw-www/sw-animal/sw-animal-02/sw-animal-02-06.jsp"
+    }
+  ],
+  "hours": null,
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [],
+  "summary": "스토리펫은 화성시 정남면에 등록된 장례식장으로, 수원시 반려동물 장례 협약업체로 안내됩니다. 홈페이지가 연결되지 않아 서비스와 가격은 대부분 미확인입니다.",
+  "cautions": [
+    "등록된 홈페이지 주소가 연결되지 않음",
+    "등록 전화번호와 수원시 안내 번호가 다름",
+    "협약 할인은 수원시민과 등록 반려동물 대상"
+  ]
+}

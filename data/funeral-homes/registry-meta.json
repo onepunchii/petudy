@@ -1,0 +1,13 @@
+{
+ "checkedAt": "2026-11-07",
+ "primarySource": {"label": "동물보호관리시스템(animal.go.kr) 동물장묘업 등록(허가) 현황", "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?menuNo=6000000131", "totalCountShown": 89, "pages": 9, "pagingParams": "totalCount=89&pageSize=10&page=N", "fieldsShown": ["번호","취급업종","업체명","전화번호","소재지","홈페이지"]},
+ "fieldsNotAvailableFromPrimary": ["regNo","permitDate","status","jibunAddress","full road address with building number (most rows)"],
+ "secondarySourcesAttempted": [
+  {"label": "행정안전부_동물_동물장묘업 (file data, 2025-11-27, 86 rows, has 인허가일자/영업상태/좌표)", "url": "https://www.data.go.kr/data/15045054/fileData.do", "result": "download host https://file.localdata.go.kr/file/animal_cremation/info returned HTTP 403 to this client; not retrieved"},
+  {"label": "행정안전부_동물_동물장묘업 조회서비스 (OpenAPI)", "url": "https://www.data.go.kr/data/15155065/openapi.do", "result": "requires a data.go.kr service key (SERVICE_KEY_IS_NULL); not used"},
+  {"label": "인천광역시 서해구_동물장묘업 (2026-06-24, 3 rows)", "url": "https://www.data.go.kr/data/15121152/fileData.do", "result": "metadata only; used for the 인천 서구→서해구 note"}
+ ],
+ "statusPolicy": "status='listed' means present on the official 등록(허가) 현황 list on 2026-11-07. Business status (영업/폐업/휴업) could not be verified because localdata/data.go.kr status data was not reachable; nothing was excluded.",
+ "geocoding": "OpenStreetMap Nominatim, <=1 req/s, UA po-on-site-builder/1.0. Official addresses mostly lack building numbers, so no Nominatim result was building-level. geoPrecision 'address' is used only where petbyeol coordinates were accepted after a Nominatim reverse geocode confirmed same sigungu and eup/myeon. All others are 'sigungu' (approximate); geoDetail tells which: road (road segment in the same eup/myeon), ri_dong, eup_myeon_office, landmark_in_ri_dong, admin_area (ri/dong boundary centroid), sigungu_office.",
+ "reference": {"label": "petbyeol facilities.json (reference only)", "url": "https://www.petbyeol.com/ko"}
+}

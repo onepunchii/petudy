@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { PetBreedData } from "@/data/petData";
+import { cn } from "@/lib/utils";
 
 interface PetCharacteristicBarsProps {
     traits: PetBreedData["traits"];
@@ -18,49 +19,49 @@ export default function PetCharacteristicBars({ traits }: PetCharacteristicBarsP
 
     if (!traits) return null;
 
+    // 예전 이모지(높음/낮음 표시)는 점수 숫자로 바꿨습니다. 막대는 남색(pine) 한 가지 색
     const items = [
-        { label: "크기", value: traits.size || 3, color: "bg-blue-400", emoji: "📏", maxEmoji: "🐘", minEmoji: "🐁" },
-        { label: "털빠짐", value: traits.shedding || 3, color: "bg-orange-400", emoji: "☁️", maxEmoji: "🌪️", minEmoji: "✨" },
-        { label: "친화력", value: traits.friendliness || 3, color: "bg-pink-400", emoji: "💕", maxEmoji: "🥰", minEmoji: "😐" },
-        { label: "학습력", value: traits.trainability || 3, color: "bg-purple-400", emoji: "🧠", maxEmoji: "🎓", minEmoji: "🍼" },
-        { label: "실내/외", value: traits.energy || 3, color: "bg-green-400", emoji: "🏠", maxEmoji: "🏞️", minEmoji: "🛋️" },
+        { label: "크기", value: traits.size || 3 },
+        { label: "털빠짐", value: traits.shedding || 3 },
+        { label: "친화력", value: traits.friendliness || 3 },
+        { label: "학습력", value: traits.trainability || 3 },
+        { label: "실내/외", value: traits.energy || 3 },
     ];
 
     return (
-        <div className="space-y-2 mt-3 bg-[#18181b]/50 p-4 rounded-2xl border border-[#27272a]">
+        <dl className="mt-4 space-y-2.5 border-t border-line pt-4">
             {items.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                     {/* Label */}
-                    <div className="w-10 text-right">
-                        <span className="text-[10px] font-bold text-gray-500 block">{item.label}</span>
-                    </div>
+                    <dt className="w-14 shrink-0 text-right text-[13px] font-semibold text-ink-3">{item.label}</dt>
 
-                    {/* Segmented Bar */}
-                    <div className="flex-1 flex gap-1 h-1.5">
-                        {[1, 2, 3, 4, 5].map((score) => (
-                            <div
-                                key={score}
-                                className={`flex-1 rounded-full transition-all duration-500 ease-out border border-transparent
-                                    ${item.value >= score
-                                        ? `bg-foon-lime shadow-[0_0_5px_rgba(163,223,70,0.4)] ${animate ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`
-                                        : "bg-[#27272a] opacity-50"
-                                    }
-                                `}
-                                style={{
-                                    transitionDelay: `${idx * 100 + score * 50}ms`
-                                }}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Emoji/Value */}
-                    <div className="w-4 flex justify-start">
-                        <span className="text-xs filter drop-shadow-sm opacity-80">
-                            {item.value >= 3 ? item.maxEmoji : item.minEmoji}
+                    <dd className="flex min-w-0 flex-1 items-center gap-3">
+                        {/* Segmented Bar */}
+                        <span className="flex h-1.5 flex-1 gap-1" aria-hidden>
+                            {[1, 2, 3, 4, 5].map((score) => (
+                                <span
+                                    key={score}
+                                    className={cn(
+                                        "flex-1 rounded-full transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-none",
+                                        item.value >= score
+                                            ? cn("bg-pine", animate ? "scale-100 opacity-100" : "scale-90 opacity-0")
+                                            : "bg-paper-2",
+                                    )}
+                                    style={{
+                                        transitionDelay: `${idx * 100 + score * 50}ms`
+                                    }}
+                                />
+                            ))}
                         </span>
-                    </div>
+
+                        {/* Value */}
+                        <span className="w-8 shrink-0 text-[13px] font-semibold tabular-nums text-ink-2">
+                            {item.value}
+                            <span className="text-ink-3">/5</span>
+                        </span>
+                    </dd>
                 </div>
             ))}
-        </div>
+        </dl>
     );
 }

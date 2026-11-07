@@ -50,7 +50,8 @@ export const pets = pgTable('pets', {
     breed: text('breed').notNull(),
     gender: genderEnum('gender').notNull(),
     neutered: neuteredEnum('neutered').notNull(),
-    birthDate: date('birth_date').notNull(),
+    // 생일을 모르는 아이(입양·구조)도 있어 비워 둘 수 있습니다 (기존 DB: drizzle/manual/2026-11-07_pets_birth_date_nullable.sql)
+    birthDate: date('birth_date'),
     adoptionDate: date('adoption_date'),
     weightKg: decimal('weight_kg', { precision: 4, scale: 2 }),
     furColor: text('fur_color'),

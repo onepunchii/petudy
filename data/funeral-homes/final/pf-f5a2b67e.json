@@ -1,0 +1,111 @@
+{
+  "id": "pf-f5a2b67e",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": "개별·합동 구분 표기 없음",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "시설 사진 항목에 납골당 표기",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/funeral"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": "출장 장례 안내만 있고 운구 표기 없음",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/funeral"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 상담·운영, 연중무휴",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/about"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "체중 구간 요금 미표기",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "출장 장례",
+      "note": "방문이 어려우면 24시간 전국 출장 장례",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/funeral"
+    },
+    {
+      "label": "영정사진",
+      "note": "장례 예약 시 영정사진 무료 제작",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/"
+    },
+    {
+      "label": "장례 선납 플랜",
+      "note": "월 1만 원씩 최대 36개월 분할 납부",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/happypet-plan"
+    },
+    {
+      "label": "추모실",
+      "note": "시설 사진 항목에 추모실 표기",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/funeral"
+    }
+  ],
+  "hours": {
+    "text": "24시간 상담·운영, 연중무휴",
+    "sourceUrl": "https://www.xn--te8br2a1e.com/about"
+  },
+  "prices": [
+    {
+      "label": "반려동물 장례식",
+      "amount": "11만 원",
+      "includes": "장례, 화장, 유골 수습 포함. 체중 구간·VAT 미표기",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "월 1만 원 장례 플랜",
+      "amount": "월 1만 원",
+      "includes": "최대 36개월 분할 납부하는 선납 플랜, 총액 미표기",
+      "sourceUrl": "https://www.xn--te8br2a1e.com/happypet-plan",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 110000,
+  "parking": null,
+  "access": [],
+  "summary": "해피펫은 24시간 연중무휴로 상담·운영하며 출장 장례를 안내합니다. 홈페이지에 반려동물 장례식 요금을 11만 원으로 게시합니다.",
+  "cautions": [
+    "11만 원 요금의 체중 기준·VAT 포함 여부 미표기",
+    "홈페이지 대표번호가 공식 목록 번호와 다름",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

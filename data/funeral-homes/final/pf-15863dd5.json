@@ -1,0 +1,148 @@
+{
+  "id": "pf-15863dd5",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "단독 추모 후 개별 화장, 수골·분골 진행",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": "홈페이지에 합동 화장 안내 없음",
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": "홈페이지에 참관 안내 없음",
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품 염습 포함, 수의는 관·요람 상품",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "세종점에서 봉안당 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "수목장 운영 지점 목록에 세종점 없음",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골로 블리스 스톤 제작 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "브랜드 공통 편도 무료 차량, 세종점 범위 미기재",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "대표번호 24시간 상담, 장례는 08~24시",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "세종점 최대 30kg 이하까지 장례 가능",
+      "sourceUrl": "https://fourpaws.co.kr/faq"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 전용, 1kg 이하 소동물 상품 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong"
+    }
+  },
+  "extras": [
+    {
+      "label": "산골장",
+      "note": "세종점에서 산골장 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong"
+    },
+    {
+      "label": "장례증명서",
+      "note": "기본 장례 추모 키트에 장례 증명서 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong"
+    },
+    {
+      "label": "생화 장식",
+      "note": "장례 시 생화 장식 추가 선택 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong"
+    }
+  ],
+  "hours": {
+    "text": "매일 08:00~24:00, 마지막 예약 22:00, 상담 24시간",
+    "sourceUrl": "https://fourpaws.co.kr/service/store/sejong"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습, 추모 시간, 개별 화장, 추모 키트, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 기본 장례 1kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모, 개별 화장, 추모 키트, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "10kg 초과 체중 추가",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "용품 크기 변경 시 별도 추가",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고양이 전용 장례 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 장례에 관, 기본 유골함, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 전용 장례 1kg 이하",
+      "amount": "40만 원",
+      "includes": "기본 장례에 오동나무 관, 면 수의보, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "관 장례 기본형 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 장례에 오동나무 관, 인견 수의 세트, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 기본형 10kg 이하",
+      "amount": "60만 원",
+      "includes": "기본 장례에 요람 관, 인견 수의, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "올인원 패키지 10kg 이하",
+      "amount": "140만 원",
+      "includes": "기본 장례에 오동나무 관, 면 수의 세트, 블리스 스톤 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/sejong",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "포포즈 반려동물 장례식장 세종점은 개별 화장과 봉안당, 산골장을 운영합니다. 기본 장례는 10kg 이하 30만 원이며 최대 30kg까지 장례가 가능합니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "1588-2888은 브랜드 대표번호, 지점 직통번호 별도",
+    "홈페이지 주소는 부강면 시목부강로 620"
+  ]
+}

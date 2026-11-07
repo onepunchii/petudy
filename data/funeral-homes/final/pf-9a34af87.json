@@ -1,0 +1,153 @@
+{
+  "id": "pf-9a34af87",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별(단독) 화장 원칙",
+      "sourceUrl": "https://byeoldaman.co.kr/process"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "개별 화장 원칙으로 운영",
+      "sourceUrl": "https://byeoldaman.co.kr/process"
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": "참관 명시 없음, 수골 후 유골 확인 절차만",
+      "sourceUrl": "https://byeoldaman.co.kr/process"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "목관 기본 장례 이상 염습, 수의는 상위 상품",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "FAQ에 자체 봉안당 안내, 요금 미게시",
+      "sourceUrl": "https://byeoldaman.co.kr/faq"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "수목장 페이지 이동으로 운영 여부 미확인",
+      "sourceUrl": "https://byeoldaman.co.kr/woodlandBurial"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골 추모 보석 제작, 유골량 기준 요금",
+      "sourceUrl": "https://byeoldaman.co.kr/memorialStone"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "동행·비동행 운구, 광주·목포 등 전남권",
+      "sourceUrl": "https://byeoldaman.co.kr/byeoldamanService"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "상담·운영 24시간 연중무휴, 예약 권장",
+      "sourceUrl": "https://byeoldaman.co.kr/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "50kg 미만까지 단독 화장 요금 게시",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": "종 구분 없음, 1kg 미만 요금 구간 있음",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService"
+    }
+  },
+  "extras": [
+    {
+      "label": "냉장 안치",
+      "note": "장례 당일까지 무료, 7일 초과 시 별도 비용",
+      "sourceUrl": "https://byeoldaman.co.kr/byeoldamanService"
+    },
+    {
+      "label": "단독 추모실",
+      "note": "목관 기본 장례 이상 단독 추모실 예식",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService"
+    },
+    {
+      "label": "장례증명서",
+      "note": "단독 화장 상품부터 장례증명서 발급",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService"
+    },
+    {
+      "label": "비동행 운구",
+      "note": "보호자 비동행 픽업·드랍 가능",
+      "sourceUrl": "https://byeoldaman.co.kr/byeoldamanService"
+    }
+  ],
+  "hours": {
+    "text": "상담·운영 24시간 연중무휴, 예약제",
+    "sourceUrl": "https://byeoldaman.co.kr/"
+  },
+  "prices": [
+    {
+      "label": "단독 화장 1kg 미만",
+      "amount": "15만 원",
+      "includes": "개별 화장, 장례증명서 발급, VAT 포함",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "단독 화장 5kg 미만",
+      "amount": "20만 원",
+      "includes": "개별 화장, 장례증명서 발급, VAT 포함",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "단독 화장 10kg 미만",
+      "amount": "25만 원",
+      "includes": "개별 화장, 장례증명서 발급, VAT 포함",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "단독 화장 30kg 미만",
+      "amount": "40만 원",
+      "includes": "개별 화장, 장례증명서 발급, VAT 포함",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "단독 화장 50kg 미만",
+      "amount": "50만 원",
+      "includes": "개별 화장, 장례증명서 발급, VAT 포함",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "목관 기본 장례 5kg 미만",
+      "amount": "29만 원",
+      "includes": "염습, 단독 추모실, 개별 화장, 백자 유골함, 목관, 생화",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "목관 기본 장례 10kg 미만",
+      "amount": "36만 원",
+      "includes": "염습, 단독 추모실, 개별 화장, 백자 유골함, 목관, 생화",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "별다만 장례 5kg 미만",
+      "amount": "38만 원",
+      "includes": "목관 기본 장례 구성에 수의, 꽃다발",
+      "sourceUrl": "https://byeoldaman.co.kr/packageService",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [],
+  "summary": "(주)별다만은 개별 화장과 운구, 유골 보석 제작을 안내합니다. 단독 화장은 5kg 미만 20만 원이며 50kg 미만까지 요금이 게시되어 있습니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "홈페이지 하단 주소는 다도로 863으로 표기",
+    "수목장 운영 여부는 홈페이지에서 확인 안 됨"
+  ]
+}

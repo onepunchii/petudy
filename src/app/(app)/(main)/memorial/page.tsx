@@ -1,97 +1,138 @@
 "use client";
 
-import { ChevronLeft, Heart, PenLine, Image, Mail } from "lucide-react";
+import { Image as ImageIcon, Mail, PawPrint, PenLine, Plus } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { APP_ICON_STROKE, AppBody, AppButton, AppEmpty, AppHero, AppLinkButton, BRAND_ICON, skeletonClass } from "@/components/app/ui";
+import { PassCard } from "@/components/site/PassCard";
+import { usePets } from "@/hooks/usePets";
+import { cn } from "@/lib/utils";
 
-interface Pet {
-    id: string;
-    petName: string;
-    species: string;
-    profilePhotoUrl?: string;
+/*
+ * 추억상자 (떠난 뒤 = 별자리). 차분한 화면이라 라임·이모지·캐릭터를 쓰지 않습니다.
+ * 위쪽 밤 머리(작은 별자리) -> 달빛 본문(아이마다 탑승권 카드 한 장, 절취선 아래에 편지·사진·부고장).
+ */
+
+/** 머리 오른쪽의 작은 별자리 (장식) */
+function Constellation() {
+    const stars: [number, number, number][] = [
+        [8, 46, 1.6],
+        [32, 30, 2.2],
+        [56, 40, 1.5],
+        [78, 14, 2.6],
+        [98, 26, 1.7],
+    ];
+    return (
+        <svg width="106" height="60" viewBox="0 0 106 60" fill="none" aria-hidden className="block">
+            <polyline
+                points={stars.map(([x, y]) => `${x},${y}`).join(" ")}
+                className="stroke-star-3"
+                strokeOpacity={0.55}
+                strokeWidth={1}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            {stars.map(([x, y, r]) => (
+                <circle key={`${x}-${y}`} cx={x} cy={y} r={r} className="fill-star" />
+            ))}
+        </svg>
+    );
 }
 
-export default function MemorialPage() {
-    const [pets, setPets] = useState<Pet[]>([]);
-    const [loading, setLoading] = useState(true);
+const memoryLinkClass =
+    "flex flex-col items-center gap-1.5 py-2.5 text-[13.5px] font-semibold text-ink-2 transition-colors hover:text-ink active:translate-y-px focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink";
 
-    useEffect(() => {
-        // TODO: Fetch user's pets from Supabase
-        // For now, mock data
-        setTimeout(() => {
-            setPets([
-                { id: "1", petName: "두부", species: "DOG" },
-            ]);
-            setLoading(false);
-        }, 500);
-    }, []);
+export default function MemorialPage() {
+    const { data: pets = [], isLoading, isError, refetch } = usePets();
 
     return (
-        <div className="min-h-screen bg-[#0A0A0B]">
-            <header className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                <div className="w-full max-w-[480px] mx-auto flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <Heart className="w-5 h-5 text-foon-lime" />
-                        <h1 className="text-lg font-bold text-white">추억상자</h1>
-                    </div>
-                </div>
-            </header>
+        <div className="min-h-full">
+            <AppHero title="추억상자" action={<Constellation />} />
 
-            <main className="p-4 max-w-[480px] mx-auto">
-                {loading ? (
-                    <div className="flex justify-center py-20">
-                        <div className="w-8 h-8 border-2 border-foon-lime border-t-transparent rounded-full animate-spin" />
+            <AppBody>
+                {isLoading ? (
+                    <div className="space-y-4" role="status" aria-live="polite">
+                        <div className={cn(skeletonClass, "h-[164px]")} aria-hidden />
+                        <div className={cn(skeletonClass, "h-[164px]")} aria-hidden />
+                        <p className="pt-2 text-center text-[13px] text-ink-3">아이 목록을 불러오는 중이에요</p>
                     </div>
+                ) : isError ? (
+                    <AppEmpty
+                        title={
+                            <span role="heading" aria-level={2}>
+                                목록을 불러오지 못했어요
+                            </span>
+                        }
+                        description="잠시 후 다시 시도해 주세요."
+                        action={
+                            <AppButton variant="secondary" onClick={() => refetch()}>
+                                다시 불러오기
+                            </AppButton>
+                        }
+                    />
                 ) : pets.length === 0 ? (
-                    <div className="text-center py-20">
-                        <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#1e1e20] flex items-center justify-center">
-                            <Heart className="w-10 h-10 text-gray-500" />
-                        </div>
-                        <h2 className="text-xl font-bold text-white mb-2">아직 추억상자에 담을 수 있는 아이가 없어요</h2>
-                        <p className="text-gray-400 text-sm">마이페이지에서 반려동물을 등록해주세요</p>
-                    </div>
+                    <AppEmpty
+                        icon={BRAND_ICON.memorial}
+                        title={
+                            <span role="heading" aria-level={2}>
+                                아이를 먼저 등록해 주세요
+                            </span>
+                        }
+                        description="등록한 아이의 편지·사진·부고장을 추억상자에 담을 수 있어요."
+                        action={
+                            <AppLinkButton href="/register" variant="primary">
+                                <Plus className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                아이 등록하기
+                            </AppLinkButton>
+                        }
+                    />
                 ) : (
-                    <div className="space-y-6">
+                    <ul className="space-y-4">
                         {pets.map((pet) => (
-                            <div key={pet.id} className="bg-[#1e1e20] rounded-2xl p-4 border border-white/5">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-12 h-12 rounded-full bg-foon-lime/20 flex items-center justify-center">
-                                        <span className="text-lg">🐾</span>
+                            <PassCard
+                                key={pet.id}
+                                as="li"
+                                stubPosition="bottom"
+                                mainClassName="p-5 sm:p-5"
+                                stubClassName="p-0 sm:min-w-0 sm:p-0"
+                                stub={
+                                    <div className="grid grid-cols-3 divide-x divide-line px-1 py-2">
+                                        <Link href={`/memorial/${pet.id}/letters`} className={memoryLinkClass}>
+                                            <PenLine className="h-5 w-5 text-pine" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                            편지
+                                        </Link>
+                                        <Link href={`/memorial/${pet.id}/photos`} className={memoryLinkClass}>
+                                            <ImageIcon className="h-5 w-5 text-pine" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                            사진
+                                        </Link>
+                                        <Link href={`/memorial/${pet.id}/obituary`} className={memoryLinkClass}>
+                                            <Mail className="h-5 w-5 text-pine" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                            부고장
+                                        </Link>
                                     </div>
-                                    <div>
-                                        <h2 className="text-white font-bold">{pet.petName}</h2>
-                                        <p className="text-gray-400 text-sm">{pet.species === "DOG" ? "강아지" : "고양이"}</p>
+                                }
+                            >
+                                <div className="flex items-center gap-4">
+                                    <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-paper-2 text-ink-3 ring-1 ring-inset ring-line">
+                                        {pet.photo_url ? (
+                                            <Image src={pet.photo_url} alt={`${pet.name} 사진`} fill sizes="56px" className="object-cover" />
+                                        ) : (
+                                            <PawPrint className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                        )}
+                                    </div>
+                                    <div className="min-w-0">
+                                        <h2 className="truncate text-[18px] font-bold leading-snug text-ink">{pet.name}</h2>
+                                        <p className="mt-0.5 truncate text-[14px] text-ink-3">
+                                            {pet.species === "cat" ? "고양이" : "강아지"}
+                                            {pet.breed ? ` · ${pet.breed}` : ""}
+                                        </p>
                                     </div>
                                 </div>
-
-                                <div className="grid grid-cols-3 gap-2">
-                                    <Link
-                                        href={`/memorial/${pet.id}/letters`}
-                                        className="flex flex-col items-center gap-1.5 p-3 bg-[#252527] rounded-xl hover:bg-[#2a2a2c] transition-colors"
-                                    >
-                                        <PenLine className="w-5 h-5 text-foon-lime" />
-                                        <span className="text-xs text-gray-300">편지</span>
-                                    </Link>
-                                    <Link
-                                        href={`/memorial/${pet.id}/photos`}
-                                        className="flex flex-col items-center gap-1.5 p-3 bg-[#252527] rounded-xl hover:bg-[#2a2a2c] transition-colors"
-                                    >
-                                        <Image className="w-5 h-5 text-foon-lime" />
-                                        <span className="text-xs text-gray-300">사진</span>
-                                    </Link>
-                                    <Link
-                                        href={`/memorial/${pet.id}/obituary`}
-                                        className="flex flex-col items-center gap-1.5 p-3 bg-[#252527] rounded-xl hover:bg-[#2a2a2c] transition-colors"
-                                    >
-                                        <Mail className="w-5 h-5 text-foon-lime" />
-                                        <span className="text-xs text-gray-300">부고장</span>
-                                    </Link>
-                                </div>
-                            </div>
+                            </PassCard>
                         ))}
-                    </div>
+                    </ul>
                 )}
-            </main>
+            </AppBody>
         </div>
     );
 }

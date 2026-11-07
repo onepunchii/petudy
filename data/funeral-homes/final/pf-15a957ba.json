@@ -1,0 +1,170 @@
+{
+  "id": "pf-15a957ba",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장으로 진행",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": "홈페이지에 합동 화장 안내 없음",
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "추가 비용 없이 참관 가능",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 기본 포함, 수의는 선택 품목",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안당 운영, 연중무휴 예약 없이 방문",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/service1.php"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "1년 단위 수목장 운영",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골 일부로도 메모리얼 스톤 제작",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "지역별 요금 픽업, 방문·귀가 각각 산정",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    "allDay": {
+      "status": "no",
+      "note": "운영 08:30~22:00, 상담 07:00~23:00",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/intro2.php"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "15kg 이상은 별도 문의",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "위탁 장례",
+      "note": "보호자 없이 아이만 맡기는 장례 안내",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    {
+      "label": "보관실 안치",
+      "note": "장례 전 1일 무료, 관 구입 시 이용",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    {
+      "label": "산골장",
+      "note": "업체 정원에 유골 산골",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    {
+      "label": "잔디장",
+      "note": "1년 단위 잔디장 운영",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php"
+    },
+    {
+      "label": "장례확인서",
+      "note": "장례 후 장례확인서 발급",
+      "sourceUrl": "https://www.littlepaws.co.kr/"
+    }
+  ],
+  "hours": {
+    "text": "운영 08:30~22:00, 상담 07:00~23:00, 연중무휴",
+    "sourceUrl": "https://www.littlepaws.co.kr/doc/intro2.php"
+  },
+  "prices": [
+    {
+      "label": "화장 및 장례 5kg 미만",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모실, 개별 화장, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 및 장례 5~10kg 미만",
+      "amount": "30만 원",
+      "includes": "5kg 미만과 같은 구성, VAT 포함",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 및 장례 10~15kg 미만",
+      "amount": "36만 원",
+      "includes": "5kg 미만과 같은 구성, VAT 포함",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 및 장례 15kg 이상",
+      "amount": "별도 문의",
+      "includes": null,
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1년",
+      "amount": "20만~35만 원",
+      "includes": "층·등급별 상이, 2년 이상 계약 시 10% 할인",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수목장 1년",
+      "amount": "50만~70만 원",
+      "includes": "나무 종류별 상이, 2년 이상 계약 시 10% 할인",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 스톤",
+      "amount": "30만 원부터",
+      "includes": "3kg 미만 기본, 초과 1kg당 5만 원 추가",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "픽업 대구·영천·군위",
+      "amount": "6만 원",
+      "includes": "방문과 귀가 각각 산정",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/cost1.php",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": {
+    "text": "주차 공간이 넉넉하다고 안내",
+    "sourceUrl": "https://www.littlepaws.co.kr/doc/facility1.php"
+  },
+  "access": [
+    {
+      "text": "동군위IC에서 약 2분 거리",
+      "sourceUrl": "https://www.littlepaws.co.kr/"
+    },
+    {
+      "text": "큰 도로변에 위치",
+      "sourceUrl": "https://www.littlepaws.co.kr/doc/facility1.php"
+    }
+  ],
+  "summary": "리틀포즈 반려동물 장례식장은 개별 화장, 봉안당, 수목장을 운영하며 참관은 추가 비용 없이 가능합니다. 5kg 미만 장례는 25만 원입니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "15kg 이상은 요금 별도 문의",
+    "지도 서비스 영업시간은 홈페이지와 다름"
+  ]
+}

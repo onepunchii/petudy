@@ -9,7 +9,8 @@ export const SITE = {
     name: "포온",
     brand: "po-on",
     fullName: "포온 반려동물 서비스",
-    tagline: "우리 동네 반려동물 서비스, 가장 가까운 곳으로 연결합니다",
+    tagline: "반려동물의 여행을 함께 준비하고 배웅하는 동네 안내소",
+    // 메타 description(홈·기본값). SEO 값이라 디자인 작업에서 바꾸지 않습니다
     description:
         "반려동물 장례·미용·호텔·펫시터까지. 포온이 보호자님 동네에서 가장 가까운 등록 업체를 확인해 연결합니다. 서울 25개 구·경기 주요 도시 24시간 상담.",
     url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://foon.app").replace(/\/$/, ""),

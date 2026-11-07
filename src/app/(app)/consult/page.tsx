@@ -1,12 +1,12 @@
 "use client";
 
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { ChevronLeft, Sparkles, Send, Loader2 } from "lucide-react";
+import { IdCard, Send, Loader2, Phone, Stethoscope } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { askAiCounselor } from "@/actions/consult";
-import { initRagDatabase } from "@/actions/init-db";
-import { populate21gramData } from "@/actions/populate-21gram";
+import { APP_ICON_STROKE, AppButton, AppList, AppListItem, BRAND_ICON, BrandIcon, appInputClass, AppTopBar } from "@/components/app/ui";
+import { SITE } from "@/lib/site/config";
+import { cn } from "@/lib/utils";
 
 interface Message {
     role: "user" | "ai";
@@ -18,19 +18,6 @@ export default function ConsultPage() {
     const [messages, setMessages] = useState<Message[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
-
-    // DB 초기화 함수 (관리자용 임시)
-    const handleInitDB = async () => {
-        if (!confirm("RAG DB를 초기화하고 21그램 데이터를 populates하시겠습니까?")) return;
-        const initRes = await initRagDatabase();
-        if (!initRes.success) {
-            alert("DB 초기화 실패: " + initRes.error);
-            return;
-        }
-        const popRes = await populate21gramData();
-        if (popRes.success) alert("DB 초기화 및 21그램 데이터 population 완료!");
-        else alert("Population 실패: " + popRes.error);
-    };
 
     // 자동 스크롤
     useEffect(() => {
@@ -57,108 +44,112 @@ export default function ConsultPage() {
         if (result.success && result.answer) {
             setMessages(prev => [...prev, { role: "ai", content: result.answer! }]);
         } else {
-            setMessages(prev => [...prev, { role: "ai", content: "죄송합니다. 오류가 발생했습니다: " + (result.error || "알 수 없는 오류") }]);
+            setMessages(prev => [...prev, { role: "ai", content: result.error || "지금 AI 도우미가 답변하기 어려워요. 잠시 후 다시 시도해 주세요." }]);
         }
         setIsLoading(false);
     };
 
     return (
-        <div className="min-h-screen bg-[#121212] flex justify-center">
-            <div className="w-full max-w-[512px] bg-bg-main h-screen border-x border-[#121212] relative flex flex-col">
-
-                {/* Header */}
-                <header className="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/5 h-14 flex items-center px-4">
-                    <Link href="/app" className="p-2 -ml-2 text-white hover:text-gray-300 transition-colors">
-                        <ChevronLeft className="w-6 h-6" />
-                    </Link>
-                    <h1
-                        className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-white flex items-center gap-2 cursor-pointer"
-                        onDoubleClick={handleInitDB}
-                    >
-                        <Sparkles className="w-4 h-4 text-foon-lime" />
-                        AI 닥터 멍냥
-                    </h1>
-                </header>
-
-                {/* Chat Area */}
-                <div
-                    ref={scrollRef}
-                    className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide"
-                >
-                    {messages.length === 0 ? (
-                        <div className="flex flex-col items-center justify-center h-full text-center space-y-6 opacity-80 py-10">
-                            <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-foon-lime to-green-300 flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(163,223,70,0.3)] overflow-hidden">
-                                <div className="w-full h-full transform scale-125">
-                                    <DotLottieReact
-                                        src="https://lottie.host/fbd4eadc-be4a-44a3-adfb-0630b5bf1647/tBSDMcctNr.lottie"
-                                        loop
-                                        autoplay
-                                    />
-                                </div>
-                            </div>
-                            <h2 className="text-2xl font-bold text-white">무엇이든 물어보세요!</h2>
-                            <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
-                                아이의 증상이 궁금하거나<br />
-                                앱 사용법이 헷갈리실 때 언제든 찾아주세요.
-                            </p>
-                            <div className="w-full max-w-sm bg-[#1e1e20] rounded-2xl p-4 border border-white/5 text-left space-y-3">
-                                <div className="text-xs text-gray-500 font-bold ml-1">추천 질문</div>
-                                <div className="space-y-2">
-                                    <button
-                                        onClick={() => setInput("강아지가 초콜릿을 먹었어요!")}
-                                        className="w-full text-left p-3 rounded-xl bg-[#2a2a2c] hover:bg-[#333] transition-colors text-sm text-gray-200"
-                                    >
-                                        💊 강아지가 초콜릿을 먹었어요!
-                                    </button>
-                                    <button
-                                        onClick={() => setInput("펫 패스는 어떻게 발급받나요?")}
-                                        className="w-full text-left p-3 rounded-xl bg-[#2a2a2c] hover:bg-[#333] transition-colors text-sm text-gray-200"
-                                    >
-                                        💳 펫 패스는 어떻게 발급받나요?
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    ) : (
-                        messages.map((msg, idx) => (
-                            <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-[85%] p-3.5 rounded-2xl text-sm leading-relaxed ${msg.role === 'user'
-                                    ? 'bg-foon-lime text-bg-main font-medium rounded-tr-none'
-                                    : 'bg-[#1e1e20] text-gray-100 border border-white/5 rounded-tl-none whitespace-pre-wrap'
-                                    }`}>
-                                    {msg.content}
-                                </div>
-                            </div>
-                        ))
-                    )}
-                    {isLoading && (
-                        <div className="flex justify-start">
-                            <div className="bg-[#1e1e20] p-3.5 rounded-2xl rounded-tl-none border border-white/5">
-                                <Loader2 className="w-4 h-4 text-foon-lime animate-spin" />
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                {/* Input Area */}
-                <div className="p-4 border-t border-white/5 bg-[#121212]">
-                    <div className="relative">
-                        <input
-                            type="text"
-                            placeholder="메시지를 입력하세요..."
-                            className="w-full bg-[#1e1e20] border border-white/10 rounded-full py-3.5 pl-5 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-foon-lime/50 transition-colors"
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                        />
-                        <button
-                            onClick={handleSend}
-                            disabled={!input.trim() || isLoading}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-foon-lime flex items-center justify-center text-bg-main hover:bg-[#bbf080] disabled:opacity-50 disabled:hover:bg-foon-lime transition-all"
+        <div className="flex h-full flex-col bg-moon">
+            {/* 뒤로 가기는 예전처럼 항상 앱 홈(/app)으로 가는 링크 */}
+            <AppTopBar title="포온 AI 도우미" backHref="/app" className="shrink-0">
+                {/* 긴급 연락 안내 (채팅 영역 밖이라 스크롤해도 항상 보임). 장례 안내라 라임 없이 흰 글자로 */}
+                <div className="flex flex-wrap items-center justify-between gap-x-3 border-t border-white/10 px-5 py-1 text-[13px]">
+                    <span className="py-1.5 text-star-2">급한 장례는 전화가 가장 빠릅니다</span>
+                    <div className="flex items-center gap-3">
+                        <a
+                            href={SITE.phoneHref}
+                            className="inline-flex min-h-10 items-center gap-1 font-bold tabular-nums text-star transition-opacity hover:opacity-80"
+                            aria-label={`${SITE.name} 전화 상담 ${SITE.phone}`}
                         >
-                            <Send className="w-4 h-4 ml-0.5" />
-                        </button>
+                            <Phone className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            {SITE.phone}
+                        </a>
+                        <span className="h-3 w-px bg-white/15" aria-hidden="true" />
+                        <Link href="/contact" className="inline-flex min-h-10 items-center font-semibold text-star-2 transition-colors hover:text-star">
+                            상담 남기기
+                        </Link>
                     </div>
+                </div>
+            </AppTopBar>
+
+            {/* Chat Area */}
+            <div
+                ref={scrollRef}
+                className="scrollbar-hide flex-1 space-y-3 overflow-y-auto px-5 py-6"
+            >
+                {messages.length === 0 ? (
+                    <div className="flex min-h-full flex-col items-center justify-center text-center">
+                        <BrandIcon src={BRAND_ICON.ai} size={104} />
+                        <h2 className="mt-5 text-[22px] font-bold text-ink">무엇이든 물어보세요!</h2>
+                        <p className="mt-2 max-w-xs text-[15px] leading-relaxed text-ink-2">
+                            아이의 증상이 궁금하거나<br />
+                            앱 사용법이 헷갈리실 때 언제든 찾아주세요.
+                        </p>
+                        <div className="mt-8 w-full max-w-sm text-left">
+                            <p className="mb-2 px-1 text-[13px] font-semibold text-ink-3">추천 질문</p>
+                            <AppList aria-label="추천 질문">
+                                <AppListItem
+                                    onClick={() => setInput("강아지가 초콜릿을 먹었어요!")}
+                                    icon={<Stethoscope className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />}
+                                    label="강아지가 초콜릿을 먹었어요!"
+                                />
+                                <AppListItem
+                                    onClick={() => setInput("펫 패스는 어떻게 발급받나요?")}
+                                    icon={<IdCard className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />}
+                                    label="펫 패스는 어떻게 발급받나요?"
+                                />
+                            </AppList>
+                        </div>
+                    </div>
+                ) : (
+                    messages.map((msg, idx) => (
+                        <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                            <div
+                                className={cn(
+                                    "max-w-[85%] px-4 py-3 text-[15px] leading-relaxed",
+                                    msg.role === "user"
+                                        ? "rounded-[20px] rounded-tr-md bg-night font-medium text-star"
+                                        : "whitespace-pre-wrap rounded-[20px] rounded-tl-md bg-pass text-ink ring-1 ring-line",
+                                )}
+                            >
+                                {msg.content}
+                            </div>
+                        </div>
+                    ))
+                )}
+                {isLoading && (
+                    <div className="flex justify-start">
+                        <div className="rounded-[20px] rounded-tl-md bg-pass px-4 py-3.5 ring-1 ring-line">
+                            <Loader2 className="h-4 w-4 animate-spin text-ink-3 motion-reduce:animate-none" strokeWidth={APP_ICON_STROKE} />
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Input Area: 달빛 위 아래에 붙는 입력줄 */}
+            <div className="shrink-0 border-t border-line bg-moon px-4 pt-3" style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}>
+                <div className="flex items-center gap-2">
+                    <input
+                        type="text"
+                        placeholder="메시지를 입력하세요..."
+                        className={appInputClass}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) => {
+                            // 한글 조합 중 Enter 는 조합 확정이므로 보내지 않습니다 (두 번 보내지거나 끝 글자가 남는 문제 방지)
+                            if (e.key === "Enter" && !e.nativeEvent.isComposing) handleSend();
+                        }}
+                    />
+                    <AppButton
+                        variant="primary"
+                        onClick={handleSend}
+                        disabled={!input.trim() || isLoading}
+                        aria-label="메시지 보내기"
+                        className="h-12 w-12 shrink-0 px-0"
+                    >
+                        <Send className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                    </AppButton>
                 </div>
             </div>
         </div>

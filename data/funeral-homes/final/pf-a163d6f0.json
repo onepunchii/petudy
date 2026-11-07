@@ -1,0 +1,153 @@
+{
+  "id": "pf-a163d6f0",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례를 개별 화장으로 진행",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 장례를 개별 화장으로 진행",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "참관실에서 화장 전 과정 참관 가능",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "전 상품에 염습 포함, 장례Ⅱ 이상 수의",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "경기광주점 봉안당 운영, 1년 단위",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "경기광주점 수목장 안내 없음",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "루세떼 상담·제작 가능 표기",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "카카오T펫 연계 편도 운구, 3시간 전 예약",
+      "sourceUrl": "https://21gram.co.kr/hearse1"
+    },
+    "allDay": {
+      "status": "no",
+      "note": "24시간 아님, 07~02시 운영, 23시 예약 마감",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "15kg 이상 대형 동물 요금 별도 운영",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "15kg 미만 일반·소동물 요금 구분",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자 비동행 장례 접수 운영",
+      "sourceUrl": "https://21gram.co.kr/unaccompanied"
+    },
+    {
+      "label": "냉장 임시 안치",
+      "note": "전용 냉장시설 안치, 최대 1주",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "산골 대행",
+      "note": "산골 대행 서비스 운영, 6만 원",
+      "sourceUrl": "https://21gram.co.kr/254"
+    }
+  ],
+  "hours": {
+    "text": "매일 07:00~02:00, 마지막 예약 23시",
+    "sourceUrl": "https://21gram.co.kr/branch"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 15kg 미만",
+      "amount": "35만 원",
+      "includes": "염습, 단독 추모실, 개별 화장, 추모 예식, 백자 유골함. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 15kg 이상",
+      "amount": "65만 원",
+      "includes": "베이직 구성 동일, 체중별 추가금 없음. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅰ 15kg 미만",
+      "amount": "70만 원",
+      "includes": "베이직 구성, 시그니처 요람, 꽃다발. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 15kg 미만",
+      "amount": "75만 원",
+      "includes": "베이직 구성, 오동나무 관, 고급 수의, 꽃다발. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "경기광주점 봉안당 1 (1년)",
+      "amount": "신규 30만 원, 연장 20만 원",
+      "includes": "1년 봉안",
+      "sourceUrl": "https://21gram.co.kr/charnel",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "경기광주점 봉안당 2 (1년)",
+      "amount": "신규 50만 원, 연장 40만 원",
+      "includes": "1년 봉안",
+      "sourceUrl": "https://21gram.co.kr/charnel",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "냉장 안치",
+      "amount": "1일 3만 5천 원",
+      "includes": "염습 후 냉장 안치, 최대 1주",
+      "sourceUrl": "https://21gram.co.kr/254",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구(경기광주점까지 편도)",
+      "amount": "6만~10만 원",
+      "includes": "서울·경기 출발 지역별 요금",
+      "sourceUrl": "https://21gram.co.kr/hearse1",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [
+    {
+      "text": "한국외대 글로벌캠퍼스에서 1.5km 이내로 안내",
+      "sourceUrl": "https://21gram.co.kr/"
+    }
+  ],
+  "summary": "21그램 반려동물 장례식장은 광주시에 있는 21그램 경기광주점으로, 매일 7시부터 새벽 2시까지 운영합니다. 베이직 장례는 15kg 미만 35만 원입니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "운영시간 표기가 페이지마다 다름",
+    "등록 주소와 홈페이지 주소 표기가 다름"
+  ]
+}

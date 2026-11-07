@@ -1,0 +1,153 @@
+{
+  "id": "pf-33f13b07",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례를 개별 화장으로 진행",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 장례를 개별 화장으로 진행",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "참관실에서 화장 전 과정 참관 가능",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품에 염습 포함, 장례Ⅱ 이상 수의",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "화성점 봉안당 운영, 층별 요금",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "화성점 안내에 수목장 표기 없음",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골 보석 루세떼 상담·제작",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "운구 서비스 운영, 출발 지역별 유료",
+      "sourceUrl": "https://21gram.co.kr/131"
+    },
+    "allDay": {
+      "status": "no",
+      "note": "24시간 아님, 09~22시 운영",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "15kg 이상 대형 동물 요금 구간 있음",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "15kg 미만 일반·소동물 요금 구간 있음",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자 비동행 장례 상담 운영",
+      "sourceUrl": "https://21gram.co.kr/unaccompanied"
+    },
+    {
+      "label": "냉장 임시 안치",
+      "note": "염습 후 냉장 안치, 최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "산골 대행",
+      "note": "화장 후 산골 대행, 6만 원",
+      "sourceUrl": "https://21gram.co.kr/254"
+    }
+  ],
+  "hours": {
+    "text": "매일 09:00~22:00(마지막 예약 19시), 봉안당 09~19시",
+    "sourceUrl": "https://21gram.co.kr/branch"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 15kg 미만",
+      "amount": "35만 원",
+      "includes": "염습, 개별 화장, 단독 추모실, 추모 예식, 백자 유골함. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 15kg 이상",
+      "amount": "65만 원",
+      "includes": "베이직 구성 동일, 체중별 추가금 없음. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅰ 15kg 미만",
+      "amount": "70만 원",
+      "includes": "베이직 구성, 시그니처 요람, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 15kg 미만",
+      "amount": "75만 원",
+      "includes": "베이직 구성, 오동나무 관, 고급 수의, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화성점 봉안당 1년 5층",
+      "amount": "20만 원",
+      "includes": "신규 기준, 연장 시 30% 할인",
+      "sourceUrl": "https://21gram.co.kr/charnel",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화성점 봉안당 1년 1~4층",
+      "amount": "30만 원",
+      "includes": "신규 기준, 연장 시 30% 할인",
+      "sourceUrl": "https://21gram.co.kr/charnel",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "냉장 임시 안치",
+      "amount": "1일 3만 5천 원",
+      "includes": "최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구(화성점까지 편도)",
+      "amount": "6만~10만 원",
+      "includes": "서울·경기 출발 지역별 요금",
+      "sourceUrl": "https://21gram.co.kr/131",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [
+    {
+      "text": "백학IC에서 1.5km 이내로 안내",
+      "sourceUrl": "https://21gram.co.kr/"
+    }
+  ],
+  "summary": "21그램 반려동물장례식장 화성점은 화성시 비봉면에서 매일 9시부터 22시까지 운영합니다. 베이직 장례는 15kg 미만 35만 원이며 참관실과 봉안당을 갖추고 있습니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "마지막 장례 예약은 19시",
+    "지도 서비스에 옛 상호 펫오케스트라로 표기될 수 있음"
+  ]
+}

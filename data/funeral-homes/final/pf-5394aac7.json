@@ -1,0 +1,152 @@
+{
+  "id": "pf-5394aac7",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례를 개별 화장으로 진행",
+      "sourceUrl": "https://sweetdreampet.com/about/"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 장례를 개별 화장으로 진행한다고 안내",
+      "sourceUrl": "https://sweetdreampet.com/about/"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "독립 참관실에서 화장 전 과정 참관 가능",
+      "sourceUrl": "https://sweetdreampet.com/about/"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 소·중형 5만 원, 삼베·무명·모시 수의 선택",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "메모리얼 홀 봉안당, 일반형·확장형 운영",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "수목장 운영, 30만 원",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "로니테 스톤·하트 제작, 보관 유골분도 가능",
+      "sourceUrl": "https://sweetdreampet.com/stone/about/"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "보호자 동행 픽업(편도·왕복)과 위임장례 운영",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/"
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": "화장 09:00~18:00, 야간·휴일 장례는 할증",
+      "sourceUrl": "https://sweetdreampet.com/guide/procedure/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "요금표는 20kg 미만까지, 대형 염습은 별도 문의",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이용 관·유골함 안내, 소동물 안내는 없음",
+      "sourceUrl": "https://sweetdreampet.com/guide/products/"
+    }
+  },
+  "extras": [
+    {
+      "label": "위임장례",
+      "note": "보호자 없이 맡기는 위임장례 운영",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/"
+    },
+    {
+      "label": "100% 예약제",
+      "note": "예약제로 1:1 담당 장례지도사 배정",
+      "sourceUrl": "https://sweetdreampet.com/about/"
+    }
+  ],
+  "hours": {
+    "text": "이용시간과 화장 가능시간 09:00~18:00",
+    "sourceUrl": "https://sweetdreampet.com/"
+  },
+  "prices": [
+    {
+      "label": "장례예식 5kg 미만",
+      "amount": "24만 원",
+      "includes": "단독 추모, 개별 화장, 기본 종이관 안치. VAT 포함",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "장례예식 10kg 미만",
+      "amount": "30만 원",
+      "includes": "단독 추모, 개별 화장. VAT 포함",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "장례예식 15kg 미만",
+      "amount": "38만 원",
+      "includes": "단독 추모, 개별 화장. VAT 포함",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "장례예식 20kg 미만",
+      "amount": "44만 원",
+      "includes": "단독 추모, 개별 화장. VAT 포함",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "염습 소·중형",
+      "amount": "5만 원",
+      "includes": "대형은 별도 문의. VAT 포함",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 홀 일반형 1년",
+      "amount": "12만~22만 원",
+      "includes": "층별 상이, 안치비 외 관리비 없음. VAT 포함",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수목장",
+      "amount": "30만 원",
+      "includes": "VAT 포함",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "보호자 동행 픽업 편도",
+      "amount": "최소 3만 원",
+      "includes": "지역별 상이, 왕복 가능",
+      "sourceUrl": "https://sweetdreampet.com/guide/prices/",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 240000,
+  "parking": null,
+  "access": [
+    {
+      "text": "칠곡 현대공원 2묘원 입구 옆",
+      "sourceUrl": "https://sweetdreampet.com/location/"
+    },
+    {
+      "text": "대구와 구미에서 가까운 위치로 안내",
+      "sourceUrl": "https://sweetdreampet.com/location/"
+    }
+  ],
+  "summary": "스윗드림 펫은 칠곡군 가산면의 반려동물 장례식장으로 모든 장례를 개별 화장으로 진행합니다. 봉안당과 수목장을 함께 운영하며 장례예식은 5kg 미만 24만 원입니다.",
+  "cautions": [
+    "근무시간 외 야간·휴일 장례는 할증 적용",
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "지도 서비스 영업시간은 홈페이지와 다르게 표기"
+  ]
+}

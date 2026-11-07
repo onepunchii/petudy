@@ -1,12 +1,16 @@
 "use client";
 
-import { deletePetAction, signOutAction } from "@/actions/user";
-import { AddPetDialog } from "./add-pet-dialog";
+import { signOutAction } from "@/actions/user";
 import Image from "next/image";
-import { LogOut, Plus, Trash2, User } from "lucide-react";
+import { LogOut, User } from "lucide-react";
 import { useProfile } from "@/hooks/useProfile";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { APP_ICON_STROKE, AppBody, AppHero, AppList, skeletonClass } from "@/components/app/ui";
+import { PassCard } from "@/components/site/PassCard";
+import { cn } from "@/lib/utils";
+
+type Profile = NonNullable<ReturnType<typeof useProfile>["data"]>;
 
 export default function MyPage() {
     const { data: profile, isLoading } = useProfile();
@@ -19,7 +23,18 @@ export default function MyPage() {
     }, [isLoading, profile, router]);
 
     if (isLoading) {
-        return <div className="min-h-screen bg-bg-main flex items-center justify-center text-white">Loading...</div>; // Replace with Skeleton later
+        return (
+            <div className="min-h-full bg-moon">
+                <AppHero title="내 정보" />
+                <AppBody>
+                    <div className={cn(skeletonClass, "h-[104px]")} aria-hidden />
+                    <div className={cn(skeletonClass, "mt-4 h-14")} aria-hidden />
+                    <p role="status" className="sr-only">
+                        불러오는 중
+                    </p>
+                </AppBody>
+            </div>
+        );
     }
 
     if (!profile) return null; // Redirecting or waiting for profile
@@ -29,42 +44,47 @@ export default function MyPage() {
 
 
 // Extracted for clean render
-function MyPageContent({ profile }: { profile: any }) {
+function MyPageContent({ profile }: { profile: Profile }) {
     return (
-        <div className="min-h-screen bg-bg-main p-6 pb-24 space-y-8 text-white">
-            <header className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold">마이페이지</h1>
-                <form action={signOutAction}>
-                    <button className="text-gray-400 hover:text-red-500 transition-colors bg-[#2C2C2E] p-2 rounded-full border border-[#333]">
-                        <LogOut size={18} />
-                    </button>
-                </form>
-            </header>
+        <div className="min-h-full bg-moon">
+            <AppHero title="내 정보" />
 
-            {/* Same UI as before */}
-            {/* Profile Card */}
-            <div className="flex items-center gap-4 bg-bg-card p-5 rounded-[20px] shadow-lg border border-[#333] relative overflow-hidden group">
-                {/* ... */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-foon-lime/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+            <AppBody>
+                {/* 프로필: 탑승권 카드 (절취선 없는 기본형) */}
+                <PassCard mainClassName="flex items-center gap-4 p-5 sm:p-5">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-paper-2 ring-1 ring-line">
+                        {profile.avatarUrl ? (
+                            <Image src={profile.avatarUrl} alt="Avatar" width={64} height={64} className="h-full w-full object-cover" />
+                        ) : (
+                            <User className="h-7 w-7 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                        )}
+                    </div>
+                    <div className="min-w-0">
+                        <h2 className="flex flex-wrap items-center gap-2 text-[18px] font-bold leading-snug text-ink">
+                            {profile.nickname}
+                            <span className="rounded-full bg-pine-soft px-2.5 py-0.5 text-[13px] font-semibold tracking-[0.02em] text-pine">MEMBER</span>
+                        </h2>
+                        <p className="mt-0.5 truncate text-[14px] text-ink-3">{profile.email}</p>
+                    </div>
+                </PassCard>
 
-                <div className="w-16 h-16 bg-[#2C2C2E] rounded-full flex items-center justify-center overflow-hidden border-2 border-[#333] group-hover:border-foon-lime transition-colors">
-                    {profile.avatarUrl ? (
-                        <Image src={profile.avatarUrl} alt="Avatar" width={64} height={64} className="object-cover w-full h-full" />
-                    ) : (
-                        <User size={30} className="text-gray-500" />
-                    )}
-                </div>
-                <div className="relative z-10">
-                    <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                        {profile.nickname}
-                        <span className="text-[10px] bg-foon-lime/20 text-foon-lime px-2 py-0.5 rounded-full border border-foon-lime/30">MEMBER</span>
-                    </h2>
-                    <p className="text-sm text-gray-500">{profile.email}</p>
-                </div>
-            </div>
-
-
+                {/* 계정 */}
+                <AppList className="mt-4">
+                    <li>
+                        <form action={signOutAction}>
+                            <button
+                                type="submit"
+                                className="flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-paper-2/70 active:bg-paper-2"
+                            >
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-paper-2 text-ink-2">
+                                    <LogOut className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                </span>
+                                <span className="min-w-0 flex-1 text-[15.5px] font-semibold text-ink">로그아웃</span>
+                            </button>
+                        </form>
+                    </li>
+                </AppList>
+            </AppBody>
         </div>
     );
 }
-

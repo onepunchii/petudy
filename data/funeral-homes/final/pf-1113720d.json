@@ -1,0 +1,152 @@
+{
+  "id": "pf-1113720d",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장을 원칙으로 안내",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "요청 시 전 과정 참관, 화장 후 유골 확인",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품에 염습 포함, 상위 상품에 수의",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "지점 안내에 봉안당 운영 표기",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/hwaseong-1"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "지점 운영 서비스 목록에 수목장 없음",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/hwaseong-1"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "블리스 스톤 퓨어 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/hwaseong-1"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "전용 차량 편도 무료, 사전 예약",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "지점 24시간 운영, 대표번호 24시간 예약",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/hwaseong-1"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "30kg 이하 동물만 장례 가능 안내",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/hwaseong-1"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 전용, 1kg 이하 소동물 상품 있음",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "운구 시 보호자 동행 여부 선택 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    {
+      "label": "산골장·잔디장",
+      "note": "지점에서 산골장과 잔디장 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/hwaseong-1"
+    },
+    {
+      "label": "장례 증명서",
+      "note": "기본 장례 추모 키트에 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    {
+      "label": "생화 장식",
+      "note": "선택 추가, 5만 원",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    }
+  ],
+  "hours": {
+    "text": "24시간 운영",
+    "sourceUrl": "https://fourpaws.co.kr/service/store/hwaseong-1"
+  },
+  "prices": [
+    {
+      "label": "소동물 기본 장례 1kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모, 개별 화장, 추모 키트, 기본 유골함. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습, 추모 시간, 화장, 장례 증명서 등 추모 키트, 기본 유골함. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기준 무게 초과",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "일반동물 기준 무게 10kg 초과분",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고양이 전용 장례",
+      "amount": "55만 원",
+      "includes": "기본 장례, 관, 기본 유골함, 작은 꽃다발. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "관 장례 기본형 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 장례, 오동나무 관, 인견 수의 세트, 기본 유골함, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 기본형 10kg 이하",
+      "amount": "60만 원",
+      "includes": "기본 장례, 요람 관, 인견 수의, 기본 유골함, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "올인원 패키지 10kg 이하",
+      "amount": "140만 원",
+      "includes": "기본 장례, 오동나무 관, 면 수의 세트, 블리스 스톤 전량 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "차량 지원(운구)",
+      "amount": "무료(편도)",
+      "includes": "출발지에서 장례식장까지 편도, 사전 예약 필요",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "포포즈 반려동물 장례식장 화성1호점은 화성시 팔탄면에서 24시간 운영합니다. 30kg 이하 동물 장례를 안내하며 기본 장례는 10kg 이하 30만 원입니다.",
+  "cautions": [
+    "지점 안내상 30kg 이하 동물만 장례 가능",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "pf-d257ecf7",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "한 아이씩 단독 개별 화장으로 진행",
+      "sourceUrl": "https://wehappyending.com/process"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "전 과정 보호자 참관 가능",
+      "sourceUrl": "https://wehappyending.com/process"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습·입관 포함, 관 등 용품은 선택 시 추가",
+      "sourceUrl": "https://wehappyending.com/process"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "일반·개별 공간 납골당, 1년 단위 계약",
+      "sourceUrl": "https://wehappyending.com/cost"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "추모 방식으로 수목장 안내, 요금 미기재",
+      "sourceUrl": "https://wehappyending.com/process"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "희망 시 메모리얼 스톤 제작, 15만 원부터",
+      "sourceUrl": "https://wehappyending.com/cost"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "위치 확인 후 방문 픽업 안내, 추가 비용 가능",
+      "sourceUrl": "https://wehappyending.com/faq"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 365일 운영, 야간 이동은 별도 기준",
+      "sourceUrl": "https://wehappyending.com/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "20kg 이상은 1kg당 2만 원 추가",
+      "sourceUrl": "https://wehappyending.com/"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 장례 명시, 소동물 안내는 없음",
+      "sourceUrl": "https://wehappyending.com/cost"
+    }
+  },
+  "extras": [
+    {
+      "label": "생화 장식",
+      "note": "희망 시 생화로 배웅 공간 구성, 추가 비용",
+      "sourceUrl": "https://wehappyending.com/cost"
+    },
+    {
+      "label": "만원의 약속",
+      "note": "사전 참여 1만 원, 기본 화장비 20% 할인 등 혜택 안내",
+      "sourceUrl": "https://wehappyending.com/"
+    }
+  ],
+  "hours": {
+    "text": "24시간 365일",
+    "sourceUrl": "https://wehappyending.com/"
+  },
+  "prices": [
+    {
+      "label": "기본 화장 5kg 미만",
+      "amount": "20만 원",
+      "includes": "기본 유골함 포함, 픽업·관·꽃장식 등은 선택 시 추가",
+      "sourceUrl": "https://wehappyending.com/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "20kg 이상 추가 요금",
+      "amount": "1kg당 2만 원 추가",
+      "includes": "기본 화장비에 더해 계산",
+      "sourceUrl": "https://wehappyending.com/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "납골당 1년, 일반",
+      "amount": "신규·연장 각 20만 원",
+      "includes": "1년 단위 계약",
+      "sourceUrl": "https://wehappyending.com/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "납골당 1년, 개별 공간",
+      "amount": "신규 40만 원, 연장 30만 원",
+      "includes": "1년 단위 계약",
+      "sourceUrl": "https://wehappyending.com/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 스톤 제작",
+      "amount": "15만 원부터",
+      "includes": "구성과 크기에 따라 최종 비용 변동",
+      "sourceUrl": "https://wehappyending.com/cost",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 200000,
+  "parking": null,
+  "access": [],
+  "summary": "㈜해피엔딩은 경기도 광주시 초월읍의 반려동물 장례시설로 24시간 365일 운영한다고 안내합니다. 5kg 미만 기본 화장은 20만 원이며 납골당과 수목장을 함께 안내합니다.",
+  "cautions": [
+    "5kg 이상 20kg 미만 화장비는 홈페이지에 없음",
+    "픽업은 위치에 따라 추가 비용이 생길 수 있음",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

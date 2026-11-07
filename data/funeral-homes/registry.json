@@ -1,0 +1,4168 @@
+[
+ {
+  "id": "pf-15863dd5",
+  "name": "포포즈 반려동물 장례식장 세종점",
+  "regNo": null,
+  "sido": "세종특별자치시",
+  "sigungu": null,
+  "roadAddress": "세종시 부강로 시목부강로",
+  "jibunAddress": null,
+  "phone": "1588-2888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://fourpaws.co.kr",
+  "lat": 36.4801145,
+  "lng": 127.2889636,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 89, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-022",
+  "conflicts": [
+   "petbyeol detailed address '세종특별자치시 부강면 시목부강로 620' (unverified)",
+   "petbyeol lists registration number '5690000-038-2017-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 89,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "세종특별자치시 부강로 시목부강로",
+   "세종특별자치시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "세종특별자치시청",
+  "geoDisplayName": "세종특별자치시청, 2130, 한누리대로, 보람동, 용포리, 세종특별자치시, 30151, 대한민국"
+ },
+ {
+  "id": "pf-58b54cd2",
+  "name": "21그램 반려동물장례식장 세종점",
+  "regNo": null,
+  "sido": "세종특별자치시",
+  "sigungu": null,
+  "roadAddress": "세종특별자치시 장군면 금암리",
+  "jibunAddress": null,
+  "phone": "1688-1240",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://21gram.co.kr",
+  "lat": 36.4538981,
+  "lng": 127.2156946,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 88, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-003",
+  "conflicts": [
+   "petbyeol name: official '21그램 반려동물장례식장 세종점' vs petbyeol '펫포유'",
+   "petbyeol phone: official '1688-1240' vs petbyeol '1533-4426'",
+   "petbyeol website: official 'http://21gram.co.kr' vs petbyeol 'http://www.petforyou.kr'"
+  ],
+  "officialListNo": 88,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "세종특별자치시 장군면 금암리",
+   "금암리, 장군면, 세종특별자치시"
+  ],
+  "geoDetail": "admin_area",
+  "geoQuery": "세종특별자치시 장군면 금암리",
+  "geoDisplayName": "금암리, 장군면, 세종특별자치시, 대한민국"
+ },
+ {
+  "id": "pf-7a270503",
+  "name": "펫문",
+  "regNo": null,
+  "sido": "서울특별시",
+  "sigungu": "마포구",
+  "roadAddress": "서울 마포구 성지5길",
+  "jibunAddress": null,
+  "phone": "02-322-1004",
+  "facilityTypes": [
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.petmun.com/",
+  "lat": 37.5463052,
+  "lng": 126.913526,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 87, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-004",
+  "conflicts": [],
+  "officialListNo": 87,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "서울특별시 마포구 성지5길"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "서울특별시 마포구 성지5길",
+  "geoDisplayName": "성지5길, 합정동, 마포구, 서울특별시, 04083, 대한민국"
+ },
+ {
+  "id": "pf-52031400",
+  "name": "해늘마루",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "목포시",
+  "roadAddress": "전남광주통합특별시 목포시 고하대로",
+  "jibunAddress": null,
+  "phone": "061-273-4000",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.haeneul.kr",
+  "lat": 34.8118243,
+  "lng": 126.392237,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 86, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-060",
+  "conflicts": [],
+  "officialListNo": 86,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전라남도 목포시 고하대로",
+   "전라남도 목포시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "전라남도 목포시청",
+  "geoDisplayName": "목포시청, 유방산 등산로, 용당1동, 목포시, 전남광주통합특별시, 58649, 대한민국"
+ },
+ {
+  "id": "pf-15f1e0df",
+  "name": "전남반려동물장례식장 푸른솔 (주)",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "여수시",
+  "roadAddress": "전남광주통합특별시 여수시 율촌면 조화길",
+  "jibunAddress": null,
+  "phone": "1566-7112",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.greenssol.com",
+  "lat": 34.7622079,
+  "lng": 127.6630984,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 85, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-061",
+  "conflicts": [],
+  "officialListNo": 85,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전라남도 여수시 율촌면 조화길",
+   "전라남도 여수시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "전라남도 여수시청",
+  "geoDisplayName": "여수시청, 시청로, 선원동, 여수시, 전남광주통합특별시, 59677, 대한민국"
+ },
+ {
+  "id": "pf-8c7663d6",
+  "name": "전남순천1004반려동물장례식장",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "순천시",
+  "roadAddress": "전남광주통합특별시 서면 순천로 260-1",
+  "jibunAddress": null,
+  "phone": "061-753-1007",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 34.9506588,
+  "lng": 127.4872797,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 84, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-063",
+  "conflicts": [
+   "official address omits 시군구 ('서면 순천로 260-1'); 순천시 inferred from business name and 서면 (unverified)"
+  ],
+  "officialListNo": 84,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전라남도 순천시 서면 순천로 260-1",
+   "전라남도 순천시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "전라남도 순천시청",
+  "geoDisplayName": "순천시청, 30, 장명로, 장천동, 옥천동, 순천시, 전남광주통합특별시, 57956, 대한민국"
+ },
+ {
+  "id": "pf-e97f3b29",
+  "name": "(주)퍼스트펫",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "나주시",
+  "roadAddress": "전남광주통합특별시 나주시 다시면 영산로 4952",
+  "jibunAddress": null,
+  "phone": "061-337-0991",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.firstpet.co.kr",
+  "lat": 35.0171056,
+  "lng": 126.7138784,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 83, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-064",
+  "conflicts": [],
+  "officialListNo": 83,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전라남도 나주시 다시면 영산로 4952",
+   "전라남도 나주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "전라남도 나주시청",
+  "geoDisplayName": "나주시청, 예향로, 송월동, 금천면, 나주시, 전남광주통합특별시, 58261, 대한민국"
+ },
+ {
+  "id": "pf-9a34af87",
+  "name": "(주)별다만",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "나주시",
+  "roadAddress": "전남광주통합특별시 나주시 다도면 다도로 857",
+  "jibunAddress": null,
+  "phone": "061-337-1230",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 35.0171056,
+  "lng": 126.7138784,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 82, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-065",
+  "conflicts": [],
+  "officialListNo": 82,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전라남도 나주시 다도면 다도로 857",
+   "전라남도 나주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "전라남도 나주시청",
+  "geoDisplayName": "나주시청, 예향로, 송월동, 금천면, 나주시, 전남광주통합특별시, 58261, 대한민국"
+ },
+ {
+  "id": "pf-dea049aa",
+  "name": "㈜하늘정원",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "광산구",
+  "roadAddress": "전남광주통합특별시 광산구 체암로",
+  "jibunAddress": null,
+  "phone": "062-714-2979",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://skygardencafe.dothome.co.kr/",
+  "lat": 35.1395234,
+  "lng": 126.793725,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 81, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-011",
+  "conflicts": [
+   "petbyeol facility types: official '장례, 화장, 봉안' vs petbyeol '장례,화장'"
+  ],
+  "officialListNo": 81,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "광주광역시 광산구 체암로",
+   "광주광역시 광산구청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "광주광역시 광산구청",
+  "geoDisplayName": "광산구청, 송정로1번길, 송정동, 광산구, 광주, 전남광주통합특별시, 62430, 대한민국"
+ },
+ {
+  "id": "pf-caea8284",
+  "name": "타임투반려동물장례문화원",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "함평군",
+  "roadAddress": "전남광주통합특별시 함평군 학교면 학교월봉길",
+  "jibunAddress": null,
+  "phone": "061-322-0122",
+  "facilityTypes": [
+   "장례식장",
+   "건조장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.timeto.co.kr",
+  "lat": 35.0659654,
+  "lng": 126.5166819,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 80, page 1)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=1"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-066",
+  "conflicts": [],
+  "officialListNo": 80,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전라남도 함평군 학교면 학교월봉길",
+   "전라남도 함평군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "전라남도 함평군청",
+  "geoDisplayName": "함평군청, 중앙길, 함평리, 함평읍, 함평군, 전남광주통합특별시, 57147, 대한민국"
+ },
+ {
+  "id": "pf-fea0faed",
+  "name": "센트럴파크(주)",
+  "regNo": null,
+  "sido": "부산광역시",
+  "sigungu": "기장군",
+  "roadAddress": "부산광역시 기장군 일광면 차양길",
+  "jibunAddress": null,
+  "phone": "051-728-5411",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.startice.co.kr",
+  "lat": 35.2443935,
+  "lng": 129.2221725,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 79, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-006",
+  "conflicts": [],
+  "officialListNo": 79,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "부산광역시 기장군 일광면 차양길",
+   "부산광역시 기장군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "부산광역시 기장군청",
+  "geoDisplayName": "기장군청, 560, 기장대로, 기장읍, 기장군, 부산광역시, 46064, 대한민국"
+ },
+ {
+  "id": "pf-96f73645",
+  "name": "파트라슈",
+  "regNo": null,
+  "sido": "부산광역시",
+  "sigungu": "기장군",
+  "roadAddress": "부산 기장군 장안읍 좌동리",
+  "jibunAddress": null,
+  "phone": "051-723-2201",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.mypatrasche.co.kr",
+  "lat": 35.2443935,
+  "lng": 129.2221725,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 78, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-040",
+  "conflicts": [
+   "petbyeol detailed address '부산광역시 기장군 장안읍 기장대로 1561-68' (unverified)",
+   "petbyeol lists registration number '부산 21001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 78,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "부산광역시 기장군 장안읍 좌동리",
+   "좌동리, 장안읍, 기장군",
+   "부산광역시 기장군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "부산광역시 기장군청",
+  "geoDisplayName": "기장군청, 560, 기장대로, 기장읍, 기장군, 부산광역시, 46064, 대한민국"
+ },
+ {
+  "id": "pf-3a483859",
+  "name": "아이별",
+  "regNo": null,
+  "sido": "부산광역시",
+  "sigungu": "기장군",
+  "roadAddress": "부산광역시 기장군 장안읍 기룡길",
+  "jibunAddress": null,
+  "phone": "051-727-4499",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.aistar.co.kr",
+  "lat": 35.2443935,
+  "lng": 129.2221725,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 77, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-005",
+  "conflicts": [],
+  "officialListNo": 77,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "부산광역시 기장군 장안읍 기룡길",
+   "부산광역시 기장군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "부산광역시 기장군청",
+  "geoDisplayName": "기장군청, 560, 기장대로, 기장읍, 기장군, 부산광역시, 46064, 대한민국"
+ },
+ {
+  "id": "pf-e9daba7c",
+  "name": "대구러브펫",
+  "regNo": null,
+  "sido": "대구광역시",
+  "sigungu": "달서구",
+  "roadAddress": "대구 달서구 장동",
+  "jibunAddress": null,
+  "phone": "053-593-4900",
+  "facilityTypes": [
+   "장례식장"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://dglovepet.kr",
+  "lat": 35.83845,
+  "lng": 128.51512,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 76, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-007",
+  "conflicts": [],
+  "officialListNo": 76,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "대구광역시 달서구 장동"
+  ],
+  "geoDetail": "ri_dong",
+  "geoQuery": "대구광역시 달서구 장동",
+  "geoDisplayName": "장동, 장기동, 달서구, 대구광역시, 42722, 대한민국"
+ },
+ {
+  "id": "pf-15a957ba",
+  "name": "리틀포즈 반려동물 장례식장",
+  "regNo": null,
+  "sido": "대구광역시",
+  "sigungu": "군위군",
+  "roadAddress": "대구광역시 군위군 부계면 부흥로",
+  "jibunAddress": null,
+  "phone": "054-382-0400",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.littlepaws.co.kr",
+  "lat": 36.1097517,
+  "lng": 128.6767935,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 75, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-008",
+  "conflicts": [],
+  "officialListNo": 75,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "대구광역시 군위군 부계면 부흥로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "대구광역시 군위군 부계면 부흥로",
+  "geoDisplayName": "부흥로, 부계면, 군위군, 대구광역시, 43162, 대한민국"
+ },
+ {
+  "id": "pf-b8d1eec4",
+  "name": "아이드림펫",
+  "regNo": null,
+  "sido": "인천광역시",
+  "sigungu": "서구",
+  "roadAddress": "인천광역시 서구 원당대로 246번길",
+  "jibunAddress": null,
+  "phone": "1899-4996",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.idreampet.co.kr",
+  "lat": 37.5452311,
+  "lng": 126.6755963,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 74, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-016",
+  "conflicts": [
+   "official list says 인천광역시 서구; Incheon's 2026-07-01 district reorganization renamed/split 서구 (data.go.kr dataset 15121152 is published by '인천광역시 서해구' and says its pet funeral businesses are in 오류동·대곡동, i.e., the 검단 area). Current gu name (서해구 or 검단구) unverified",
+   "petbyeol detailed address '경기도 김포시 하성면 하성로 647' (unverified; DIFFERENT sigungu/area from official address)",
+   "petbyeol lists registration number '4090000-038-2018-0002' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 74,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "인천광역시 서구 원당대로 246번길",
+   "인천광역시 서구청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "인천광역시 서구청",
+  "geoDisplayName": "인천광역시 서구청, 307, 서곶로, 심곡동, 연희동, 서해구, 인천광역시, 22726, 대한민국"
+ },
+ {
+  "id": "pf-1f4fb721",
+  "name": "㈜더 포에버",
+  "regNo": null,
+  "sido": "인천광역시",
+  "sigungu": "서구",
+  "roadAddress": "인천광역시 서구 설원로",
+  "jibunAddress": null,
+  "phone": "032-713-5002",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.theforever.net",
+  "lat": 37.5452311,
+  "lng": 126.6755963,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 73, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-010",
+  "conflicts": [
+   "official list says 인천광역시 서구; Incheon's 2026-07-01 district reorganization renamed/split 서구 (data.go.kr dataset 15121152 is published by '인천광역시 서해구' and says its pet funeral businesses are in 오류동·대곡동, i.e., the 검단 area). Current gu name (서해구 or 검단구) unverified"
+  ],
+  "officialListNo": 73,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "인천광역시 서구 설원로",
+   "인천광역시 서구청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "인천광역시 서구청",
+  "geoDisplayName": "인천광역시 서구청, 307, 서곶로, 심곡동, 연희동, 서해구, 인천광역시, 22726, 대한민국"
+ },
+ {
+  "id": "pf-91d70dcd",
+  "name": "(주)어게인",
+  "regNo": null,
+  "sido": "인천광역시",
+  "sigungu": "서구",
+  "roadAddress": "인천광역시 서구 원당대로",
+  "jibunAddress": null,
+  "phone": "032-566-1936",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 37.5452311,
+  "lng": 126.6755963,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 72, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-009",
+  "conflicts": [
+   "official list says 인천광역시 서구; Incheon's 2026-07-01 district reorganization renamed/split 서구 (data.go.kr dataset 15121152 is published by '인천광역시 서해구' and says its pet funeral businesses are in 오류동·대곡동, i.e., the 검단 area). Current gu name (서해구 or 검단구) unverified"
+  ],
+  "officialListNo": 72,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "인천광역시 서구 원당대로",
+   "인천광역시 서구청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "인천광역시 서구청",
+  "geoDisplayName": "인천광역시 서구청, 307, 서곶로, 심곡동, 연희동, 서해구, 인천광역시, 22726, 대한민국"
+ },
+ {
+  "id": "pf-36382213",
+  "name": "(주)젠틀펫",
+  "regNo": null,
+  "sido": "울산광역시",
+  "sigungu": "북구",
+  "roadAddress": "울산광역시 북구 진장동 859",
+  "jibunAddress": null,
+  "phone": "1577-3620",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://gentlepetstar.modoo.at",
+  "lat": 35.56914,
+  "lng": 129.36195,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 71, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-012",
+  "conflicts": [],
+  "officialListNo": 71,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "울산광역시 북구 진장동 859"
+  ],
+  "geoDetail": "ri_dong",
+  "geoQuery": "울산광역시 북구 진장동 859",
+  "geoDisplayName": "진장동, 북구, 울산광역시, 44251, 대한민국"
+ },
+ {
+  "id": "pf-a2e564af",
+  "name": "이별공간",
+  "regNo": null,
+  "sido": "울산광역시",
+  "sigungu": "울주군",
+  "roadAddress": "울산광역시 울주군 삼동면 삼동로 140",
+  "jibunAddress": null,
+  "phone": "052-263-2300",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://ebyulplace.com",
+  "lat": 35.5094719,
+  "lng": 129.1437586,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 70, page 2)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=2"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-039",
+  "conflicts": [
+   "petbyeol lists registration number '3730000-038-2019-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 70,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "울산광역시 울주군 삼동면 삼동로 140"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "울산광역시 울주군 삼동면 삼동로 140",
+  "geoDisplayName": "삼동로, 울주군, 울산광역시, 44956, 대한민국"
+ },
+ {
+  "id": "pf-0025542b",
+  "name": "펫브릿지",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "안산시",
+  "roadAddress": "경기도 안산시 단원구 산단로 232",
+  "jibunAddress": null,
+  "phone": "1670-2818",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.petbrg.com",
+  "lat": 37.3220207,
+  "lng": 126.830834,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 69, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-013",
+  "conflicts": [],
+  "officialListNo": 69,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": "단원구",
+  "geoQueriesTried": [
+   "경기도 안산시 단원구 산단로 232",
+   "경기도 안산시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 안산시청",
+  "geoDisplayName": "안산시청, 화랑로, 고잔동, 단원구, 안산시, 경기도, 15353, 대한민국"
+ },
+ {
+  "id": "pf-c638a79d",
+  "name": "(주)펫콤",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "안산시",
+  "roadAddress": "경기 안산시 단원구 광덕서로",
+  "jibunAddress": null,
+  "phone": "1833-5158",
+  "facilityTypes": [
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://petcom.kr",
+  "lat": 37.309973,
+  "lng": 126.8270472,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 68, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-014",
+  "conflicts": [],
+  "officialListNo": 68,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "단원구",
+  "geoQueriesTried": [
+   "경기도 안산시 단원구 광덕서로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경기도 안산시 단원구 광덕서로",
+  "geoDisplayName": "광덕서로, 고잔동, 단원구, 안산시, 경기도, 15476, 대한민국"
+ },
+ {
+  "id": "pf-7506335e",
+  "name": "펫콤 안산점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "안산시",
+  "roadAddress": "안산시 상록구 서당길",
+  "jibunAddress": null,
+  "phone": "1833-5158",
+  "facilityTypes": [
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://petcom.kr",
+  "lat": 37.3220207,
+  "lng": 126.830834,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 67, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-015",
+  "conflicts": [
+   "official address omits sido; 경기도 inferred from 안산시"
+  ],
+  "officialListNo": 67,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "상록구",
+  "geoQueriesTried": [
+   "경기도 안산시 상록구 서당길",
+   "경기도 안산시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 안산시청",
+  "geoDisplayName": "안산시청, 화랑로, 고잔동, 단원구, 안산시, 경기도, 15353, 대한민국"
+ },
+ {
+  "id": "pf-08776829",
+  "name": "㈜펫바라기",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "고양시",
+  "roadAddress": "경기 고양시 일산동구 설문동",
+  "jibunAddress": null,
+  "phone": "031-976-3179",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.petbaragi.com",
+  "lat": 37.7137556,
+  "lng": 126.8058086,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 66, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-018",
+  "conflicts": [
+   "petbyeol detailed address '경기 고양시 일산동구 설문동 515-1' (unverified)",
+   "petbyeol lists registration number '3940000-038-2015-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 66,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "일산동구",
+  "geoQueriesTried": [
+   "경기도 고양시 일산동구 설문동"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 고양시 일산동구 설문동",
+  "geoDisplayName": "설문동, 고봉동, 일산동구, 고양시, 경기도, 10943, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.713755559290334,
+   "lng": 126.80580860360148,
+   "reverse": "설문동, 고봉동, 일산동구, 고양시, 경기도, 10943, 대한민국 | 은마길, 설문동, 고봉동, 일산동구, 고양시, 경기도, 10257, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "sigungu match (address has no eup/myeon)"
+  }
+ },
+ {
+  "id": "pf-16bd5923",
+  "name": "펫포레스트 반려동물장례식장 남양주점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "남양주시",
+  "roadAddress": "경기도 남양주시 와부읍 수레로 699",
+  "jibunAddress": null,
+  "phone": "1577-0996",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://petforest.co.kr",
+  "lat": 37.612318,
+  "lng": 127.26583,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 65, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-038",
+  "conflicts": [
+   "petbyeol detailed address '경기 광주시 오포읍 문형리' (unverified; DIFFERENT sigungu/area from official address)",
+   "petbyeol lists registration number '5540000-038-2016-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 65,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 남양주시 와부읍 수레로 699"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경기도 남양주시 와부읍 수레로 699",
+  "geoDisplayName": "수레로, 월문2리, 와부읍, 남양주시, 경기도, 12202, 대한민국"
+ },
+ {
+  "id": "pf-2da5a404",
+  "name": "21그램 반려동물 장례식장 남양주점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "남양주시",
+  "roadAddress": "경기도 남양주시 화도읍 수레로",
+  "jibunAddress": null,
+  "phone": "1688-1240",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://21gram.co.kr",
+  "lat": 37.6285706,
+  "lng": 127.28438,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 64, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-001",
+  "conflicts": [
+   "petbyeol detailed address '경기도 광주시 오포읍 매자리길 185-35' (unverified; DIFFERENT sigungu/area from official address)",
+   "petbyeol lists registration number '5540000-038-2008-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 64,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 남양주시 화도읍 수레로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경기도 남양주시 화도읍 수레로",
+  "geoDisplayName": "수레로, 화도읍, 남양주시, 경기도, 12202, 대한민국"
+ },
+ {
+  "id": "pf-1ab839b0",
+  "name": "몽몽이엠파크",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "남양주시",
+  "roadAddress": "경기도 남양주시 화도읍 모꼬지로",
+  "jibunAddress": null,
+  "phone": "1811-1336",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://mmempark.com",
+  "lat": 37.6813724,
+  "lng": 127.3646813,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 63, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-021",
+  "conflicts": [
+   "petbyeol detailed address '경기 남양주시 화도읍 구암리 305' (unverified)",
+   "petbyeol lists registration number '3990000-038-2019-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 63,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 남양주시 화도읍 모꼬지로",
+   "경기도 남양주시청"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 남양주시청",
+  "geoDisplayName": "남양주시청, 경춘로, 금곡동, 남양주시, 경기도, 12232, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.6813724129656,
+   "lng": 127.364681279813,
+   "reverse": "구암리, 남양주시, 경기도, 12192, 대한민국 | 화도읍, 남양주시, 경기도, 12457, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-b936ff92",
+  "name": "씨엘로펫",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "용인시",
+  "roadAddress": "경기도 용인시 처인구 죽양대로",
+  "jibunAddress": null,
+  "phone": "1577-7332",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.cielopet.co.kr",
+  "lat": 37.1700752,
+  "lng": 127.3749217,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 62, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-022",
+  "conflicts": [
+   "petbyeol detailed address '경기 용인시 처인구 백암면 백암리 220' (unverified)",
+   "petbyeol lists registration number '4050000-038-2020-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 62,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "처인구",
+  "geoQueriesTried": [
+   "경기도 용인시 처인구 죽양대로"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 용인시 처인구 죽양대로",
+  "geoDisplayName": "죽양대로, 처인구, 용인시, 경기도, 17163, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.1700752478906,
+   "lng": 127.374921746897,
+   "reverse": "백암리, 용인시, 경기도, 17178, 대한민국 | 죽양대로, 처인구, 용인시, 경기도, 17178, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "sigungu match (address has no eup/myeon)"
+  }
+ },
+ {
+  "id": "pf-43577879",
+  "name": "리멤버",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "용인시",
+  "roadAddress": "경기도 용인시 처인구 남사면",
+  "jibunAddress": null,
+  "phone": "080-200-5004",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://리멤버.net",
+  "lat": 37.241063,
+  "lng": 127.1776328,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 61, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-023",
+  "conflicts": [
+   "petbyeol detailed address '경기 용인시 처인구 남사읍 방아리 883-3' (unverified)",
+   "petbyeol lists registration number '4050000-038-2019-0001' (not shown on official list; unverified)",
+   "petbyeol coordinates rejected: reverse geocode '방아리, 용인시, 경기도, 17123, 대한민국 | 어진로, 장서리, 처인구, 용인시, 경기도, 17123, 대한민국' does not match official area"
+  ],
+  "officialListNo": 61,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "처인구",
+  "geoQueriesTried": [
+   "경기도 용인시 처인구 남사면",
+   "경기도 용인시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 용인시청",
+  "geoDisplayName": "용인시청, 금학로, 역북동, 처인구, 용인시, 경기도, 17020, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.10730675729214,
+   "lng": 127.1722534419611,
+   "reverse": "방아리, 용인시, 경기도, 17123, 대한민국 | 어진로, 장서리, 처인구, 용인시, 경기도, 17123, 대한민국",
+   "agreesWithOfficialArea": false,
+   "how": null
+  }
+ },
+ {
+  "id": "pf-06287624",
+  "name": "(주)페어웰",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "파주시",
+  "roadAddress": "경기도 파주시 광탄면 수레길",
+  "jibunAddress": null,
+  "phone": "031-941-3350",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://farewell.kr",
+  "lat": 37.7598901,
+  "lng": 126.7796343,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 60, page 3)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=3"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-017",
+  "conflicts": [],
+  "officialListNo": 60,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 파주시 광탄면 수레길",
+   "경기도 파주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 파주시청",
+  "geoDisplayName": "파주시청, 시민회관길, 금촌동, 금촌1동, 파주시, 경기도, 10923, 대한민국"
+ },
+ {
+  "id": "pf-b0289077",
+  "name": "㈜아리아펫",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "이천시",
+  "roadAddress": "경기 이천시 마장면 장암리",
+  "jibunAddress": null,
+  "phone": "031-635-2266",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.aria.pet",
+  "lat": 37.279656,
+  "lng": 127.3906599,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 59, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-025",
+  "conflicts": [
+   "petbyeol detailed address '경기 이천시 마장면 장암리 525-1' (unverified)",
+   "petbyeol lists registration number '4070000-038-2017-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 59,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 이천시 마장면 장암리",
+   "장암리, 마장면, 이천시"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 이천시 마장면 장암리",
+  "geoDisplayName": "장암리, 마장면, 이천시, 경기도, 17383, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.2796560487043,
+   "lng": 127.390659922317,
+   "reverse": "장암리, 마장면, 이천시, 경기도, 17383, 대한민국 | 이장로, 장암리, 마장면, 이천시, 경기도, 17383, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-a132dc11",
+  "name": "안성펫문화원",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "안성시",
+  "roadAddress": "경기도 안성시 죽산면 당목리 704-1",
+  "jibunAddress": null,
+  "phone": null,
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 37.03122,
+  "lng": 127.43525,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 58, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-018",
+  "conflicts": [],
+  "officialListNo": 58,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 안성시 죽산면 당목리 704-1",
+   "당목리, 죽산면, 안성시"
+  ],
+  "geoDetail": "admin_area",
+  "geoQuery": "당목리, 죽산면, 안성시",
+  "geoDisplayName": "당목리, 죽산면, 안성시, 경기도, 대한민국"
+ },
+ {
+  "id": "pf-d3b13b3e",
+  "name": "포포즈 반려동물 장례식장 경기 김포점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "김포시",
+  "roadAddress": "경기 김포시 월곶면 애기봉로",
+  "jibunAddress": null,
+  "phone": "1588-2888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://fourpaws.co.kr",
+  "lat": 37.7302034,
+  "lng": 126.5756151,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 57, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-027",
+  "conflicts": [
+   "petbyeol detailed address '경기 김포시 월곶면 개곡리 810-1' (unverified)",
+   "petbyeol lists registration number '4090000-038-2017-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 57,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 김포시 월곶면 애기봉로"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 김포시 월곶면 애기봉로",
+  "geoDisplayName": "애기봉로, 월곶면, 김포시, 경기도, 10024, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.7302033830478,
+   "lng": 126.575615125759,
+   "reverse": "개곡리, 김포시, 경기도, 10024, 대한민국 | 애기봉로, 월곶면, 김포시, 경기도, 10024, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-9671976d",
+  "name": "엔젤스톤",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "김포시",
+  "roadAddress": "경기 김포시 하성면 양택리",
+  "jibunAddress": null,
+  "phone": "031-981-0271",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.angelstone.co.kr",
+  "lat": 37.7364998,
+  "lng": 126.6297641,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 56, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-030",
+  "conflicts": [
+   "petbyeol detailed address '경기 김포시 하성면 양택리 251-6' (unverified)",
+   "petbyeol lists registration number '2008-02' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 56,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 김포시 하성면 양택리",
+   "양택리, 하성면, 김포시",
+   "경기도 김포시청"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 김포시청",
+  "geoDisplayName": "김포시청, 풍무동, 김포시, 경기도, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.7364998369331,
+   "lng": 126.629764078858,
+   "reverse": "양택리, 김포시, 경기도, 10011, 대한민국 | 하성로, 하성면, 김포시, 경기도, 10011, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-35455482",
+  "name": "펫포레스트 김포점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "김포시",
+  "roadAddress": "경기도 김포시 통진읍 고정로",
+  "jibunAddress": null,
+  "phone": "1577-0996",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://petforest.co.kr",
+  "lat": 37.72366,
+  "lng": 126.5868118,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 55, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-019",
+  "conflicts": [],
+  "officialListNo": 55,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 김포시 통진읍 고정로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경기도 김포시 통진읍 고정로",
+  "geoDisplayName": "고정로, 통진읍, 김포시, 경기도, 10016, 대한민국"
+ },
+ {
+  "id": "pf-b463db39",
+  "name": "아이드림펫",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "김포시",
+  "roadAddress": "경기 김포시 하성면 하성로",
+  "jibunAddress": null,
+  "phone": "031-996-7444",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.idreampet.co.kr",
+  "lat": 37.7017654,
+  "lng": 126.6363892,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 54, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-029",
+  "conflicts": [],
+  "officialListNo": 54,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 김포시 하성면 하성로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경기도 김포시 하성면 하성로",
+  "geoDisplayName": "하성로, 하성면, 김포시, 경기도, 10011, 대한민국"
+ },
+ {
+  "id": "pf-1b622bc3",
+  "name": "마스꼬따 휴㈜",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "김포시",
+  "roadAddress": "경기도 김포시 통진읍 애기봉로",
+  "jibunAddress": null,
+  "phone": "031-989-2444",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.mascotahue.com",
+  "lat": 37.7267656,
+  "lng": 126.613975,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 53, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-029",
+  "conflicts": [
+   "petbyeol detailed address '경기 김포시 통진읍 귀전리 3-15' (unverified)",
+   "petbyeol lists registration number '4090000-038-2018-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 53,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 김포시 통진읍 애기봉로"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 김포시 통진읍 애기봉로",
+  "geoDisplayName": "애기봉로, 통진읍, 김포시, 경기도, 10016, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.72676561140824,
+   "lng": 126.61397503869613,
+   "reverse": "귀전리, 김포시, 경기도, 10011, 대한민국 | 애기봉로, 통진읍, 김포시, 경기도, 10011, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-f28d1747",
+  "name": "ROYHILLS",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "양평군",
+  "roadAddress": "경기도 양평군 양동면 양동금곡",
+  "jibunAddress": null,
+  "phone": "1855-2004",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.royhills.co.kr",
+  "lat": 37.4916667,
+  "lng": 127.4875344,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 52, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-032",
+  "conflicts": [],
+  "officialListNo": 52,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 양평군 양동면 양동금곡",
+   "경기도 양평군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 양평군청",
+  "geoDisplayName": "양평군청, 양근리, 양평군, 경기도, 대한민국"
+ },
+ {
+  "id": "pf-af25b2af",
+  "name": "포포즈 반려동물장례식장 화성2호점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "화성시",
+  "roadAddress": "경기도 화성시 서신면 안벼슬길",
+  "jibunAddress": null,
+  "phone": "1588-2888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://fourpaws.co.kr",
+  "lat": 37.1990931,
+  "lng": 126.8309685,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 51, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-035",
+  "conflicts": [
+   "petbyeol detailed address '경기 화성시 서신면 사곶리 5-18' (unverified)",
+   "petbyeol lists registration number '5530000-038-2019-0002' (not shown on official list; unverified)",
+   "petbyeol coordinates rejected: reverse geocode '홍법리, 화성시, 경기도, 18555, 대한민국 | 안벼슬길102번길, 만세구, 화성시, 경기도, 18543, 대한민국' does not match official area"
+  ],
+  "officialListNo": 51,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 화성시 서신면 안벼슬길",
+   "경기도 화성시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 화성시청",
+  "geoDisplayName": "화성시청, 시청로, 남양읍, 만세구, 화성시, 경기도, 18271, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.1547702217778,
+   "lng": 126.741502454155,
+   "reverse": "홍법리, 화성시, 경기도, 18555, 대한민국 | 안벼슬길102번길, 만세구, 화성시, 경기도, 18543, 대한민국",
+   "agreesWithOfficialArea": false,
+   "how": null
+  }
+ },
+ {
+  "id": "pf-33f13b07",
+  "name": "21그램 반려동물장례식장 화성점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "화성시",
+  "roadAddress": "경기도 화성시 효행구 비봉면 양노남길",
+  "jibunAddress": null,
+  "phone": "1688-1240",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://21gram.co.kr/",
+  "lat": 37.2192811,
+  "lng": 126.8685376,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 50, page 4)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=4"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-036",
+  "conflicts": [
+   "official address includes '효행구' (화성시 일반구); sigungu recorded as 화성시",
+   "petbyeol name: official '21그램 반려동물장례식장 화성점' vs petbyeol '펫오케스트라 반려동물장례식장'",
+   "petbyeol phone: official '1688-1240' vs petbyeol '1588-1289'",
+   "petbyeol detailed address '경기 화성시 비봉면 양노리 755-5' (unverified)",
+   "petbyeol website: official 'https://21gram.co.kr/' vs petbyeol 'http://www.petorchestra.co.kr/'",
+   "petbyeol lists registration number '5530000-038-2019-0003' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 50,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "효행구",
+  "geoQueriesTried": [
+   "경기도 화성시 비봉면 양노남길"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 화성시 비봉면 양노남길",
+  "geoDisplayName": "양노남길, 비봉면, 효행구, 화성시, 경기도, 18284, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.2192810753309,
+   "lng": 126.868537620852,
+   "reverse": "양노리, 화성시, 경기도, 18284, 대한민국 | 푸른들판로, 비봉면, 효행구, 화성시, 경기도, 18284, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-1113720d",
+  "name": "포포즈 반려동물 장례식장 화성1호점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "화성시",
+  "roadAddress": "경기도 화성시 팔탄면 독곡길",
+  "jibunAddress": null,
+  "phone": "1588-2888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://fourpaws.co.kr",
+  "lat": 37.1990931,
+  "lng": 126.8309685,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 49, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-034",
+  "conflicts": [
+   "petbyeol detailed address '경기 화성시 팔탄면 창곡리 925-6' (unverified)",
+   "petbyeol lists registration number '5530000-038-2019-0001' (not shown on official list; unverified)",
+   "petbyeol coordinates rejected: reverse geocode '창곡리, 화성시, 경기도, 18525, 대한민국 | 푸른들판로, 비봉면, 만세구, 화성시, 경기도, 18525, 대한민국' does not match official area"
+  ],
+  "officialListNo": 49,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 화성시 팔탄면 독곡길",
+   "경기도 화성시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 화성시청",
+  "geoDisplayName": "화성시청, 시청로, 남양읍, 만세구, 화성시, 경기도, 18271, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.17505841537953,
+   "lng": 126.8947574170922,
+   "reverse": "창곡리, 화성시, 경기도, 18525, 대한민국 | 푸른들판로, 비봉면, 만세구, 화성시, 경기도, 18525, 대한민국",
+   "agreesWithOfficialArea": false,
+   "how": null
+  }
+ },
+ {
+  "id": "pf-16fbafa1",
+  "name": "스토리펫",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "화성시",
+  "roadAddress": "경기도 화성시 정남면 서봉로",
+  "jibunAddress": null,
+  "phone": "031-353-5579",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.스토리펫.com",
+  "lat": 37.146953,
+  "lng": 126.9606899,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 48, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-047",
+  "conflicts": [],
+  "officialListNo": 48,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 화성시 정남면 서봉로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경기도 화성시 정남면 서봉로",
+  "geoDisplayName": "서봉로, 정남면, 효행구, 화성시, 경기도, 18519, 대한민국"
+ },
+ {
+  "id": "pf-a163d6f0",
+  "name": "21그램 반려동물 장례식장",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "광주시",
+  "roadAddress": "경기 광주시 오포읍 매산리",
+  "jibunAddress": null,
+  "phone": "1688-1240",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://21gram.co.kr",
+  "lat": 37.4295137,
+  "lng": 127.2551698,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 47, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-049",
+  "conflicts": [],
+  "officialListNo": 47,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 광주시 오포읍 매산리",
+   "매산리, 오포읍, 광주시",
+   "경기도 광주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 광주시청",
+  "geoDisplayName": "광주시청, 회안대로, 송정동, 광주시, 경기도, 12746, 대한민국"
+ },
+ {
+  "id": "pf-2824abc9",
+  "name": "하늘강아지 반려동물 장례식장",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "광주시",
+  "roadAddress": "경기도 광주시 초월읍 선장동길",
+  "jibunAddress": null,
+  "phone": "1577-4428",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://skyplayground.co.kr",
+  "lat": 37.3890126,
+  "lng": 127.321951,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 46, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-050",
+  "conflicts": [],
+  "officialListNo": 46,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 광주시 초월읍 선장동길"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경기도 광주시 초월읍 선장동길",
+  "geoDisplayName": "선장동길, 초월읍, 광주시, 경기도, 12732, 대한민국"
+ },
+ {
+  "id": "pf-5ad19884",
+  "name": "러브펫",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "광주시",
+  "roadAddress": "경기 광주시 초월읍 지월리",
+  "jibunAddress": null,
+  "phone": "031-796-4341",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.러브펫.net",
+  "lat": 37.4161168,
+  "lng": 127.2875797,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 45, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-002",
+  "conflicts": [
+   "petbyeol detailed address '경기도 광주시 현산로 361번길 12' (unverified)",
+   "petbyeol lists registration number '5540000-038-2014-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 45,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 광주시 초월읍 지월리",
+   "지월리, 초월읍, 광주시"
+  ],
+  "geoDetail": "admin_area",
+  "geoQuery": "경기도 광주시 초월읍 지월리",
+  "geoDisplayName": "지월리, 초월읍, 광주시, 경기도, 대한민국"
+ },
+ {
+  "id": "pf-378d4f2f",
+  "name": "백꽃사랑하이빛",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "광주시",
+  "roadAddress": "경기도 광주시 곤지암읍 부항리",
+  "jibunAddress": null,
+  "phone": null,
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 37.3549316,
+  "lng": 127.3997101,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 44, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-051",
+  "conflicts": [
+   "phone masked ('***********') on official list"
+  ],
+  "officialListNo": 44,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 광주시 곤지암읍 부항리",
+   "부항리, 곤지암읍, 광주시"
+  ],
+  "geoDetail": "admin_area",
+  "geoQuery": "경기도 광주시 곤지암읍 부항리",
+  "geoDisplayName": "부항리, 곤지암읍, 광주시, 경기도, 대한민국"
+ },
+ {
+  "id": "pf-d257ecf7",
+  "name": "㈜해피엔딩",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "광주시",
+  "roadAddress": "경기 광주시 초월읍 지월리",
+  "jibunAddress": null,
+  "phone": "1899-5127",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.wehappyending.com",
+  "lat": 37.412716,
+  "lng": 127.3005319,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 43, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-037",
+  "conflicts": [
+   "petbyeol detailed address '경기 광주시 초월읍 지월리 134' (unverified)",
+   "petbyeol lists registration number '5540000-038-2017-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 43,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 광주시 초월읍 지월리",
+   "지월리, 초월읍, 광주시"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 광주시 초월읍 지월리",
+  "geoDisplayName": "지월리, 초월읍, 광주시, 경기도, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.4127160364256,
+   "lng": 127.300531888324,
+   "reverse": "지월리, 광주시, 경기도, 12728, 대한민국 | 지월로100번길, 초월읍, 광주시, 경기도, 12728, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-7b14bd48",
+  "name": "포포즈 반려동물 장례식장 경기 광주점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "광주시",
+  "roadAddress": "경기 광주시 초월읍 산수로",
+  "jibunAddress": null,
+  "phone": "1588-2888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://fourpaws.co.kr",
+  "lat": 37.3971833,
+  "lng": 127.3099948,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 42, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-039",
+  "conflicts": [
+   "petbyeol detailed address '경기 광주시 초월읍 신월리 592-19' (unverified)",
+   "petbyeol lists registration number '5540000-038-2015-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 42,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 광주시 초월읍 산수로"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 광주시 초월읍 산수로",
+  "geoDisplayName": "산수로, 초월읍, 광주시, 경기도, 12729, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.39718329589877,
+   "lng": 127.30999475387344,
+   "reverse": "신월리, 광주시, 경기도, 12729, 대한민국 | 중부고속도로, 초월읍, 광주시, 경기도, 12729, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-9bb61aea",
+  "name": "펫포레스트 경기광주점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "광주시",
+  "roadAddress": "경기 광주시 오포읍 문형리",
+  "jibunAddress": null,
+  "phone": "1577-0996",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://petforest.co.kr",
+  "lat": 37.4295137,
+  "lng": 127.2551698,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 41, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-048",
+  "conflicts": [],
+  "officialListNo": 41,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 광주시 오포읍 문형리",
+   "문형리, 오포읍, 광주시",
+   "경기도 광주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 광주시청",
+  "geoDisplayName": "광주시청, 회안대로, 송정동, 광주시, 경기도, 12746, 대한민국"
+ },
+ {
+  "id": "pf-42a94f10",
+  "name": "포포즈 반려동물 장례식장 경기 양주점",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "양주시",
+  "roadAddress": "경기 양주시 광적면 부흥로",
+  "jibunAddress": null,
+  "phone": "1588-2888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://fourpaws.co.kr",
+  "lat": 37.8092251,
+  "lng": 126.9215962,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 40, page 5)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=5"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-044",
+  "conflicts": [
+   "petbyeol detailed address '경기 양주시 광적면 비암리 583-4' (unverified)",
+   "petbyeol lists registration number '5590000-038-2017-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 40,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 양주시 광적면 부흥로"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "경기도 양주시 광적면 부흥로",
+  "geoDisplayName": "부흥로, 광적면, 양주시, 경기도, 11417, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.809225115118934,
+   "lng": 126.92159620663791,
+   "reverse": "비암리, 양주시, 경기도, 11517, 대한민국 | 부흥로, 광적면, 양주시, 경기도, 10953, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-ad744175",
+  "name": "스타펫",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "포천시",
+  "roadAddress": "경기도 포천시 내촌면 진금로",
+  "jibunAddress": null,
+  "phone": "1588-9344",
+  "facilityTypes": [
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 37.8949308,
+  "lng": 127.2003521,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 39, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-045",
+  "conflicts": [
+   "petbyeol detailed address '경기 포천시 내촌면 진목리 225' (unverified)",
+   "petbyeol lists registration number '5600000-038-2019-0001' (not shown on official list; unverified)",
+   "petbyeol coordinates rejected: reverse geocode '우금리, 포천시, 경기도, 11190, 대한민국 | 우금리, 포천시, 경기도, 11190, 대한민국' does not match official area"
+  ],
+  "officialListNo": 39,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 포천시 내촌면 진금로",
+   "경기도 포천시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 포천시청",
+  "geoDisplayName": "포천시청, 중앙로, 포천동, 포천시, 경기도, 11147, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.81551288930365,
+   "lng": 127.2126161890204,
+   "reverse": "우금리, 포천시, 경기도, 11190, 대한민국 | 우금리, 포천시, 경기도, 11190, 대한민국",
+   "agreesWithOfficialArea": false,
+   "how": null
+  }
+ },
+ {
+  "id": "pf-825a3312",
+  "name": "반려마루 추모관",
+  "regNo": null,
+  "sido": "경기도",
+  "sigungu": "여주시",
+  "roadAddress": "경기도 여주시 상거동 380-5",
+  "jibunAddress": null,
+  "phone": "031-8030-448",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 37.2982294,
+  "lng": 127.6371406,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 38, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": null,
+  "conflicts": [
+   "official phone '031-8030-448' has only 3 digits in last group (possibly truncated, unverified)"
+  ],
+  "officialListNo": 38,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경기도 여주시 상거동 380-5",
+   "경기도 여주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경기도 여주시청",
+  "geoDisplayName": "여주시청, 창동, 여주시, 경기도, 대한민국"
+ },
+ {
+  "id": "pf-7a871504",
+  "name": "주식회사 패투헤븐",
+  "regNo": null,
+  "sido": "강원특별자치도",
+  "sigungu": "원주시",
+  "roadAddress": "강원 원주시 소초면 현촌길",
+  "jibunAddress": null,
+  "phone": "033-745-4211",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.pettoheaven.co.kr",
+  "lat": 37.340668,
+  "lng": 127.922409,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 37, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-052",
+  "conflicts": [],
+  "officialListNo": 37,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "강원특별자치도 원주시 소초면 현촌길",
+   "강원특별자치도 원주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "강원특별자치도 원주시청",
+  "geoDisplayName": "원주시청, 21, 시청로, 무실동, 원주시, 강원특별자치도, 26383, 대한민국"
+ },
+ {
+  "id": "pf-abe35ac7",
+  "name": "강릉 펫사랑",
+  "regNo": null,
+  "sido": "강원특별자치도",
+  "sigungu": "강릉시",
+  "roadAddress": "강원 강릉시 사천면 구라미길",
+  "jibunAddress": null,
+  "phone": "033-645-8888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://gpetlove.modoo.at",
+  "lat": 37.8323263,
+  "lng": 128.8122231,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 36, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-047",
+  "conflicts": [
+   "petbyeol detailed address '강원특별자치도 강릉시 사천면 석교리 779' (unverified)",
+   "petbyeol lists registration number '4200000-038-2018-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 36,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "강원특별자치도 강릉시 사천면 구라미길",
+   "강원특별자치도 강릉시청"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "강원특별자치도 강릉시청",
+  "geoDisplayName": "강릉시청, 동해대로, 홍제동, 강릉시, 강원특별자치도, 25522, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 37.8323262838217,
+   "lng": 128.812223128573,
+   "reverse": "석교리, 강릉시, 강원특별자치도, 25434, 대한민국 | 사천면, 강릉시, 강원특별자치도, 25434, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-5487baea",
+  "name": "굿바이펫",
+  "regNo": null,
+  "sido": "충청북도",
+  "sigungu": "제천시",
+  "roadAddress": "충북 제천시 봉양읍 장평리",
+  "jibunAddress": null,
+  "phone": "043-642-1537",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://goodbyepet.co.kr",
+  "lat": 37.1326386,
+  "lng": 128.1910407,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 35, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-020",
+  "conflicts": [
+   "petbyeol detailed address '충청북도 제천시 봉양읍 장평로 95' (unverified)",
+   "petbyeol lists registration number '4400000-038-2012-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 35,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "충청북도 제천시 봉양읍 장평리",
+   "장평리, 봉양읍, 제천시",
+   "충청북도 제천시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "충청북도 제천시청",
+  "geoDisplayName": "제천시청, 원뜰로1길, 하소동, 제천시, 충청북도, 27188, 대한민국"
+ },
+ {
+  "id": "pf-aa2017f1",
+  "name": "대전 이별공간",
+  "regNo": null,
+  "sido": "충청북도",
+  "sigungu": "옥천군",
+  "roadAddress": "충청북도 옥천군 이원면 이원로",
+  "jibunAddress": null,
+  "phone": "1588-4476",
+  "facilityTypes": [
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://mamresky.modoo.at/",
+  "lat": 36.2227458,
+  "lng": 127.6288383,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 34, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-053",
+  "conflicts": [
+   "petbyeol name: official '대전 이별공간' vs petbyeol '대전 스카이 펫'"
+  ],
+  "officialListNo": 34,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "충청북도 옥천군 이원면 이원로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "충청북도 옥천군 이원면 이원로",
+  "geoDisplayName": "이원로, 이원면, 옥천군, 충청북도, 29061, 대한민국"
+ },
+ {
+  "id": "pf-89194c6c",
+  "name": "스마일 어게인",
+  "regNo": null,
+  "sido": "충청북도",
+  "sigungu": "영동군",
+  "roadAddress": "충청북도 영동군 추풍령면 작동",
+  "jibunAddress": null,
+  "phone": "1544-9262",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.smileagain.net",
+  "lat": 36.175023,
+  "lng": 127.7834315,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 33, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-023",
+  "conflicts": [
+   "petbyeol detailed address '충청북도 영동군 추풍령면 작동1길 81' (unverified)",
+   "petbyeol lists registration number '4540000-038-2018-0002' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 33,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "충청북도 영동군 추풍령면 작동",
+   "작동, 추풍령면, 영동군",
+   "충청북도 영동군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "충청북도 영동군청",
+  "geoDisplayName": "영동군청, 기골로, 계산리, 영동군, 충청북도, 29144, 대한민국"
+ },
+ {
+  "id": "pf-680a6dee",
+  "name": "우바스",
+  "regNo": null,
+  "sido": "충청북도",
+  "sigungu": "청주시",
+  "roadAddress": "충북 청주시 상당구 신송서원길",
+  "jibunAddress": null,
+  "phone": "1588-6326",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.ubas.co.kr",
+  "lat": 36.6424586,
+  "lng": 127.489043,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 32, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-025",
+  "conflicts": [
+   "petbyeol detailed address '충청북도 청주시 상당구 남일면 신송서원길 120-30' (unverified)",
+   "petbyeol lists registration number '5710000-038-2017-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 32,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "상당구",
+  "geoQueriesTried": [
+   "충청북도 청주시 상당구 신송서원길",
+   "충청북도 청주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "충청북도 청주시청",
+  "geoDisplayName": "청주시청, 중앙로, 북문로3가, 상당구, 청주시, 충청북도, 28543, 대한민국"
+ },
+ {
+  "id": "pf-4212488a",
+  "name": "러블리엔젤",
+  "regNo": null,
+  "sido": "충청북도",
+  "sigungu": "청주시",
+  "roadAddress": "충청북도 청주시 서원구 남이면",
+  "jibunAddress": null,
+  "phone": "1577-2518",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.lovelyangel.co.kr",
+  "lat": 36.5606627,
+  "lng": 127.433587,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 31, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-054",
+  "conflicts": [],
+  "officialListNo": 31,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "서원구",
+  "geoQueriesTried": [
+   "충청북도 청주시 서원구 남이면"
+  ],
+  "geoDetail": "eup_myeon_office",
+  "geoQuery": "충청북도 청주시 서원구 남이면",
+  "geoDisplayName": "남이면 행정복지센터, 7, 척산길, 서원구, 청주시, 충청북도, 28182, 대한민국"
+ },
+ {
+  "id": "pf-8aad2739",
+  "name": "(주)별지반려동물장례식장",
+  "regNo": null,
+  "sido": "충청북도",
+  "sigungu": "청주시",
+  "roadAddress": "충청북도 청주시 서원구 남이면 부용외천2길 42-170",
+  "jibunAddress": null,
+  "phone": "043-260-2486",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.byeolg.com",
+  "lat": 36.6424586,
+  "lng": 127.489043,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 30, page 6)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=6"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": null,
+  "conflicts": [],
+  "officialListNo": 30,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": "서원구",
+  "geoQueriesTried": [
+   "충청북도 청주시 서원구 남이면 부용외천2길 42-170",
+   "충청북도 청주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "충청북도 청주시청",
+  "geoDisplayName": "청주시청, 중앙로, 북문로3가, 상당구, 청주시, 충청북도, 28543, 대한민국"
+ },
+ {
+  "id": "pf-baa93c75",
+  "name": "21그램 반려동물 장례식장 천안아산점",
+  "regNo": null,
+  "sido": "충청남도",
+  "sigungu": "천안시",
+  "roadAddress": "충남 천안시 동남구 광풍로 1668",
+  "jibunAddress": null,
+  "phone": "1688-1240",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "건조장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://21gram.co.kr",
+  "lat": 36.734241,
+  "lng": 127.1262775,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 29, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-055",
+  "conflicts": [
+   "petbyeol address: official '충남 천안시 동남구 광풍로 1668' vs petbyeol '충남 천안시 동남구 광풍로'"
+  ],
+  "officialListNo": 29,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": "동남구",
+  "geoQueriesTried": [
+   "충청남도 천안시 동남구 광풍로 1668"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "충청남도 천안시 동남구 광풍로 1668",
+  "geoDisplayName": "광풍로, 동남구, 천안시, 충청남도, 31216, 대한민국"
+ },
+ {
+  "id": "pf-e5f25bca",
+  "name": "무지개별 반려동물장례식",
+  "regNo": null,
+  "sido": "충청남도",
+  "sigungu": "천안시",
+  "roadAddress": "충남 천안시 동남구 풍세면 세종평택로 150",
+  "jibunAddress": null,
+  "phone": "1588-5351",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.rainbowstar.pet/",
+  "lat": 36.7280054,
+  "lng": 127.1358026,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 28, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": null,
+  "conflicts": [],
+  "officialListNo": 28,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": "동남구",
+  "geoQueriesTried": [
+   "충청남도 천안시 동남구 풍세면 세종평택로 150"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "충청남도 천안시 동남구 풍세면 세종평택로 150",
+  "geoDisplayName": "세종평택로, 동남구, 천안시, 충청남도, 31216, 대한민국"
+ },
+ {
+  "id": "pf-6b91f9e7",
+  "name": "㈜좋은친구들",
+  "regNo": null,
+  "sido": "충청남도",
+  "sigungu": "공주시",
+  "roadAddress": "충남 공주시 우성면 보흥2길",
+  "jibunAddress": null,
+  "phone": "041-858-4411",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://goodfriend2012.com",
+  "lat": 36.4467875,
+  "lng": 127.1191109,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 27, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-027",
+  "conflicts": [
+   "petbyeol detailed address '충청남도 공주시 우성면 보흥2길 36-61' (unverified)",
+   "petbyeol lists registration number '4500000-038-2014-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 27,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "충청남도 공주시 우성면 보흥2길",
+   "충청남도 공주시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "충청남도 공주시청",
+  "geoDisplayName": "공주시청, 1, 봉황로, 봉황동, 공주시, 충청남도, 32552, 대한민국"
+ },
+ {
+  "id": "pf-f2b1db05",
+  "name": "리멤버 파크",
+  "regNo": null,
+  "sido": "충청남도",
+  "sigungu": "논산시",
+  "roadAddress": "충청남도 논산시 연산면 계백로",
+  "jibunAddress": null,
+  "phone": "041-735-1700",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.rememberpark.kr",
+  "lat": 36.1872353,
+  "lng": 127.0987445,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 26, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-021",
+  "conflicts": [
+   "petbyeol detailed address '충청남도 논산시 연산면 계백로 2172-13' (unverified)",
+   "petbyeol lists registration number '4540000-038-2018-0002' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 26,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "충청남도 논산시 연산면 계백로",
+   "충청남도 논산시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "충청남도 논산시청",
+  "geoDisplayName": "논산시청, 시민로222번길, 내동, 와야리, 논산시, 충청남도, 32987, 대한민국"
+ },
+ {
+  "id": "pf-41e1dfd7",
+  "name": "위드엔젤",
+  "regNo": null,
+  "sido": "충청남도",
+  "sigungu": "예산군",
+  "roadAddress": "충남 예산군 대슬면 화산리",
+  "jibunAddress": null,
+  "phone": "041-332-8787",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.withangel.net",
+  "lat": 36.6808741,
+  "lng": 126.8450906,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 25, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-026",
+  "conflicts": [
+   "official address spells '대슬면'; the 예산군 township is 대술면 (likely typo in source, unverified)",
+   "petbyeol detailed address '충청남도 예산군 대술면 대술로 700' (unverified)",
+   "petbyeol lists registration number '4610000-038-2013-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 25,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "충청남도 예산군 대술면 화산리",
+   "화산리, 대술면, 예산군",
+   "충청남도 예산군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "충청남도 예산군청",
+  "geoDisplayName": "예산군청, 군청로1길, 예산리, 예산군, 충청남도, 32436, 대한민국"
+ },
+ {
+  "id": "pf-683b2e66",
+  "name": "전주 반려동물 장례식장 아리움",
+  "regNo": null,
+  "sido": "전북특별자치도",
+  "sigungu": "전주시",
+  "roadAddress": "전라북도 전주시 완산구 콩쥐팥쥐로",
+  "jibunAddress": null,
+  "phone": "063-223-7942",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.arium.kr",
+  "lat": 35.8244753,
+  "lng": 127.0773155,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 24, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-056",
+  "conflicts": [
+   "official list shows legacy sido name '전라북도'; normalized to 전북특별자치도"
+  ],
+  "officialListNo": 24,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "완산구",
+  "geoQueriesTried": [
+   "전북특별자치도 전주시 완산구 콩쥐팥쥐로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "전북특별자치도 전주시 완산구 콩쥐팥쥐로",
+  "geoDisplayName": "콩쥐팥쥐로, 상림동, 효자4동, 완산구, 전주시, 전북특별자치도, 55068, 대한민국"
+ },
+ {
+  "id": "pf-11eb69c4",
+  "name": "서래안 펫타운",
+  "regNo": null,
+  "sido": "전북특별자치도",
+  "sigungu": "군산시",
+  "roadAddress": "전라북도 군산시 서래안1길",
+  "jibunAddress": null,
+  "phone": null,
+  "facilityTypes": [
+   "장례식장"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 35.9830254,
+  "lng": 126.7251525,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 23, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-057",
+  "conflicts": [
+   "official list shows legacy sido name '전라북도'; normalized to 전북특별자치도",
+   "phone masked ('***********') on official list"
+  ],
+  "officialListNo": 23,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전북특별자치도 군산시 서래안1길"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "전북특별자치도 군산시 서래안1길",
+  "geoDisplayName": "서래안1길, 중동, 군산시, 전북특별자치도, 54031, 대한민국"
+ },
+ {
+  "id": "pf-6ccddc7e",
+  "name": "펫바라기",
+  "regNo": null,
+  "sido": "전북특별자치도",
+  "sigungu": "남원시",
+  "roadAddress": "전북 남원시 보절면 신파리",
+  "jibunAddress": null,
+  "phone": "063-625-3737",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.petbaragi.co.kr",
+  "lat": 35.5202148,
+  "lng": 127.4168315,
+  "geoPrecision": "address",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 22, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-059",
+  "conflicts": [
+   "petbyeol detailed address '전북특별자치도 남원시 보절면 신파리 403' (unverified)",
+   "petbyeol lists registration number '4700000-038-2014-0001' (not shown on official list; unverified)",
+   "coordinates taken from petbyeol (reference) after Nominatim reverse-geocode confirmed same sigungu/eup-myeon as official address; exact building not independently verified"
+  ],
+  "officialListNo": 22,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전북특별자치도 남원시 보절면 신파리",
+   "신파리, 보절면, 남원시",
+   "전북특별자치도 남원시청"
+  ],
+  "geoDetail": "petbyeol_coordinates_area_verified",
+  "geoQuery": "전북특별자치도 남원시청",
+  "geoDisplayName": "남원시청, 60, 시청로, 도통동, 용담리, 남원시, 전북특별자치도, 55738, 대한민국",
+  "petbyeolCoordCheck": {
+   "lat": 35.5202147907783,
+   "lng": 127.41683149865229,
+   "reverse": "신파리, 남원시, 전북특별자치도, 55706, 대한민국 | 사계로, 보절면, 남원시, 전북특별자치도, 55706, 대한민국",
+   "agreesWithOfficialArea": true,
+   "how": "reverse geocode contains same eup/myeon"
+  }
+ },
+ {
+  "id": "pf-12f3256c",
+  "name": "전주 하늘",
+  "regNo": null,
+  "sido": "전북특별자치도",
+  "sigungu": "완주군",
+  "roadAddress": "전라북도 완주군 소양면 전진로",
+  "jibunAddress": null,
+  "phone": "063-432-0600",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://전주하늘반려동물장례식장.com",
+  "lat": 35.8571312,
+  "lng": 127.2414383,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 21, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-046",
+  "conflicts": [
+   "official list shows legacy sido name '전라북도'; normalized to 전북특별자치도",
+   "petbyeol detailed address '전라북도 완주군 소양면 전진로 1630' (unverified)",
+   "petbyeol lists registration number '4720000-038-2020-0002' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 21,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전북특별자치도 완주군 소양면 전진로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "전북특별자치도 완주군 소양면 전진로",
+  "geoDisplayName": "전진로, 소양면, 완주군, 전북특별자치도, 55356, 대한민국"
+ },
+ {
+  "id": "pf-f5a2b67e",
+  "name": "해피펫",
+  "regNo": null,
+  "sido": "전북특별자치도",
+  "sigungu": "완주군",
+  "roadAddress": "전라북도 완주군 이서면 팥죽이로",
+  "jibunAddress": null,
+  "phone": "063-242-2114",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 35.8071529,
+  "lng": 127.0183055,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 20, page 7)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=7"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-058",
+  "conflicts": [
+   "official list shows legacy sido name '전라북도'; normalized to 전북특별자치도"
+  ],
+  "officialListNo": 20,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전북특별자치도 완주군 이서면 팥죽이로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "전북특별자치도 완주군 이서면 팥죽이로",
+  "geoDisplayName": "팥죽이로, 장동, 상개리, 이서면, 완주군, 전북특별자치도, 55366, 대한민국"
+ },
+ {
+  "id": "pf-ac6497fe",
+  "name": "오수 펫 추모공원",
+  "regNo": null,
+  "sido": "전북특별자치도",
+  "sigungu": "임실군",
+  "roadAddress": "전라북도 임실군 오수면 춘향로",
+  "jibunAddress": null,
+  "phone": "063-643-0486",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.osupet.com",
+  "lat": 35.5466551,
+  "lng": 127.3326173,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 19, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-059",
+  "conflicts": [
+   "official list shows legacy sido name '전라북도'; normalized to 전북특별자치도"
+  ],
+  "officialListNo": 19,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전북특별자치도 임실군 오수면 춘향로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "전북특별자치도 임실군 오수면 춘향로",
+  "geoDisplayName": "춘향로, 오수면, 임실군, 전북특별자치도, 55951, 대한민국"
+ },
+ {
+  "id": "pf-af6b5f59",
+  "name": "순천 반려동물장례식장 하늘별",
+  "regNo": null,
+  "sido": "전남광주통합특별시",
+  "sigungu": "순천시",
+  "roadAddress": "전라남도 순천시 별량면 송산길",
+  "jibunAddress": null,
+  "phone": "061-741-0703",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://www.하늘별반려동물장례식장.kr",
+  "lat": 34.9506588,
+  "lng": 127.4872797,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 18, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-062",
+  "conflicts": [
+   "official list shows legacy sido name '전라남도'; normalized to 전남광주통합특별시 as used elsewhere in the same official list"
+  ],
+  "officialListNo": 18,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "전라남도 순천시 별량면 송산길",
+   "전라남도 순천시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "전라남도 순천시청",
+  "geoDisplayName": "순천시청, 30, 장명로, 장천동, 옥천동, 순천시, 전남광주통합특별시, 57956, 대한민국"
+ },
+ {
+  "id": "pf-780f2c8d",
+  "name": "경북반려동물장례식장",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "김천시",
+  "roadAddress": "경상북도 김천시 봉산면 영남대로",
+  "jibunAddress": null,
+  "phone": "1522-0912",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://gbpet.co.kr",
+  "lat": 36.18242,
+  "lng": 128.0135809,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 17, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-067",
+  "conflicts": [],
+  "officialListNo": 17,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 김천시 봉산면 영남대로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상북도 김천시 봉산면 영남대로",
+  "geoDisplayName": "영남대로, 봉산면, 김천시, 경상북도, 29120, 대한민국"
+ },
+ {
+  "id": "pf-a9ee9b62",
+  "name": "(주)모모리아",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "구미시",
+  "roadAddress": "경상북도 구미시 옥성면 이곡3길",
+  "jibunAddress": null,
+  "phone": null,
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "건조장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": null,
+  "lat": 36.1196537,
+  "lng": 128.3442731,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 16, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-071",
+  "conflicts": [
+   "phone masked ('***********') on official list",
+   "petbyeol name: official '(주)모모리아' vs petbyeol '(주)한별소울펫'",
+   "petbyeol phone: official '***********' vs petbyeol '1588-9749'",
+   "petbyeol website: official 'None' vs petbyeol 'https://hanbyulsoulpet.modoo.at'",
+   "petbyeol lists registration number '5080000-038-2018-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 16,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 구미시 옥성면 이곡3길",
+   "경상북도 구미시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경상북도 구미시청",
+  "geoDisplayName": "구미시청, 송원동로, 송정동, 구미시, 경상북도, 39280, 대한민국"
+ },
+ {
+  "id": "pf-fa1dc819",
+  "name": "(주)젠틀펫",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "문경시",
+  "roadAddress": "경상북도 문경시 문경읍 문경대로",
+  "jibunAddress": null,
+  "phone": "1577-3620",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://gentlepetstar.com/",
+  "lat": 36.7318155,
+  "lng": 128.0959497,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 15, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-068",
+  "conflicts": [],
+  "officialListNo": 15,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 문경시 문경읍 문경대로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상북도 문경시 문경읍 문경대로",
+  "geoDisplayName": "문경대로, 마원리, 문경시, 경상북도, 36916, 대한민국"
+ },
+ {
+  "id": "pf-2d559208",
+  "name": "아이들랜드",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "경산시",
+  "roadAddress": "경상북도 경산시 와촌면 불굴사길",
+  "jibunAddress": null,
+  "phone": "1522-6979",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://아이들랜드.com",
+  "lat": 35.8250934,
+  "lng": 128.741514,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 14, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-037",
+  "conflicts": [
+   "petbyeol detailed address '경상북도 경산시 와촌면 불굴사길 82' (unverified)",
+   "petbyeol lists registration number '5130000-038-2019-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 14,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 경산시 와촌면 불굴사길",
+   "경상북도 경산시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경상북도 경산시청",
+  "geoDisplayName": "경산시청, 159, 남매로, 경산임당호반베르디움아파트, 삼북동, 중앙동, 경산시, 경상북도, 38620, 대한민국"
+ },
+ {
+  "id": "pf-90dcdb31",
+  "name": "(주)젠틀펫",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "경산시",
+  "roadAddress": "경상북도 경산시 한의대로 124",
+  "jibunAddress": null,
+  "phone": "1577-3620",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://gentlepetstar.modoo.at",
+  "lat": 35.8250934,
+  "lng": 128.741514,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 13, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-069",
+  "conflicts": [],
+  "officialListNo": 13,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 경산시 한의대로 124",
+   "경상북도 경산시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경상북도 경산시청",
+  "geoDisplayName": "경산시청, 159, 남매로, 경산임당호반베르디움아파트, 삼북동, 중앙동, 경산시, 경상북도, 38620, 대한민국"
+ },
+ {
+  "id": "pf-442d85e6",
+  "name": "하얀민들레",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "청도군",
+  "roadAddress": "경북 청도군 화양읍 남성현로",
+  "jibunAddress": null,
+  "phone": "1599-1627",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.youngheal.com",
+  "lat": 35.7146114,
+  "lng": 128.7295603,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 12, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-044",
+  "conflicts": [
+   "petbyeol detailed address '경상북도 청도군 화양읍 남성현로 852' (unverified)",
+   "petbyeol lists registration number '5190000-038-2015-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 12,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 청도군 화양읍 남성현로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상북도 청도군 화양읍 남성현로",
+  "geoDisplayName": "남성현로, 송금리, 화양읍, 청도군, 경상북도, 38324, 대한민국"
+ },
+ {
+  "id": "pf-c78c065b",
+  "name": "강아지 펫 헤븐",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "성주군",
+  "roadAddress": "경상북도 성주군 선남면 오도리",
+  "jibunAddress": null,
+  "phone": "1899-6144",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://petheaven.ad-media.kr",
+  "lat": 35.92098,
+  "lng": 128.35748,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 11, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-031",
+  "conflicts": [
+   "petbyeol detailed address '경상북도 성주군 선남면 오도리 80' (unverified)",
+   "petbyeol lists registration number '5210000-038-2020-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 11,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 성주군 선남면 오도리",
+   "오도리, 선남면, 성주군"
+  ],
+  "geoDetail": "ri_dong",
+  "geoQuery": "경상북도 성주군 선남면 오도리",
+  "geoDisplayName": "오도리, 선남면, 성주군, 경상북도, 40045, 대한민국"
+ },
+ {
+  "id": "pf-5394aac7",
+  "name": "스윗드림 펫",
+  "regNo": null,
+  "sido": "경상북도",
+  "sigungu": "칠곡군",
+  "roadAddress": "경상북도 칠곡군 가산면 다부거문1길",
+  "jibunAddress": null,
+  "phone": "054-974-2220",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.sweetdreampet.com",
+  "lat": 35.9955834,
+  "lng": 128.4017635,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 10, page 8)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=8"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-035",
+  "conflicts": [
+   "petbyeol detailed address '경상북도 칠곡군 가산면 다부거문1길 51-68' (unverified)",
+   "petbyeol lists registration number '5220000-038-2020-0001호' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 10,
+  "addressPrecision": "includes_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상북도 칠곡군 가산면 다부거문1길",
+   "경상북도 칠곡군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경상북도 칠곡군청",
+  "geoDisplayName": "칠곡군청, 80, 군청1길, 석전리, 왜관읍, 칠곡군, 경상북도, 39877, 대한민국"
+ },
+ {
+  "id": "pf-f6f023e6",
+  "name": "한별 반려동물 장례식장",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "창원시",
+  "roadAddress": "경남 창원시 진해구 진해대로",
+  "jibunAddress": null,
+  "phone": "1644-9040",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://hanbyul.page24.app",
+  "lat": 35.115238,
+  "lng": 128.7676476,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 9, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-070",
+  "conflicts": [],
+  "officialListNo": 9,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": "진해구",
+  "geoQueriesTried": [
+   "경상남도 창원시 진해구 진해대로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상남도 창원시 진해구 진해대로",
+  "geoDisplayName": "진해대로, 남문동, 와성마을, 진해구, 창원시, 경상남도, 51621, 대한민국"
+ },
+ {
+  "id": "pf-0cd590a1",
+  "name": "펫로스 케어",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "김해시",
+  "roadAddress": "경상남도 김해시 상동면 묵방로",
+  "jibunAddress": null,
+  "phone": "1522-2253",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.petlosscare.co.kr/",
+  "lat": 35.2981619,
+  "lng": 128.9114496,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 8, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-042",
+  "conflicts": [
+   "petbyeol detailed address '경상남도 김해시 상동면 묵방로 109번길 3' (unverified)",
+   "petbyeol lists registration number '5350000-038-2019-0002' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 8,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 김해시 상동면 묵방로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상남도 김해시 상동면 묵방로",
+  "geoDisplayName": "묵방로, 묵방리, 김해시, 경상남도, 50805, 대한민국"
+ },
+ {
+  "id": "pf-173caa58",
+  "name": "별이되다",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "김해시",
+  "roadAddress": "경상남도 김해시 생림면 나전리",
+  "jibunAddress": null,
+  "phone": "1566-9399",
+  "facilityTypes": [
+   "화장시설",
+   "장례식장",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.becomestars.co.kr",
+  "lat": 35.2270823,
+  "lng": 128.8903754,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 7, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-034",
+  "conflicts": [
+   "petbyeol detailed address '경상남도 김해시 생림면 나전로137번길 31' (unverified)",
+   "petbyeol lists registration number '5350000-038-2019-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 7,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 김해시 생림면 나전리",
+   "나전리, 생림면, 김해시",
+   "경상남도 김해시청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경상남도 김해시청",
+  "geoDisplayName": "김해시청, 김해대로, 봉황동, 주촌면, 김해시, 경상남도, 50924, 대한민국"
+ },
+ {
+  "id": "pf-c911c084",
+  "name": "아이헤븐",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "김해시",
+  "roadAddress": "경상남도 김해시 생림면 봉림리",
+  "jibunAddress": null,
+  "phone": "1577-5474",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://iheaven.kr",
+  "lat": 35.3407581,
+  "lng": 128.8463656,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 6, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-038",
+  "conflicts": [
+   "petbyeol detailed address '경상남도 김해시 생림대로928번길 10-5' (unverified)",
+   "petbyeol lists registration number '535000-038-2018-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 6,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 김해시 생림면 봉림리",
+   "봉림리, 생림면, 김해시"
+  ],
+  "geoDetail": "landmark_in_ri_dong",
+  "geoQuery": "경상남도 김해시 생림면 봉림리",
+  "geoDisplayName": "봉림리 팽나무, 생림대로, 생림면, 김해시, 경상남도, 50801, 대한민국"
+ },
+ {
+  "id": "pf-7be7f0de",
+  "name": "포포즈 반려동물 장례식장 부산점",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "김해시",
+  "roadAddress": "경상남도 김해시 한림면 안하로",
+  "jibunAddress": null,
+  "phone": "1588-2888",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://fourpaws.co.kr",
+  "lat": 35.3101238,
+  "lng": 128.8246147,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 5, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-071",
+  "conflicts": [],
+  "officialListNo": 5,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 김해시 한림면 안하로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상남도 김해시 한림면 안하로",
+  "geoDisplayName": "안하로, 한림면, 김해시, 경상남도, 50848, 대한민국"
+ },
+ {
+  "id": "pf-43e61501",
+  "name": "(주)펫노블레스",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "양산시",
+  "roadAddress": "경상남도 양산시 상북면 공원로",
+  "jibunAddress": null,
+  "phone": "055-374-4400",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.petnoblesse.com",
+  "lat": 35.4255068,
+  "lng": 129.0492169,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 4, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-041",
+  "conflicts": [
+   "petbyeol detailed address '경상남도 양산시 상북면 공원로3길 19-91' (unverified)",
+   "petbyeol lists registration number '5380000-038-2019-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 4,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 양산시 상북면 공원로"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상남도 양산시 상북면 공원로",
+  "geoDisplayName": "공원로, 상북면, 양산시, 경상남도, 50558, 대한민국"
+ },
+ {
+  "id": "pf-bebe7f99",
+  "name": "메리온",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "양산시",
+  "roadAddress": "경남 양산시 상북면 오룡길",
+  "jibunAddress": null,
+  "phone": "055-374-6503",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.merion.co.kr",
+  "lat": 35.4560704,
+  "lng": 129.0383703,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 3, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-033",
+  "conflicts": [
+   "petbyeol detailed address '경상남도 양산시 상북면 오룡길 152' (unverified)",
+   "petbyeol lists registration number '5380000-038-2016-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 3,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 양산시 상북면 오룡길"
+  ],
+  "geoDetail": "road",
+  "geoQuery": "경상남도 양산시 상북면 오룡길",
+  "geoDisplayName": "오룡길, 상북면, 양산시, 경상남도, 50558, 대한민국"
+ },
+ {
+  "id": "pf-759f116d",
+  "name": "한별 리멤버파크",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "함안군",
+  "roadAddress": "경상남도 함안군 법수면 이묵골로",
+  "jibunAddress": null,
+  "phone": "1899-2610",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "https://hanbyul0042.page24.app",
+  "lat": 35.2724799,
+  "lng": 128.4065084,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 2, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-045",
+  "conflicts": [
+   "petbyeol detailed address '경상남도 함안군 법수면 이묵골로 135-3' (unverified)",
+   "petbyeol lists registration number '5400 000-038-2019-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 2,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 함안군 법수면 이묵골로",
+   "경상남도 함안군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경상남도 함안군청",
+  "geoDisplayName": "함안군청, 1, 말산로, 가야읍, 함안군, 경상남도, 52043, 대한민국"
+ },
+ {
+  "id": "pf-3baf80ed",
+  "name": "하늘소풍",
+  "regNo": null,
+  "sido": "경상남도",
+  "sigungu": "고성군",
+  "roadAddress": "경남 고성군 회화면 봉오로",
+  "jibunAddress": null,
+  "phone": "1566-4546",
+  "facilityTypes": [
+   "장례식장",
+   "화장시설",
+   "봉안시설"
+  ],
+  "permitDate": null,
+  "status": "listed",
+  "website": "http://www.하늘소풍.kr",
+  "lat": 34.9729935,
+  "lng": 128.3222242,
+  "geoPrecision": "sigungu",
+  "sources": [
+   {
+    "label": "동물보호관리시스템 동물장묘업 등록(허가) 현황 (번호 1, page 9)",
+    "url": "https://www.animal.go.kr/front/awtis/shop/undertaker1List.do?totalCount=89&pageSize=10&menuNo=6000000131&page=9"
+   },
+   {
+    "label": "펫별 (reference only, not authoritative)",
+    "url": "https://www.petbyeol.com/ko"
+   }
+  ],
+  "checkedAt": "2026-11-07",
+  "petbyeolId": "fh-official-043",
+  "conflicts": [
+   "petbyeol detailed address '경상남도 고성군 회화면 봉오로 145-22' (unverified)",
+   "petbyeol lists registration number '5420000-038-2017-0001' (not shown on official list; unverified)"
+  ],
+  "officialListNo": 1,
+  "addressPrecision": "road_or_ri_without_number",
+  "sigunguDistrict": null,
+  "geoQueriesTried": [
+   "경상남도 고성군 회화면 봉오로",
+   "경상남도 고성군청"
+  ],
+  "geoDetail": "sigungu_office",
+  "geoQuery": "경상남도 고성군청",
+  "geoDisplayName": "고성군청, 서외리, 고성군, 경상남도, 대한민국"
+ }
+]

@@ -1,0 +1,161 @@
+{
+  "id": "pf-173caa58",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "단독 화장으로만 진행",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0301"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "단독 화장으로만 진행한다고 안내",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0301"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "모든 과정 참관 가능",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0301"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 기본 포함, 상위 상품에 수의·관 포함",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/board.php?bo_table=sub0702"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안당 별들의정원 운영, 외부 유골함 안치 가능",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0401"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "첨가물 없는 메모리얼스톤 제작, 참관 가능",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0501"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "주간·야간 픽업과 보호자 비동행 장례 운영",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0203"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 연중무휴, 당일·새벽 장례 예약 가능",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0102"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "15~30kg 미만 요금 게시, 30kg 초과는 사전 고지",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/board.php?bo_table=sub0702"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물 요금 별도, 토끼는 일반 요금",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0303"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자 없이 운구 후 유골을 전달",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0203"
+    },
+    {
+      "label": "간소화장례",
+      "note": "염습과 추모 없이 화장과 분골만 진행",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0304"
+    },
+    {
+      "label": "산골 대행",
+      "note": "유골 산골 대행, 5만 원",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0304"
+    },
+    {
+      "label": "VIP 단독 장례",
+      "note": "VIP 전용 공간에서 한 타임에 한 아이만 진행",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0701"
+    }
+  ],
+  "hours": {
+    "text": "365일 연중무휴 24시간 운영",
+    "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0102"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 15kg 미만",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모실, 단독 화장, 한지이불, 나무유골함. kg당 추가 없음. VAT 별도",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0301",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "별장례 15kg 미만",
+      "amount": "50만 원",
+      "includes": "베이직 구성에 수의, 오동나무관, 사진액자, 꽃장식. VAT 별도",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0301",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "대형동물 베이직 15~30kg 미만",
+      "amount": "40만 원",
+      "includes": "한지이불, 국화, 나무유골함, 보자기. VAT 별도",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0302",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물장례 1kg 미만",
+      "amount": "20만 원",
+      "includes": "나무유골함, 보자기. VAT 별도",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0303",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "간소화장례 15kg 미만",
+      "amount": "25만 원",
+      "includes": "염습·추모 생략, 화장·분골. 00~07시 할증 5만 원",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0304",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼스톤장례 20알 기준",
+      "amount": "55만 원",
+      "includes": "베이직 장례, 메모리얼스톤, 기본 유리병",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0501",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 일반형 1년",
+      "amount": "9만~15만 원",
+      "includes": "단별 상이, 다년 계약 시 최대 30% 할인",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0401",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "픽업 주간 김해 전 지역",
+      "amount": "무료",
+      "includes": "09~18시 기준, 부산·창원 등은 편도 5만 원",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0203",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 200000,
+  "parking": {
+    "text": "넓은 주차 공간 안내, 대수 미표기",
+    "sourceUrl": "http://www.becomestars.co.kr/bbs/board.php?bo_table=sub0702"
+  },
+  "access": [
+    {
+      "text": "편도 픽업 이용 시 귀가 때 가야대역까지 이동 지원",
+      "sourceUrl": "http://www.becomestars.co.kr/bbs/content.php?co_id=sub0203"
+    }
+  ],
+  "summary": "별이되다는 김해시 생림면의 반려동물 장례식장으로 365일 24시간 운영합니다. 단독 화장만 진행하며 베이직 장례는 15kg 미만 25만 원(VAT 별도)입니다.",
+  "cautions": [
+    "야간 할증 기준이 페이지마다 달라 확인 필요",
+    "30kg 초과 반려동물은 사전 고지 필요",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": "pf-caea8284",
+  "services": {
+    "individualCremation": {
+      "status": "no",
+      "note": "화장이 아닌 개별 건조장 방식으로 진행",
+      "sourceUrl": "http://www.timeto.co.kr/"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "건조장 방식, 개별 장례 원칙",
+      "sourceUrl": "http://www.timeto.co.kr/30"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "장례 전 과정 참관 가능",
+      "sourceUrl": "http://www.timeto.co.kr/30"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 장례 염습 포함, 수의는 상위 상품",
+      "sourceUrl": "http://www.timeto.co.kr/33"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "장례 후 봉안당 안치 선택 가능, 요금 미게시",
+      "sourceUrl": "http://www.timeto.co.kr/30"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "카멜리아 파크 수목장 운영",
+      "sourceUrl": "http://www.timeto.co.kr/24"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골 스톤 타임스톤 제작, 2~3시간 추가",
+      "sourceUrl": "http://www.timeto.co.kr/23"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "관내 운구 무료",
+      "sourceUrl": "http://www.timeto.co.kr/30"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "예약 상담 24시간, 야간 장례 18~22시",
+      "sourceUrl": "http://www.timeto.co.kr/"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "명시 없음, 체중 추가 kg당 1만 원부터",
+      "sourceUrl": "http://www.timeto.co.kr/33"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "건조장",
+      "note": "전기를 이용한 건조 방식으로 개별 장례",
+      "sourceUrl": "http://www.timeto.co.kr/"
+    },
+    {
+      "label": "비대면 장례",
+      "note": "관내 픽업과 유골 전달 무료, 진행 사진 촬영",
+      "sourceUrl": "http://www.timeto.co.kr/30"
+    },
+    {
+      "label": "추모 영상",
+      "note": "장례 과정 슬라이드 영상 제공",
+      "sourceUrl": "http://www.timeto.co.kr/30"
+    }
+  ],
+  "hours": {
+    "text": "영업 09:00~21:00, 예약 상담 24시간",
+    "sourceUrl": "http://www.timeto.co.kr/"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 주간 09~18시",
+      "amount": "25만 원",
+      "includes": "염습, 추모 예식, 유골 수습·분골, 기본 유골함, VAT 포함",
+      "sourceUrl": "http://www.timeto.co.kr/33",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 야간 18~22시",
+      "amount": "28만 원",
+      "includes": "주간 베이직 장례와 같은 구성, VAT 포함",
+      "sourceUrl": "http://www.timeto.co.kr/33",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "체중 추가",
+      "amount": "1kg당 1만 원부터 추가",
+      "includes": "기준 체중 미게시",
+      "sourceUrl": "http://www.timeto.co.kr/33",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "타임투 장례",
+      "amount": "47만 원(정가 55만 원)",
+      "includes": "기본 구성에 수의 또는 오동나무관 택1, 기능성 유골함",
+      "sourceUrl": "http://www.timeto.co.kr/33",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 타임스톤 장례",
+      "amount": "60만 원(정가 65만 원)",
+      "includes": "기본 구성에 타임스톤, 타임스톤 케이스",
+      "sourceUrl": "http://www.timeto.co.kr/33",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "타임투 타임스톤 장례",
+      "amount": "98만 원(정가 108만 원)",
+      "includes": "기본 구성에 수의, 오동나무관, 타임스톤, 케이스",
+      "sourceUrl": "http://www.timeto.co.kr/33",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "타임스톤 제작(장례 미진행)",
+      "amount": "40만 원",
+      "includes": "장례 없이 스톤만 제작, 주얼리는 별도 문의",
+      "sourceUrl": "http://www.timeto.co.kr/23",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수목장(장례 미진행)",
+      "amount": "40만 원부터",
+      "includes": "장례 없이 수목장만 이용",
+      "sourceUrl": "http://www.timeto.co.kr/24",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [
+    {
+      "text": "상무지구·나주역·목포시청에서 각각 약 20분",
+      "sourceUrl": "http://www.timeto.co.kr/"
+    }
+  ],
+  "summary": "타임투반려동물장례문화원은 화장이 아닌 전기 건조 방식으로 개별 장례를 진행합니다. 베이직 장례는 주간 25만 원, 야간 28만 원입니다.",
+  "cautions": [
+    "화장이 아닌 건조장 방식으로 운영",
+    "기준 체중이 게시되지 않아 상담 필요",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

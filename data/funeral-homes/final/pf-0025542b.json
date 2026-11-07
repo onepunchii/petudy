@@ -1,0 +1,144 @@
+{
+  "id": "pf-0025542b",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "다른 동물과 함께 화장하지 않는 개별 화장",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "합동 화장 미운영, 개별 화장만 안내",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습은 모든 장례 기본, 수의는 상위 패키지",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": "자체 봉안당 언급 없음",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "시설 언급 없음, 일부 패키지에 수목함 포함",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모리얼 스톤·스톤 링 제작",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": "비동행 진행 시 픽업 여부 사전 협의",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "연중무휴 24시간 상담, 진행 시간 미표기",
+      "sourceUrl": "https://www.petbrg.com/"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "체중 상한 미표기, 5kg 초과 kg당 추가",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물 화장·전용 패키지 운영",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    }
+  },
+  "extras": [
+    {
+      "label": "단독 추모실",
+      "note": "단독 추모실 운영",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    {
+      "label": "장례증명서",
+      "note": "모든 장례에 장례증명서 포함",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    },
+    {
+      "label": "비동행 장례",
+      "note": "비동행 방식 진행 가능, 픽업은 사전 협의",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell"
+    }
+  ],
+  "hours": {
+    "text": "연중무휴 24시간 장례 상담, 진행 시간은 미표기",
+    "sourceUrl": "https://www.petbrg.com/"
+  },
+  "prices": [
+    {
+      "label": "기본 화장 5kg 이하",
+      "amount": "22만 원",
+      "includes": "염습·단독 추모실·개별 화장, 장례증명서 등, VAT 표기 없음",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "5kg 초과 체중 추가",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "5kg 초과분에 적용",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 기본 화장 1kg 미만",
+      "amount": "15만 원",
+      "includes": "1kg 미만 소동물 기본 화장",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "에센셜 리추얼 5kg 이하",
+      "amount": "43만 원(정가 46만 원)",
+      "includes": "이벤트가, 오동나무 관, 기본 유골함, 꽃다발, VAT 포함",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "스탠다드 리추얼 5kg 이하",
+      "amount": "49만 원(정가 54만 원)",
+      "includes": "이벤트가, 오동나무 관, 친환경 수목함, VAT 포함",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "펫브릿지 리추얼 5kg 이하",
+      "amount": "69만 원(정가 75만 원)",
+      "includes": "이벤트가, 오동나무 관과 이불보, 유골함 변경, VAT 포함",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 스탠다드 리추얼",
+      "amount": "30만 원(정가 32만 원)",
+      "includes": "1kg 미만, 이벤트가, 소동물 전용 오동관, VAT 포함",
+      "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": {
+    "text": "주차·차량 진입은 방문 전 전화 문의",
+    "sourceUrl": "https://www.petbrg.com/location"
+  },
+  "access": [],
+  "summary": "펫브릿지는 개별 화장과 단독 추모실로 장례를 진행하며 메모리얼 스톤을 제작합니다. 기본 화장은 5kg 이하 22만 원이고 장례 상담은 연중무휴 24시간 받습니다.",
+  "cautions": [
+    "홈페이지 주소는 상록구 수인로 1171로 등록과 다름",
+    "패키지 가격은 이벤트가 기준이며 변동될 수 있음",
+    "기본 화장 요금의 VAT 포함 여부 미표기"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "pf-7a871504",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "단독 개별 화장으로 진행",
+      "sourceUrl": "https://www.pettoheaven.co.kr/precess"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 화장을 단독·개별로 한다고 안내",
+      "sourceUrl": "https://www.pettoheaven.co.kr/precess"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "단독 추모실에서 화장 전 과정 참관",
+      "sourceUrl": "https://www.pettoheaven.co.kr/product"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 후 수의 착의, 오동나무관 입관",
+      "sourceUrl": "https://www.pettoheaven.co.kr/precess"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "자체 봉안당 운영, 층별 구분",
+      "sourceUrl": "https://www.pettoheaven.co.kr/precess"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모리얼 스톤 장례 상품 운영",
+      "sourceUrl": "https://www.pettoheaven.co.kr/cost"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "유료 픽업, 원주·춘천·여주·제천 등 대상",
+      "sourceUrl": "https://www.pettoheaven.co.kr/service"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "19시 전 예약 시 당일 밤이나 새벽 장례 가능",
+      "sourceUrl": "https://www.pettoheaven.co.kr/precess"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "관 크기 특대 표기, 대형견 안내는 없음",
+      "sourceUrl": "https://www.pettoheaven.co.kr/product"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": "특수 동물용 관 표기, 고양이 안내 없음",
+      "sourceUrl": "https://www.pettoheaven.co.kr/product"
+    }
+  },
+  "extras": [
+    {
+      "label": "화장만 이용",
+      "note": "장례 절차 없이 화장만 이용 가능",
+      "sourceUrl": "https://www.pettoheaven.co.kr/precess"
+    },
+    {
+      "label": "화장 증명서",
+      "note": "화장 증명서 발급",
+      "sourceUrl": "https://www.pettoheaven.co.kr/product"
+    }
+  ],
+  "hours": {
+    "text": "예약 필수, 09:00~23:00(소개 페이지는 08:00~20:00)",
+    "sourceUrl": "https://www.pettoheaven.co.kr"
+  },
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [
+    {
+      "text": "치악산 아래에 있다고 소개",
+      "sourceUrl": "https://www.pettoheaven.co.kr"
+    }
+  ],
+  "summary": "주식회사 패투헤븐은 강원 원주시 소초면의 반려동물 장례시설로 모든 화장을 단독 개별로 진행한다고 안내합니다. 자체 봉안당과 메모리얼 스톤 상품이 있으며 요금 금액은 홈페이지에 없습니다.",
+  "cautions": [
+    "홈페이지에 요금 금액이 없어 전화 문의 필요",
+    "운영시간 표기가 페이지마다 달라 확인 필요",
+    "예약 필수로 안내"
+  ]
+}

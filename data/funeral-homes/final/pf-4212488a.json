@@ -1,0 +1,153 @@
+{
+  "id": "pf-4212488a",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장 원칙, 기본 요금에 포함",
+      "sourceUrl": "https://lovelyangel.co.kr/SERVICE"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "어떤 경우에도 합동 화장은 하지 않음",
+      "sourceUrl": "https://lovelyangel.co.kr/SERVICE"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "참관실에서 화장과 유골 수습 참관",
+      "sourceUrl": "https://lovelyangel.co.kr/SERVICE"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습·수의·입관은 별도 요금 선택 항목",
+      "sourceUrl": "https://lovelyangel.co.kr/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "자체 봉안당, 유골분과 스톤 안치",
+      "sourceUrl": "https://lovelyangel.co.kr/SERVICE"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "전용 수목장 운영, 요금은 별도 문의",
+      "sourceUrl": "https://lovelyangel.co.kr/SERVICE"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "장례지도사가 메모리얼 스톤 직접 제작",
+      "sourceUrl": "https://lovelyangel.co.kr/memorial"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "유료 안심픽업, 지역·거리별 요금",
+      "sourceUrl": "https://lovelyangel.co.kr/"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 장례·상담, 명절에도 운영 공지",
+      "sourceUrl": "https://lovelyangel.co.kr/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "20kg 초과 시 1kg당 2만 원 추가",
+      "sourceUrl": "https://lovelyangel.co.kr/cost"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "햄스터 등 소동물 요금 별도, 고양이 표기 없음",
+      "sourceUrl": "https://lovelyangel.co.kr/cost"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "픽업과 함께 비동행 장례 이용 가능",
+      "sourceUrl": "https://lovelyangel.co.kr/"
+    },
+    {
+      "label": "산골·자연장",
+      "note": "지정 장소의 산골 나무에 자연장 선택 가능",
+      "sourceUrl": "https://lovelyangel.co.kr/SERVICE"
+    },
+    {
+      "label": "장례확인서",
+      "note": "장례 종료 후 장례확인서 발급",
+      "sourceUrl": "https://lovelyangel.co.kr/SERVICE"
+    },
+    {
+      "label": "안락사 연계",
+      "note": "협력 동물병원 연계로 안락사 진행 지원",
+      "sourceUrl": "https://lovelyangel.co.kr/"
+    }
+  ],
+  "hours": {
+    "text": "24시간 장례·상담, 고객센터 00:00~24:00",
+    "sourceUrl": "https://lovelyangel.co.kr/reservations"
+  },
+  "prices": [
+    {
+      "label": "기본 화장 소동물",
+      "amount": "15만 원",
+      "includes": "햄스터·기니피그 등, 단독 추모실, 개별 화장, 기본 유골함, VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 1kg 미만",
+      "amount": "18만 원",
+      "includes": "단독 추모실, 사진액자, 개별 화장, 기본 유골함, VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 5kg 미만",
+      "amount": "20만 원",
+      "includes": "단독 추모실, 사진액자, 개별 화장, 기본 유골함, VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 10kg 미만",
+      "amount": "23만 원",
+      "includes": "기본 화장 구성, VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 15kg 미만",
+      "amount": "26만 원",
+      "includes": "기본 화장 구성, VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 20kg 미만",
+      "amount": "30만 원",
+      "includes": "기본 화장 구성, VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "20kg 초과 추가 요금",
+      "amount": "1kg당 2만 원 추가",
+      "includes": "VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "염습 선택",
+      "amount": "5만 원부터",
+      "includes": "기본 화장에 미포함, VAT 별도",
+      "sourceUrl": "https://lovelyangel.co.kr/cost",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [],
+  "summary": "러블리엔젤은 충북 청주시 서원구 남이면의 반려동물 장례시설로 합동 화장 없이 개별 화장만 진행합니다. 24시간 장례와 상담이 가능하며 5kg 미만 기본 화장은 20만 원입니다.",
+  "cautions": [
+    "홈페이지 가격은 부가세 별도",
+    "염습·수의·관은 기본 화장에 포함되지 않음",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

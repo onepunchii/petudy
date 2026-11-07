@@ -1,0 +1,185 @@
+{
+  "model": "google/gemini-3-pro-image",
+  "style": {
+    "ill": "Hand-painted gouache and colored-pencil illustration in the style of a quiet contemporary picture book. Visible paper grain and soft dry-brush texture, flat simplified shapes, gentle hand-drawn imperfection. Limited palette: deep navy night blue (#0B1020 to #1F2742), soft starlight off-white, a muted dawn peach used sparingly, and at most one tiny touch of fresh lime green (#A3DF46). Calm, warm, hopeful mood. Do NOT use: glowing light trails, lens flares, bokeh, sparkle overload, purple or violet neon, photorealism, 3D render look, text, letters, numbers, logos, signatures, watermarks. Paint the whole frame edge to edge with no empty flat color blocks.",
+    "icon": "Soft 3D clay-toy render that matches the reference images' material, color and lighting exactly: matte soft plastic, rounded chunky forms, gentle studio light, soft contact shadow, the object centered with generous padding, plain pure white background. Palette: cream, soft navy, starlight white, with small fresh lime-green (#A3DF46) accents. No text, no letters, no logos."
+  },
+  "refs": {
+    "icon": [
+      "public/images/rocket-3d.png",
+      "design-src/brand/icons/hotel.png",
+      "design-src/brand/icons/training.png"
+    ]
+  },
+  "items": [
+    {
+      "id": "hero-home",
+      "style": "ill",
+      "aspect": "16:9",
+      "out": "public/brand/hero/home.png",
+      "prompt": "Wide scene at blue hour above a quiet Korean residential neighborhood of low-rise villas and small apartment blocks, a few warm lit windows. In the lower right third, on a small grassy hill with one bench, a fluffy white small dog and a tabby cat sit side by side seen from behind, looking up at the sky where the first stars appear. The left half is open, softly textured evening sky with a few small stars, calm enough for a headline to sit over it."
+    },
+    {
+      "id": "hero-funeral",
+      "style": "ill",
+      "aspect": "16:9",
+      "out": "public/brand/hero/funeral.png",
+      "prompt": "Wide night scene. A gentle path made of small painted dots of starlight rises from a quiet Korean neighborhood at the bottom right, curving up into the deep navy sky. Far along the path, very small and seen from behind, the soft silhouettes of a dog and a cat walk upward side by side. Restful and comforting, not sad. The upper-left two-thirds is open, softly textured night sky with scattered small stars for a headline. No glow effects; the starlight is painted, matte."
+    },
+    {
+      "id": "hero-grooming",
+      "style": "ill",
+      "aspect": "16:9",
+      "out": "public/brand/hero/grooming.png",
+      "prompt": "Wide early-evening street scene in a Korean neighborhood. A small cozy pet grooming shop with a large warm-lit window sits on the right. Inside the window, a freshly groomed fluffy small white dog (bichon) sits proudly wearing a navy bandana with tiny star prints, looking out at the first star in the darkening blue sky. The left half is calm textured evening sky above rooftops for a headline. Cheerful and warm."
+    },
+    {
+      "id": "icon-funeral",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/funeral.png",
+      "prompt": "A small crescent moon resting gently on a soft round cloud, with one small star floating above. Serene and minimal, no face, no cute expression."
+    },
+    {
+      "id": "icon-grooming",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/grooming.png",
+      "prompt": "A tiny cute planet with a ring; on the planet rest a small pair of grooming scissors and a soft brush."
+    },
+    {
+      "id": "icon-hotel",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/hotel.png",
+      "prompt": "A tiny round planet with a small cozy pet house on top, warm light in its little round window, and a soft cushion at the door."
+    },
+    {
+      "id": "icon-petsitter",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/petsitter.png",
+      "prompt": "A small round planet with a looping leash orbiting it like a ring and a heart-shaped name tag hanging from the leash."
+    },
+    {
+      "id": "icon-pet-taxi",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/pet-taxi.png",
+      "prompt": "A small rounded rocket-shaped car with four little wheels, a round window with a paw print on it, and a tiny lime flame at the back."
+    },
+    {
+      "id": "icon-training",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/training.png",
+      "prompt": "A small round planet with a little flag planted on top and a frisbee orbiting it."
+    },
+    {
+      "id": "icon-memorial",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/memorial.png",
+      "prompt": "A small wooden keepsake box, its lid slightly open, with three tiny stars floating up out of it."
+    },
+    {
+      "id": "icon-mbti",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/mbti.png",
+      "prompt": "A small round plaque on which five tiny stars are connected by thin lines forming the outline of a dog's head, like a constellation."
+    },
+    {
+      "id": "icon-ai",
+      "style": "icon",
+      "aspect": "1:1",
+      "out": "public/brand/icons/ai.png",
+      "prompt": "A friendly small round robot head with two simple dot eyes and a short lime-green antenna, like a helpful chat assistant."
+    },
+    {
+      "id": "guide-pet-death-first-steps",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/pet-death-first-steps.png",
+      "prompt": "A soft folded blanket on a low wooden floor with a small collar resting on it, beside a window showing a calm night sky with a few stars. Quiet and tender. No animal shown."
+    },
+    {
+      "id": "guide-pet-funeral-cost",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/pet-funeral-cost.png",
+      "prompt": "A tidy desk by a window at dusk: an open notebook with a small hand-drawn star sticker, a pencil, and a plain envelope. No writing visible."
+    },
+    {
+      "id": "guide-licensed-pet-crematorium-check",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/licensed-pet-crematorium-check.png",
+      "prompt": "A calm single-story building with warm windows standing among trees under a starry navy sky, a small round stamp shape with a check mark (no letters) floating in the corner."
+    },
+    {
+      "id": "guide-pet-body-legal-options",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/pet-body-legal-options.png",
+      "prompt": "Three gentle paths branching through a quiet park at dusk; the middle path is softly lit by starlight from above. Abstract and calm, no people."
+    },
+    {
+      "id": "guide-individual-vs-group-cremation",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/individual-vs-group-cremation.png",
+      "prompt": "A single small paper lantern floating upward into a navy sky full of small stars, above quiet rooftops."
+    },
+    {
+      "id": "guide-pet-ashes-options",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/pet-ashes-options.png",
+      "prompt": "On a windowsill at night: a small round keepsake jar, a smooth pale memorial stone pebble, and a tiny potted plant, with stars outside the window."
+    },
+    {
+      "id": "guide-cat-funeral",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/cat-funeral.png",
+      "prompt": "A cat's favorite round cushion by a window in moonlight; in the sky outside, a few stars form the gentle outline of a sitting cat."
+    },
+    {
+      "id": "guide-pet-registration-cancel",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/pet-registration-cancel.png",
+      "prompt": "A small passport-like pet booklet lying open on a table with one round star-shaped stamp mark (no letters), next to a cup of tea, soft evening light."
+    },
+    {
+      "id": "guide-pet-loss-care",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/pet-loss-care.png",
+      "prompt": "A person seen from behind sitting on a park bench at early dawn, sky turning from navy to soft peach; a few stars above form the gentle outline of a dog. Hopeful."
+    },
+    {
+      "id": "guide-dog-grooming-cycle",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/dog-grooming-cycle.png",
+      "prompt": "Grooming tools neatly arranged on a light table: a comb, rounded scissors, a soft brush, and a small calendar card showing simple moon-phase circles (no numbers)."
+    },
+    {
+      "id": "guide-dog-grooming-price",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/dog-grooming-price.png",
+      "prompt": "A happy small curly poodle just after grooming, wearing a navy bandana with tiny stars, sitting on a grooming table, soft warm light."
+    },
+    {
+      "id": "guide-cat-grooming-anesthesia",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/cat-grooming-anesthesia.png",
+      "prompt": "A calm long-haired cat being gently brushed by a hand with a soft brush, relaxed eyes half closed, cozy evening light."
+    }
+  ],
+  "_note": "생성 후 scripts/optimize-brand-images.sh 로 webp 변환(원본 PNG 는 design-src/ 로 이동, git 제외). icon 참조 이미지는 design-src/brand/icons/*.png"
+}

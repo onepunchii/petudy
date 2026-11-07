@@ -1,0 +1,152 @@
+{
+  "id": "pf-2da5a404",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 구성에 개별 화장·단독 추모실",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "유리벽 참관실에서 화장 과정 참관",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습은 모든 구성 포함, 수의는 상위 구성",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": "봉안당 운영 지점 목록에 남양주점 없음",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "루세떼 상담 표기(제작 표기는 없음)",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "카카오T펫 운구(편도), 3시간 전 예약",
+      "sourceUrl": "https://21gram.co.kr/hearse1"
+    },
+    "allDay": {
+      "status": "no",
+      "note": "운영 07:00~24:00, 마지막 예약 21시",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "15kg 이상 대형 동물 요금 별도 공시",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "소동물 요금 구분 공시",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    }
+  },
+  "extras": [
+    {
+      "label": "냉장 안치",
+      "note": "장례 당일까지 냉장 안치, 최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "비동행 장례",
+      "note": "보호자 없이 진행하는 비동행 장례 운영",
+      "sourceUrl": "https://21gram.co.kr/hearse1"
+    },
+    {
+      "label": "산골 대행",
+      "note": "산골 대행 서비스",
+      "sourceUrl": "https://21gram.co.kr/254"
+    }
+  ],
+  "hours": {
+    "text": "매일 07:00~24:00(마지막 예약 21시)",
+    "sourceUrl": "https://21gram.co.kr/branch"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 15kg 미만",
+      "amount": "35만 원",
+      "includes": "염습·개별화장·단독추모실, 백자 유골함, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 15kg 이상",
+      "amount": "65만 원",
+      "includes": "베이직 장례와 같은 구성, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅰ 15kg 미만",
+      "amount": "70만 원",
+      "includes": "베이직 구성에 요람, 꽃다발, VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 15kg 미만",
+      "amount": "75만 원",
+      "includes": "베이직 구성에 오동나무 관, 수의, 꽃다발",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "냉장 안치",
+      "amount": "1일 3만 5천 원",
+      "includes": "최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "산골 대행",
+      "amount": "6만 원",
+      "includes": null,
+      "sourceUrl": "https://21gram.co.kr/254",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 편도(서울 출발)",
+      "amount": "6만 원 또는 10만 원",
+      "includes": "출발 구에 따라 2단계, 카카오T펫 운행",
+      "sourceUrl": "https://21gram.co.kr/hearse1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 편도(경기 출발)",
+      "amount": "6만 원 또는 10만 원",
+      "includes": "남양주·하남·구리 등 인접 지역 6만 원",
+      "sourceUrl": "https://21gram.co.kr/hearse1",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [
+    {
+      "text": "서울에서 약 30분 거리로 소개",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    }
+  ],
+  "summary": "21그램 반려동물 장례식장 남양주점은 참관실을 갖추고 개별 화장을 진행합니다. 베이직 장례는 15kg 미만 35만 원이고 매일 오전 7시부터 자정까지 운영합니다.",
+  "cautions": [
+    "운영시간 표기가 페이지마다 다름(22시 종료 안내)",
+    "가격은 브랜드 공통 요금이며 변동될 수 있음"
+  ]
+}

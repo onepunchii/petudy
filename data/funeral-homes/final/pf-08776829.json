@@ -1,0 +1,148 @@
+{
+  "id": "pf-08776829",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장으로 진행",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/cost"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": "옛 펫바라기 홈페이지 기준 전 과정 참관",
+      "sourceUrl": "http://www.petbaragi.com/default/menu1/m1.php?sub=1"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "기본 장례에 염습 포함, 수의는 상품별",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안당 운영",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "일산점 서비스에는 산골장만 표기",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "블리스 스톤 퓨어 제작",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": "옛 펫바라기 홈페이지 기준 운구 가능",
+      "sourceUrl": "http://www.petbaragi.com/default/menu2/m1.php?sub=1"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 운영",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "20kg 이하 동물만 가능",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 전용·소동물 장례 상품 있음",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    }
+  },
+  "extras": [
+    {
+      "label": "산골장",
+      "note": "일산점 운영 서비스에 산골장 표기",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    },
+    {
+      "label": "장례증명서",
+      "note": "기본 장례 추모 키트에 장례 증명서 포함",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/cost"
+    },
+    {
+      "label": "생화 꽃 장식",
+      "note": "생화 꽃 장식 추가 가능(5만 원)",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+    }
+  ],
+  "hours": {
+    "text": "24시간 운영(00:00~24:00)",
+    "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습·추모 시간·화장, 추모 키트, 기본 유골함, VAT 포함",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기준 체중 초과",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "일반 10kg·소동물 1kg 초과분",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 기본 장례 1kg 이하",
+      "amount": "25만 원",
+      "includes": "구성 상세 미표기, VAT 포함",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 전용 장례 1kg 이하",
+      "amount": "40만 원",
+      "includes": "구성 상세 미표기, VAT 포함",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "관 장례 기본형",
+      "amount": "55만 원",
+      "includes": "기본 장례에 오동나무 관, 인견 수의, 작은 꽃다발",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 기본형",
+      "amount": "60만 원",
+      "includes": "기본 장례에 요람 관(목화솜 이불), 인견 수의",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고양이 전용 장례",
+      "amount": "55만 원",
+      "includes": "기본 장례에 고양이 전용 관, 작은 꽃다발",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "올인원 패키지",
+      "amount": "140만 원",
+      "includes": "기본 장례, 면 수의, 블리스 스톤 전량 제작, 스톤함",
+      "sourceUrl": "https://www.fourpaws.co.kr/service/store/ilsan",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "㈜펫바라기 정보는 현재 운영 페이지인 포포즈 일산점 기준이며 24시간 운영합니다. 기본 장례는 10kg 이하 30만 원이고 20kg 이하 동물만 가능합니다.",
+  "cautions": [
+    "포포즈 일산점으로 리뉴얼 보도, 운영 법인 미확인",
+    "참관·운구는 옛 펫바라기 홈페이지 기준 정보",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

@@ -2,50 +2,62 @@
 
 import { createClient } from "@/lib/supabase/server";
 
-export async function uploadPetPhoto(formData: FormData) {
+/** 받는 사진 형식. 확장자는 파일 이름이 아니라 실제 내용(앞 몇 바이트)으로 정합니다 */
+const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
+
+function sniffImageType(head: Uint8Array): { mime: string; ext: string } | null {
+    const ascii = (from: number, to: number) => String.fromCharCode(...head.slice(from, to));
+    if (head[0] === 0xff && head[1] === 0xd8 && head[2] === 0xff) return { mime: "image/jpeg", ext: "jpg" };
+    if (head[0] === 0x89 && ascii(1, 4) === "PNG") return { mime: "image/png", ext: "png" };
+    if (ascii(0, 4) === "RIFF" && ascii(8, 12) === "WEBP") return { mime: "image/webp", ext: "webp" };
+    if (ascii(0, 4) === "GIF8") return { mime: "image/gif", ext: "gif" };
+    return null;
+}
+
+type UploadResult = { success: true; url: string } | { success: false; code: "auth" | "invalid" | "server"; error: string };
+
+export async function uploadPetPhoto(formData: FormData): Promise<UploadResult> {
+    const file = formData.get("file");
+    if (!(file instanceof File) || file.size === 0) {
+        return { success: false, code: "invalid", error: "사진을 다시 골라 주세요." };
+    }
+    if (file.size > MAX_PHOTO_BYTES) {
+        return { success: false, code: "invalid", error: "사진은 5MB 이하로 올려 주세요." };
+    }
+
     try {
-        const file = formData.get("file") as File;
-        if (!file) throw new Error("No file provided");
-
         const supabase = await createClient();
-
-        // Generate unique filename
-        const fileExt = file.name.split('.').pop();
-        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 15)}.${fileExt}`;
-        const filePath = `pets/${fileName}`;
-
-        // Upload to 'pet-photos' bucket
-        // If this bucket doesn't exist, we might need to handle creation or use a different one.
-        // For now, assuming 'pet-photos' or 'images'. Let's try 'pet-photos'.
-        const { error } = await supabase.storage
-            .from("pet-photos")
-            .upload(filePath, file, {
-                cacheControl: "3600",
-                upsert: false
-            });
-
-        if (error) {
-            console.error("Storage upload error:", error);
-            throw error;
+        const { data: { user }, error: authError } = await supabase.auth.getUser();
+        if (!user) {
+            return authError?.name === "AuthRetryableFetchError"
+                ? { success: false, code: "server", error: "서버에 연결하지 못했어요. 잠시 후 다시 시도해 주세요." }
+                : { success: false, code: "auth", error: "로그인이 필요해요. 다시 로그인한 뒤 시도해 주세요." };
         }
 
-        // Get Public URL
-        const { data: { publicUrl } } = supabase.storage
-            .from("pet-photos")
-            .getPublicUrl(filePath);
+        const bytes = new Uint8Array(await file.arrayBuffer());
+        const type = sniffImageType(bytes.subarray(0, 12));
+        if (!type) {
+            return { success: false, code: "invalid", error: "JPG, PNG, WEBP, GIF 사진만 올릴 수 있어요." };
+        }
 
+        // 사용자별 폴더에 겹치지 않는 이름으로 저장
+        const filePath = `pets/${user.id}/${crypto.randomUUID()}.${type.ext}`;
+        const { error } = await supabase.storage.from("pet-photos").upload(filePath, bytes, {
+            contentType: type.mime,
+            cacheControl: "3600",
+            upsert: false,
+        });
+
+        if (error) {
+            // 관리자용 정보(버킷 없음 등)는 서버 로그에만 남깁니다
+            console.error("Storage upload error (bucket 'pet-photos' must exist and be public):", error);
+            return { success: false, code: "server", error: "사진을 올리지 못했어요. 잠시 후 다시 시도해 주세요." };
+        }
+
+        const { data: { publicUrl } } = supabase.storage.from("pet-photos").getPublicUrl(filePath);
         return { success: true, url: publicUrl };
     } catch (error) {
         console.error("Upload action failed:", error);
-        const errMsg = (error as Error).message;
-
-        if (errMsg.includes("Bucket not found")) {
-            return {
-                success: false,
-                error: "이미지 저장소(Bucket)를 찾을 수 없습니다. Supabase 관리자 페이지에서 'pet-photos'라는 이름의 공개(Public) 버킷을 생성해주세요."
-            };
-        }
-
-        return { success: false, error: errMsg };
+        return { success: false, code: "server", error: "사진을 올리지 못했어요. 잠시 후 다시 시도해 주세요." };
     }
 }

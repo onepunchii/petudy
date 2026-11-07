@@ -1,0 +1,148 @@
+{
+  "id": "pf-52031400",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례 상품에 개별 화장 포함",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs02_01&wr_id=2"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 장례 상품이 개별 화장",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs02_01&wr_id=2"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "모든 절차 참관 가능, 화장 중 참관실 이용",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs05_01&wr_id=1"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품에 염 포함, 수의는 선택",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs02_01&wr_id=1"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "자체 추모관 운영, 방문 09~20시 연중무휴",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "수목장 운영, 수목함·나무 비용 안내",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골을 고온으로 녹인 타임스톤 제작",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs03_01&wr_id=1"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "운구 서비스 운영, 왕복 픽업 표기",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs02_01&wr_id=1"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 상담·예약, 야간 당일 예약은 전화",
+      "sourceUrl": "http://www.haeneul.kr/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "대형견 장례 가능, 비용은 소요 시간 기준",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs05_01&wr_id=1"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "새·햄스터 등 1kg 미만 소동물 장례",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs05_01&wr_id=1"
+    }
+  },
+  "extras": [
+    {
+      "label": "냉장 안치",
+      "note": "사정에 따라 냉장 안치 지원",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs05_01&wr_id=1"
+    },
+    {
+      "label": "스톤 제작 참관",
+      "note": "타임스톤 제작 과정 참관 가능",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs03_01&wr_id=1"
+    }
+  ],
+  "hours": {
+    "text": "운영 09:00~20:00 연중무휴, 상담 24시간, 예약제",
+    "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs01_01&wr_id=1"
+  },
+  "prices": [
+    {
+      "label": "장례비 체중 추가 5kg 초과",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "기본 패키지 금액은 홈페이지에 미게시",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs02_01&wr_id=2",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "타임스톤 제작 체중 추가",
+      "amount": "1kg당 3만 원 추가",
+      "includes": "타임스톤 장례 상품의 스톤 제작비 추가분",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs02_01&wr_id=2",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1층 하우스 미포함",
+      "amount": "30만 원",
+      "includes": "기간 단위 미표기, 다년 계약 시 10% 할인",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 2·6층 하우스 미포함",
+      "amount": "40만 원",
+      "includes": "기간 단위 미표기, 다년 계약 시 10% 할인",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 3·4·5층 하우스 미포함",
+      "amount": "50만 원",
+      "includes": "기간 단위 미표기, 다년 계약 시 10% 할인",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1층 하우스 포함",
+      "amount": "55만 원",
+      "includes": "할인가 50만 원 병기, 기간 단위 미표기",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수목장 작은 나무",
+      "amount": "30만 원",
+      "includes": null,
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "수목장 큰 나무",
+      "amount": "40만 원",
+      "includes": null,
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs04_01&wr_id=1",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": null,
+  "parking": null,
+  "access": [
+    {
+      "text": "목포 대양동 대양산단 안에 위치",
+      "sourceUrl": "http://www.haeneul.kr/bbs/board.php?bo_table=bbs01_01&wr_id=3"
+    }
+  ],
+  "summary": "해늘마루는 개별 화장, 봉안당, 수목장, 타임스톤 제작을 안내하며 장례 전 과정 참관이 가능합니다. 기본 장례 금액은 홈페이지에 게시되어 있지 않습니다.",
+  "cautions": [
+    "기본 장례 금액이 홈페이지에 없어 문의 필요",
+    "봉안당 요금의 계약 기간이 표기되지 않음",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "id": "pf-d3b13b3e",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장을 원칙으로 안내",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": "합동 화장 언급 없음",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "요청하면 장례 전 과정 참관 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/process"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "기본 장례에 염습 포함, 상위 상품에 수의",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "김포점에서 봉안당 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimpo"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "김포점에서 수목장 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimpo"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "김포점에서 블리스 스톤 퓨어 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimpo"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "보호자 동행 차량 편도 무료, 사전 예약",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "김포점 24시간 운영, 24시간 예약 가능",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimpo"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "60kg 이하 동물까지 장례 가능 안내",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimpo"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이 전용, 1kg 이하 소동물 상품 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자 없이 운구해 장례 진행 안내",
+      "sourceUrl": "https://fourpaws.co.kr/service/transport"
+    },
+    {
+      "label": "산골장·잔디장",
+      "note": "김포점에서 산골장과 잔디장 운영",
+      "sourceUrl": "https://fourpaws.co.kr/service/store/gimpo"
+    },
+    {
+      "label": "장례 증명서",
+      "note": "기본 장례 추모 키트에 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    },
+    {
+      "label": "생화 장식",
+      "note": "선택 추가, 5만 원",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost"
+    }
+  ],
+  "hours": {
+    "text": "24시간 운영",
+    "sourceUrl": "https://fourpaws.co.kr/service/store/gimpo"
+  },
+  "prices": [
+    {
+      "label": "소동물 기본 장례 1kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모, 개별 화장, 추모 키트, 기본 유골함. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습, 추모 시간, 화장, 장례 증명서 등 추모 키트, 기본 유골함. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기준 무게 초과",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "일반동물 기준 무게 10kg 초과분",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고양이 전용 장례",
+      "amount": "55만 원",
+      "includes": "기본 장례, 관, 기본 유골함, 작은 꽃다발. VAT 포함",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "관 장례 기본형 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 장례, 오동나무 관, 인견 수의 세트, 기본 유골함, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 기본형 10kg 이하",
+      "amount": "60만 원",
+      "includes": "기본 장례, 요람 관, 인견 수의, 기본 유골함, 작은 꽃다발",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "올인원 패키지 10kg 이하",
+      "amount": "140만 원",
+      "includes": "기본 장례, 오동나무 관, 면 수의 세트, 블리스 스톤 전량 제작",
+      "sourceUrl": "https://fourpaws.co.kr/service/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "블리스 스톤 전량",
+      "amount": "40만 원",
+      "includes": "기준 10kg, 초과 시 1kg당 2만 원 추가, 기본 스톤함",
+      "sourceUrl": "https://fourpaws.co.kr/service/stone/common",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": {
+    "text": "무료 주차, 지도 서비스 표기 기준",
+    "sourceUrl": "https://place.map.kakao.com/1897872250"
+  },
+  "access": [],
+  "summary": "포포즈 반려동물 장례식장 경기 김포점은 김포시 월곶면에서 24시간 운영하는 장례식장입니다. 기본 장례는 10kg 이하 30만 원이며 봉안당, 수목장, 스톤 제작을 운영합니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "주차 정보는 지도 서비스 표기 기준"
+  ]
+}

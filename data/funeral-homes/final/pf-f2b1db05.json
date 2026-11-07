@@ -1,0 +1,95 @@
+{
+  "id": "pf-f2b1db05",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": "참관 속 화장 안내, 개별 여부 미표기",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub2/menu_1.php"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "입관부터 화장로 진입까지 참관 가능",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub5/menu_2.php"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 후 수의 착용, 수의 2종 안내",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub3/menu_1.php"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "건물 2층 봉안당에 유골함 안치",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub2/menu_1.php"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골로 리멤버스톤 제작 가능",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub2/menu_3.php"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "운구차량 방문, 대전 유성·도안 픽업 안내",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub2/menu_1.php"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 상담 전화, 운구차량 24시간 대기",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub2/menu_1.php"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "중·대형은 요금 별도 문의",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub5/menu_2.php"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물은 요금 별도 문의",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub5/menu_2.php"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자 대신 픽업해 장례 후 사진·영상 전달",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub5/menu_2.php"
+    },
+    {
+      "label": "반려동물 카페",
+      "note": "부지 안에 반려동물 카페 시설",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub2/menu_3.php"
+    }
+  ],
+  "hours": {
+    "text": "24시간 전화 상담, 운구차량 24시간 대기",
+    "sourceUrl": "http://www.rememberpark.kr/kor/sub2/menu_1.php"
+  },
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [
+    {
+      "text": "대전 유성·도안동에서 약 20분 거리",
+      "sourceUrl": "http://www.rememberpark.kr/kor/sub5/menu_2.php"
+    },
+    {
+      "text": "대전 상담센터: 중구 계룡로 833 지하1층",
+      "sourceUrl": "http://www.rememberpark.kr/kor/main/"
+    }
+  ],
+  "summary": "리멤버 파크는 봉안당과 리멤버스톤 제작, 화장 전 과정 참관을 안내합니다. 24시간 전화 상담과 운구차량 대기를 운영하며 요금은 전화 확인이 필요합니다.",
+  "cautions": [
+    "요금은 홈페이지에 이미지로만 게시돼 전화 확인 필요",
+    "장례 요금은 5kg 미만 기준, VAT 별도로 안내",
+    "시설 영업시간은 홈페이지에 따로 없음"
+  ]
+}

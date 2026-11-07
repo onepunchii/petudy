@@ -1,0 +1,141 @@
+{
+  "id": "pf-91d70dcd",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 장례를 단독 화장으로 진행",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126886&t=board"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "합동 화장 미운영, 전부 단독 화장",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126886&t=board"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "입로부터 유골 수습까지 참관 가능",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126886&t=board"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "기본 화장에 염습 포함, 수의는 선택 품목",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "장례식장 내 봉안당 안치 가능",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126890&t=board"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "유골 처리 방법으로 안내, 자체 시설 불명",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126890&t=board"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "첨가물 없는 유골 스톤, 당일 제작 원칙",
+      "sourceUrl": "https://xn--o79a109b1hb.com/36"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "픽업 서비스, 왕길역 무료 픽업",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126903&t=board"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "연중무휴 24시간 상담·장례, 예약제",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126873&t=board"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "대형견용 화장로 보유, 예약 시 체중 전달",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15127014&t=board"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "소동물 전용 화장로 보유",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15127017&t=board"
+    }
+  },
+  "extras": [
+    {
+      "label": "장례 대행",
+      "note": "보호자 없이 장례 대행, 진행 사진 전송",
+      "sourceUrl": "https://xn--o79a109b1hb.com/42/?bmode=view&idx=15126903&t=board"
+    },
+    {
+      "label": "단독 추모실",
+      "note": "기본 화장에 단독 추모실 포함",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34"
+    }
+  ],
+  "hours": {
+    "text": "24시간 운영·상담, 주말·공휴일 운영, 예약 후 방문",
+    "sourceUrl": "https://xn--o79a109b1hb.com/46"
+  },
+  "prices": [
+    {
+      "label": "기본 화장 1kg 미만(소동물)",
+      "amount": "18만 원",
+      "includes": "염습·단독 추모실·개별 화장, 기본 유골함, 부가세 별도",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 5kg 미만",
+      "amount": "20만 원",
+      "includes": "염습·단독 추모실·개별 화장, 기본 유골함, 부가세 별도",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 5~10kg",
+      "amount": "23만 원",
+      "includes": "기본 화장 구성, 부가세 별도",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 10~15kg",
+      "amount": "28만 원",
+      "includes": "기본 화장 구성, 부가세 별도",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 15~20kg",
+      "amount": "35만 원",
+      "includes": "기본 화장 구성, 부가세 별도",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 20kg 이상",
+      "amount": "1kg당 2만 원",
+      "includes": "기준 금액 산정 방식 미표기, 부가세 별도",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 스톤",
+      "amount": "30만 원부터",
+      "includes": "유골량 측정 후 확정, 부가세 별도",
+      "sourceUrl": "https://xn--o79a109b1hb.com/34",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 180000,
+  "parking": null,
+  "access": [
+    {
+      "text": "인천 2호선 왕길역 도착 전 연락 시 무료 픽업",
+      "sourceUrl": "https://xn--o79a109b1hb.com/46"
+    }
+  ],
+  "summary": "(주)어게인은 모든 장례를 단독 화장으로 진행하며 대형견용과 소동물 전용 화장로를 갖추고 있습니다. 기본 화장은 5kg 미만 20만 원(부가세 별도)입니다.",
+  "cautions": [
+    "가격은 부가세 별도 표기이며 변동될 수 있음",
+    "홈페이지는 상호·주소 정황으로 연결, 일부 미확인",
+    "등록 전화번호와 홈페이지 대표번호가 다름"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "pf-6ccddc7e",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": "지도 정보에 24시간 표기, 공식 미확인",
+      "sourceUrl": "https://map.naver.com/p/entry/place/35644049"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [],
+  "hours": {
+    "text": "지도 정보에 24시간 표기, 출처마다 달라 미확인",
+    "sourceUrl": "https://map.naver.com/p/entry/place/35644049"
+  },
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [],
+  "summary": "펫바라기는 등록된 홈페이지가 접속되지 않아 서비스와 요금을 확인하지 못했습니다. 운영시간도 출처마다 달라 방문 전 전화 확인이 필요합니다.",
+  "cautions": [
+    "등록된 홈페이지 주소가 접속되지 않음",
+    "다른 지역에 같은 이름의 업체가 있어 주의",
+    "운영시간은 출처마다 달라 전화 확인 필요"
+  ]
+}

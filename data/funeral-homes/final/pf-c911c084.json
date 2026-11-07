@@ -1,0 +1,131 @@
+{
+  "id": "pf-c911c084",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장으로 진행",
+      "sourceUrl": "https://iheaven.kr/page/service/service.php"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "보호자가 장례 절차 참관 가능",
+      "sourceUrl": "https://iheaven.kr/"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 장례에 염습 포함, 상위 상품에 수의 포함",
+      "sourceUrl": "https://iheaven.kr/page/funeral-price/funeral-price.php"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "납골당 헤븐 하우스, 외부 봉안함 이전 가능",
+      "sourceUrl": "https://iheaven.kr/page/ossuary/ossuary.php"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "루세떼 제작, 유골분으로 되돌리는 리스토어 가능",
+      "sourceUrl": "https://iheaven.kr/page/lucete/lucete.php"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시 장례예약 전화, 운영시간은 09~20시",
+      "sourceUrl": "https://iheaven.kr/"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "5kg 이하 기준 요금만 게시",
+      "sourceUrl": "https://iheaven.kr/page/funeral-price/funeral-price.php"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "100% 예약제",
+      "note": "1:1 담당 장례지도사 배정, 단독 추모실",
+      "sourceUrl": "https://iheaven.kr/page/service/service.php"
+    }
+  ],
+  "hours": {
+    "text": "운영 09:00~20:00, 장례 예약 전화 24시간",
+    "sourceUrl": "https://iheaven.kr/"
+  },
+  "prices": [
+    {
+      "label": "헤븐 장례 5kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모실, 생화 헌화, 개별 화장, 기본 유골함. VAT 별도",
+      "sourceUrl": "https://iheaven.kr/page/funeral-price/funeral-price.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "헤븐 고급 장례 5kg 이하",
+      "amount": "45만 원",
+      "includes": "헤븐 장례에 수의, 오동나무관, 청자 유골함 추가. VAT 별도",
+      "sourceUrl": "https://iheaven.kr/page/funeral-price/funeral-price.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "루세떼 장례 5kg 이하",
+      "amount": "80만 원",
+      "includes": "헤븐 장례, 루세떼 제작, 유리 봉안함. VAT 별도",
+      "sourceUrl": "https://iheaven.kr/page/funeral-price/funeral-price.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "루세떼 고급 장례 5kg 이하",
+      "amount": "100만 원",
+      "includes": "헤븐 고급 장례, 루세떼 제작, 유리 봉안함. VAT 별도",
+      "sourceUrl": "https://iheaven.kr/page/funeral-price/funeral-price.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "루세떼 제작 보관 유골분",
+      "amount": "60만 원",
+      "includes": "루세떼 제작, 유리 봉안함. VAT 별도",
+      "sourceUrl": "https://iheaven.kr/page/funeral-price/funeral-price.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "헤븐 하우스 중앙 1년",
+      "amount": "25만~55만 원",
+      "includes": "단별 상이, 가족 2칸 65만 원, 3칸 85만 원. VAT 별도",
+      "sourceUrl": "https://iheaven.kr/page/ossuary/ossuary.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "헤븐 하우스 측면 1년",
+      "amount": "20만~35만 원",
+      "includes": "단별 상이, 가족 2칸 45만 원, 3칸 65만 원. VAT 별도",
+      "sourceUrl": "https://iheaven.kr/page/ossuary/ossuary.php",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "아이헤븐은 김해시 생림면의 반려동물 장례식장으로 예약제 개별 화장과 납골당 헤븐 하우스를 운영합니다. 헤븐 장례는 5kg 이하 25만 원(VAT 별도)입니다.",
+  "cautions": [
+    "5kg 초과 요금은 홈페이지에 미게시",
+    "홈페이지 전화번호는 등록 대표번호와 다름",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

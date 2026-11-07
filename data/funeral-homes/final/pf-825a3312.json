@@ -1,0 +1,151 @@
+{
+  "id": "pf-825a3312",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "한 아이씩 개별 화장",
+      "sourceUrl": "http://koreapet.kr/page/?pid=intro"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습·정돈 포함, 관·수의는 별도 선택",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안실 408기, 최대 5년 안치",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "수목장 안내·상담 표기, 운영 방식 미확인",
+      "sourceUrl": "http://koreapet.kr/page/?pid=main_service"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골을 추모석 형태로 받는 방식 안내",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "거리·시간에 따라 운구 가능 여부와 비용 상담",
+      "sourceUrl": "http://koreapet.kr/page/?pid=main_service"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "연중무휴, 예약 상담 24시간 안내",
+      "sourceUrl": "http://koreapet.kr"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "체중 상한 표기 없음, 5kg 초과분 kg당 가산",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": "1kg 이하 요금 구간 있음, 동물 종류 표기 없음",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    }
+  },
+  "extras": [
+    {
+      "label": "공설 시설",
+      "note": "경기도 첫 공설 동물장묘시설, 2026년 6월 개소",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    },
+    {
+      "label": "비동행 장례",
+      "note": "보호자 동행 없이 장례 진행 가능",
+      "sourceUrl": "http://koreapet.kr/page/?pid=main_service"
+    },
+    {
+      "label": "임시 안치·산골",
+      "note": "사전 상담 후 임시 안치와 산골 진행",
+      "sourceUrl": "http://koreapet.kr/page/?pid=main_service"
+    },
+    {
+      "label": "화분 안치",
+      "note": "유골을 화분에 안치하는 방식 선택 가능",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    }
+  ],
+  "hours": {
+    "text": "연중무휴, 24시간 예약 상담 안내(지도 표기와 다름)",
+    "sourceUrl": "http://koreapet.kr/bbs/board.php?bo_table=notice&wr_id=1"
+  },
+  "prices": [
+    {
+      "label": "화장 1kg 이하",
+      "amount": "10만 원",
+      "includes": "화장, 기본 염습, 기본 유골함 포함, 관·수의 별도",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 1kg 초과 5kg 이하",
+      "amount": "20만 원",
+      "includes": "화장, 기본 염습, 기본 유골함 포함",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "5kg 초과 추가 요금",
+      "amount": "1kg당 9천 원 추가",
+      "includes": "5kg 초과분에 더함",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 장례 5kg 이하",
+      "amount": "20만 원부터",
+      "includes": "상담, 몸 정돈, 개별 화장, 기본 유골함, 조건에 따라 변동",
+      "sourceUrl": "http://koreapet.kr/page/?pid=intro",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안 1년",
+      "amount": "10만~40만 원",
+      "includes": "층별 상이, 봉안함 1기에 유골함 1기 원칙",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "경기도민 할인",
+      "amount": "화장 사용료 10% 할인",
+      "includes": null,
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "여주시민 등 할인",
+      "amount": "화장 사용료 50% 할인",
+      "includes": "여주시민, 국가유공자, 장애인, 도내 저소득층",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 100000,
+  "parking": null,
+  "access": [
+    {
+      "text": "반려동물 복합문화공간 '반려마루 여주' 단지 안",
+      "sourceUrl": "https://www.gg.go.kr/myggd/vol205/2_1.php"
+    }
+  ],
+  "summary": "반려마루 추모관은 경기도 여주시에 있는 공설 동물장묘시설로 개별 화장과 봉안실을 운영합니다. 화장 사용료는 1kg 이하 10만 원이며 경기도민과 여주시민 할인이 있습니다.",
+  "cautions": [
+    "공식 목록 전화번호가 홈페이지 번호와 다름",
+    "세부 요금은 경기도 소식지 2026년 7월호 기준",
+    "운영시간 표기가 출처마다 달라 확인 필요"
+  ]
+}

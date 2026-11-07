@@ -1,0 +1,143 @@
+{
+  "id": "pf-43577879",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 화장을 개별로 진행",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "화장 참관과 스톤 성형 참관을 원칙으로 함",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "장례 상품에 염습·소렴(수의) 단계 포함",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "3층 리멤버 봉안실, 항온항습 운영",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/columbarium/"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "잔디·산골 안치 항목만 있고 수목장 없음",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골 스톤 '리멤버스톤' 제작, 참관 가능",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/rememberstone/"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "차량 픽업, 거리 기준 요금, 왕복·편도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 상담 표기, 장례 시간은 미표기",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "20kg 이상 요금 항목 있음(별도 문의)",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 요금 항목 있음",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    }
+  },
+  "extras": [
+    {
+      "label": "잔디·산골 안치",
+      "note": "요금 페이지에 잔디·산골 안치 항목 있음",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    },
+    {
+      "label": "개별 빈소",
+      "note": "기본 화장에 개별 빈소 포함",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/"
+    }
+  ],
+  "hours": {
+    "text": "연중무휴 24시간 상담, 카톡 상담 08~23시",
+    "sourceUrl": "https://xn--oy2b6mu6c.net/"
+  },
+  "prices": [
+    {
+      "label": "기본 화장 1kg 미만",
+      "amount": "15만 원",
+      "includes": "개별 화장, 개별 빈소, 유골함, VAT 별도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 5kg 미만",
+      "amount": "20만 원",
+      "includes": "개별 화장, 개별 빈소, 유골함, VAT 별도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 10kg 미만",
+      "amount": "25만 원",
+      "includes": "같은 구성, VAT 별도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 15kg 미만",
+      "amount": "35만 원",
+      "includes": "같은 구성, VAT 별도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 20kg 미만",
+      "amount": "45만 원",
+      "includes": "같은 구성, VAT 별도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본 화장 20kg 이상",
+      "amount": "55만 원(별도 문의)",
+      "includes": "VAT 별도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "리멤버장 5kg 기준",
+      "amount": "31만 원",
+      "includes": "기본 화장에 염습·소렴·추모식 포함, VAT 별도",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "차량 픽업",
+      "amount": "4만 원부터",
+      "includes": "거리 기준, 왕복·편도 선택",
+      "sourceUrl": "https://xn--oy2b6mu6c.net/price/",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [],
+  "summary": "리멤버는 모든 화장을 개별로 진행하며 화장과 리멤버스톤 제작을 참관할 수 있습니다. 기본 화장은 5kg 미만 20만 원(VAT 별도)이고 3층 봉안실을 운영합니다.",
+  "cautions": [
+    "가격은 VAT 별도 표기이며 변동될 수 있음",
+    "카드 결제 시 부가세 10%가 별도로 붙는다고 안내",
+    "봉안실 비용은 홈페이지에 금액 미표시"
+  ]
+}

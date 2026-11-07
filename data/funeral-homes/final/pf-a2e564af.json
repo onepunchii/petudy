@@ -1,0 +1,153 @@
+{
+  "id": "pf-a2e564af",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장을 원칙으로 진행",
+      "sourceUrl": "https://ebyulplace.com/funeral/"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "모든 장례 과정 참관 가능",
+      "sourceUrl": "https://ebyulplace.com/faq/"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습·입관 기본 포함, 상품별 수의 제공",
+      "sourceUrl": "https://ebyulplace.com/funeral/"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "자체 납골당 운영, 1년 단위 계약",
+      "sourceUrl": "https://ebyulplace.com/charnel-house/"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골 스톤·메모리얼 글라스 제작",
+      "sourceUrl": "https://ebyulplace.com/stone/"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "운구 편도·왕복, 울산 인근과 부산·포항 등",
+      "sourceUrl": "https://ebyulplace.com/transportation/"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "연중무휴 08:00~02:00, 새벽은 문의",
+      "sourceUrl": "https://ebyulplace.com/ulsan/"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "15kg 이상 소요시간 안내, 상한 미표기",
+      "sourceUrl": "https://ebyulplace.com/faq/"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "새·햄스터·고슴도치 등 소동물 장례 가능",
+      "sourceUrl": "https://ebyulplace.com/faq/"
+    }
+  },
+  "extras": [
+    {
+      "label": "비동행 장례",
+      "note": "보호자 없이 진행하는 비동행 장례 운영",
+      "sourceUrl": "https://ebyulplace.com/transportation/"
+    },
+    {
+      "label": "임시 안치",
+      "note": "당일 장례가 어려우면 임시 안치 가능",
+      "sourceUrl": "https://ebyulplace.com/funeral/"
+    },
+    {
+      "label": "단독 추모실",
+      "note": "단독 추모실, 보낸 사진으로 추모 영상 재생",
+      "sourceUrl": "https://ebyulplace.com/funeral/"
+    },
+    {
+      "label": "화장 증명서",
+      "note": "장례(화장) 증명서 발급",
+      "sourceUrl": "https://ebyulplace.com/funeral/"
+    }
+  ],
+  "hours": {
+    "text": "연중무휴 08:00~02:00, 02~08시 예약은 문의",
+    "sourceUrl": "https://ebyulplace.com/ulsan/"
+  },
+  "prices": [
+    {
+      "label": "공통장례 5kg 미만",
+      "amount": "25만 원",
+      "includes": "염습·단독 추모·개별 화장, 기본 유골함, 증명서, VAT 별도",
+      "sourceUrl": "https://ebyulplace.com/funeral/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "구름장례 5kg 미만",
+      "amount": "35만 원",
+      "includes": "공통장례에 수제 이불수의, 구름관 추가, VAT 별도",
+      "sourceUrl": "https://ebyulplace.com/funeral/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "이별장례 5kg 미만",
+      "amount": "45만 원",
+      "includes": "공통장례에 수제 이불수의, 오픈관 추가, VAT 별도",
+      "sourceUrl": "https://ebyulplace.com/funeral/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "이별고급장례 5kg 미만",
+      "amount": "65만 원",
+      "includes": "공통장례에 삼베수의, 백자 유골함, 뚜껑관, VAT 별도",
+      "sourceUrl": "https://ebyulplace.com/funeral/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "납골당 1년",
+      "amount": "20만~30만 원",
+      "includes": "층별 차등, 하우징·밀봉 유골함 필수, VAT 별도",
+      "sourceUrl": "https://ebyulplace.com/charnel-house/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "천국계단납골당 1년",
+      "amount": "10만~16만 원",
+      "includes": "층별 차등, 밀봉 유골함 필수, VAT 별도",
+      "sourceUrl": "https://ebyulplace.com/charnel-house/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 울산 인근·양산·부산·경주",
+      "amount": "5만 원부터",
+      "includes": "체중, 출장 인원에 따라 변동",
+      "sourceUrl": "https://ebyulplace.com/transportation/",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 야간 할증 22~08시",
+      "amount": "8만 원",
+      "includes": "픽업 비용에 가산",
+      "sourceUrl": "https://ebyulplace.com/transportation/",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [],
+  "summary": "이별공간은 개별 화장을 원칙으로 하며 자체 납골당과 단독 추모실을 운영합니다. 공통장례는 5kg 미만 25만 원(VAT 별도)이고 연중무휴 새벽 2시까지 운영합니다.",
+  "cautions": [
+    "가격은 VAT 별도, 5kg 초과 요금 기준은 미표기",
+    "등록 전화번호와 홈페이지 대표번호가 다름",
+    "운영시간 표기가 페이지마다 다름(24시간, 새벽 2시)"
+  ]
+}

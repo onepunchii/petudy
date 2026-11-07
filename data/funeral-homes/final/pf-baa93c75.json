@@ -1,0 +1,158 @@
+{
+  "id": "pf-baa93c75",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 요금 구성에 개별 화장 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "모든 장례를 개별 화장 원칙으로 진행",
+      "sourceUrl": "https://21gram.co.kr/process"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "전면 유리 참관실에서 화장 전 과정 참관",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 기본 포함, 수의는 장례Ⅱ 이상 구성",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "지점 봉안당 운영, 방문 07:00~23:00",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "지점 안내에 수목장 표기 없음",
+      "sourceUrl": "https://21gram.co.kr/charnel"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "루세떼 상담·제작",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "펫택시 제휴 편도 운구, 3시간 전 예약",
+      "sourceUrl": "https://21gram.co.kr/hearse2"
+    },
+    "allDay": {
+      "status": "no",
+      "note": "24시간 아님, 07~02시 운영, 23시 예약 마감",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "15kg 이상 대형 요금 별도 공시",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "소동물 요금 구분 공시",
+      "sourceUrl": "https://21gram.co.kr/pricing"
+    }
+  },
+  "extras": [
+    {
+      "label": "냉장 안치",
+      "note": "1일 요금 공시, 최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "비동행 장례",
+      "note": "보호자가 동행하지 않는 장례 진행",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    },
+    {
+      "label": "산골 대행",
+      "note": "산골 대행 요금 공시",
+      "sourceUrl": "https://21gram.co.kr/254"
+    },
+    {
+      "label": "꽃다발",
+      "note": "꽃다발 서비스 별도 요금 공시",
+      "sourceUrl": "https://21gram.co.kr/253"
+    }
+  ],
+  "hours": {
+    "text": "매일 07:00~02:00, 마지막 예약 23시",
+    "sourceUrl": "https://21gram.co.kr/branch"
+  },
+  "prices": [
+    {
+      "label": "베이직 장례 15kg 미만",
+      "amount": "35만 원",
+      "includes": "염습, 개별 화장, 단독 추모실, 추모 예식, 백자 유골함. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 15kg 이상",
+      "amount": "65만 원",
+      "includes": "베이직 구성과 같음. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅰ 15kg 미만",
+      "amount": "70만 원",
+      "includes": "베이직 구성에 요람, 꽃다발 추가. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 15kg 미만",
+      "amount": "75만 원",
+      "includes": "베이직 구성에 오동나무 관, 수의, 꽃다발 추가. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "21그램 장례Ⅱ 소동물",
+      "amount": "65만 원",
+      "includes": "장례Ⅱ 구성과 같음, 상담 후 적용. VAT 포함",
+      "sourceUrl": "https://21gram.co.kr/pricing",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "봉안당 1년 1·2·6층",
+      "amount": "20만 원",
+      "includes": "신규 기준, 연장 시 30% 할인",
+      "sourceUrl": "https://21gram.co.kr/charnel",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "운구 편도 천안·아산 출발",
+      "amount": "6만 원",
+      "includes": "펫택시 제휴, 장례식장까지 편도만",
+      "sourceUrl": "https://21gram.co.kr/hearse2",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "냉장 안치",
+      "amount": "1일 3만 5천 원",
+      "includes": "최대 1주일",
+      "sourceUrl": "https://21gram.co.kr/254",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [
+    {
+      "text": "1호선 쌍용역 인근 시내에 위치",
+      "sourceUrl": "https://21gram.co.kr/branch"
+    }
+  ],
+  "summary": "21그램 반려동물 장례식장 천안아산점은 개별 화장과 참관실, 봉안당을 운영합니다. 매일 07:00~02:00 운영하며 15kg 미만 베이직 장례는 35만 원입니다.",
+  "cautions": [
+    "장례 요금은 21그램 브랜드 공통 요금 기준",
+    "대표번호 상담은 05:00~24:00, 24시간 아님",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}

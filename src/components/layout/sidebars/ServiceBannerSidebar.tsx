@@ -1,83 +1,89 @@
-import { ArrowRight, Sparkles, Building2, Car } from "lucide-react";
+import { ArrowRight, Building2, Car, FileText, UserRound } from "lucide-react";
 import Link from "next/link";
+import { APP_ICON_STROKE, appButtonClass } from "@/components/app/tokens";
+
+// 앱 오른쪽 배너. 데스크톱(lg 이상)에서만 보이며 (app)/layout.tsx 의 밤하늘 위에 바로 놓입니다.
+// 카드는 night-2 + ring-white/10, 글자는 star 계열. 라임은 제휴 상담 버튼 하나에만 씁니다(장례 카드에는 쓰지 않음).
+
+const chipClass = "inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-night-3 px-3 py-1.5 text-[13px] text-star-2";
 
 export default function ServiceBannerSidebar() {
     return (
-        <aside className="hidden lg:flex flex-col justify-center items-start w-full max-w-[calc(50%-256px)] h-full fixed right-0 top-0 p-12 z-0">
-            <div className="max-w-md w-full space-y-6 animate-in fade-in slide-in-from-right-10 duration-700 delay-100">
+        <aside className="scrollbar-hide fixed right-0 top-0 z-0 hidden h-full w-full max-w-[calc(50%-256px)] flex-col items-start overflow-y-auto p-6 lg:flex xl:p-12">
+            {/* my-auto: 화면이 낮거나 좁으면(lg 1024px) 가운데 정렬 대신 스크롤 */}
+            <div className="my-auto w-full max-w-md space-y-4">
 
-                {/* Banner 1: Franchise Recruitment */}
-                <div className="group relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#2A2A2C] to-[#1E1E20] border border-white/5 hover:border-foon-lime/50 transition-all duration-300 shadow-2xl hover:shadow-[0_0_30px_rgba(163,223,70,0.1)]">
-                    <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                        <Building2 className="w-32 h-32 rotate-12" />
+                {/* Banner 1: 제휴 업체 모집 (라임 버튼은 이 배너에만) */}
+                <div className="rounded-[28px] bg-night-2 p-6 ring-1 ring-white/10 xl:p-8">
+                    <div className={chipClass}>
+                        <Building2 className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                        파트너 모집
                     </div>
+                    <h3 className="mt-4 text-[20px] font-bold leading-[1.3] tracking-[-0.02em] text-star xl:text-[24px]">
+                        포온과 함께할<br />
+                        파트너를 찾습니다
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-star-2">
+                        동네 보호자님과 연결될<br />
+                        허가·등록 반려동물 서비스 업체를 모집합니다.
+                    </p>
 
-                    <div className="relative p-8 z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foon-lime/10 text-foon-lime text-xs font-bold mb-4 border border-foon-lime/20">
-                            <Sparkles className="w-3 h-3 fill-current" />
-                            파트너 모집
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                            Po-ON과 함께할<br />
-                            파트너를 찾습니다
-                        </h3>
-                        <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                            반려동물 장례 에이전시 플랫폼의<br />
-                            새로운 표준을 함께 만들어갑니다.
-                        </p>
-
-                        <Link href="/partner/inquiry" className="inline-flex items-center gap-2 text-white font-bold group-hover:text-foon-lime transition-colors">
-                            상담 신청하기 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                    </div>
+                    {/* "/partners" 의 상담 폼은 사이트와 같은 "상담 남기기" 라벨 (한 의도 한 라벨) */}
+                    <Link href="/partners" className={appButtonClass({ variant: "accent", size: "sm", className: "mt-6" })}>
+                        상담 남기기
+                        <ArrowRight className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                    </Link>
                 </div>
 
-                {/* Banner 2: Service Highlight - Mobility Funeral */}
-                <div className="group relative overflow-hidden rounded-[32px] bg-[#1c1c1e] border border-white/5 p-8 hover:bg-[#252527] transition-all duration-300">
-                    <div className="absolute -bottom-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <Car className="w-24 h-24 -rotate-12" />
-                    </div>
-
-                    <h3 className="text-lg font-bold text-white mb-1">
+                {/* Banner 2: 반려동물 장례 (라임 없이 흰색·남색만) */}
+                <div className="rounded-[28px] bg-night-2 p-6 ring-1 ring-white/10 xl:p-8">
+                    <h3 className="text-[18px] font-bold text-star">
                         반려동물 장례
                     </h3>
-                    <p className="text-gray-500 text-xs mb-4">
+                    <p className="mt-1 text-[14px] text-star-2">
                         반려동물의 마지막 길을 정성껏 모십니다
                     </p>
 
-                    <div className="flex flex-col gap-3">
-                        <div className="flex gap-2">
-                            <div className="bg-[#333] px-3 py-1.5 rounded-lg text-xs text-gray-300 border border-white/5">
-                                🕊️ 전문 지도사 동행
-                            </div>
-                            <div className="bg-[#333] px-3 py-1.5 rounded-lg text-xs text-gray-300 border border-white/5">
-                                🚐 전용 운구 차량
-                            </div>
-                        </div>
-
-                        <Link href="/regulatory-notice" className="w-full py-2 rounded-xl bg-[#2A2A2C] border border-white/10 hover:bg-[#333] hover:border-foon-lime/30 text-xs text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1.5 group-hover:shadow-lg">
-                            <span>📄 실증특례 이용자 고지 보기</span>
-                            <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                        <span className={chipClass}>
+                            <UserRound className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            전문 지도사 동행
+                        </span>
+                        <span className={chipClass}>
+                            <Car className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            전용 운구 차량
+                        </span>
                     </div>
+
+                    <Link href="/regulatory-notice" className={appButtonClass({ variant: "onNightGhost", size: "sm", block: true, className: "mt-5 h-auto min-h-10 whitespace-normal py-2 text-center text-[13px]" })}>
+                        <FileText className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                        <span>실증특례 이용자 고지 보기</span>
+                        <ArrowRight className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                    </Link>
                 </div>
 
-                {/* Banner 3: App Link (Simple) */}
-                <div className="flex gap-4">
-                    <div className="flex-1 bg-[#2A2A2C] rounded-2xl p-4 flex items-center justify-center gap-2 border border-white/5 cursor-pointer hover:bg-[#333] transition-colors">
-                        <span className="text-2xl">🍎</span>
+                {/* Banner 3: 사이트 바로가기 (지역 서비스 찾기) */}
+                <div className="flex flex-col gap-3 xl:flex-row">
+                    <Link
+                        href="/funeral"
+                        className="group/card flex flex-1 items-center justify-between gap-2 rounded-[20px] bg-night-2 p-4 ring-1 ring-white/10 transition-colors hover:bg-night-3"
+                    >
                         <div className="text-left">
-                            <div className="text-[10px] text-gray-500">Download on the</div>
-                            <div className="text-xs font-bold text-gray-300">App Store</div>
+                            <div className="text-[13px] text-star-3">반려동물 장례</div>
+                            <div className="text-[14px] font-bold text-star-2 transition-colors group-hover/card:text-star">지역별 장례 찾기</div>
                         </div>
-                    </div>
-                    <div className="flex-1 bg-[#2A2A2C] rounded-2xl p-4 flex items-center justify-center gap-2 border border-white/5 cursor-pointer hover:bg-[#333] transition-colors">
-                        <span className="text-2xl">🤖</span>
+                        <ArrowRight className="h-4 w-4 shrink-0 text-star-3 transition-colors group-hover/card:text-star" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                    </Link>
+                    <Link
+                        href="/grooming"
+                        className="group/card flex flex-1 items-center justify-between gap-2 rounded-[20px] bg-night-2 p-4 ring-1 ring-white/10 transition-colors hover:bg-night-3"
+                    >
                         <div className="text-left">
-                            <div className="text-[10px] text-gray-500">GET IT ON</div>
-                            <div className="text-xs font-bold text-gray-300">Google Play</div>
+                            <div className="text-[13px] text-star-3">반려동물 미용</div>
+                            <div className="text-[14px] font-bold text-star-2 transition-colors group-hover/card:text-star">애견미용 찾기</div>
                         </div>
-                    </div>
+                        <ArrowRight className="h-4 w-4 shrink-0 text-star-3 transition-colors group-hover/card:text-star" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                    </Link>
                 </div>
 
             </div>

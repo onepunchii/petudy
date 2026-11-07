@@ -1,0 +1,124 @@
+{
+  "id": "pf-e9daba7c",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "수의·관·유골함 판매, 염습 언급 없음",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "1년 단위 납골당 요금 게시, 위치 미확인",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모리얼 스톤(사리) 제작, 비용 상담",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "20kg 이상은 별도 문의",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [
+    {
+      "label": "추모 의식",
+      "note": "모든 장례에 분향소 참배, 추모제 무료 포함",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php"
+    }
+  ],
+  "hours": {
+    "text": "카카오맵 표기 월~토 09:00~19:00",
+    "sourceUrl": "https://place.map.kakao.com/23280324"
+  },
+  "prices": [
+    {
+      "label": "화장 5kg 미만",
+      "amount": "20만 원",
+      "includes": "분향소 참배, 장례의식, 추모제 포함, VAT 별도",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 5~10kg 미만",
+      "amount": "25만 원",
+      "includes": "분향소 참배, 장례의식, 추모제 포함, VAT 별도",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 10~20kg 미만",
+      "amount": "30만 원",
+      "includes": "분향소 참배, 장례의식, 추모제 포함, VAT 별도",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "화장 20kg 이상",
+      "amount": "별도 문의",
+      "includes": null,
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "일반 납골당 1년",
+      "amount": "10만 원",
+      "includes": "1년 안치, VAT 별도",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "고급 납골당 1년",
+      "amount": "30만 원",
+      "includes": "1년 안치, VAT 별도",
+      "sourceUrl": "http://dglovepet.kr/sub/process4.php",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 200000,
+  "parking": null,
+  "access": [],
+  "summary": "대구러브펫은 체중별 화장 요금과 1년 단위 납골당 요금을 홈페이지에 게시하고 있습니다. 5kg 미만 화장은 20만 원이며 부가세는 별도입니다.",
+  "cautions": [
+    "가격은 부가세 별도이며 오래된 정보일 수 있음",
+    "화장·납골당 자체 시설 여부는 미확인",
+    "영업시간은 지도 서비스 표기 기준"
+  ]
+}

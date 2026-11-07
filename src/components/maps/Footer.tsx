@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { SITE } from '@/lib/site/config';
 
 export default function Footer() {
     return (
@@ -9,7 +10,7 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="col-span-2">
                         <Link href="/" className="flex items-center gap-2 mb-6">
-                            <span className="text-xl font-bold text-white tracking-tight">Po-ON</span>
+                            <span className="text-xl font-bold text-white tracking-tight">{SITE.name}</span>
                             <div className="w-2 h-2 rounded-full bg-[#A3DF46]"></div>
                         </Link>
                         <p className="text-[#666666] text-sm leading-relaxed max-w-xs break-keep">
@@ -43,7 +44,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-[#666666]">
-                    <p>Copyright © 2025 21gram. All rights reserved.</p>
+                    <p>Copyright © {SITE.company.legalName}. All rights reserved.</p>
                     <p>Designed by Antigravity</p>
                 </div>
             </div>

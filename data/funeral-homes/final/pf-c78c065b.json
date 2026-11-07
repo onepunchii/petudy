@@ -1,0 +1,98 @@
+{
+  "id": "pf-c78c065b",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "장례 절차 안내에 개별 화장 단계 포함",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/223368141380"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "세정 후 한지로 감싸는 염습, 수의·관은 선택",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222287091776"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안실 보관 안내, 업종에 납골 표기",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222287091776"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "2023년 글에서 시설 내 수목장은 계획으로만 언급",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/223049224129"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골분 스톤 제작 안내",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222287091776"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "전화 상시 대기, 예약 시 심야 장례 사례 안내",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/223319819348"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "체구별로 추모실·화장로 구분, 대형견 문의 가능",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222287091776"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이와 햄스터·앵무새 등 소동물 장례 안내",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222337474038"
+    }
+  },
+  "extras": [
+    {
+      "label": "추모실",
+      "note": "체구에 따라 추모실 2곳을 나눠 사용",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222287091776"
+    }
+  ],
+  "hours": {
+    "text": "전화 상시 대기 안내, 운영시간 표기 없음",
+    "sourceUrl": "https://blog.naver.com/sukjc191ok/223368141380"
+  },
+  "prices": [
+    {
+      "label": "화장비 1kg~4.9kg",
+      "amount": "25만 원",
+      "includes": "화장 기본 비용, 그 외 용품은 선택 추가",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/223368141380",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 250000,
+  "parking": null,
+  "access": [
+    {
+      "text": "대구 성서와 북대구IC에서 각각 약 20분",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222287091776"
+    },
+    {
+      "text": "남양공원묘원과 우성공원묘원 사이에 위치",
+      "sourceUrl": "https://blog.naver.com/sukjc191ok/222337474038"
+    }
+  ],
+  "summary": "강아지 펫 헤븐은 성주군 선남면의 반려동물 장례식장으로 2020년 7월 개장했습니다. 공식 블로그 기준 개별 화장과 봉안실을 운영하며 화장비는 1kg~4.9kg 25만 원입니다.",
+  "cautions": [
+    "등록 홈페이지 접속 불가, 공식 블로그 기준 정보",
+    "가격은 2024년 2월 블로그 글 기준",
+    "참관과 픽업 가능 여부는 사전 문의 필요"
+  ]
+}

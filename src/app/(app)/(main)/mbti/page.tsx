@@ -2,9 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Dog, ArrowRight } from "lucide-react";
+import { ArrowRight, Crown, PawPrint, Zap } from "lucide-react";
 
 import { getPets } from "@/actions/pet";
+import { APP_ICON_STROKE, AppBody, AppBottomAction, AppButton, AppHero, BRAND_ICON } from "@/components/app/ui";
+import { PassCard } from "@/components/site/PassCard";
+import { Porthole } from "@/components/site/ui";
+import { cn } from "@/lib/utils";
 
 // Helper type for the pet object returned by getPets (inferred)
 type Pet = Awaited<ReturnType<typeof getPets>>[number];
@@ -30,7 +34,7 @@ export default function MbtiIntroPage() {
                     // For now, if no pets, we might want to prompt creation or show dummy
                     // Keeping existing fallback for consistency but adapted
                     const storedName = localStorage.getItem("petName");
-                    const dummyPet: any = { id: "temp", name: storedName || "두부", photo_url: localStorage.getItem("petPhoto") };
+                    const dummyPet = { id: "temp", name: storedName || "두부", photo_url: localStorage.getItem("petPhoto") } as Pet;
                     setPets([dummyPet]);
                     setSelectedPet(dummyPet);
                 }
@@ -54,42 +58,53 @@ export default function MbtiIntroPage() {
     };
 
     return (
-        <div className="min-h-screen bg-bg-main flex flex-col text-white relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="absolute top-0 left-0 w-full h-96 bg-foon-lime/5 blur-[100px] pointer-events-none" />
-
-            {/* Navbar Placeholder */}
-            <div className="h-14 flex items-center justify-between border-b border-[#333] relative z-10 bg-bg-main/50 backdrop-blur-md px-4">
-                <button onClick={() => router.back()} className="p-1">
-                    <ArrowRight className="w-6 h-6 rotate-180 text-white" />
-                </button>
-                <h1 className="font-bold text-lg absolute left-1/2 -translate-x-1/2">멍BTI 분석</h1>
-                <div className="w-8" /> {/* Spacer for centering */}
-            </div>
-
-            <div className="flex-1 flex flex-col items-center justify-center p-6 text-center space-y-4 z-10 max-h-[calc(100vh-3.5rem)] overflow-y-auto">
-
+        // 멍BTI 화면은 하단 탭이 없으므로 (main) 레이아웃의 pb-28 을 상쇄해 아래 버튼이 화면 바닥에 붙게 합니다
+        <div className="-mb-28 flex min-h-[100dvh] flex-col bg-moon">
+            <AppHero
+                back="/app"
+                top={<span className="text-[15px] font-semibold text-star-2">멍BTI 분석</span>}
+                title={
+                    <>
+                        우리 {selectedPet?.name || "아이"},<br />사실 사람 아닐까?
+                    </>
+                }
+                subtitle={
+                    <>
+                        행동 분석을 통해 아이의 성향을 파악하고 딱 맞는 <span className="font-semibold text-star">맞춤 서비스</span>를 추천해드려요.
+                    </>
+                }
+                action={<Porthole src={BRAND_ICON.mbti} size={76} />}
+            >
                 {/* Pet Selection Area */}
-                <div className="w-full max-w-xs mb-2">
-                    <p className="text-xs text-gray-500 mb-1 font-medium">분석할 아이를 선택해주세요</p>
-                    <div className="flex gap-4 overflow-x-auto p-4 justify-center items-center scrollbar-hide">
+                <div>
+                    <p id="mbti-pet-label" className="text-[13px] font-medium text-star-3">분석할 아이를 선택해주세요</p>
+                    <div role="group" aria-labelledby="mbti-pet-label" className="scrollbar-hide -mx-5 mt-3 flex gap-4 overflow-x-auto px-5 py-1">
                         {pets.map((pet) => {
                             const isSelected = selectedPet?.id === pet.id;
                             return (
                                 <button
                                     key={pet.id}
+                                    type="button"
                                     onClick={() => setSelectedPet(pet)}
-                                    className={`flex flex-col items-center gap-2 transition-all duration-300 ${isSelected ? "scale-110 opacity-100" : "scale-100 opacity-50 grayscale hover:grayscale-0 hover:opacity-80"}`}
+                                    aria-pressed={isSelected}
+                                    className="flex w-16 shrink-0 flex-col items-center gap-2 active:translate-y-px"
                                 >
-                                    <div className={`relative w-14 h-14 rounded-full overflow-hidden border-2 ${isSelected ? "border-foon-lime shadow-[0_0_15px_rgba(163,223,70,0.4)]" : "border-transparent bg-white/10"}`}>
+                                    <span
+                                        className={cn(
+                                            "relative block h-14 w-14 overflow-hidden rounded-full bg-night-3 transition-[box-shadow,opacity] duration-200 motion-reduce:transition-none",
+                                            isSelected ? "ring-2 ring-star ring-offset-2 ring-offset-night" : "opacity-60 ring-1 ring-white/10 hover:opacity-90",
+                                        )}
+                                    >
                                         {pet.photo_url ? (
                                             // eslint-disable-next-line @next/next/no-img-element
-                                            <img src={pet.photo_url} alt={pet.name} className="w-full h-full object-cover" />
+                                            <img src={pet.photo_url} alt={pet.name} className="h-full w-full object-cover" />
                                         ) : (
-                                            <div className="w-full h-full flex items-center justify-center bg-gray-700 text-xl">🐶</div>
+                                            <span className="flex h-full w-full items-center justify-center text-star-3">
+                                                <PawPrint className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                            </span>
                                         )}
-                                    </div>
-                                    <span className={`text-xs font-medium ${isSelected ? "text-foon-lime" : "text-gray-400"}`}>
+                                    </span>
+                                    <span className={cn("max-w-full truncate text-[13px]", isSelected ? "font-bold text-star" : "font-medium text-star-3")}>
                                         {pet.name}
                                     </span>
                                 </button>
@@ -98,47 +113,49 @@ export default function MbtiIntroPage() {
                         {/* 'Add Pet' placeholder if needed, omitted for now to keep it clean */}
                     </div>
                 </div>
+            </AppHero>
 
-                <div>
-                    <h2 className="text-2xl font-bold text-white mb-2 tracking-tight leading-tight">
-                        우리 <span className="text-foon-lime">{selectedPet?.name || "아이"}</span>,<br />사실 <span className="text-foon-lime">사람</span> 아닐까?
-                    </h2>
-                    <p className="text-gray-400 leading-relaxed font-light text-sm">
-                        행동 분석을 통해 아이의 성향을 파악하고<br />
-                        딱 맞는 <span className="text-white font-medium">맞춤 서비스</span>를 추천해드려요.
-                    </p>
-                </div>
-
-                <div className="w-full max-w-xs space-y-3">
-                    <div className="bg-bg-card p-4 rounded-2xl flex items-center gap-4 text-left border border-[#333] shadow-lg">
-                        <span className="text-2xl bg-bg-input p-2 rounded-full">🔥</span>
-                        <div>
-                            <h3 className="font-bold text-sm text-white">파워 에너자이저</h3>
-                            <p className="text-xs text-foon-lime font-medium">지치지 않는 체력왕</p>
+            <AppBody className="flex-1">
+                {/* 결과 예시: 탑승권 한 장, 절취선 너머에 기록 안내 */}
+                <PassCard
+                    stubPosition="bottom"
+                    mainClassName="p-0 sm:p-0"
+                    stubClassName="px-5 py-4 sm:px-5 sm:py-4"
+                    stub={
+                        <p className="text-[13px] leading-relaxed text-ink-3">
+                            결과는 <b className="font-semibold text-ink-2">반려동물 등록증</b>에 뱃지로 기록됩니다.
+                        </p>
+                    }
+                >
+                    <div className="divide-y divide-line">
+                        <div className="flex items-center gap-4 px-5 py-4">
+                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-paper-2 text-ink-2">
+                                <Zap className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            </span>
+                            <div>
+                                <h3 className="text-[15.5px] font-bold text-ink">파워 에너자이저</h3>
+                                <p className="mt-0.5 text-[13.5px] text-ink-2">지치지 않는 체력왕</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-4 px-5 py-4">
+                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-paper-2 text-ink-2">
+                                <Crown className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            </span>
+                            <div>
+                                <h3 className="text-[15.5px] font-bold text-ink">유리멘탈 공주님</h3>
+                                <p className="mt-0.5 text-[13.5px] text-ink-2">섬세한 케어 요망</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="bg-bg-card p-4 rounded-2xl flex items-center gap-4 text-left border border-[#333] shadow-lg">
-                        <span className="text-2xl bg-bg-input p-2 rounded-full">👑</span>
-                        <div>
-                            <h3 className="font-bold text-sm text-white">유리멘탈 공주님</h3>
-                            <p className="text-xs text-foon-lime font-medium">섬세한 케어 요망</p>
-                        </div>
-                    </div>
-                </div>
+                </PassCard>
+            </AppBody>
 
-                <div className="w-full pt-2">
-                    <button
-                        onClick={handleStart}
-                        className="w-full bg-foon-lime text-bg-main font-black text-lg py-4 rounded-2xl shadow-[0_4px_20px_rgba(163,223,70,0.4)] hover:bg-[#bbf080] transition-all flex items-center justify-center gap-2 active:scale-[0.98] group"
-                    >
-                        검사 시작하기
-                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                    <p className="text-xs text-gray-500 mt-4">
-                        결과는 <b className="text-gray-300">반려동물 등록증</b>에 뱃지로 기록됩니다.
-                    </p>
-                </div>
-            </div>
+            <AppBottomAction>
+                <AppButton variant="accent" size="lg" block onClick={handleStart}>
+                    검사 시작하기
+                    <ArrowRight className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                </AppButton>
+            </AppBottomAction>
         </div>
     );
 }

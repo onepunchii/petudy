@@ -4,11 +4,24 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
-import { Camera, ChevronRight, Activity, Bone, Apple, Smile, Scale, Heart, Eye, Brain, Calendar as CalendarIcon, Hash } from "lucide-react";
+import { Camera, Check, ChevronRight, Activity, Bone, Apple, Smile, Scale, Heart, Eye, Brain, Calendar as CalendarIcon, Hash, LoaderCircle, PawPrint } from "lucide-react";
 import { PetFormData } from "@/actions/pet";
 import DatePickerModal from "@/components/register/DatePickerModal";
 import BreedSelectDrawer from "@/components/register/steps/BreedSelectDrawer";
 import { updatePet } from "@/actions/pet";
+import { APP_ICON_STROKE, AppBody, AppBottomAction, AppButton, AppSection, appChipClass, appInputClass, appLabelClass, appOptionClass } from "@/components/app/ui";
+import { PET_NAME_MAX, PET_REG_NUMBER_MAX, PET_WEIGHT_MAX, PET_WEIGHT_MIN, petDatesError, regNumberError, weightError } from "@/lib/pet-rules";
+import { cn } from "@/lib/utils";
+
+/** 칸 아래 오류 문구 */
+function FieldError({ id, children }: { id: string; children: React.ReactNode }) {
+    return (
+        <p id={id} role="alert" className="mt-1.5 text-[13px] font-semibold leading-snug text-danger">
+            {children}
+        </p>
+    );
+}
+const invalidRing = "ring-2 ring-danger focus:ring-danger";
 
 // Reuse Concern Options
 const CONCERN_OPTIONS = [
@@ -21,6 +34,18 @@ const CONCERN_OPTIONS = [
     { value: "eye", label: "눈 / 귀", icon: Eye },
     { value: "behavior", label: "행동 / 분리불안", icon: Brain },
 ];
+
+/** 입력창처럼 생긴 선택 버튼 (품종, 날짜) */
+const pickerButtonClass = cn(appInputClass, "flex items-center gap-2 text-left transition-colors hover:bg-paper-2/60 active:bg-paper-2");
+
+/** 큰 선택 카드 오른쪽 위 체크 (선택됨 = 남색 테두리 2px + 체크) */
+function OptionCheck() {
+    return (
+        <span className="absolute right-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-night text-star" aria-hidden>
+            <Check className="h-3 w-3" strokeWidth={3} />
+        </span>
+    );
+}
 
 interface EditPetFormProps {
     petId: string;
@@ -49,6 +74,14 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
     });
 
     const [photoFile, setPhotoFile] = useState<File | null>(null);
+    const [submitError, setSubmitError] = useState<string | null>(null);
+
+    // 입력 규칙 (등록 화면·서버와 같은 규칙)
+    const nameError = !formData.name?.trim() ? "이름을 입력해 주세요" : null;
+    const regError = regNumberError(formData.reg_number);
+    const wError = weightError(formData.weight);
+    const datesError = petDatesError({ birth: formData.birth, adoptionDate: formData.adoptionDate });
+    const hasError = !!(nameError || regError || wError || datesError);
 
     // Modals
     const [openDateField, setOpenDateField] = useState<"birth" | "adoptionDate" | null>(null);
@@ -95,21 +128,31 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
     };
 
     const handleSubmit = async () => {
-        if (!formData.name) return alert("이름을 입력해주세요.");
+        if (hasError) return;
 
         setIsSubmitting(true);
+        setSubmitError(null);
         try {
-            let finalPhotoUrl = formData.photo;
+            let finalPhotoUrl = formData.photo || null;
             if (photoFile) {
                 const { uploadPetPhoto } = await import("@/actions/storage");
                 const formDataPhoto = new FormData();
                 formDataPhoto.append("file", photoFile);
                 const res = await uploadPetPhoto(formDataPhoto);
-                if (!res.success) throw new Error(res.error || "Upload failed");
+                if (!res.success) {
+                    setSubmitError(res.error);
+                    return;
+                }
                 finalPhotoUrl = res.url;
+                setPhotoFile(null);
+                setFormData(prev => ({ ...prev, photo: res.url }));
             }
 
-            await updatePet(petId, { ...formData, photo: finalPhotoUrl } as PetFormData);
+            const result = await updatePet(petId, { ...formData, photo: finalPhotoUrl } as PetFormData);
+            if (!result.success) {
+                setSubmitError(result.error);
+                return;
+            }
 
             // Invalidate cache to force refresh on Home Page
             await queryClient.invalidateQueries({ queryKey: ["pets"] });
@@ -118,243 +161,301 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
             router.refresh();
         } catch (error) {
             console.error(error);
-            alert("저장 중 오류가 발생했습니다.");
+            setSubmitError("연결이 불안정해요. 잠시 후 다시 시도해 주세요.");
         } finally {
             setIsSubmitting(false);
         }
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-bg-main text-white relative pb-32">
-            {/* Ambient Background Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-foon-lime rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
-
-            <div className="px-6 pt-6 flex flex-col gap-8 relative z-10 text-sm">
+        <div className="relative flex flex-1 flex-col">
+            <AppBody className="flex-1 pb-4">
 
                 {/* 1. Photo Section */}
                 <div className="flex flex-col items-center gap-3">
-                    <label className="relative cursor-pointer group">
-                        <div className="w-28 h-28 rounded-full bg-[#2C2C2E] border-2 border-[#333] overflow-hidden flex items-center justify-center relative shadow-lg group-active:scale-95 transition-transform">
+                    <label className="group relative cursor-pointer">
+                        <span className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-paper-2 ring-1 ring-line transition-transform group-active:translate-y-px motion-reduce:transition-none">
                             {formData.photo ? (
-                                <Image src={formData.photo} alt="Profile" fill className="object-cover" />
+                                <Image src={formData.photo} alt="Profile" fill sizes="112px" className="object-cover" />
                             ) : (
-                                <span className="text-4xl">🐶</span>
+                                <PawPrint className="h-10 w-10 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
                             )}
-                        </div>
-                        <div className="absolute bottom-0 right-0 w-8 h-8 bg-foon-lime rounded-full flex items-center justify-center text-bg-main shadow-md border-2 border-bg-main">
-                            <Camera className="w-4 h-4" />
-                        </div>
+                        </span>
+                        <span className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-full bg-night text-star ring-[3px] ring-moon">
+                            <Camera className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                        </span>
                         <input type="file" accept="image/*" className="hidden" onChange={handlePhotoSelect} />
                     </label>
-                    <span className="text-gray-400 text-xs">프로필 사진 변경</span>
+                    <span className="text-[13px] text-ink-3">프로필 사진 변경</span>
                 </div>
 
                 {/* 2. Basic Info Section */}
-                <section className="space-y-4">
-                    <h3 className="text-lg font-bold text-gray-200">기본 정보</h3>
+                <AppSection title="기본 정보">
+                    <div className="space-y-5">
 
-                    {/* Name */}
-                    <div className="space-y-2">
-                        <label className="text-gray-400 text-xs pl-1">이름</label>
-                        <input
-                            type="text"
-                            value={formData.name || ""}
-                            onChange={(e) => handleChange("name", e.target.value)}
-                            className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-foon-lime outline-none transition-colors font-medium"
-                            placeholder="이름을 입력해주세요"
-                        />
-                    </div>
-
-                    {/* Registraion Number */}
-                    <div className="space-y-2">
-                        <label className="text-gray-400 text-xs pl-1">동물등록번호 (선택)</label>
-                        <div className="relative">
+                        {/* Name */}
+                        <div>
+                            <label htmlFor="pet-name" className={appLabelClass}>이름</label>
                             <input
+                                id="pet-name"
                                 type="text"
-                                value={formData.reg_number || ""}
-                                onChange={(e) => handleChange("reg_number", e.target.value)}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 pl-10 text-white focus:border-foon-lime outline-none transition-colors font-medium"
-                                placeholder="등록번호 15자리"
+                                maxLength={PET_NAME_MAX}
+                                value={formData.name || ""}
+                                onChange={(e) => handleChange("name", e.target.value)}
+                                aria-invalid={!!nameError}
+                                aria-describedby={nameError ? "pet-name-error" : undefined}
+                                className={cn(appInputClass, "font-medium", nameError && invalidRing)}
+                                placeholder="이름을 입력해주세요"
                             />
-                            <Hash className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+                            {nameError && <FieldError id="pet-name-error">{nameError}</FieldError>}
                         </div>
-                    </div>
 
-                    {/* Species & Gender Row */}
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-2">
-                            <label className="text-gray-400 text-xs pl-1">종류</label>
-                            <div className="flex bg-bg-input rounded-xl p-1 border border-[#333]">
-                                {[
-                                    { id: "dog", label: "강아지" },
-                                    { id: "cat", label: "고양이" }
-                                ].map(opt => (
-                                    <button
-                                        key={opt.id}
-                                        onClick={() => handleChange("species", opt.id)}
-                                        className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all ${formData.species === opt.id
-                                            ? "bg-[#3A3A3C] text-white shadow-sm"
-                                            : "text-gray-500 hover:text-gray-300"
-                                            }`}
-                                    >
-                                        {opt.label}
-                                    </button>
-                                ))}
+                        {/* Registraion Number */}
+                        <div>
+                            <label htmlFor="pet-reg-number" className={appLabelClass}>
+                                동물등록번호 <span className="font-normal text-ink-3">(선택)</span>
+                            </label>
+                            <div className="relative">
+                                <input
+                                    id="pet-reg-number"
+                                    type="text"
+                                    inputMode="numeric"
+                                    autoComplete="off"
+                                    maxLength={PET_REG_NUMBER_MAX + 4}
+                                    value={formData.reg_number || ""}
+                                    onChange={(e) => handleChange("reg_number", e.target.value)}
+                                    aria-invalid={!!regError}
+                                    aria-describedby={regError ? "pet-reg-number-error" : undefined}
+                                    className={cn(appInputClass, "pl-10 font-medium tabular-nums", regError && invalidRing)}
+                                    placeholder="등록번호 15자리"
+                                />
+                                <Hash className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            </div>
+                            {regError && <FieldError id="pet-reg-number-error">{regError}</FieldError>}
+                        </div>
+
+                        {/* Species & Gender Row */}
+                        <div className="grid grid-cols-2 gap-3">
+                            <div role="group" aria-labelledby="pet-species-label">
+                                <p id="pet-species-label" className={appLabelClass}>종류</p>
+                                <div className="flex gap-2">
+                                    {[
+                                        { id: "dog", label: "강아지" },
+                                        { id: "cat", label: "고양이" }
+                                    ].map(opt => (
+                                        <button
+                                            key={opt.id}
+                                            type="button"
+                                            aria-pressed={formData.species === opt.id}
+                                            onClick={() => handleChange("species", opt.id)}
+                                            className={appChipClass(formData.species === opt.id, "h-12 flex-1 px-2")}
+                                        >
+                                            {opt.label}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                            <div role="group" aria-labelledby="pet-gender-label">
+                                <p id="pet-gender-label" className={appLabelClass}>성별</p>
+                                <div className="flex gap-2">
+                                    {[
+                                        { id: "male", label: "남아" },
+                                        { id: "female", label: "여아" }
+                                    ].map(opt => (
+                                        <button
+                                            key={opt.id}
+                                            type="button"
+                                            aria-pressed={formData.gender === opt.id}
+                                            onClick={() => handleChange("gender", opt.id)}
+                                            className={appChipClass(formData.gender === opt.id, "h-12 flex-1 px-2")}
+                                        >
+                                            {opt.label}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                        <div className="space-y-2">
-                            <label className="text-gray-400 text-xs pl-1">성별</label>
-                            <div className="flex bg-bg-input rounded-xl p-1 border border-[#333]">
-                                {[
-                                    { id: "male", label: "남아" },
-                                    { id: "female", label: "여아" }
-                                ].map(opt => (
-                                    <button
-                                        key={opt.id}
-                                        onClick={() => handleChange("gender", opt.id)}
-                                        className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all ${formData.gender === opt.id
-                                            ? (opt.id === 'male' ? "bg-blue-500/20 text-blue-400" : "bg-pink-500/20 text-pink-400")
-                                            : "text-gray-500 hover:text-gray-300"
-                                            }`}
-                                    >
-                                        {opt.label}
-                                    </button>
-                                ))}
-                            </div>
+
+                        {/* Breed */}
+                        <div>
+                            <p id="pet-breed-label" className={appLabelClass}>품종</p>
+                            <button
+                                type="button"
+                                aria-labelledby="pet-breed-label pet-breed-value"
+                                onClick={() => setIsBreedDrawerOpen(true)}
+                                className={cn(pickerButtonClass, "justify-between")}
+                            >
+                                <span id="pet-breed-value" className={formData.breed ? "truncate font-medium text-ink" : "text-ink-3"}>
+                                    {formData.breed || "품종을 선택해주세요"}
+                                </span>
+                                <ChevronRight className="h-4 w-4 shrink-0 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            </button>
                         </div>
                     </div>
-
-                    {/* Breed */}
-                    <div className="space-y-2">
-                        <label className="text-gray-400 text-xs pl-1">품종</label>
-                        <button
-                            onClick={() => setIsBreedDrawerOpen(true)}
-                            className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-left flex justify-between items-center group active:bg-[#252527] transition-colors"
-                        >
-                            <span className={formData.breed ? "text-white font-medium" : "text-gray-500"}>
-                                {formData.breed || "품종을 선택해주세요"}
-                            </span>
-                            <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" />
-                        </button>
-                    </div>
-                </section>
-
-                <hr className="border-[#222]" />
+                </AppSection>
 
                 {/* 3. Details Section */}
-                <section className="space-y-4">
-                    <h3 className="text-lg font-bold text-gray-200">상세 정보</h3>
+                <AppSection title="상세 정보">
+                    <div className="space-y-5">
 
-                    {/* Dates */}
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-2">
-                            <label className="text-gray-400 text-xs pl-1">생일</label>
-                            <button
-                                onClick={() => setOpenDateField("birth")}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-3 py-3 text-left flex items-center gap-2 group active:bg-[#252527]"
-                            >
-                                <CalendarIcon className="w-4 h-4 text-gray-500" />
-                                <span className={formData.birth ? "text-white font-medium text-sm" : "text-gray-500 text-sm"}>
-                                    {formData.birth || "선택"}
-                                </span>
-                            </button>
+                        {/* Dates */}
+                        <div className="grid grid-cols-2 gap-3">
+                            <div>
+                                <p id="pet-birth-label" className={appLabelClass}>
+                                    생일 <span className="font-normal text-ink-3">(선택)</span>
+                                </p>
+                                <button
+                                    type="button"
+                                    aria-labelledby="pet-birth-label pet-birth-value"
+                                    onClick={() => setOpenDateField("birth")}
+                                    className={cn(pickerButtonClass, "px-3.5")}
+                                >
+                                    <CalendarIcon className="h-4 w-4 shrink-0 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                    <span id="pet-birth-value" className={formData.birth ? "truncate font-medium tabular-nums text-ink" : "text-ink-3"}>
+                                        {formData.birth || "선택"}
+                                    </span>
+                                </button>
+                            </div>
+                            <div>
+                                <p id="pet-adoption-label" className={appLabelClass}>
+                                    입양일 <span className="font-normal text-ink-3">(선택)</span>
+                                </p>
+                                <button
+                                    type="button"
+                                    aria-labelledby="pet-adoption-label pet-adoption-value"
+                                    onClick={() => setOpenDateField("adoptionDate")}
+                                    className={cn(pickerButtonClass, "px-3.5")}
+                                >
+                                    <CalendarIcon className="h-4 w-4 shrink-0 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                    <span id="pet-adoption-value" className={formData.adoptionDate ? "truncate font-medium tabular-nums text-ink" : "text-ink-3"}>
+                                        {formData.adoptionDate || "선택"}
+                                    </span>
+                                </button>
+                            </div>
+                            {datesError && (
+                                <div className="col-span-2 -mt-1">
+                                    <FieldError id="pet-dates-error">{datesError}</FieldError>
+                                </div>
+                            )}
+                            {(formData.birth || formData.adoptionDate) && (
+                                <div className="col-span-2 -mt-1 flex gap-3 text-[13px] text-ink-3">
+                                    {formData.birth && (
+                                        <button type="button" onClick={() => handleChange("birth", null)} className="underline underline-offset-2 hover:text-ink">
+                                            생일 지우기
+                                        </button>
+                                    )}
+                                    {formData.adoptionDate && (
+                                        <button type="button" onClick={() => handleChange("adoptionDate", null)} className="underline underline-offset-2 hover:text-ink">
+                                            입양일 지우기
+                                        </button>
+                                    )}
+                                </div>
+                            )}
                         </div>
-                        <div className="space-y-2">
-                            <label className="text-gray-400 text-xs pl-1">입양일 (선택)</label>
-                            <button
-                                onClick={() => setOpenDateField("adoptionDate")}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-3 py-3 text-left flex items-center gap-2 group active:bg-[#252527]"
-                            >
-                                <CalendarIcon className="w-4 h-4 text-gray-500" />
-                                <span className={formData.adoptionDate ? "text-white font-medium text-sm" : "text-gray-500 text-sm"}>
-                                    {formData.adoptionDate || "선택"}
-                                </span>
-                            </button>
-                        </div>
-                    </div>
 
-                    {/* Physical */}
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-2">
-                            <label className="text-gray-400 text-xs pl-1">몸무게 (kg)</label>
+                        {/* Physical */}
+                        <div className="grid grid-cols-2 gap-3">
+                            <div>
+                                <label htmlFor="pet-weight" className={appLabelClass}>몸무게 (kg)</label>
+                                <input
+                                    id="pet-weight"
+                                    type="number"
+                                    inputMode="decimal"
+                                    min={PET_WEIGHT_MIN}
+                                    max={PET_WEIGHT_MAX}
+                                    value={formData.weight || ""}
+                                    onChange={(e) => handleChange("weight", e.target.value)}
+                                    aria-invalid={!!wError}
+                                    aria-describedby={wError ? "pet-weight-error" : undefined}
+                                    className={cn(appInputClass, "font-medium tabular-nums", wError && invalidRing)}
+                                    placeholder="0.0"
+                                    step="0.1"
+                                />
+                                {wError && <FieldError id="pet-weight-error">{wError}</FieldError>}
+                            </div>
+                            <div>
+                                <label htmlFor="pet-color" className={appLabelClass}>모색</label>
+                                <input
+                                    id="pet-color"
+                                    type="text"
+                                    value={formData.color || ""}
+                                    onChange={(e) => handleChange("color", e.target.value)}
+                                    className={cn(appInputClass, "font-medium")}
+                                    placeholder="예: 갈색"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Neuter Checkbox */}
+                        <div className="flex min-h-12 items-center gap-3 rounded-xl bg-pass px-4 py-3 ring-1 ring-inset ring-line">
                             <input
-                                type="number"
-                                value={formData.weight || ""}
-                                onChange={(e) => handleChange("weight", e.target.value)}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-foon-lime outline-none transition-colors font-medium placeholder-gray-600"
-                                placeholder="0.0"
-                                step="0.1"
+                                type="checkbox"
+                                id="neuter"
+                                className="h-5 w-5 cursor-pointer rounded accent-night"
+                                checked={formData.neuter === true}
+                                onChange={(e) => handleChange("neuter", e.target.checked)}
                             />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-gray-400 text-xs pl-1">모색</label>
-                            <input
-                                type="text"
-                                value={formData.color || ""}
-                                onChange={(e) => handleChange("color", e.target.value)}
-                                className="w-full bg-bg-input border border-[#333] rounded-xl px-4 py-3 text-white focus:border-foon-lime outline-none transition-colors font-medium placeholder-gray-600"
-                                placeholder="예: 갈색"
-                            />
+                            <label htmlFor="neuter" className="flex-1 cursor-pointer text-[15px] font-medium text-ink">
+                                중성화 수술을 했어요
+                            </label>
                         </div>
                     </div>
-
-                    {/* Neuter Checkbox */}
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-bg-input border border-[#333]">
-                        <input
-                            type="checkbox"
-                            id="neuter"
-                            className="w-5 h-5 accent-foon-lime rounded cursor-pointer"
-                            checked={formData.neuter === true}
-                            onChange={(e) => handleChange("neuter", e.target.checked)}
-                        />
-                        <label htmlFor="neuter" className="text-sm font-medium text-gray-300 flex-1 cursor-pointer">
-                            중성화 수술을 했어요
-                        </label>
-                    </div>
-                </section>
-
-                <hr className="border-[#222]" />
+                </AppSection>
 
                 {/* 4. Concerns Section */}
-                <section className="space-y-4">
-                    <h3 className="text-lg font-bold text-gray-200">건강 고민</h3>
-                    <div className="grid grid-cols-4 gap-2">
+                <AppSection title="건강 고민">
+                    <div className="grid grid-cols-2 gap-2.5">
                         <button
+                            type="button"
+                            aria-pressed={!!formData.concern?.includes("none")}
                             onClick={() => handleConcernChange("none")}
-                            className={`col-span-4 p-3 rounded-xl border transition-all text-xs font-bold ${formData.concern?.includes("none")
-                                ? "bg-foon-lime/20 border-foon-lime text-foon-lime"
-                                : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
-                                }`}
+                            className={appOptionClass(!!formData.concern?.includes("none"), "relative col-span-2 min-h-[52px] py-3 pr-10 text-[14px] font-semibold text-ink")}
                         >
                             고민 없어요 (건강함)
+                            {formData.concern?.includes("none") && <OptionCheck />}
                         </button>
-                        {CONCERN_OPTIONS.map((opt) => (
-                            <button
-                                key={opt.value}
-                                onClick={() => handleConcernChange(opt.value)}
-                                className={`flex flex-col items-center justify-center gap-2 p-2 h-20 rounded-xl border transition-all ${formData.concern?.includes(opt.value)
-                                    ? "bg-foon-lime/20 border-foon-lime text-foon-lime"
-                                    : "bg-bg-input border-[#333] text-gray-400 hover:bg-[#252527]"
-                                    }`}
-                            >
-                                <opt.icon className="w-5 h-5" />
-                                <span className="text-[10px] font-bold text-center leading-tight">{opt.label}</span>
-                            </button>
-                        ))}
+                        {CONCERN_OPTIONS.map((opt) => {
+                            const selected = !!formData.concern?.includes(opt.value);
+                            return (
+                                <button
+                                    key={opt.value}
+                                    type="button"
+                                    aria-pressed={selected}
+                                    onClick={() => handleConcernChange(opt.value)}
+                                    className={appOptionClass(selected, "relative flex min-h-[60px] items-center gap-2.5 py-3 pr-9")}
+                                >
+                                    <opt.icon className={cn("h-5 w-5 shrink-0", selected ? "text-ink" : "text-ink-3")} strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                    <span className="min-w-0 text-[14px] font-semibold leading-snug text-ink">{opt.label}</span>
+                                    {selected && <OptionCheck />}
+                                </button>
+                            );
+                        })}
                     </div>
-                </section>
-            </div>
+                </AppSection>
+            </AppBody>
 
             {/* Sticky Bottom Button */}
-            <div className="fixed bottom-0 left-0 right-0 p-4 pb-8 bg-gradient-to-t from-bg-main via-bg-main to-transparent z-50">
-                <button
+            <AppBottomAction>
+                {submitError && (
+                    <p role="alert" className="mb-3 rounded-xl bg-pass px-4 py-3 text-[14px] font-semibold leading-snug text-danger ring-1 ring-inset ring-danger/30">
+                        {submitError}
+                    </p>
+                )}
+                <AppButton
+                    variant="primary"
+                    size="lg"
+                    block
                     onClick={handleSubmit}
-                    disabled={isSubmitting}
-                    className="w-full max-w-[430px] mx-auto bg-foon-lime text-bg-main font-bold py-4 rounded-2xl shadow-[0_4px_14px_rgba(163,223,70,0.4)] active:scale-95 transition-transform disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-2"
+                    disabled={isSubmitting || hasError}
                 >
-                    {isSubmitting ? <span className="animate-spin text-xl">⏳</span> : "저장하기"}
-                </button>
-            </div>
+                    {isSubmitting ? (
+                        <>
+                            <LoaderCircle className="h-5 w-5 animate-spin motion-reduce:animate-none" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            <span className="sr-only">저장 중</span>
+                        </>
+                    ) : "저장하기"}
+                </AppButton>
+            </AppBottomAction>
 
             {/* Drawers & Modals */}
             <DatePickerModal

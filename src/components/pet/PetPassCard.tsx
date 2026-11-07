@@ -2,7 +2,10 @@
 
 import React, { forwardRef } from "react";
 import { QRCodeSVG } from "qrcode.react";
+import { GraduationCap, PawPrint, Ruler, Smile, Sparkles, Trees, type LucideIcon } from "lucide-react";
 
+import { APP_ICON_STROKE } from "@/components/app/tokens";
+import { cn } from "@/lib/utils";
 import { mbtiConfig, MbtiType } from "../shared/PetPassCard";
 
 export interface PetPassStats {
@@ -33,6 +36,14 @@ interface PetPassCardProps {
     mbtiType?: MbtiType;
 }
 
+/**
+ * 펫패스 (반려동물 여권). 사이트 PassCard 와 같은 흰 탑승권(globals.css .pass)으로,
+ * 위쪽은 아이 정보, 점선 절취선 아래(stub)는 성향 막대입니다.
+ * - 400x640 고정: 등록 완료 화면에서 이 요소를 html2canvas 로 그대로 이미지 저장합니다.
+ * - html2canvas 가 읽을 수 있도록 투명도 수식어(/70 등, color-mix)와 Tailwind rotate/scale 대신
+ *   불투명 토큰 색과 인라인 transform 을 씁니다. html2canvas 는 mask 를 그리지 않아
+ *   저장 이미지에서는 반원 홈 없이 둥근 카드로 나옵니다.
+ */
 export const PetPassCard = forwardRef<HTMLDivElement, PetPassCardProps>(({ data, mbtiType }, ref) => {
     const genderDisplay =
         data.gender === "male"
@@ -53,245 +64,111 @@ export const PetPassCard = forwardRef<HTMLDivElement, PetPassCardProps>(({ data,
         }
     }
 
-
-    // Determine background color for stat bars
-    const limeColor = "#a3df46";
-    const inactiveColor = "rgba(255,255,255,0.1)";
-
     // MBTI Badge Info
     const badgeInfo = mbtiType ? mbtiConfig[mbtiType] : null;
 
     return (
         <div
             ref={ref}
-            className="pet-pass-card"
+            className="pet-pass-card pass"
+            data-stub="bottom"
+            data-tone="light"
+            data-radius="tile"
             style={{
                 width: "400px",
                 height: "640px",
                 position: "relative",
-                borderRadius: "30px",
-                overflow: "hidden",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
-                fontFamily: '"Noto Sans KR", sans-serif',
-                background: "linear-gradient(135deg, #1f1f1f 0%, #0d0d0d 100%)", // base dark
+                // 위 정보 칸이 남는 높이를 모두 쓰고, 성향 막대(stub)는 내용만큼
+                gridTemplateRows: "minmax(0, 1fr) auto",
             }}
         >
-            {/* Holographic Overlay Layer - Improved */}
-            <div
-                className="absolute inset-0 pointer-events-none z-0"
-                style={{
-                    background: `
-                    linear-gradient(
-                        115deg, 
-                        transparent 0%, 
-                        rgba(255, 0, 150, 0.1) 25%, 
-                        rgba(0, 200, 255, 0.1) 35%, 
-                        rgba(0, 255, 200, 0.1) 45%, 
-                        rgba(255, 255, 0, 0.1) 55%, 
-                        rgba(255, 0, 0, 0.1) 65%, 
-                        transparent 100%
-                    )
-                `,
-                    backgroundSize: "200% 200%",
-                    backgroundPosition: "0% 0%",
-                    filter: "brightness(1.3) contrast(1.1)",
-                    mixBlendMode: "screen", // Easier to see on dark bg than color-dodge
-                    opacity: 0.6,
-                    animation: "holographic-shimmer 4s linear infinite",
-                }}
-            >
-                {/* Texture noise */}
-                <div style={{
-                    position: "absolute",
-                    inset: 0,
-                    opacity: 0.15,
-                    backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=')",
-                    mixBlendMode: "overlay",
-                }} />
-            </div>
-
-            {/* Global Styles for Keyframes */}
-            <style dangerouslySetInnerHTML={{
-                __html: `
-            @keyframes holographic-shimmer {
-                0% { background-position: 200% 0%; }
-                100% { background-position: -200% 0%; }
-            }
-            @keyframes badge-pulse {
-                0% { transform: scale(1) rotate(12deg); box-shadow: 0 0 0 0 rgba(163, 223, 70, 0.7); }
-                70% { transform: scale(1.05) rotate(12deg); box-shadow: 0 0 0 10px rgba(163, 223, 70, 0); }
-                100% { transform: scale(1) rotate(12deg); box-shadow: 0 0 0 0 rgba(163, 223, 70, 0); }
-            }
-        `}} />
-
-            {/* MBTI Badge Stamp Effect */}
+            {/* 멍BTI 도장: 여권에 찍힌 도장처럼 기울여 설명 칸 오른쪽에 둡니다 (설명 칸은 그만큼 오른쪽을 비움) */}
             {badgeInfo && (
                 <div
-                    className="absolute top-[180px] right-[30px] z-30 flex flex-col items-center justify-center pointer-events-none"
-                    style={{
-                        transform: "rotate(12deg)",
-                        // animation: "badge-pulse 2s infinite" // Validation: User requested to remove blinking square
-                    }}
+                    className="pointer-events-none absolute right-[26px] top-[124px] z-30 flex flex-col items-center"
+                    style={{ transform: "rotate(12deg)" }}
                 >
-                    <div className="rounded-full bg-black/80 backdrop-blur-md border-[3px] border-foon-lime p-3 shadow-[0_0_20px_rgba(163,223,70,0.5)] flex items-center justify-center w-20 h-20">
-                        <div className="transform scale-150">
-                            {badgeInfo.icon}
-                        </div>
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full border-[3px] border-double border-pine bg-pass text-pine">
+                        <div style={{ transform: "scale(1.5)" }}>{badgeInfo.icon}</div>
                     </div>
-                    <div className="mt-2 bg-foon-lime text-black font-black text-xs px-2 py-1 rounded-full shadow-lg border border-white/20">
+                    <div className="mt-2 rounded-full bg-pine px-2.5 py-1 text-[13px] font-bold text-star">
                         {data.gender === 'male' ? badgeInfo.label.replace("공주님", "왕자님") : badgeInfo.label}
                     </div>
                 </div>
             )}
 
-            {/* Content Container (z-10 to sit above holo) */}
-            <div className="relative z-10 w-full h-full flex flex-col p-[30px] text-white">
-
-                {/* Header Row: Badge, Name, Photo, QR */}
-                <div className="flex justify-between items-start mb-6">
-                    <div className="flex flex-col">
+            <div className="pass-main flex flex-col px-7 pb-6 pt-7">
+                {/* Header Row: Owner, Name, Photo, QR */}
+                <div className="flex items-start justify-between gap-4">
+                    <div className="flex min-w-0 flex-col">
                         {/* Owner Badge */}
-                        <div
-                            style={{
-                                backgroundColor: limeColor,
-                                color: "#000",
-                                fontSize: "12px",
-                                fontWeight: "bold",
-                                padding: "4px 10px",
-                                borderRadius: "12px",
-                                alignSelf: "flex-start",
-                                marginBottom: "8px",
-                            }}
-                        >
+                        <span className="self-start rounded-full bg-paper-2 px-2.5 py-1 text-[13px] font-semibold text-ink-2">
                             {data.ownerName}
-                        </div>
+                        </span>
 
                         {/* Name & Photo */}
-                        <div className="flex items-center gap-3">
-                            <span style={{ fontSize: "36px", fontWeight: "900" }}>
+                        <div className="mt-2 flex items-center gap-3">
+                            <span className="text-[34px] font-extrabold leading-tight tracking-[-0.03em] text-ink">
                                 {data.name}
                             </span>
-                            {/* Larger Photo Circle */}
-                            <div
-                                className="rounded-full overflow-hidden flex items-center justify-center"
-                                style={{
-                                    width: "48px",
-                                    height: "48px",
-                                    border: "2px solid rgba(255,255,255,0.5)",
-                                    backgroundColor: "#ffffff",
-                                }}
-                            >
+                            <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-paper-2 text-ink-3 ring-2 ring-line">
                                 {data.photo ? (
                                     // eslint-disable-next-line @next/next/no-img-element
                                     <img
                                         src={data.photo}
                                         alt="Profile"
-                                        className="w-full h-full object-cover"
+                                        className="h-full w-full object-cover"
                                         crossOrigin="anonymous"
                                     />
                                 ) : (
-                                    <span style={{ fontSize: "20px" }}>🐶</span>
+                                    <PawPrint className="h-5 w-5" strokeWidth={APP_ICON_STROKE} aria-hidden />
                                 )}
-                            </div>
+                            </span>
                         </div>
-                        <span style={{ fontSize: "12px", color: "#aaaaaa", marginTop: "4px" }}>
+                        <span className="mt-1 text-[13px] text-ink-3 tabular-nums">
                             등록번호 ({data.regNum})
                         </span>
                     </div>
 
-                    {/* QR Code */}
-                    <div
-                        className="rounded-lg mt-2"
-                        style={{
-                            width: "70px",
-                            height: "70px",
-                            backgroundColor: "#ffffff",
-                            padding: "4px"
-                        }}
-                    >
+                    {/* QR Code: 읽히도록 흰 바탕에 짙은 글자색(ink) */}
+                    <div className="mt-1 shrink-0 rounded-xl bg-pass p-1 ring-1 ring-line">
                         <QRCodeSVG
                             value={`foon-${data.petId}`}
                             size={62}
-                            bgColor="#FFFFFF"
-                            fgColor="#000000"
+                            bgColor="#FCFCFD"
+                            fgColor="#10131A"
                             level="M"
                         />
                     </div>
                 </div>
 
-                {/* Description Box */}
+                {/* Description Box (높이 고정: 문구 길이에 따라 흔들리지 않게) */}
                 <div
-                    className="rounded-2xl p-4 text-center mb-6"
-                    style={{
-                        backgroundColor: "rgba(255,255,255,0.08)",
-                        border: "1px solid rgba(255,255,255,0.1)",
-                        color: "#ddd",
-                        fontSize: "13px",
-                        fontWeight: "500",
-                        lineHeight: "1.6", // Explicit line height
-                        wordBreak: "keep-all", // Better Korean wrapping
-                        whiteSpace: "pre-wrap", // Handle newlines
-                        letterSpacing: "0.5px", // Slight spacing
-                        height: "110px", // Fixed height to prevent shift
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        overflow: "hidden", // Clip overflow
-                    }}
+                    className={cn(
+                        "mt-4 flex h-[100px] items-center justify-center overflow-hidden whitespace-pre-wrap break-keep rounded-xl bg-moon text-center text-[14px] font-medium leading-[1.6] text-ink-2",
+                        badgeInfo ? "pl-4 pr-[104px]" : "px-4",
+                    )}
                 >
                     {data.description}
                 </div>
 
                 {/* Info List */}
-                <div className="flex flex-col mb-6" style={{ fontSize: "13px", gap: "8px" }}>
+                <dl className="mt-auto flex flex-col pt-3">
                     <InfoRow label="생일" value={birthDisplay} />
                     <InfoRow label="품종" value={data.breed} />
                     <InfoRow label="색상" value={data.color} />
                     <InfoRow label="성별" value={genderDisplay} />
                     <InfoRow label="중성화" value={neuterDisplay} />
-                </div>
+                </dl>
+            </div>
 
-                {/* Stats Bar Chart Section */}
-                <div
-                    className="flex-1 rounded-2xl p-4 flex flex-col justify-between"
-                    style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
-                >
-                    <StatRow
-                        label="크기"
-                        score={data.stats.size}
-                        icon="🐘" // Using elephant for size as placeholder or keep existing
-                        activeColor={limeColor}
-                        inactiveColor={inactiveColor}
-                    />
-                    <StatRow
-                        label="털빠짐"
-                        score={data.stats.shedding}
-                        icon="✨"
-                        activeColor={limeColor}
-                        inactiveColor={inactiveColor}
-                    />
-                    <StatRow
-                        label="친화력"
-                        score={data.stats.social}
-                        icon="🥰"
-                        activeColor={limeColor}
-                        inactiveColor={inactiveColor}
-                    />
-                    <StatRow
-                        label="학습력"
-                        score={data.stats.smart}
-                        icon="🎓"
-                        activeColor={limeColor}
-                        inactiveColor={inactiveColor}
-                    />
-                    <StatRow
-                        label="실내/외"
-                        score={data.stats.indoor}
-                        icon="🏞️"
-                        activeColor={limeColor}
-                        inactiveColor={inactiveColor}
-                    />
-                </div>
+            {/* Stats Bar Chart Section (절취선 너머) */}
+            <div className="pass-stub flex flex-col gap-[9px] px-7 py-5">
+                <StatRow label="크기" score={data.stats.size} icon={Ruler} />
+                <StatRow label="털빠짐" score={data.stats.shedding} icon={Sparkles} />
+                <StatRow label="친화력" score={data.stats.social} icon={Smile} />
+                <StatRow label="학습력" score={data.stats.smart} icon={GraduationCap} />
+                <StatRow label="실내/외" score={data.stats.indoor} icon={Trees} />
             </div>
         </div>
     );
@@ -302,41 +179,31 @@ PetPassCard.displayName = "PetPassCard";
 // Helper Components
 
 const InfoRow = ({ label, value }: { label: string; value: string }) => (
-    <div
-        className="flex justify-between pb-1"
-        style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
-    >
-        <span style={{ color: "#888888" }}>{label}</span>
-        <span style={{ fontWeight: "bold" }}>{value}</span>
+    <div className="flex items-baseline justify-between gap-4 border-b border-line py-[5px] last:border-b-0">
+        <dt className="shrink-0 text-[13px] text-ink-3">{label}</dt>
+        <dd className="min-w-0 text-right text-[14.5px] font-semibold text-ink">{value}</dd>
     </div>
 );
 
 const StatRow = ({
     label,
     score,
-    icon,
-    activeColor,
-    inactiveColor,
+    icon: Icon,
 }: {
     label: string;
     score: number;
-    icon: string;
-    activeColor: string;
-    inactiveColor: string;
+    icon: LucideIcon;
 }) => (
-    <div className="flex items-center justify-between">
-        <span className="text-xs text-[#aaa] w-[50px]">{label}</span>
-        <div className="flex gap-1 flex-1 mx-3 h-[6px]">
+    <div className="flex items-center gap-3">
+        <Icon className="h-4 w-4 shrink-0 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
+        <span className="w-[52px] shrink-0 text-[13px] font-medium text-ink-2">{label}</span>
+        <div className="flex h-1.5 flex-1 gap-1">
             {[1, 2, 3, 4, 5].map((step) => (
                 <div
                     key={step}
-                    className="flex-1 rounded-sm"
-                    style={{
-                        backgroundColor: step <= score ? activeColor : inactiveColor,
-                    }}
+                    className={cn("flex-1 rounded-full", step <= score ? "bg-pine" : "bg-line")}
                 />
             ))}
         </div>
-        <span className="text-sm">{icon}</span>
     </div>
 );

@@ -1,0 +1,145 @@
+{
+  "id": "pf-89194c6c",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "가족 참관 하에 단독 개별 화장",
+      "sourceUrl": "http://www.smileagain.net/main/page.html?pid=2"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "화장과 유골 수습 과정 참관 가능",
+      "sourceUrl": "http://www.smileagain.net/main/page.html?pid=2"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "염습 기본 진행, 가족이 준비한 수의도 사용",
+      "sourceUrl": "http://www.smileagain.net/main/page.html?pid=2"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "납골 안치실 운영, 3개월 단위 안치",
+      "sourceUrl": "https://www.goodbyepet.co.kr/locations"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "자체 수목장 안내 없음, 수목장용 유골함 제공",
+      "sourceUrl": "http://www.smileagain.net/main/page.html?pid=2"
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": "운영사가 스톤 제작을 권하지 않는다고 안내",
+      "sourceUrl": "https://www.goodbyepet.co.kr/faq"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "대중교통 이용 시 차량 지원, 운구는 편도 유료",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/reservation"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "예약·상담 24시간, 저녁 화장은 추가 요금",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/reservation"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "약 45kg 초대형견까지, 운영사 공통 요금",
+      "sourceUrl": "https://www.goodbyepet.co.kr/faq"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "특수동물 감액 요금 있음, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost"
+    }
+  },
+  "extras": [
+    {
+      "label": "화장증명서",
+      "note": "화장 후 증명서 발급",
+      "sourceUrl": "http://www.smileagain.net/main/page.html?pid=2"
+    },
+    {
+      "label": "셀프 장례",
+      "note": "집에서 염·입관 후 화장만, 5만 원 차감(운영사 공통)",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost"
+    }
+  ],
+  "hours": {
+    "text": "화장로 07:00~22:00, 예약·상담 24시간(운영사 기준)",
+    "sourceUrl": "https://www.goodbyepet.co.kr/guide/reservation"
+  },
+  "prices": [
+    {
+      "label": "기본 장례, 소형관 40cm",
+      "amount": "35만 원",
+      "includes": "염습, 오동나무관, 한지 수의보, 개별 화장, 유골 단지, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "중소형관 60cm 입관",
+      "amount": "5만 원 추가",
+      "includes": "기본 금액에 더함, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "야간 시간대 17:30 이후",
+      "amount": "5만 원 추가",
+      "includes": "17:30 이후 도착 시 더함, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "특수동물·6개월 이내 소형",
+      "amount": "5만 원 차감",
+      "includes": "고슴도치, 기니피그 등, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "중형견 약 15kg 이내",
+      "amount": "여아 45만 원, 남아 50만 원",
+      "includes": "관 대신 한지·광목천 감싸기, 부가세 포함, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "중대형~초대형견 45kg 이내",
+      "amount": "여아 55만~75만 원, 남아 60만~80만 원",
+      "includes": "약 25kg, 35kg, 45kg 이내 골격별 3단계, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "납골당 안치 3개월",
+      "amount": "6만 원",
+      "includes": "연장 가능, 운영사 공통",
+      "sourceUrl": "https://www.goodbyepet.co.kr/guide/cost",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 350000,
+  "parking": null,
+  "access": [
+    {
+      "text": "경부고속도로 추풍령IC에서 약 9분",
+      "sourceUrl": "https://www.goodbyepet.co.kr/locations"
+    },
+    {
+      "text": "추풍령역·터미널에서 약 8분, 대중교통 시 차량 지원",
+      "sourceUrl": "http://www.smileagain.net/main/page.html?pid=91"
+    }
+  ],
+  "summary": "스마일 어게인은 충북 영동군 추풍령면의 반려동물 장례시설로 운영사 굿바이펫과 같은 방식으로 운영됩니다. 기본 장례는 35만 원이며 단독 개별 화장과 참관이 가능합니다.",
+  "cautions": [
+    "요금은 운영사 굿바이펫 공통 요금표 기준",
+    "운영시간 표기가 출처마다 달라 방문 전 확인 필요",
+    "운영사 사이트는 다른 공통 예약번호를 안내함"
+  ]
+}

@@ -30,8 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-# .env*
+# env files — 키가 커밋되지 않도록 모두 무시하고, 예시 파일만 허용
+.env*
+!.env.local.example
 
 # vercel
 .vercel
@@ -40,3 +41,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .gstack/
+
+# 생성 이미지 원본(PNG) 보관 — public 에는 webp 만 둡니다
+/design-src/

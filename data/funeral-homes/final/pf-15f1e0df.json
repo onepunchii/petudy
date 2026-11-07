@@ -1,0 +1,155 @@
+{
+  "id": "pf-15f1e0df",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장 원칙으로 운영",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "개별 화장 원칙으로 운영",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "염습, 수골·분골 등 모든 절차 참관",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "화장 단독 상품 외 염습 포함, 수의는 일부 상품",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "600호실 개별 잠금 봉안당, 1년 무료 안치",
+      "sourceUrl": "https://www.greenssol.com/%EB%B3%B5%EC%A0%9C-%EB%B4%89%EC%95%88%EB%8B%B9-%EC%88%98%EB%AA%A9%EC%9E%A5"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "반려동물 전용 수목원 운영",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "자체 공정으로 당일 제작, 참관 가능",
+      "sourceUrl": "https://www.greenssol.com/stone"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "전용 차량 운구 서비스 운영",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 상담·예약, 연중무휴",
+      "sourceUrl": "https://www.greenssol.com/"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "50kg 이상 대형 동물 전용 화장로 운영",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "1kg 미만 소동물, 도마뱀·거북 등 장례",
+      "sourceUrl": "https://www.greenssol.com/service"
+    }
+  },
+  "extras": [
+    {
+      "label": "비대면 장례",
+      "note": "보호자 비대면으로 진행하는 장례 운영",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    {
+      "label": "임시 안치",
+      "note": "무료 임시 안치 제공",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    {
+      "label": "단독 추모실",
+      "note": "모든 장례 상품에 단독 추모실 포함",
+      "sourceUrl": "https://www.greenssol.com/service"
+    },
+    {
+      "label": "장례증명서",
+      "note": "개별 화장 상품부터 장례증명서 포함",
+      "sourceUrl": "https://www.greenssol.com/service"
+    }
+  ],
+  "hours": {
+    "text": "매일 09:00~20:00, 24시간 상담·예약",
+    "sourceUrl": "https://www.greenssol.com/"
+  },
+  "prices": [
+    {
+      "label": "개별 화장 5kg 이하",
+      "amount": "15만 원",
+      "includes": "단독 추모실, 개별 화장, 국화 헌화, 장례증명서, VAT 별도",
+      "sourceUrl": "https://www.greenssol.com/service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "베이직 장례 5kg 이하",
+      "amount": "25만 원",
+      "includes": "염습, 단독 추모실, 추모예식, 개별 화장, 유골함, VAT 별도",
+      "sourceUrl": "https://www.greenssol.com/service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "푸른'솔' 장례 5kg 이하",
+      "amount": "45만 원 / 36만 원",
+      "includes": "두 금액 병기, 조건 미확인. 오동나무 관, 삼베 수의",
+      "sourceUrl": "https://www.greenssol.com/service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "꿈나라 장례 5kg 이하",
+      "amount": "50만 원 / 40만 원",
+      "includes": "두 금액 병기, 조건 미확인. 오동나무 관, 인견 수의",
+      "sourceUrl": "https://www.greenssol.com/service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "요람 장례 5kg 이하",
+      "amount": "65만 원 / 52만 원",
+      "includes": "두 금액 병기, 조건 미확인. 요람 관, 목화솜 이불",
+      "sourceUrl": "https://www.greenssol.com/service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "별나라 장례 5kg 이하",
+      "amount": "75만 원 / 60만 원",
+      "includes": "두 금액 병기, 조건 미확인. 편지관, 발도장 클레이",
+      "sourceUrl": "https://www.greenssol.com/service",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "자연숲 장례 5kg 이하",
+      "amount": "100만 원 / 80만 원",
+      "includes": "두 금액 병기, 조건 미확인. 한옥관, 목화솜 수의",
+      "sourceUrl": "https://www.greenssol.com/service",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [
+    {
+      "text": "순천 신대지구·조례동 약 10분, 여수공항 약 10분",
+      "sourceUrl": "https://www.greenssol.com/about"
+    },
+    {
+      "text": "북광주IC에서 약 55분",
+      "sourceUrl": "https://www.greenssol.com/about"
+    }
+  ],
+  "summary": "전남반려동물장례식장 푸른솔 (주)는 개별 화장, 봉안당, 수목장을 운영하며 50kg 이상 대형 동물도 화장합니다. 5kg 이하 개별 화장은 15만 원입니다.",
+  "cautions": [
+    "가격은 부가세 별도이며 변동될 수 있음",
+    "상위 장례 상품은 두 금액이 병기되어 확인 필요",
+    "봉안당 방문 시간은 09:00~18:00"
+  ]
+}

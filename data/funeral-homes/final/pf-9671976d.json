@@ -1,0 +1,146 @@
+{
+  "id": "pf-9671976d",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "개별 화장 진행 안내",
+      "sourceUrl": "http://www.angelstone.co.kr/company/aboutus"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": "합동 화장 언급 없음",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/step"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "화장 참관 가능 안내",
+      "sourceUrl": "http://www.angelstone.co.kr/company/aboutus"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "수의·관 판매 확인, 염습 절차는 명시 없음",
+      "sourceUrl": "http://www.angelstone.co.kr/product/list?ca_id=01"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "납골당 운영, 연중 방문 가능",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/charnel"
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "홈페이지에 수목장 언급 없음",
+      "sourceUrl": "http://www.angelstone.co.kr/"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "유골로 엔젤스톤 제작, 주얼리 제작 가능",
+      "sourceUrl": "http://www.angelstone.co.kr/company/angelstone"
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": "지도 서비스에만 차량 지원 표기, 미검증",
+      "sourceUrl": "https://place.map.kakao.com/27121322"
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": "당일 화장은 22시 도착까지, 24시간 표기 없음",
+      "sourceUrl": "http://www.angelstone.co.kr/company/aboutus"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "65kg 미만까지 요금 게시, 이상은 문의",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "고양이·소동물 장례 표기, 1kg 이하 요금",
+      "sourceUrl": "http://www.angelstone.co.kr/"
+    }
+  },
+  "extras": [
+    {
+      "label": "기존 유골 스톤",
+      "note": "화장 후 시간이 지난 유골도 스톤 제작 가능",
+      "sourceUrl": "http://www.angelstone.co.kr/company/angelstone"
+    },
+    {
+      "label": "납골당 추가 안치",
+      "note": "같은 자리에 추가 안치 가능",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/charnel"
+    }
+  ],
+  "hours": {
+    "text": "연중무휴. 당일 화장 도착 08~22시, 일요일 08~18시",
+    "sourceUrl": "http://www.angelstone.co.kr/company/aboutus"
+  },
+  "prices": [
+    {
+      "label": "기본화장 0~1kg",
+      "amount": "22만 원",
+      "includes": "포함 내역과 VAT 여부 미기재",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본화장 1~5kg",
+      "amount": "25만 원",
+      "includes": "포함 내역과 VAT 여부 미기재",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본화장 5~10kg",
+      "amount": "28만 원",
+      "includes": "포함 내역과 VAT 여부 미기재",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본화장 10~15kg",
+      "amount": "30만 원",
+      "includes": "포함 내역과 VAT 여부 미기재",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본화장 15~65kg 미만",
+      "amount": "33만~90만 원",
+      "includes": "5kg 단위 구간별 요금",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "기본화장 65kg 이상",
+      "amount": "별도 문의",
+      "includes": null,
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "엔젤스톤 제작 0~10g",
+      "amount": "11만 원",
+      "includes": "유골 무게 구간별 요금, 1000g까지 게시",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "납골당 안치 2년",
+      "amount": "18만 원",
+      "includes": "최초 안치 2년, 1년 연장은 10만 원",
+      "sourceUrl": "http://www.angelstone.co.kr/funeral/pay",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 220000,
+  "parking": {
+    "text": "무료 주차, 지도 서비스 표기 기준",
+    "sourceUrl": "https://place.map.kakao.com/27121322"
+  },
+  "access": [],
+  "summary": "엔젤스톤은 김포시 하성면에서 연중무휴로 운영하며 개별 화장과 화장 참관을 안내합니다. 체중 구간별 기본화장 요금을 게시하고 유골 스톤 제작과 납골당을 운영합니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "요금표에 포함 내역과 VAT 여부 미기재",
+    "주차 정보는 지도 서비스 표기 기준"
+  ]
+}

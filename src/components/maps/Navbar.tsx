@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { SITE } from '@/lib/site/config';
 
 interface NavbarProps {
     onOpenInquiry?: () => void;
@@ -11,9 +12,9 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
                 {/* Left: Brand Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <span className="text-2xl font-bold text-white tracking-tight">MAPS</span>
+                    <span className="text-2xl font-bold text-white tracking-tight">{SITE.name}</span>
                     <span className="text-xs text-[#666] font-medium tracking-wide hidden sm:block border-l border-white/10 pl-3">
-                        모빌리티 올펫 서비스
+                        반려동물 서비스 에이전시
                     </span>
                     <div className="w-1.5 h-1.5 rounded-full bg-[#FF5500] group-hover:shadow-[0_0_10px_#FF5500] transition-shadow"></div>
                 </Link>

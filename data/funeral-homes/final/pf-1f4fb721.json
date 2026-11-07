@@ -1,0 +1,151 @@
+{
+  "id": "pf-1f4fb721",
+  "services": {
+    "individualCremation": {
+      "status": "yes",
+      "note": "모든 화장을 개별로 진행",
+      "sourceUrl": "https://www.theforever.net/bbs/board.php?bo_table=table61"
+    },
+    "groupCremation": {
+      "status": "no",
+      "note": "합동 화장 미운영, 전부 개별 화장",
+      "sourceUrl": "https://www.theforever.net/bbs/board.php?bo_table=table61"
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "전 과정 참관, 수의 입히기 등 직접 참여",
+      "sourceUrl": "https://www.theforever.net/sh_page/page48.php"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "모든 상품에 염습 포함, 수의는 상품별",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php"
+    },
+    "columbarium": {
+      "status": "yes",
+      "note": "봉안실 운영",
+      "sourceUrl": "https://www.theforever.net/sh_page/page60.php"
+    },
+    "treeBurial": {
+      "status": "yes",
+      "note": "수목장·화단장 운영",
+      "sourceUrl": "https://www.theforever.net/sh_page/page60.php"
+    },
+    "memorialStone": {
+      "status": "yes",
+      "note": "메모리얼 스톤 제작",
+      "sourceUrl": "https://www.theforever.net/sh_page/page62.php"
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "펫택시 예약 대행, 보호자 동승 편도·왕복",
+      "sourceUrl": "https://www.theforever.net/bbs/board.php?bo_table=table61"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 운영, 심야 할증 없음(예약제)",
+      "sourceUrl": "https://www.theforever.net/bbs/board.php?bo_table=table61"
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": "체중 상한 표기 없음, 10kg 초과 추가비",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php"
+    },
+    "catSmall": {
+      "status": "yes",
+      "note": "햄스터·고슴도치·앵무새 등 소동물 상품",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php"
+    }
+  },
+  "extras": [
+    {
+      "label": "위탁 장례",
+      "note": "보호자 없이 아이만 맡기는 위탁 서비스",
+      "sourceUrl": "https://www.theforever.net/bbs/board.php?bo_table=table61"
+    },
+    {
+      "label": "단독 추모실",
+      "note": "모든 장례 상품에 단독 추모실 포함",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php"
+    },
+    {
+      "label": "산골장",
+      "note": "유골 안치 방식으로 산골장 선택 가능",
+      "sourceUrl": "https://www.theforever.net/sh_page/page60.php"
+    },
+    {
+      "label": "장례증명서",
+      "note": "추모 키트에 장례증명서 포함",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php"
+    }
+  ],
+  "hours": {
+    "text": "24시간 상담·운영, 시간대별 예약 후 방문",
+    "sourceUrl": "https://www.theforever.net/bbs/board.php?bo_table=table68"
+  },
+  "prices": [
+    {
+      "label": "단독 장례 10kg 이하",
+      "amount": "30만 원",
+      "includes": "염습·단독 추모실·개별 화장, 추모 키트, 백자 유골함",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "10kg 초과 추가 화장비",
+      "amount": "별도 문의",
+      "includes": "추가비 발생 가능, 금액 미표기",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "소동물 표준 장례",
+      "amount": "35만 원",
+      "includes": "햄스터·고슴도치·앵무새 등, 목화 수의, 오동나무관",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "표준 장례 10kg 이하",
+      "amount": "55만 원",
+      "includes": "기본 구성에 인견 수의, 오동나무관, 황토 유골함",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "The Forever I 10kg 이하",
+      "amount": "83만 원",
+      "includes": "면자수 또는 면레이스 수의, 오동나무관, 꽃다발",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "VIP 장례 10kg 이하",
+      "amount": "120만 원",
+      "includes": "인견 수의, 목화 겉싸개, 오동나무관, 호두나무 유골함",
+      "sourceUrl": "https://www.theforever.net/sh_page/page52.php",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "메모리얼 스톤 유골 3kg 미만",
+      "amount": "30만 원",
+      "includes": "부가세 별도",
+      "sourceUrl": "https://www.theforever.net/sh_page/page62.php",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 300000,
+  "parking": null,
+  "access": [
+    {
+      "text": "내비게이션에 '설원로 79' 입력 안내",
+      "sourceUrl": "https://www.theforever.net/bbs/board.php?bo_table=table61"
+    }
+  ],
+  "summary": "㈜더 포에버는 모든 화장을 개별로 진행하며 봉안실과 수목장을 운영합니다. 단독 장례는 10kg 이하 30만 원이고 24시간 예약제로 운영합니다.",
+  "cautions": [
+    "가격은 홈페이지 기준이며 변동될 수 있음",
+    "등록 전화번호와 홈페이지 대표번호가 다름",
+    "10kg 초과 추가 화장비 금액은 미표기"
+  ]
+}

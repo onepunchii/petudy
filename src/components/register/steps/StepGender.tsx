@@ -1,6 +1,8 @@
 import React from "react";
 import { Check } from "lucide-react";
 import Image from "next/image";
+import { appOptionClass } from "@/components/app/ui";
+import { cn } from "@/lib/utils";
 
 interface StepGenderProps {
     formData: {
@@ -11,6 +13,15 @@ interface StepGenderProps {
     onChange: (field: string, value: any) => void;
 }
 
+/** 선택 카드 오른쪽 위 체크 (appOptionClass: 남색 테두리 + 체크) */
+function SelectedCheck() {
+    return (
+        <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-night text-star" aria-hidden>
+            <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
+        </span>
+    );
+}
+
 export default function StepGender({ formData, onChange }: StepGenderProps) {
     const toggleNeuter = () => {
         // Toggle strict boolean
@@ -18,65 +29,71 @@ export default function StepGender({ formData, onChange }: StepGenderProps) {
     };
 
     return (
-        <div className="space-y-6 animate-fade-in-up h-full flex flex-col justify-center">
-            <h2 className="text-2xl font-bold mb-10 text-white text-center">
+        <div className="flex flex-col">
+            <h2 className="mb-8 text-[24px] font-bold leading-[1.35] text-ink">
                 성별을 알려주세요
             </h2>
-            <div className="flex gap-4">
+            <div className="grid grid-cols-2 gap-3">
                 <button
+                    type="button"
                     onClick={() => onChange("gender", "male")}
-                    className={`flex-1 p-6 rounded-2xl border transition-all flex flex-col items-center justify-center gap-3 ${formData.gender === "male"
-                        ? "bg-blue-500/20 border-blue-500 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
-                        : "bg-bg-input border-[#333] text-gray-500 hover:bg-[#252527]"
-                        }`}
+                    aria-pressed={formData.gender === "male"}
+                    className={appOptionClass(formData.gender === "male", "relative flex flex-col items-center justify-center gap-3 p-6")}
                 >
-                    <div className="relative w-24 h-24">
+                    {formData.gender === "male" && <SelectedCheck />}
+                    <div className="relative h-24 w-24">
                         <Image
                             src="/images/gender-male-symbol.png"
                             alt="왕자님"
                             fill
-                            className="object-contain drop-shadow-lg"
+                            sizes="96px"
+                            className="object-contain"
                         />
                     </div>
-                    <div className="font-bold text-lg">왕자님</div>
+                    <div className="text-[18px] font-bold text-ink">왕자님</div>
                 </button>
                 <button
+                    type="button"
                     onClick={() => onChange("gender", "female")}
-                    className={`flex-1 p-6 rounded-2xl border transition-all flex flex-col items-center justify-center gap-3 ${formData.gender === "female"
-                        ? "bg-pink-500/20 border-pink-500 text-pink-400 shadow-[0_0_20px_rgba(236,72,153,0.2)]"
-                        : "bg-bg-input border-[#333] text-gray-500 hover:bg-[#252527]"
-                        }`}
+                    aria-pressed={formData.gender === "female"}
+                    className={appOptionClass(formData.gender === "female", "relative flex flex-col items-center justify-center gap-3 p-6")}
                 >
-                    <div className="relative w-24 h-24">
+                    {formData.gender === "female" && <SelectedCheck />}
+                    <div className="relative h-24 w-24">
                         <Image
                             src="/images/gender-female-symbol.png"
                             alt="공주님"
                             fill
-                            className="object-contain drop-shadow-lg"
+                            sizes="96px"
+                            className="object-contain"
                         />
                     </div>
-                    <div className="font-bold text-lg">공주님</div>
+                    <div className="text-[18px] font-bold text-ink">공주님</div>
                 </button>
             </div>
 
             {/* Neuter Toggle - Only shows after gender selection */}
             {formData.gender && (
-                <div className="animate-fade-in-up pt-4">
-                    <label className="text-lg font-bold text-gray-300 mb-3 block">
+                <div className="pt-8">
+                    <label className="mb-3 block text-[17px] font-bold text-ink">
                         중성화 수술을 했나요?
                     </label>
                     <button
+                        type="button"
                         onClick={toggleNeuter}
-                        className={`w-full p-4 rounded-xl border flex items-center justify-between transition-all ${formData.neuter === true
-                            ? "bg-purple-500/20 border-purple-500 text-purple-300 shadow-lg"
-                            : "bg-bg-input border-[#333] text-gray-500 hover:bg-[#252527]"
-                            } `}
+                        aria-pressed={formData.neuter === true}
+                        className={appOptionClass(formData.neuter === true, "flex w-full items-center justify-between")}
                     >
-                        <span className="text-lg font-medium">중성화를 했어요</span>
-                        <div className={`w-6 h-6 rounded-full border flex items-center justify-center transition-colors ${formData.neuter === true ? "bg-purple-500 border-purple-500" : "border-gray-500 bg-[#333]"
-                            } `}>
-                            {formData.neuter === true && <Check className="w-4 h-4 text-white" />}
-                        </div>
+                        <span className="text-[16px] font-semibold text-ink">중성화를 했어요</span>
+                        <span
+                            className={cn(
+                                "flex h-6 w-6 items-center justify-center rounded-full transition-colors",
+                                formData.neuter === true ? "bg-night text-star" : "bg-pass ring-1 ring-inset ring-line",
+                            )}
+                            aria-hidden
+                        >
+                            {formData.neuter === true && <Check className="h-3.5 w-3.5" strokeWidth={2.5} />}
+                        </span>
                     </button>
                 </div>
             )}

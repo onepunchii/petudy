@@ -1,0 +1,71 @@
+{
+  "id": "pf-a132dc11",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "yeomseup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "allDay": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "largeDog": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [],
+  "hours": null,
+  "prices": [],
+  "priceFrom": null,
+  "parking": null,
+  "access": [],
+  "summary": "안성펫문화원은 안성시 죽산면에 장례식장, 화장시설, 봉안시설로 등록된 업체입니다. 공식 홈페이지와 연락처를 찾지 못해 서비스와 가격 정보는 확인되지 않았습니다.",
+  "cautions": [
+    "공식 홈페이지와 전화번호를 찾지 못함",
+    "현재 운영 여부가 확인되지 않아 사전 확인 필요"
+  ]
+}

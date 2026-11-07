@@ -26,14 +26,9 @@ export const metadata: Metadata = {
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="site min-h-screen">
-            {/* Pretendard (한글 웹폰트, 동적 서브셋) */}
-            <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-            />
-            <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white">
+        // site-grain: 화면 고정 가상요소 한 장으로 종이 결을 얹습니다(globals.css)
+        <div className="site site-grain min-h-dvh">
+            <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-star focus:px-4 focus:py-2 focus:font-semibold focus:text-ink">
                 본문 바로가기
             </a>
             <SiteHeader />

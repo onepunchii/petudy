@@ -1,0 +1,99 @@
+{
+  "id": "pf-6b91f9e7",
+  "services": {
+    "individualCremation": {
+      "status": "unknown",
+      "note": "화장 포함만 안내, 개별 여부 미표기",
+      "sourceUrl": "http://www.goodfriend2012.com/page/m31"
+    },
+    "groupCremation": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "viewing": {
+      "status": "yes",
+      "note": "기본 장례 구성에 참관 포함",
+      "sourceUrl": "http://www.goodfriend2012.com/page/m31"
+    },
+    "yeomseup": {
+      "status": "yes",
+      "note": "수의·관은 별도 상담, 염습 표기는 없음",
+      "sourceUrl": "http://www.goodfriend2012.com/page/m32"
+    },
+    "columbarium": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "treeBurial": {
+      "status": "unknown",
+      "note": "절차에 수목장 언급만, 시설 안내 없음",
+      "sourceUrl": "http://www.goodfriend2012.com/page/m31"
+    },
+    "memorialStone": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    },
+    "pickup": {
+      "status": "yes",
+      "note": "픽업 서비스와 운구 대행 표기",
+      "sourceUrl": "http://www.goodfriend2012.com/"
+    },
+    "allDay": {
+      "status": "yes",
+      "note": "24시간 운영, 예약제로 장례 진행",
+      "sourceUrl": "http://www.goodfriend2012.com/bbs/sub5_3"
+    },
+    "largeDog": {
+      "status": "yes",
+      "note": "화장로 기준 25kg까지만 가능",
+      "sourceUrl": "http://www.goodfriend2012.com/bbs/sub5_3"
+    },
+    "catSmall": {
+      "status": "unknown",
+      "note": null,
+      "sourceUrl": null
+    }
+  },
+  "extras": [],
+  "hours": {
+    "text": "24시간 운영, 예약제",
+    "sourceUrl": "http://www.goodfriend2012.com/page/m31"
+  },
+  "prices": [
+    {
+      "label": "기본 장례 5kg 기준",
+      "amount": "15만 원",
+      "includes": "예식실, 화장, 참관, 기본 유골함. VAT 별도, 수의·관 별도",
+      "sourceUrl": "http://www.goodfriend2012.com/page/m31",
+      "seenAt": "2026-11-07"
+    },
+    {
+      "label": "5kg 초과 체중 추가금",
+      "amount": "1kg당 1만 원 추가",
+      "includes": "최대 25kg까지 가능",
+      "sourceUrl": "http://www.goodfriend2012.com/page/m31",
+      "seenAt": "2026-11-07"
+    }
+  ],
+  "priceFrom": 150000,
+  "parking": null,
+  "access": [
+    {
+      "text": "서공주IC에서 약 2.5km",
+      "sourceUrl": "http://www.goodfriend2012.com/bbs/sub5_3"
+    },
+    {
+      "text": "서공주IC에서 방흥교차로 지나 오동리 방향",
+      "sourceUrl": "http://www.goodfriend2012.com/page/m13"
+    }
+  ],
+  "summary": "㈜좋은친구들은 24시간 예약제로 운영하며 화장 참관과 픽업을 안내합니다. 5kg 기준 기본 장례는 15만 원(VAT 별도)이고 25kg까지 가능합니다.",
+  "cautions": [
+    "홈페이지 공지가 2017년 이후 갱신되지 않음",
+    "기본 요금은 VAT 별도 기준",
+    "가격은 홈페이지 기준이며 변동될 수 있음"
+  ]
+}
