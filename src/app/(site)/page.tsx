@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, PawPrint } from "lucide-react";
 import { SITE } from "@/lib/site/config";
 import { FACILITY_AREAS, FACILITY_CHECKED_AT } from "@/lib/site/facilities";
 import { FUNERAL_HOMES, funeralHomesPath } from "@/lib/site/funeral-homes";
@@ -13,6 +13,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { PassCard } from "@/components/site/PassCard";
 import { RegionPicker } from "@/components/site/RegionPicker";
 import { Reveal } from "@/components/site/Reveal";
+import { MyPets } from "@/components/site/home/MyPets";
 import { CallButton, Container, FaqList, ICON_STROKE, JsonLd, PillLink, SectionTitle } from "@/components/site/ui";
 import { cn } from "@/lib/utils";
 
@@ -42,6 +43,14 @@ const ROUTE = [
 
 const FEATURED_GUIDE = "pet-death-first-steps";
 const MORE_GUIDES = ["pet-funeral-cost", "licensed-pet-crematorium-check", "individual-vs-group-cremation", "dog-grooming-price", "dog-grooming-cycle"];
+
+/** "함께 사는 동안" 바로가기. icon 이 없으면 발자국 아이콘(추억상자 타일에는 라임을 쓰지 않습니다) */
+const LIFE_LINKS: { href: string; title: string; desc: string; icon?: string }[] = [
+    { href: "/memorial", title: "추억상자", desc: "사진과 편지를 모아 둬요", icon: "memorial" },
+    { href: "/mbti", title: "멍BTI", desc: "우리 아이 성격을 알아봐요", icon: "mbti" },
+    { href: "/consult", title: "AI 도우미", desc: "궁금한 건 언제든 물어봐요", icon: "ai" },
+    { href: "/register", title: "아이 등록", desc: "펫패스를 만들어 둬요" },
+];
 
 const pickGuides = (slugs: string[]) => slugs.map((s) => GUIDES.find((g) => g.slug === s)).filter((g): g is Guide => Boolean(g));
 
@@ -109,7 +118,10 @@ export default function HomePage() {
                 </Container>
             </div>
 
-            {/* 서비스: 비대칭 bento. 장례(큰 타일) / 미용 / 준비 중 4개(한 칸) / 포온 앱 */}
+            {/* 내 아이: 로그인해 아이를 등록한 보호자에게만 보입니다(서버 렌더·비회원은 아무것도 없음, 간격도 안쪽에) */}
+            <MyPets />
+
+            {/* 서비스: 비대칭 bento. 장례(큰 타일) / 미용 / 준비 중 4개(한 칸) / 함께 사는 동안 */}
             <Reveal as="section" className="pb-20 pt-16 sm:pb-24 sm:pt-20">
                 <Container>
                     <SectionTitle
@@ -228,30 +240,41 @@ export default function HomePage() {
                             </ul>
                         </div>
 
-                        <div className="flex flex-col gap-6 rounded-[28px] bg-pine-soft p-6 sm:p-8 md:flex-row md:items-center lg:col-span-12">
-                            <div className="flex shrink-0 items-center gap-1" aria-hidden>
-                                {["memorial", "mbti", "ai"].map((n) => (
-                                    <Image
-                                        key={n}
-                                        src={`/brand/icons/${n}.webp`}
-                                        alt=""
-                                        width={160}
-                                        height={160}
-                                        sizes="80px"
-                                        className="h-16 w-16 mix-blend-multiply sm:h-20 sm:w-20"
-                                    />
+                        {/* 함께 사는 동안: 추억상자·멍BTI·AI 도우미·아이 등록으로 바로 이어집니다 */}
+                        <div className="rounded-[28px] bg-pine-soft p-6 sm:p-8 lg:col-span-12">
+                            <h3 className="text-[19px] font-bold leading-snug text-ink sm:text-[21px]">함께 사는 동안</h3>
+                            <p className="mt-1.5 max-w-[52ch] text-[15px] leading-relaxed text-ink-2">
+                                사진과 편지를 모으는 추억상자, 멍BTI, AI 도우미까지 여기서 이어져요.
+                            </p>
+                            <ul className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
+                                {LIFE_LINKS.map((l) => (
+                                    <li key={l.href}>
+                                        <Link
+                                            href={l.href}
+                                            className="group flex h-full flex-col gap-3 rounded-[20px] bg-pass p-4 ring-1 ring-line transition-[box-shadow,transform] duration-200 hover:shadow-[0_16px_32px_-24px_rgb(31_39_66/0.4)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink active:translate-y-px motion-reduce:transition-none sm:p-5"
+                                        >
+                                            {l.icon ? (
+                                                <Image
+                                                    src={`/brand/icons/${l.icon}.webp`}
+                                                    alt=""
+                                                    width={112}
+                                                    height={112}
+                                                    sizes="56px"
+                                                    className="h-12 w-12 shrink-0 mix-blend-multiply sm:h-14 sm:w-14"
+                                                />
+                                            ) : (
+                                                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-paper-2 text-ink sm:h-14 sm:w-14" aria-hidden>
+                                                    <PawPrint className="h-6 w-6" strokeWidth={ICON_STROKE} />
+                                                </span>
+                                            )}
+                                            <span className="block min-w-0">
+                                                <span className="block text-[16px] font-bold leading-snug text-ink group-hover:text-pine">{l.title}</span>
+                                                <span className="mt-0.5 block text-[13px] leading-snug text-ink-3">{l.desc}</span>
+                                            </span>
+                                        </Link>
+                                    </li>
                                 ))}
-                            </div>
-                            <div className="min-w-0 md:flex-1">
-                                <h3 className="text-[19px] font-bold leading-snug text-ink sm:text-[21px]">추억상자와 멍BTI는 포온 앱에서</h3>
-                                <p className="mt-1.5 max-w-[52ch] text-[15px] leading-relaxed text-ink-2">
-                                    아이의 사진과 편지, 부고장을 담는 추억상자부터 멍BTI, AI 도우미까지 앱에서 이어집니다.
-                                </p>
-                            </div>
-                            <PillLink href="/app" tone="onNight" variant="solid" accent="lime" className="self-start md:self-center">
-                                포온 앱
-                                <ArrowUpRight className="h-4 w-4" strokeWidth={ICON_STROKE} aria-hidden />
-                            </PillLink>
+                            </ul>
                         </div>
                     </div>
                 </Container>

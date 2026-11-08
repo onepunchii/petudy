@@ -2,62 +2,109 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, Home, Sparkles, User } from "lucide-react";
+import { Home, Moon, Phone, Scissors, Sparkles, User } from "lucide-react";
 import { APP_ICON_STROKE } from "@/components/app/tokens";
+import { SITE } from "@/lib/site/config";
 import { cn } from "@/lib/utils";
 
 /**
- * 앱 하단 탭. 사이트 모바일 하단 바(MobileCallBar)와 같은 밤색 플로팅 알약입니다.
- * 활성 탭은 라임 알약 안에 아이콘 (추억상자 화면에서는 라임 대신 흰색: 떠난 뒤의 화면은 차분하게).
+ * 포온 하단 탭. 사이트와 앱 화면 모두에 같은 밤색 플로팅 알약을 띄웁니다(lg 이상은 헤더 메뉴를 쓰므로 숨김).
+ * 활성 탭은 라임 알약 안에 아이콘. 장례·추억상자 화면에서는 라임 대신 흰색(떠남과 관련된 화면은 차분하게).
+ * call: 사이트 화면에서 탭 위에 전화 상담·상담 남기기 버튼을 함께 띄웁니다.
  */
 const TABS = [
-    { name: "홈", href: "/app", icon: Home },
-    { name: "내 상담", href: "/booking", icon: CalendarDays },
-    { name: "추억상자", href: "/memorial", icon: Sparkles },
-    { name: "내 정보", href: "/mypage", icon: User },
+    {
+        name: "홈",
+        href: "/",
+        icon: Home,
+        match: (p: string) => p === "/",
+    },
+    {
+        name: "장례",
+        href: "/funeral",
+        icon: Moon,
+        match: (p: string) => p === "/funeral" || p.startsWith("/funeral/") || p.startsWith("/funeral-homes"),
+    },
+    {
+        name: "미용",
+        href: "/grooming",
+        icon: Scissors,
+        match: (p: string) => p.startsWith("/grooming"),
+    },
+    {
+        name: "추억상자",
+        href: "/memorial",
+        icon: Sparkles,
+        match: (p: string) => p.startsWith("/memorial") && !p.startsWith("/memorial-shared"),
+    },
+    {
+        name: "내 정보",
+        href: "/mypage",
+        icon: User,
+        match: (p: string) => ["/mypage", "/booking", "/settings", "/profile"].some((prefix) => p.startsWith(prefix)),
+    },
 ] as const;
 
-export function BottomNav() {
-    const pathname = usePathname();
+export function BottomNav({ call = false }: { call?: boolean }) {
+    const pathname = usePathname() ?? "/";
 
     if (pathname.startsWith("/booking/new") || pathname.startsWith("/mbti") || pathname.startsWith("/intro")) return null;
 
-    const calm = pathname.startsWith("/memorial");
+    // 장례·추억상자 화면에서는 라임을 쓰지 않습니다
+    const calm = pathname.startsWith("/funeral") || pathname.startsWith("/memorial");
 
     return (
         <nav
-            aria-label="앱 메뉴"
-            className="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3"
+            aria-label="하단 메뉴"
+            className="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3 lg:hidden"
             style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}
         >
-            <ul className="pointer-events-auto mx-auto flex max-w-[480px] items-stretch gap-1 rounded-full bg-night/90 p-1.5 shadow-[0_12px_32px_-8px_rgb(11_16_32/0.5)] ring-1 ring-white/10 backdrop-blur-md">
-                {TABS.map((tab) => {
-                    // 홈(/app)은 정확히 일치할 때만, 나머지 탭은 하위 경로(/memorial/123 등)에서도 활성
-                    const isActive = tab.href === "/app" ? pathname === "/app" : pathname.startsWith(tab.href);
-                    return (
-                        <li key={tab.href} className="flex-1">
-                            <Link
-                                href={tab.href}
-                                aria-current={isActive ? "page" : undefined}
-                                className={cn(
-                                    "flex h-14 flex-col items-center justify-center gap-1 rounded-full text-[11px] font-semibold transition-colors active:translate-y-px",
-                                    isActive ? "text-star" : "text-star-3 hover:text-star-2",
-                                )}
-                            >
-                                <span
+            <div className="mx-auto max-w-[480px]">
+                {call && (
+                    <div className="mb-2 flex justify-end gap-2">
+                        <a
+                            href={SITE.phoneHref}
+                            className="pointer-events-auto inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-full bg-star px-4 text-[14px] font-semibold text-ink shadow-[0_8px_24px_-8px_rgb(11_16_32/0.45)] active:translate-y-px"
+                        >
+                            <Phone className="h-4 w-4 shrink-0" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            전화 상담 <span className="tabular-nums max-[359px]:hidden">{SITE.phone}</span>
+                        </a>
+                        <Link
+                            href="/contact"
+                            className="pointer-events-auto inline-flex h-10 items-center whitespace-nowrap rounded-full bg-night/90 px-4 text-[14px] font-semibold text-star shadow-[0_8px_24px_-8px_rgb(11_16_32/0.45)] ring-1 ring-white/20 backdrop-blur-md active:translate-y-px"
+                        >
+                            상담 남기기
+                        </Link>
+                    </div>
+                )}
+                <ul className="pointer-events-auto flex items-stretch gap-0.5 rounded-full bg-night/90 p-1.5 shadow-[0_12px_32px_-8px_rgb(11_16_32/0.5)] ring-1 ring-white/10 backdrop-blur-md min-[360px]:gap-1">
+                    {TABS.map((tab) => {
+                        const isActive = tab.match(pathname);
+                        return (
+                            <li key={tab.href} className="min-w-0 flex-1">
+                                <Link
+                                    href={tab.href}
+                                    aria-current={isActive ? "page" : undefined}
                                     className={cn(
-                                        "flex h-7 w-12 items-center justify-center rounded-full transition-colors",
-                                        isActive && (calm ? "bg-star text-ink" : "bg-lime text-ink"),
+                                        "flex h-14 flex-col items-center justify-center gap-1 whitespace-nowrap rounded-full text-[11px] font-semibold transition-colors active:translate-y-px",
+                                        isActive ? "text-star" : "text-star-3 hover:text-star-2",
                                     )}
                                 >
-                                    <tab.icon className="h-[19px] w-[19px]" strokeWidth={isActive ? 2 : APP_ICON_STROKE} aria-hidden />
-                                </span>
-                                {tab.name}
-                            </Link>
-                        </li>
-                    );
-                })}
-            </ul>
+                                    <span
+                                        className={cn(
+                                            "flex h-7 w-11 items-center justify-center rounded-full transition-colors min-[360px]:w-12",
+                                            isActive && (calm ? "bg-star text-ink" : "bg-lime text-ink"),
+                                        )}
+                                    >
+                                        <tab.icon className="h-[19px] w-[19px]" strokeWidth={isActive ? 2 : APP_ICON_STROKE} aria-hidden />
+                                    </span>
+                                    {tab.name}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </nav>
     );
 }

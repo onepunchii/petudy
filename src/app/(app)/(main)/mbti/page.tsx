@@ -59,9 +59,9 @@ export default function MbtiIntroPage() {
 
     return (
         // 멍BTI 화면은 하단 탭이 없으므로 (main) 레이아웃의 pb-28 을 상쇄해 아래 버튼이 화면 바닥에 붙게 합니다
-        <div className="-mb-28 flex min-h-[100dvh] flex-col bg-moon">
+        <div className="-mb-28 flex min-h-[100dvh] flex-col bg-moon lg:-mb-10 lg:min-h-[calc(100dvh-4rem)]">
             <AppHero
-                back="/app"
+                back="/"
                 top={<span className="text-[15px] font-semibold text-star-2">멍BTI 분석</span>}
                 title={
                     <>

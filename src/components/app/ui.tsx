@@ -27,7 +27,7 @@ export function AppHero({
 }: {
     title: React.ReactNode;
     subtitle?: React.ReactNode;
-    /** 뒤로 가기 버튼. true 면 history.back(없으면 /app), 문자열이면 그 경로를 fallback 으로 */
+    /** 뒤로 가기 버튼. true 면 history.back(없으면 /), 문자열이면 그 경로를 fallback 으로 */
     back?: boolean | string;
     /** 제목 위 한 줄 (로고, 사이트 링크 등). back 과 함께 쓰면 back 오른쪽에 붙습니다 */
     top?: React.ReactNode;
@@ -45,7 +45,7 @@ export function AppHero({
             <div className="site-stars -z-10" aria-hidden />
             {((back !== undefined && back !== false) || top) && (
                 <div className="mb-6 flex min-h-10 items-center gap-2">
-                    {back !== undefined && back !== false && <BackButton fallbackHref={typeof back === "string" ? back : "/app"} />}
+                    {back !== undefined && back !== false && <BackButton fallbackHref={typeof back === "string" ? back : "/"} />}
                     {top && <div className="flex min-w-0 flex-1 items-center justify-between gap-3">{top}</div>}
                 </div>
             )}
@@ -64,7 +64,7 @@ export function AppHero({
 /**
  * 하위 화면·입력 흐름의 밤색 윗줄. 스크롤해도 화면 위에 붙어 있습니다.
  * 왼쪽 버튼은 하나만 정해집니다. 우선순위: leading > onBack > backHref > back
- *  - back: true 면 history.back(기록이 없으면 /app), 문자열이면 그 경로를 fallback 으로, false 면 숨김
+ *  - back: true 면 history.back(기록이 없으면 /), 문자열이면 그 경로를 fallback 으로, false 면 숨김
  *  - backHref: 항상 그 경로로 가는 링크 (예전부터 고정 링크였던 화면)
  *  - onBack: 단계 이동처럼 화면이 직접 처리하는 뒤로 가기
  *  - leading: 닫기(X) 링크 등 완전히 다른 버튼 (appBackButtonClass 로 같은 모양을 입히세요)
@@ -109,7 +109,7 @@ export function AppTopBar({
                 <ChevronLeft className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
             </Link>
         );
-    else if (back !== false) left = <BackButton fallbackHref={typeof back === "string" ? back : "/app"} className="ml-0" />;
+    else if (back !== false) left = <BackButton fallbackHref={typeof back === "string" ? back : "/"} className="ml-0" />;
     else left = <span className="w-2" />;
 
     return (

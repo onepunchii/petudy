@@ -46,7 +46,7 @@ export default function MemorialSharedPage() {
     return (
         <div className="min-h-full">
             <AppHero
-                back="/app"
+                back="/"
                 title="별로간 아이들"
                 subtitle={
                     <>

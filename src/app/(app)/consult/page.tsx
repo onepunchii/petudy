@@ -52,7 +52,7 @@ export default function ConsultPage() {
     return (
         <div className="flex h-full flex-col bg-moon">
             {/* 뒤로 가기는 예전처럼 항상 앱 홈(/app)으로 가는 링크 */}
-            <AppTopBar title="포온 AI 도우미" backHref="/app" className="shrink-0">
+            <AppTopBar title="포온 AI 도우미" backHref="/" className="shrink-0">
                 {/* 긴급 연락 안내 (채팅 영역 밖이라 스크롤해도 항상 보임). 장례 안내라 라임 없이 흰 글자로 */}
                 <div className="flex flex-wrap items-center justify-between gap-x-3 border-t border-white/10 px-5 py-1 text-[13px]">
                     <span className="py-1.5 text-star-2">급한 장례는 전화가 가장 빠릅니다</span>

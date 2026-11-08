@@ -23,7 +23,7 @@ function NoticeHeading({ icon: Icon, children }: { icon: typeof Truck; children:
 export default function RegulatoryNoticePage() {
     return (
         <div className="min-h-full bg-moon">
-            <AppTopBar title="이용자 고지 사항" backHref="/app" />
+            <AppTopBar title="이용자 고지 사항" backHref="/" />
 
             {/* Content */}
             <AppBody className="pb-16">

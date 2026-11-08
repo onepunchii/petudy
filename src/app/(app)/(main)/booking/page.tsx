@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site/config";
 export default function MyBookingsPage() {
     return (
         <div className="min-h-full bg-moon">
-            <AppHero title="내 상담" subtitle="상담은 담당자가 전화로 확정합니다." />
+            <AppHero title="내 상담" subtitle="상담은 담당자가 전화로 확정합니다." back="/mypage" />
 
             <AppBody>
                 <AppEmpty

@@ -13,7 +13,11 @@ interface LoginPageProps {
 export default async function LoginPage({ searchParams }: LoginPageProps) {
     const { next: rawNext } = await searchParams;
     const next = safeNextPath(Array.isArray(rawNext) ? rawNext[0] : rawNext, "");
-    const reason = next.startsWith("/register") ? "아이를 등록하려면 먼저 로그인해 주세요." : null;
+    const reason = next.startsWith("/register")
+        ? "아이를 등록하려면 먼저 로그인해 주세요."
+        : next.startsWith("/mypage")
+          ? "내 정보와 내 아이를 보려면 먼저 로그인해 주세요."
+          : null;
 
     return (
         <div className="flex min-h-full flex-col bg-moon">
@@ -23,15 +27,16 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 style={{ paddingTop: "max(20px, env(safe-area-inset-top))" }}
             >
                 <div className="site-stars -z-10" aria-hidden />
-                <div className="flex min-h-10 items-center">
+                {/* 데스크톱은 위에 사이트 머리 메뉴(로고 포함)가 있어 모바일에서만 보입니다 */}
+                <div className="flex min-h-10 items-center lg:hidden">
                     <Logo />
                 </div>
-                <div className="mt-10 flex flex-col items-center text-center">
+                <div className="mt-10 flex lg:mt-4 flex-col items-center text-center">
                     {/* 앱 아이콘 그림의 흰 여백을 잘라 어두운 타일만 보이게 합니다 */}
                     <div className="relative h-24 w-24 overflow-hidden rounded-[28px] ring-1 ring-white/10">
                         <Image
                             src="/icons/app-icon.png"
-                            alt="포온 앱 아이콘"
+                            alt="포온 아이콘"
                             width={160}
                             height={160}
                             className="h-full w-full scale-[1.55] object-cover"

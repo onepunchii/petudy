@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     const code = searchParams.get("code");
     // 돌아갈 경로: 쿼리 next → 로그인 버튼이 남긴 쿠키 → 앱 홈. 사이트 안 경로만 허용합니다(open redirect 방지)
     const cookieStore = await cookies();
-    const next = safeNextPath(searchParams.get("next") ?? cookieStore.get(LOGIN_NEXT_COOKIE)?.value, "/app");
+    const next = safeNextPath(searchParams.get("next") ?? cookieStore.get(LOGIN_NEXT_COOKIE)?.value, "/");
     cookieStore.delete(LOGIN_NEXT_COOKIE);
 
     if (code) {

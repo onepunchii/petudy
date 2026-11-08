@@ -10,7 +10,9 @@ import DatePickerModal from "@/components/register/DatePickerModal";
 import BreedSelectDrawer from "@/components/register/steps/BreedSelectDrawer";
 import { updatePet } from "@/actions/pet";
 import { APP_ICON_STROKE, AppBody, AppBottomAction, AppButton, AppSection, appChipClass, appInputClass, appLabelClass, appOptionClass } from "@/components/app/ui";
-import { PET_NAME_MAX, PET_REG_NUMBER_MAX, PET_WEIGHT_MAX, PET_WEIGHT_MIN, petDatesError, regNumberError, weightError } from "@/lib/pet-rules";
+import { PET_NAME_MAX, PET_REG_NUMBER_MAX, PET_WEIGHT_MAX, PET_WEIGHT_MIN, petDatesError, petNameError, regNumberError, weightError } from "@/lib/pet-rules";
+import { preparePetPhoto } from "@/lib/prepare-pet-photo";
+import { useClientToday } from "@/hooks/useClientToday";
 import { cn } from "@/lib/utils";
 
 /** 칸 아래 오류 문구 */
@@ -74,13 +76,18 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
     });
 
     const [photoFile, setPhotoFile] = useState<File | null>(null);
+    const [isPhotoBusy, setIsPhotoBusy] = useState(false);
+    const [photoError, setPhotoError] = useState<string | null>(null);
     const [submitError, setSubmitError] = useState<string | null>(null);
 
     // 입력 규칙 (등록 화면·서버와 같은 규칙)
-    const nameError = !formData.name?.trim() ? "이름을 입력해 주세요" : null;
+    // 이름: 예전에 저장된 긴 이름도 칸 아래에서 바로 알려 줍니다 (maxLength 는 이미 있는 값을 자르지 않음)
+    const nameError = petNameError(formData.name);
     const regError = regNumberError(formData.reg_number);
     const wError = weightError(formData.weight);
-    const datesError = petDatesError({ birth: formData.birth, adoptionDate: formData.adoptionDate });
+    // 오늘 날짜는 기기 기준. 서버 렌더(UTC)에서는 "오늘 이후" 검사를 건너뛰어 오류 문구가 잠깐 보이지 않게 합니다
+    const today = useClientToday();
+    const datesError = petDatesError({ birth: formData.birth, adoptionDate: formData.adoptionDate }, today);
     const hasError = !!(nameError || regError || wError || datesError);
 
     // Modals
@@ -108,27 +115,53 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
         });
     };
 
+    /** 미리보기 주소를 바꾸고, 앞서 만든 임시 주소(blob:)는 정리합니다 */
+    const setPhotoPreview = (url: string | null) => {
+        const previous = formData.photo;
+        if (previous?.startsWith("blob:")) URL.revokeObjectURL(previous);
+        setFormData(prev => ({ ...prev, photo: url }));
+    };
+
     const handlePhotoSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
-        if (file) {
-            try {
-                const imageCompression = (await import("browser-image-compression")).default;
-                const options = { maxSizeMB: 1, maxWidthOrHeight: 1920, useWebWorker: true, fileType: "image/webp" };
-                const compressedFile = await imageCompression(file, options);
-                const webpFile = new File([compressedFile], "image.webp", { type: "image/webp" });
+        e.target.value = ""; // 같은 사진을 다시 골라도 다시 확인하도록
+        if (!file) return;
 
-                setPhotoFile(webpFile);
-                setFormData(prev => ({ ...prev, photo: URL.createObjectURL(webpFile) }));
-            } catch (error) {
-                console.error("Image compression failed:", error);
-                setPhotoFile(file);
-                setFormData(prev => ({ ...prev, photo: URL.createObjectURL(file) }));
+        setPhotoError(null);
+        setIsPhotoBusy(true);
+        try {
+            // 고른 자리에서 줄이고 형식·크기를 확인합니다. 못 쓰는 사진이면 지금 사진을 그대로 둡니다
+            const prepared = await preparePetPhoto(file);
+            if (!prepared.ok) {
+                setPhotoError(prepared.error);
+                return;
             }
+            setPhotoFile(prepared.file);
+            setPhotoPreview(URL.createObjectURL(prepared.file));
+        } finally {
+            setIsPhotoBusy(false);
         }
     };
 
+    /** 새로 고른 사진을 취소하고 원래 사진으로 */
+    const handlePhotoRevert = () => {
+        setPhotoFile(null);
+        setPhotoError(null);
+        setPhotoPreview(initialData.photo || null);
+    };
+
+    /** 원래 사진이 있고, 새로 골랐거나 지웠을 때만 되돌리기를 보여 줍니다 */
+    const canRevertPhoto = !!initialData.photo && (photoFile !== null || formData.photo !== initialData.photo);
+
+    /** 사진 지우기 (저장하면 발바닥 아이콘으로 보임) */
+    const handlePhotoRemove = () => {
+        setPhotoFile(null);
+        setPhotoError(null);
+        setPhotoPreview(null);
+    };
+
     const handleSubmit = async () => {
-        if (hasError) return;
+        if (hasError || isPhotoBusy) return;
 
         setIsSubmitting(true);
         setSubmitError(null);
@@ -157,7 +190,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
             // Invalidate cache to force refresh on Home Page
             await queryClient.invalidateQueries({ queryKey: ["pets"] });
 
-            router.push("/app");
+            router.push("/mypage#my-pets");
             router.refresh();
         } catch (error) {
             console.error(error);
@@ -173,20 +206,58 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
 
                 {/* 1. Photo Section */}
                 <div className="flex flex-col items-center gap-3">
-                    <label className="group relative cursor-pointer">
-                        <span className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-paper-2 ring-1 ring-line transition-transform group-active:translate-y-px motion-reduce:transition-none">
+                    <label className={cn("group relative", isPhotoBusy ? "cursor-wait" : "cursor-pointer")}>
+                        <span className={cn("relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-paper-2 ring-1 transition-transform group-active:translate-y-px motion-reduce:transition-none", photoError ? "ring-2 ring-danger" : "ring-line")}>
                             {formData.photo ? (
-                                <Image src={formData.photo} alt="Profile" fill sizes="112px" className="object-cover" />
+                                <Image src={formData.photo} alt="프로필 사진" fill sizes="112px" className="object-cover" />
                             ) : (
                                 <PawPrint className="h-10 w-10 text-ink-3" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            )}
+                            {isPhotoBusy && (
+                                <span className="absolute inset-0 flex items-center justify-center bg-moon/70">
+                                    <LoaderCircle className="h-6 w-6 animate-spin text-ink motion-reduce:animate-none" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                                </span>
                             )}
                         </span>
                         <span className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-full bg-night text-star ring-[3px] ring-moon">
                             <Camera className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         </span>
-                        <input type="file" accept="image/*" className="hidden" onChange={handlePhotoSelect} />
+                        <input
+                            type="file"
+                            accept="image/*"
+                            className="sr-only"
+                            onChange={handlePhotoSelect}
+                            disabled={isPhotoBusy}
+                            aria-label="프로필 사진 바꾸기"
+                            aria-describedby={photoError ? "pet-photo-error" : undefined}
+                        />
                     </label>
-                    <span className="text-[13px] text-ink-3">프로필 사진 변경</span>
+                    <div className="flex flex-col items-center gap-1.5 text-center" aria-live="polite">
+                        {isPhotoBusy ? (
+                            <span className="text-[13px] text-ink-2">사진을 준비하고 있어요…</span>
+                        ) : (
+                            <span className="text-[13px] text-ink-3">
+                                프로필 사진 변경
+                                {canRevertPhoto && (
+                                    <>
+                                        {" · "}
+                                        <button type="button" onClick={handlePhotoRevert} className="font-semibold text-ink-2 underline underline-offset-2 hover:text-ink">
+                                            원래 사진으로
+                                        </button>
+                                    </>
+                                )}
+                                {formData.photo && (
+                                    <>
+                                        {" · "}
+                                        <button type="button" onClick={handlePhotoRemove} className="font-semibold text-ink-2 underline underline-offset-2 hover:text-ink">
+                                            사진 지우기
+                                        </button>
+                                    </>
+                                )}
+                            </span>
+                        )}
+                        {photoError && <FieldError id="pet-photo-error">{photoError}</FieldError>}
+                    </div>
                 </div>
 
                 {/* 2. Basic Info Section */}
@@ -446,7 +517,7 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                     size="lg"
                     block
                     onClick={handleSubmit}
-                    disabled={isSubmitting || hasError}
+                    disabled={isSubmitting || isPhotoBusy || hasError}
                 >
                     {isSubmitting ? (
                         <>

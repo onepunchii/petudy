@@ -9,7 +9,7 @@ export default function ReviewsPage() {
     return (
         <div className="min-h-full bg-moon">
             {/* 뒤로 가기는 예전처럼 항상 앱 홈(/app)으로 */}
-            <AppTopBar title="이용 후기" backHref="/app" />
+            <AppTopBar title="이용 후기" backHref="/" />
 
             <AppBody>
                 <div className="mb-6">

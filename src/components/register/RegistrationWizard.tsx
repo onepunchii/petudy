@@ -7,7 +7,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { PetActionResult, PetFormData } from "@/actions/pet";
 import { APP_ICON_STROKE, AppBody, AppBottomAction, AppButton, AppProgress, AppTopBar, appBackButtonClass } from "@/components/app/ui";
-import { petDatesError, weightError } from "@/lib/pet-rules";
+import { petDatesError, petNameError, weightError } from "@/lib/pet-rules";
+import { preparePetPhoto } from "@/lib/prepare-pet-photo";
 import { cn } from "@/lib/utils";
 
 // Components
@@ -65,6 +66,9 @@ export default function RegistrationWizard({
         concern: []
     });
     const [photoFile, setPhotoFile] = useState<File | null>(null);
+    /** 사진을 줄이는 중이면 '다음'을 막습니다 (끝나기 전에 넘어가면 사진이 빠짐) */
+    const [isPhotoBusy, setIsPhotoBusy] = useState(false);
+    const [photoError, setPhotoError] = useState<string | null>(null);
     const [createdPetId, setCreatedPetId] = useState<string | null>(null);
 
     // Modals
@@ -112,34 +116,39 @@ export default function RegistrationWizard({
         });
     };
 
+    /** 미리보기 주소를 바꾸고, 앞서 만든 임시 주소(blob:)는 정리합니다 */
+    const setPhotoPreview = (url: string | null) => {
+        // 사진을 준비하는 동안에는 사진을 바꿀 수 없으므로 지금 화면의 주소가 곧 앞서 만든 주소입니다
+        const previous = formData.photo;
+        if (previous?.startsWith("blob:")) URL.revokeObjectURL(previous);
+        setFormData(prev => ({ ...prev, photo: url }));
+    };
+
     const handlePhotoSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
-        if (file) {
-            try {
-                // Dynamic import to avoid SSR issues with browser-image-compression
-                const imageCompression = (await import("browser-image-compression")).default;
+        e.target.value = ""; // 같은 사진을 다시 골라도 다시 확인하도록
+        if (!file) return;
 
-                const options = {
-                    maxSizeMB: 1, // Max size 1MB
-                    maxWidthOrHeight: 1920, // Max dimension
-                    useWebWorker: true,
-                    fileType: "image/webp" // Force convert to WebP
-                };
-
-                const compressedFile = await imageCompression(file, options);
-
-                // Create a new File object with .webp extension to ensure consistency
-                const webpFile = new File([compressedFile], "image.webp", { type: "image/webp" });
-
-                setPhotoFile(webpFile);
-                setFormData(prev => ({ ...prev, photo: URL.createObjectURL(webpFile) }));
-            } catch (error) {
-                console.error("Image compression failed:", error);
-                // Fallback to original file if compression fails
-                setPhotoFile(file);
-                setFormData(prev => ({ ...prev, photo: URL.createObjectURL(file) }));
+        setPhotoError(null);
+        setIsPhotoBusy(true);
+        try {
+            // 고른 자리에서 줄이고 형식·크기를 확인합니다. 못 쓰는 사진은 여기서 바로 알려 주고, 앞서 고른 사진은 그대로 둡니다
+            const prepared = await preparePetPhoto(file);
+            if (!prepared.ok) {
+                setPhotoError(prepared.error);
+                return;
             }
+            setPhotoFile(prepared.file);
+            setPhotoPreview(URL.createObjectURL(prepared.file));
+        } finally {
+            setIsPhotoBusy(false);
         }
+    };
+
+    const handlePhotoRemove = () => {
+        setPhotoFile(null);
+        setPhotoError(null);
+        setPhotoPreview(null);
     };
 
     const handleImport = (data: any) => {
@@ -243,7 +252,7 @@ export default function RegistrationWizard({
     // Validation
     const isStepValid = () => {
         switch (currentStepId) {
-            case "name": return !!formData.name?.trim();
+            case "name": return !petNameError(formData.name);
             case "species": return !!formData.species;
             case "breed": return !!formData.breed;
             case "gender": return !!formData.gender;
@@ -251,7 +260,7 @@ export default function RegistrationWizard({
             case "weight": return !!formData.weight && !weightError(formData.weight);
             case "color": return !!formData.color;
             case "concern": return formData.concern && formData.concern.length > 0;
-            case "photo": return true; // Optional
+            case "photo": return !isPhotoBusy; // 선택 항목. 사진을 준비하는 동안만 막습니다
             case "review": return true;
             default: return false;
         }
@@ -264,7 +273,7 @@ export default function RegistrationWizard({
     if (isCompleted) {
         return (
             <RegistrationSuccess3D
-                onComplete={() => router.push("/app")}
+                onComplete={() => router.push("/mypage#my-pets")}
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 formData={formData as any}
                 petId={createdPetId || petId}
@@ -290,6 +299,8 @@ export default function RegistrationWizard({
                             breed: formData.breed || null,
                         }}
                         onChange={handleChange}
+                        // 빈칸일 때는 버튼만 막고, 글자 수를 넘었을 때(불러온 이름 등)만 문구를 보여 줍니다
+                        nameError={formData.name?.trim() ? petNameError(formData.name) : null}
                         onOpenImport={() => setIsImportModalOpen(true)}
                         isBreedDrawerOpen={isBreedDrawerOpen}
                         onBreedDrawerOpenChange={setIsBreedDrawerOpen}
@@ -331,7 +342,15 @@ export default function RegistrationWizard({
             case "concern":
                 return <StepConcerns formData={{ ...formData, concern: formData.concern || [] }} onChange={handleConcernChange} />;
             case "photo":
-                return <StepPhoto formData={{ ...formData, photo: formData.photo || undefined }} onFileSelect={handlePhotoSelect} />;
+                return (
+                    <StepPhoto
+                        formData={{ ...formData, photo: formData.photo || undefined }}
+                        onFileSelect={handlePhotoSelect}
+                        onRemove={handlePhotoRemove}
+                        busy={isPhotoBusy}
+                        error={photoError}
+                    />
+                );
             case "review":
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 return <StepReview formData={formData as any} />;
@@ -356,12 +375,12 @@ export default function RegistrationWizard({
                 initialDate={openDateField ? (formData[openDateField] || undefined) : undefined}
             />
 
-            {/* Header: 첫 단계는 앱 홈으로 닫기(X), 이후 단계는 이전 단계로 + 진행 표시 */}
+            {/* Header: 첫 단계는 내 정보의 내 아이 목록으로 닫기(X), 이후 단계는 이전 단계로 + 진행 표시 */}
             <AppTopBar
                 title={isEditMode ? "반려가족 수정" : "펫패스 만들기"}
                 leading={
                     isFirstStep ? (
-                        <Link href="/app" aria-label="닫기" className={appBackButtonClass("onNight", "ml-0")}>
+                        <Link href="/mypage#my-pets" aria-label="닫기" className={appBackButtonClass("onNight", "ml-0")}>
                             <X className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         </Link>
                     ) : undefined

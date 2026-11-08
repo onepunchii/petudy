@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { SITE } from "@/lib/site/config";
 import { REGIONS, SIDO } from "@/lib/site/regions";
 import { SERVICES, liveServices } from "@/lib/site/services";
@@ -11,12 +11,13 @@ const STROKE = 1.75;
  * 푸터는 밝은 면(pass)을 유지합니다(밤 -> 달빛 전환은 페이지당 한 번).
  * 내부 링크 허브 역할도 합니다. 모든 지역 허브로의 링크가 있어
  * 검색엔진이 어떤 페이지에서 시작해도 전체 지역 페이지에 도달할 수 있습니다.
+ * 모바일에서는 하단 탭(BottomNav call)이 떠 있으므로 그 높이만큼 아래 여백을 둡니다(lg 이상은 탭 없음).
  */
 export function SiteFooter() {
     const live = liveServices();
     const linkCls = "transition-colors hover:text-ink";
     return (
-        <footer className="mt-24 border-t border-line bg-pass pb-32 lg:pb-10">
+        <footer className="mt-24 border-t border-line bg-pass pb-[calc(env(safe-area-inset-bottom)+112px)] lg:pb-10">
             <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
                 <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
                     <div>
@@ -49,11 +50,7 @@ export function SiteFooter() {
                                 <li><Link href="/about" className={linkCls}>포온 소개</Link></li>
                                 <li><Link href="/partners" className={linkCls}>제휴 업체 모집</Link></li>
                                 <li><Link href="/contact" className={linkCls}>상담 남기기</Link></li>
-                                <li>
-                                    <Link href="/app" className={`inline-flex items-center gap-0.5 ${linkCls}`}>
-                                        포온 앱 <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={STROKE} aria-hidden />
-                                    </Link>
-                                </li>
+                                <li><Link href="/memorial" className={linkCls}>추억상자</Link></li>
                                 <li><Link href="/regulatory-notice" className={linkCls}>규제특례 이용자 고지</Link></li>
                                 <li><Link href="/privacy" className={linkCls}>개인정보처리방침</Link></li>
                             </ul>
@@ -112,7 +109,7 @@ export function SiteFooter() {
 }
 
 /**
- * 모바일 하단 고정 바. 앱 하단 탭과 같은 밤색 플로팅 바(둥근 모서리, 뒤 흐림).
+ * (이전) 모바일 하단 고정 전화 바. 지금은 BottomNav 의 call 줄이 대신합니다. 다른 곳에서 쓸 수 있어 남겨 둡니다.
  * 장례 페이지에도 나오므로 라임을 쓰지 않고 흰 알약으로 통일합니다.
  */
 export function MobileCallBar() {

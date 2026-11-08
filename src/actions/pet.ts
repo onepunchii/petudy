@@ -3,10 +3,10 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import {
-    PET_NAME_MAX,
     addDaysIso,
     normalizeRegNumber,
     petDatesError,
+    petNameError,
     regNumberError,
     todayIso,
     weightError,
@@ -129,9 +129,18 @@ const clip = (value: unknown, max: number) => (typeof value === "string" ? value
 
 /** 입력값 검사 + DB 컬럼 값으로 바꾸기 */
 function toDbValues(input: PetFormData): { ok: true; values: Record<string, unknown> } | { ok: false; error: string } {
-    const name = clip(input?.name, 200);
-    if (!name) return { ok: false, error: "이름을 입력해 주세요" };
-    if (name.length > PET_NAME_MAX) return { ok: false, error: `이름은 ${PET_NAME_MAX}자까지 쓸 수 있어요` };
+    // 화면을 거치지 않은 조작 요청(객체가 아님, 날짜·번호·사진에 숫자 등)도 예외 없이 안내 문구로 돌려줍니다
+    if (!input || typeof input !== "object") return { ok: false, error: "입력값을 다시 확인해 주세요" };
+    for (const key of ["birth", "adoptionDate", "reg_number", "photo"] as const) {
+        const value: unknown = input[key];
+        if (value !== null && value !== undefined && typeof value !== "string") {
+            return { ok: false, error: "입력값 형식이 올바르지 않아요. 다시 입력해 주세요" };
+        }
+    }
+
+    const name = clip(input.name, 200);
+    const nameError = petNameError(name);
+    if (nameError) return { ok: false, error: nameError };
     if (input.species !== "dog" && input.species !== "cat") return { ok: false, error: "강아지인지 고양이인지 골라 주세요" };
     if (input.gender !== "male" && input.gender !== "female") return { ok: false, error: "성별을 골라 주세요" };
 
@@ -184,9 +193,8 @@ function dbErrorResult(error: { code?: string; message?: string } | null | undef
     return SAVE_ERROR;
 }
 
-/** 앱 홈과 내 정보 화면을 새로 그립니다 */
+/** 내 정보 화면을 새로 그립니다 (홈의 "내 아이" 카드는 화면에서 바로 다시 불러옵니다) */
 function revalidatePetScreens(petId?: string) {
-    revalidatePath("/app");
     revalidatePath("/mypage");
     if (petId) revalidatePath(`/settings/pets/${petId}/edit`);
 }
@@ -241,14 +249,36 @@ export async function getPets() {
     }
 }
 
+/**
+ * 내 아이 목록 (화면의 usePets 용). getPets 와 달리 로그인하지 않았을 때만 [] 를 돌려주고,
+ * 연결 실패·DB 오류는 예외로 알려 화면이 "아직 없어요" 대신 "불러오지 못했어요"를 보여 주게 합니다.
+ */
+export async function getMyPetsOrThrow(): Promise<Pet[]> {
+    const session = await getSessionUser();
+    if (!session.ok) {
+        if (session.failure.success === false && session.failure.code === "auth") return [];
+        throw new Error("pets_load_failed");
+    }
+    const { data, error } = await session.supabase
+        .from("pets")
+        .select("*")
+        .eq("user_id", session.user.id)
+        .order("created_at", { ascending: true });
+    if (error) {
+        console.error("Error fetching pets:", error);
+        throw new Error("pets_load_failed");
+    }
+    return (data as DbPetRow[]).map(toPet);
+}
+
 export async function createPet(formData: PetFormData): Promise<PetActionResult> {
     const session = await getSessionUser();
     if (!session.ok) return session.failure;
 
-    const parsed = toDbValues(formData);
-    if (!parsed.ok) return invalid(parsed.error);
-
     try {
+        const parsed = toDbValues(formData);
+        if (!parsed.ok) return invalid(parsed.error);
+
         const { data: newPet, error } = await session.supabase
             .from("pets")
             .insert({ user_id: session.user.id, ...parsed.values })
@@ -272,10 +302,10 @@ export async function updatePet(petId: string, formData: PetFormData): Promise<P
     const session = await getSessionUser();
     if (!session.ok) return session.failure;
 
-    const parsed = toDbValues(formData);
-    if (!parsed.ok) return invalid(parsed.error);
-
     try {
+        const parsed = toDbValues(formData);
+        if (!parsed.ok) return invalid(parsed.error);
+
         const { data, error } = await session.supabase
             .from("pets")
             .update(parsed.values)

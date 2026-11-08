@@ -29,7 +29,7 @@ export default function PartnerInquiryPage() {
 
     return (
         <div className="flex min-h-full flex-col bg-moon">
-            <AppTopBar title="가맹점 상담 신청" backHref="/app" />
+            <AppTopBar title="가맹점 상담 신청" backHref="/" />
 
             <AppBody className="flex-1 pb-0">
                 {/* Intro Text */}

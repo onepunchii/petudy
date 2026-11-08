@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 // next/og 가 한글(Hangul) 글자를 만나면 Google Fonts 의 Noto Sans KR 을 렌더 시점에 받아 그립니다.
 // 글꼴을 못 받는 환경에서도 브랜드가 남도록 영문 워드마크 "po-on" 을 함께 둡니다.
 export const runtime = "edge";
-export const alt = "포온 앱 | 반려동물 기록과 추억";
+export const alt = "포온 | 반려동물 기록과 추억";
 
 export const size = {
   width: 1200,

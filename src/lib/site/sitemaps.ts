@@ -82,8 +82,11 @@ const entry = (
     ...(images?.length ? { images: images.map((src) => (/^https?:\/\//.test(src) ? src : absoluteUrl(src))) } : {}),
 });
 
+/** 홈·소개 마지막 수정일 (앱 홈을 합치며 '함께 사는 동안' 바로가기와 추억상자 링크를 넣은 날) */
+const HOME_ABOUT_UPDATED = "2026-11-07";
+
 function pagesSitemap(): SitemapEntry[] {
-    return [entry("/", 1, "daily"), entry("/about", 0.3, "monthly"), entry("/contact", 0.3, "monthly"), entry("/partners", 0.3, "monthly")];
+    return [entry("/", 1, "daily", HOME_ABOUT_UPDATED), entry("/about", 0.3, "monthly", HOME_ABOUT_UPDATED), entry("/contact", 0.3, "monthly"), entry("/partners", 0.3, "monthly")];
 }
 
 function servicesSitemap(): SitemapEntry[] {

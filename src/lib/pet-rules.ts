@@ -46,20 +46,32 @@ export function weightError(raw: string | number | null | undefined): string | n
     return null;
 }
 
+/** 이름 오류 문구. 앞뒤 빈칸은 빼고 셉니다 (서버도 같은 기준으로 저장) */
+export function petNameError(raw: string | null | undefined): string | null {
+    const name = typeof raw === "string" ? raw.trim() : "";
+    if (!name) return "이름을 입력해 주세요";
+    if (name.length > PET_NAME_MAX) return `이름은 ${PET_NAME_MAX}자까지 쓸 수 있어요`;
+    return null;
+}
+
 /**
  * 생일·가족이 된 날 오류 문구. 둘 다 고르지 않아도 됩니다.
  * today 는 화면에서는 기기 날짜, 서버에서는 한국 날짜(+하루 여유)를 넘깁니다.
+ * today 가 null 이면 "오늘 이후" 검사는 건너뜁니다 (서버 렌더처럼 기기 날짜를 아직 모를 때).
  */
-export function petDatesError(dates: { birth?: string | null; adoptionDate?: string | null }, today = todayIso()): string | null {
+export function petDatesError(
+    dates: { birth?: string | null; adoptionDate?: string | null },
+    today: string | null = todayIso(),
+): string | null {
     const { birth, adoptionDate } = dates;
     if (birth) {
         if (!isIsoDate(birth)) return "생일 날짜 형식이 올바르지 않아요";
-        if (birth > today) return "생일은 오늘 이후 날짜로 정할 수 없어요";
+        if (today && birth > today) return "생일은 오늘 이후 날짜로 정할 수 없어요";
         if (birth < PET_DATE_MIN) return "생일은 1990년 이후 날짜로 골라 주세요";
     }
     if (adoptionDate) {
         if (!isIsoDate(adoptionDate)) return "가족이 된 날 형식이 올바르지 않아요";
-        if (adoptionDate > today) return "가족이 된 날은 오늘 이후 날짜로 정할 수 없어요";
+        if (today && adoptionDate > today) return "가족이 된 날은 오늘 이후 날짜로 정할 수 없어요";
         if (adoptionDate < PET_DATE_MIN) return "가족이 된 날은 1990년 이후 날짜로 골라 주세요";
     }
     if (birth && adoptionDate && adoptionDate < birth) return "가족이 된 날이 생일보다 빠를 수 없어요";
@@ -71,7 +83,9 @@ export const normalizeRegNumber = (raw: string) => raw.replace(/[\s-]/g, "");
 
 /** 동물등록번호 오류 문구. 비어 있으면 null */
 export function regNumberError(raw: string | null | undefined): string | null {
-    if (!raw) return null;
+    if (raw === null || raw === undefined || raw === "") return null;
+    // 화면은 늘 글자로 보내지만, 조작된 요청(숫자 등)에서도 예외 없이 안내 문구를 돌려줍니다
+    if (typeof raw !== "string") return "동물등록번호 형식이 올바르지 않아요";
     const value = normalizeRegNumber(raw);
     if (value === "") return null;
     if (!/^\d+$/.test(value)) return "동물등록번호는 숫자로만 입력해 주세요";

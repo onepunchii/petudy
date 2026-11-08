@@ -17,8 +17,8 @@ export default async function EditPetPage({ params }: EditPetPageProps) {
 
     return (
         <div className="flex min-h-full flex-col">
-            {/* 뒤로 가기는 예전처럼 항상 /app 으로 가는 링크 */}
-            <AppTopBar title="반려가족 수정" backHref="/app" />
+            {/* 뒤로 가기는 늘 내 정보(/mypage)로 가는 링크 */}
+            <AppTopBar title="반려가족 수정" backHref="/mypage" />
 
             <EditPetForm
                 petId={id}

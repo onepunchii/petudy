@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { SITE } from "@/lib/site/config";
 import { SiteHeader } from "@/components/site/SiteHeader";
-import { MobileCallBar, SiteFooter } from "@/components/site/SiteFooter";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { BottomNav } from "@/components/shared/BottomNav";
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE.url),
@@ -33,8 +34,9 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             </a>
             <SiteHeader />
             <main id="main">{children}</main>
+            {/* 모바일 하단 탭(앱과 같은 탭) + 전화·상담 버튼. 탭에 가리지 않도록 푸터 아래 여백은 SiteFooter 가 줍니다 */}
             <SiteFooter />
-            <MobileCallBar />
+            <BottomNav call />
         </div>
     );
 }

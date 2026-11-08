@@ -1,18 +1,10 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { PET_PHOTO_BAD_TYPE, PET_PHOTO_MAX_BYTES, PET_PHOTO_TOO_BIG, sniffImageType } from "@/lib/pet-photo";
 
-/** 받는 사진 형식. 확장자는 파일 이름이 아니라 실제 내용(앞 몇 바이트)으로 정합니다 */
-const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
-
-function sniffImageType(head: Uint8Array): { mime: string; ext: string } | null {
-    const ascii = (from: number, to: number) => String.fromCharCode(...head.slice(from, to));
-    if (head[0] === 0xff && head[1] === 0xd8 && head[2] === 0xff) return { mime: "image/jpeg", ext: "jpg" };
-    if (head[0] === 0x89 && ascii(1, 4) === "PNG") return { mime: "image/png", ext: "png" };
-    if (ascii(0, 4) === "RIFF" && ascii(8, 12) === "WEBP") return { mime: "image/webp", ext: "webp" };
-    if (ascii(0, 4) === "GIF8") return { mime: "image/gif", ext: "gif" };
-    return null;
-}
+// 받는 사진 형식·크기는 src/lib/pet-photo.ts 에서 화면과 같이 씁니다.
+// 확장자는 파일 이름이 아니라 실제 내용(앞 몇 바이트)으로 정합니다.
 
 type UploadResult = { success: true; url: string } | { success: false; code: "auth" | "invalid" | "server"; error: string };
 
@@ -21,8 +13,8 @@ export async function uploadPetPhoto(formData: FormData): Promise<UploadResult> 
     if (!(file instanceof File) || file.size === 0) {
         return { success: false, code: "invalid", error: "사진을 다시 골라 주세요." };
     }
-    if (file.size > MAX_PHOTO_BYTES) {
-        return { success: false, code: "invalid", error: "사진은 5MB 이하로 올려 주세요." };
+    if (file.size > PET_PHOTO_MAX_BYTES) {
+        return { success: false, code: "invalid", error: PET_PHOTO_TOO_BIG };
     }
 
     try {
@@ -37,7 +29,7 @@ export async function uploadPetPhoto(formData: FormData): Promise<UploadResult> 
         const bytes = new Uint8Array(await file.arrayBuffer());
         const type = sniffImageType(bytes.subarray(0, 12));
         if (!type) {
-            return { success: false, code: "invalid", error: "JPG, PNG, WEBP, GIF 사진만 올릴 수 있어요." };
+            return { success: false, code: "invalid", error: PET_PHOTO_BAD_TYPE };
         }
 
         // 사용자별 폴더에 겹치지 않는 이름으로 저장

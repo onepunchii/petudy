@@ -53,6 +53,8 @@ interface PetSelectionSheetProps {
     currentPetId: string | null;
     pets: Pet[];
     onSelectPet: (pet: Pet) => void;
+    /** 순서 바꾸기 버튼 표시. 순서는 아직 저장되지 않아 내 정보에서는 숨깁니다 */
+    allowReorder?: boolean;
 }
 
 // Sortable Item Component
@@ -230,7 +232,7 @@ function SortablePetItem({
     );
 }
 
-export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets: initialPets, onSelectPet }: PetSelectionSheetProps) {
+export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets: initialPets, onSelectPet, allowReorder = true }: PetSelectionSheetProps) {
     const router = useRouter();
     const queryClient = useQueryClient();
     const [shouldRender, setShouldRender] = useState(false);
@@ -411,13 +413,15 @@ export default function PetSelectionSheet({ isOpen, onClose, currentPetId, pets:
                         반려동물 선택
                         <span className="text-[15px] font-semibold tabular-nums text-ink-3">({pets.length})</span>
                     </h2>
-                    <button
-                        type="button"
-                        onClick={() => setIsEditMode(!isEditMode)}
-                        className={appButtonClass({ variant: isEditMode ? "primary" : "secondary", size: "sm" })}
-                    >
-                        {isEditMode ? "완료" : "순서 바꾸기"}
-                    </button>
+                    {allowReorder && (
+                        <button
+                            type="button"
+                            onClick={() => setIsEditMode(!isEditMode)}
+                            className={appButtonClass({ variant: isEditMode ? "primary" : "secondary", size: "sm" })}
+                        >
+                            {isEditMode ? "완료" : "순서 바꾸기"}
+                        </button>
+                    )}
                 </div>
 
                 {/* Pet List - Scrollable with Sortable Context */}

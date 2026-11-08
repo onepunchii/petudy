@@ -9,7 +9,7 @@ import { APP_ICON_STROKE, appBackButtonClass } from "./tokens";
  * 밤(AppHero/AppTopBar) 위에서 쓰는 것이 기본이고, 밝은 면에서는 tone="onLight".
  */
 export function BackButton({
-    fallbackHref = "/app",
+    fallbackHref = "/",
     tone = "onNight",
     label = "뒤로 가기",
     className,

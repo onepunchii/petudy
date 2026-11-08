@@ -18,6 +18,8 @@ interface StepBasicInfoProps {
         [key: string]: any;
     };
     onChange: (field: string, value: any) => void;
+    /** 이름 칸 오류 문구 (name 단계) */
+    nameError?: string | null;
     onOpenImport?: () => void;
     // Drawer Props
     isBreedDrawerOpen?: boolean;
@@ -39,6 +41,7 @@ export default function StepBasicInfo({
     stepId,
     formData,
     onChange,
+    nameError,
     onOpenImport,
     isBreedDrawerOpen = false,
     onBreedDrawerOpenChange
@@ -61,10 +64,17 @@ export default function StepBasicInfo({
                     value={formData.name || ""}
                     onChange={(e) => onChange("name", e.target.value)}
                     aria-labelledby="step-name-title"
-                    className={cn(appInputClass, "h-14 text-[18px] font-semibold")}
+                    aria-invalid={!!nameError}
+                    aria-describedby={nameError ? "step-name-error" : undefined}
+                    className={cn(appInputClass, "h-14 text-[18px] font-semibold", nameError && "ring-2 ring-danger focus:ring-danger")}
                     placeholder="이름을 입력해주세요"
                     autoFocus
                 />
+                {nameError && (
+                    <p id="step-name-error" role="alert" className="mt-2 text-[13px] font-semibold leading-snug text-danger">
+                        {nameError}
+                    </p>
+                )}
             </div>
         );
     }

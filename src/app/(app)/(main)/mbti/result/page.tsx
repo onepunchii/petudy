@@ -77,7 +77,7 @@ function MbtiResultContent() {
         // Simulate API call to save result
         localStorage.setItem("petMbtiType", type);
         alert("뱃지가 반려동물 등록증에 적용되었습니다!");
-        router.push("/app");
+        router.push("/");
     };
 
     const handleShare = () => {
