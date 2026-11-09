@@ -1,9 +1,10 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState, useTransition } from "react";
 import { usePathname } from "next/navigation";
 import { AlertCircle, CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { submitLead, type LeadState } from "@/actions/lead";
+import { LEAD_SERVICE_UNSURE, LEAD_SERVICE_UNSURE_LABEL } from "@/lib/site/lead-options";
 import { SITE } from "@/lib/site/config";
 import { cn } from "@/lib/utils";
 import { ICON_STROKE, pillClass } from "./ui";
@@ -16,9 +17,10 @@ const LABEL = "text-[13.5px] font-semibold text-ink";
 /**
  * 상담 남기기 폼. 밝은 카드(pass) 한 장으로 렌더링되며 밝은 면, 밤 위 어디에 두어도 됩니다.
  * 라벨은 입력창 위, 필수 항목은 연락처와 동의뿐입니다.
+ * service 는 꼭 넘깁니다. 보던 서비스를 모르면 LEAD_SERVICE_UNSURE('아직 모르겠어요')를 넘깁니다(장례를 기본값으로 두지 않음).
  */
 export function LeadForm({
-    service = "funeral",
+    service,
     services,
     regionSido,
     regionSlug,
@@ -26,7 +28,7 @@ export function LeadForm({
     compact,
     className,
 }: {
-    service?: string;
+    service: string;
     services?: { slug: string; short: string }[];
     regionSido?: string;
     regionSlug?: string;
@@ -37,6 +39,9 @@ export function LeadForm({
 }) {
     const pathname = usePathname();
     const [state, action, pending] = useActionState<LeadState, FormData>(submitLead, null);
+    const [, startTransition] = useTransition();
+    // 선택 칸이 있으면 고른 서비스에 맞춰 예시 문구를 바꿉니다(미용 폼에 장례 예시가 나오지 않게)
+    const [svc, setSvc] = useState(service);
     const card = "rounded-[20px] bg-pass ring-1 ring-line shadow-[0_24px_48px_-30px_rgb(31_39_66/0.35)]";
 
     if (state?.ok) {
@@ -72,13 +77,24 @@ export function LeadForm({
               dongPh: regionName ? `예: ${regionName} ○○동` : "예: 광진구 자양동",
               name: "보호자 성함",
               info: "아이 정보",
-              infoPh: "예: 말티즈, 4kg, 15살",
-              messagePh: "예: 오늘 저녁 희망, 픽업 필요",
+              infoPh: svc === "funeral" ? "예: 말티즈, 4kg, 15살" : svc === "grooming" ? "예: 말티즈, 4kg, 3살" : "예: 말티즈, 4kg",
+              messagePh: svc === "funeral" ? "예: 오늘 저녁 희망, 픽업 필요" : svc === "grooming" ? "예: 이번 주말 오전, 위생미용" : "예: 원하는 날짜와 시간",
               consent: "상담을 위한 개인정보(연락처, 동네, 아이 정보) 수집·이용에 동의합니다. 상담과 업체 연결에만 쓰고, 상담을 마친 뒤 1년간 보관 후 파기합니다.",
           };
 
     return (
-        <form action={action} aria-busy={pending} className={cn(card, "grid gap-4 p-5 sm:p-7", !compact && "sm:grid-cols-2", className)}>
+        <form
+            // JS 가 없을 때는 action 으로 보냅니다. JS 가 있으면 직접 보내서 React 19 의 폼 자동 초기화를 피합니다:
+            // 접수가 실패해도 적은 연락처·메시지와 고른 서비스가 그대로 남고, 다시 보낼 때 서비스가 첫 항목으로 바뀌지 않습니다.
+            action={action}
+            onSubmit={(e) => {
+                e.preventDefault();
+                const fd = new FormData(e.currentTarget);
+                startTransition(() => action(fd));
+            }}
+            aria-busy={pending}
+            className={cn(card, "grid gap-4 p-5 sm:p-7", !compact && "sm:grid-cols-2", className)}
+        >
             <input type="hidden" name="sourcePath" value={pathname ?? ""} />
             <input type="hidden" name="regionSido" value={regionSido ?? ""} />
             <input type="hidden" name="regionSlug" value={regionSlug ?? ""} />
@@ -97,12 +113,15 @@ export function LeadForm({
                 <label className={cn("grid gap-1.5", wide)}>
                     <span className={LABEL}>필요한 서비스</span>
                     <span className="relative block">
-                        <select name="service" defaultValue={service} className={cn(INPUT, "h-12 appearance-none pr-10")}>
+                        <select name="service" value={svc} onChange={(e) => setSvc(e.target.value)} className={cn(INPUT, "h-12 appearance-none pr-10")}>
                             {services.map((s) => (
                                 <option key={s.slug} value={s.slug}>
                                     {s.short}
                                 </option>
                             ))}
+                            {!services.some((s) => s.slug === LEAD_SERVICE_UNSURE) && (
+                                <option value={LEAD_SERVICE_UNSURE}>{LEAD_SERVICE_UNSURE_LABEL}</option>
+                            )}
                         </select>
                         <ChevronDown
                             className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-3"

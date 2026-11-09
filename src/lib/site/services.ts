@@ -7,6 +7,7 @@
  *            대량 생성하면 '얇은 페이지(doorway)'로 판단될 수 있어 일부러 막아둡니다.
  *            제휴처가 확보되면 "live"로 바꾸기만 하면 지역 페이지·사이트맵이 자동 생성됩니다.
  */
+import { LEAD_SERVICE_UNSURE } from "./lead-options";
 
 export type ServiceSlug = "funeral" | "grooming" | "hotel" | "petsitter" | "pet-taxi" | "training";
 export type ServiceTone = "dusk" | "clay" | "pine";
@@ -301,6 +302,19 @@ export const SERVICES: Service[] = [
 
 export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug);
 export const liveServices = () => SERVICES.filter((s) => s.status === "live");
+
+/**
+ * 서비스가 정해지지 않은 화면(동네 안내, 상담 선택지)의 순서: 일상 서비스 먼저, 장례는 맨 뒤.
+ * 미용을 보러 온 보호자가 이별을 먼저 만나지 않게 합니다(장례 화면·장례 검색 착지는 그대로).
+ */
+export const liveServicesEverydayFirst = () =>
+    [...liveServices()].sort((a, b) => Number(a.slug === "funeral") - Number(b.slug === "funeral"));
+
+/** 주소(?service=)로 넘어온 값이 연결 중인 서비스면 그 값, 아니면 '아직 모르겠어요' */
+export const leadServiceFromParam = (param: string | string[] | undefined) => {
+    const v = Array.isArray(param) ? param[0] : param;
+    return v && liveServices().some((s) => s.slug === v) ? v : LEAD_SERVICE_UNSURE;
+};
 
 export const TONE: Record<ServiceTone, { fg: string; bg: string; soft: string; text: string }> = {
     dusk: { fg: "text-dusk", bg: "bg-dusk", soft: "bg-dusk-soft", text: "text-dusk" },

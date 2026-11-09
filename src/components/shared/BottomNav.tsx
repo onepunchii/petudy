@@ -45,10 +45,25 @@ const TABS = [
     },
 ] as const;
 
-export function BottomNav({ call = false }: { call?: boolean }) {
+/**
+ * 하단 '상담 남기기'가 보던 서비스를 들고 갑니다(/contact?service=…). 미용 화면에서 눌렀는데 장례로 접수되지 않게.
+ * 가이드 글은 그 글의 서비스(guideServices: 글 주소 → 서비스, 사이트 레이아웃이 서버에서 만들어 넘김)를 씁니다.
+ * 서비스를 알 수 없는 화면은 /contact 로 가고, 폼에서 '아직 모르겠어요'로 시작합니다.
+ */
+function contactHref(p: string, guideServices?: Record<string, string>) {
+    if (p === "/funeral" || p.startsWith("/funeral/") || p.startsWith("/funeral-homes")) return "/contact?service=funeral";
+    if (p === "/grooming" || p.startsWith("/grooming/")) return "/contact?service=grooming";
+    const guide = p.match(/^\/guide\/([^/?#]+)/)?.[1];
+    const service = guide ? guideServices?.[guide] : undefined;
+    return service ? `/contact?service=${service}` : "/contact";
+}
+
+export function BottomNav({ call = false, guideServices }: { call?: boolean; guideServices?: Record<string, string> }) {
     const pathname = usePathname() ?? "/";
 
     if (pathname.startsWith("/booking/new") || pathname.startsWith("/mbti") || pathname.startsWith("/intro")) return null;
+    // 지인이 받은 공개 부고장에는 하단 탭(미용·내 정보 등)을 띄우지 않습니다
+    if (/^\/memorial\/[^/]+\/obituary\/[^/]+/.test(pathname)) return null;
 
     // 장례·추억상자 화면에서는 라임을 쓰지 않습니다
     const calm = pathname.startsWith("/funeral") || pathname.startsWith("/memorial");
@@ -70,7 +85,7 @@ export function BottomNav({ call = false }: { call?: boolean }) {
                             전화 상담 <span className="tabular-nums max-[359px]:hidden">{SITE.phone}</span>
                         </a>
                         <Link
-                            href="/contact"
+                            href={contactHref(pathname, guideServices)}
                             className="pointer-events-auto inline-flex h-10 items-center whitespace-nowrap rounded-full bg-night/90 px-4 text-[14px] font-semibold text-star shadow-[0_8px_24px_-8px_rgb(11_16_32/0.45)] ring-1 ring-white/20 backdrop-blur-md active:translate-y-px"
                         >
                             상담 남기기

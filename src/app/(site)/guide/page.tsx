@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Moon } from "lucide-react";
 import { funeralHomesPath } from "@/lib/site/funeral-homes";
 import { GUIDES, guideCover, type Guide } from "@/lib/site/guides";
-import { liveServices } from "@/lib/site/services";
+import { liveServicesEverydayFirst } from "@/lib/site/services";
 import { breadcrumbLd } from "@/lib/site/schema";
 import { Reveal } from "@/components/site/Reveal";
 import { Container, ICON_STROKE, JsonLd, SectionTitle } from "@/components/site/ui";
@@ -17,12 +17,17 @@ export const metadata: Metadata = {
     alternates: { canonical: "/guide" },
 };
 
-/** 히어로에 세우는 "먼저 읽을 글" */
-const FEATURED = "pet-death-first-steps";
+/**
+ * 히어로에 세우는 "먼저 읽을 글": 함께 사는 날의 글(그림) 하나 + 배웅하는 날의 글(글자 한 줄) 하나.
+ * 가이드 목록은 시간대 순서(함께 사는 날 → 배웅하는 날과 그 뒤)로 나눕니다.
+ */
+const FEATURED = "dog-grooming-cycle";
+const FEATURED_FAREWELL = "pet-death-first-steps";
 
-const SERVICE_LEAD: Record<string, string> = {
-    funeral: "떠나는 날 앞뒤로 보호자가 알아야 할 절차와 비용, 법을 차례대로 정리했습니다.",
-    grooming: "함께 사는 동안 자주 찾게 되는 미용 주기와 가격, 고양이 미용을 모았습니다.",
+/** 서비스별 묶음의 시간대 제목과 안내 */
+const SECTION: Record<string, { title: string; lead: string }> = {
+    grooming: { title: "함께 사는 날 · 반려동물 미용", lead: "함께 사는 동안 자주 찾게 되는 미용 주기와 가격, 고양이 미용을 모았습니다." },
+    funeral: { title: "배웅하는 날과 그 뒤 · 반려동물 장례", lead: "떠나는 날 앞뒤로 보호자가 알아야 할 절차와 비용, 법, 그리고 그 뒤의 마음을 차례대로 정리했습니다." },
 };
 
 /** 표지 + 제목 + 요약 두 줄. 목록용 가로형 */
@@ -56,6 +61,7 @@ export default function GuideIndexPage() {
         { name: "보호자 가이드", href: "/guide" },
     ];
     const featured = GUIDES.find((g) => g.slug === FEATURED) ?? GUIDES[0];
+    const farewell = GUIDES.find((g) => g.slug === FEATURED_FAREWELL);
     const fc = guideCover(featured.slug);
 
     return (
@@ -74,7 +80,8 @@ export default function GuideIndexPage() {
                 }
                 subtitle="처음 겪는 순간에 펼쳐 보는 안내서. 법령과 공식 자료를 근거로 썼습니다."
                 aside={
-                    <Link href={`/guide/${featured.slug}`} className="group block lg:ml-auto lg:max-w-[480px]">
+                    <div className="lg:ml-auto lg:max-w-[480px]">
+                    <Link href={`/guide/${featured.slug}`} className="group block">
                         <span className="relative block aspect-[4/3] overflow-hidden rounded-[28px] bg-night-2 ring-1 ring-white/10">
                             <Image
                                 src={fc.src}
@@ -88,10 +95,20 @@ export default function GuideIndexPage() {
                         <span className="mt-4 block text-[13px] font-semibold text-star-3">먼저 읽어 보세요</span>
                         <span className="mt-1 block text-[17px] font-bold leading-snug text-star underline-offset-4 group-hover:underline">{featured.title}</span>
                     </Link>
+                    {farewell && (
+                        <Link
+                            href={`/guide/${farewell.slug}`}
+                            className="mt-3 inline-flex min-h-11 items-center gap-2 text-[15px] font-medium text-star-2 underline-offset-4 hover:text-star hover:underline"
+                        >
+                            <Moon className="h-4 w-4 shrink-0" strokeWidth={ICON_STROKE} aria-hidden />
+                            아이가 먼저 떠났다면 · 바로 해야 할 일
+                        </Link>
+                    )}
+                    </div>
                 }
             />
 
-            {liveServices().map((s, i) => {
+            {liveServicesEverydayFirst().map((s, i) => {
                 const list = GUIDES.filter((g) => g.service === s.slug && g.slug !== featured.slug);
                 if (!list.length) return null;
                 const id = `guide-${s.slug}`;
@@ -102,7 +119,7 @@ export default function GuideIndexPage() {
                 return (
                     <Reveal key={s.slug} as="section" className={cn("py-14 sm:py-20", i > 0 && "border-t border-line")}>
                         <Container>
-                            <SectionTitle id={id} title={s.name} lead={SERVICE_LEAD[s.slug]} />
+                            <SectionTitle id={id} title={SECTION[s.slug]?.title ?? s.name} lead={SECTION[s.slug]?.lead} />
                             {big ? (
                                 <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12">
                                     <Link href={`/guide/${lead.slug}`} className="group block">

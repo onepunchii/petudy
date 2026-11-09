@@ -3,6 +3,8 @@
 import { z } from "zod";
 import { db } from "@/lib/db";
 import { agencyLeads } from "@/lib/db/schema";
+import { LEAD_SERVICE_UNSURE, LEAD_SERVICE_UNSURE_LABEL } from "@/lib/site/lead-options";
+import { getService } from "@/lib/site/services";
 
 const LeadSchema = z.object({
     service: z.string().min(1).max(40),
@@ -23,6 +25,9 @@ const LeadSchema = z.object({
 });
 
 export type LeadState = { ok: boolean; message: string } | null;
+
+const serviceLabel = (slug: string) =>
+    slug === LEAD_SERVICE_UNSURE ? `서비스 미정(${LEAD_SERVICE_UNSURE_LABEL})` : slug === "partner" ? "업체 제휴 문의" : (getService(slug)?.name ?? slug);
 
 export async function submitLead(_prev: LeadState, formData: FormData): Promise<LeadState> {
     const parsed = LeadSchema.safeParse(Object.fromEntries(formData));
@@ -49,7 +54,8 @@ export async function submitLead(_prev: LeadState, formData: FormData): Promise<
             await fetch(hook, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ text: `새 상담 접수: ${lead.service} / ${lead.regionSlug ?? ""} ${lead.dong ?? ""} / ${lead.phone}`, lead: row }),
+                // 담당자가 읽는 알림 글에는 서비스 이름을(미정이면 '아직 모르겠어요'), 원본 값은 lead.service 에 그대로 둡니다
+                body: JSON.stringify({ text: `새 상담 접수: ${serviceLabel(parsed.data.service)} / ${lead.regionSlug ?? ""} ${lead.dong ?? ""} / ${lead.phone}`, lead: row }),
             });
             saved = true;
         } catch (e) {

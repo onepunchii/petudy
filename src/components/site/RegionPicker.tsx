@@ -80,7 +80,7 @@ export function RegionPicker({
     regions: PickerRegion[];
     /** 고정 서비스 (서비스 허브에서 사용) */
     service?: string;
-    /** 서비스 선택지 (홈에서 사용) */
+    /** 서비스 선택지 (홈에서 사용). 기본값은 '전체 서비스'라 고르지 않으면 동네 안내(/area)로 갑니다 */
     services?: { slug: string; short: string }[];
     variant?: "light" | "dark" | "pass";
     /** 카드 제목 */
@@ -91,7 +91,8 @@ export function RegionPicker({
     const router = useRouter();
     const [sido, setSido] = useState<"seoul" | "gyeonggi">("seoul");
     const [slug, setSlug] = useState("");
-    const [svc, setSvc] = useState(service ?? services?.[0]?.slug ?? "");
+    // 장례를 미리 고르지 않습니다. 서비스를 안 고르면 그 동네의 서비스 전체 안내로 갑니다
+    const [svc, setSvc] = useState(service ?? "");
     const [locating, setLocating] = useState(false);
     const [msg, setMsg] = useState("");
     const options = useMemo(() => regions.filter((r) => r.sido === sido), [regions, sido]);
@@ -168,6 +169,7 @@ export function RegionPicker({
                     onChange={(e) => setSvc(e.target.value)}
                     className={pass ? "md:col-span-2 lg:col-span-1" : "sm:col-span-2"}
                 >
+                    <option value="">전체 서비스</option>
                     {services.map((s) => (
                         <option key={s.slug} value={s.slug}>
                             {s.short}

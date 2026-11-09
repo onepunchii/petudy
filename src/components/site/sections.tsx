@@ -4,7 +4,8 @@ import { ArrowRight, ArrowUpRight, Check, ShieldCheck } from "lucide-react";
 import { SITE } from "@/lib/site/config";
 import { GUIDES, type Guide } from "@/lib/site/guides";
 import { REGIONS, SIDO, type Region } from "@/lib/site/regions";
-import { liveServices, type Service, type ServiceSlug } from "@/lib/site/services";
+import { LEAD_SERVICE_UNSURE } from "@/lib/site/lead-options";
+import { liveServicesEverydayFirst, type Service, type ServiceSlug } from "@/lib/site/services";
 import { cn } from "@/lib/utils";
 import { LeadForm } from "./LeadForm";
 import { PassCard } from "./PassCard";
@@ -391,7 +392,6 @@ export function ConsultSection({
     title?: string;
     lead?: string;
 }) {
-    const live = liveServices();
     return (
         <Reveal as="section" id="consult" className="scroll-mt-20 border-t border-line py-16 sm:pt-24 sm:pb-8">
             <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
@@ -415,8 +415,8 @@ export function ConsultSection({
                     </ul>
                 </div>
                 <LeadForm
-                    service={service?.slug ?? live[0].slug}
-                    services={service ? undefined : live.map((s) => ({ slug: s.slug, short: s.name }))}
+                    service={service?.slug ?? LEAD_SERVICE_UNSURE}
+                    services={service ? undefined : liveServicesEverydayFirst().map((s) => ({ slug: s.slug, short: s.name }))}
                     regionSido={region?.sido}
                     regionSlug={region?.slug}
                     regionName={region?.name}

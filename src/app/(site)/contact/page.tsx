@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site/config";
-import { liveServices } from "@/lib/site/services";
+import { leadServiceFromParam, liveServicesEverydayFirst } from "@/lib/site/services";
 import { LeadForm } from "@/components/site/LeadForm";
 import { CallButton, Container } from "@/components/site/ui";
 import { PageHero } from "../_components/PageHero";
@@ -18,7 +18,9 @@ const STEPS = [
     { t: "예상 비용과 함께 연락", d: "남겨 주신 연락처로 확인한 내용을 알려 드립니다." },
 ];
 
-export default function ContactPage() {
+/** 하단 '상담 남기기'·서비스 페이지에서 ?service=grooming 처럼 보던 서비스를 넘깁니다. 없거나 모르는 값이면 '아직 모르겠어요' */
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ service?: string | string[] }> }) {
+    const { service } = await searchParams;
     const crumbs = [
         { name: "홈", href: "/" },
         { name: "상담 남기기", href: "/contact" },
@@ -45,7 +47,10 @@ export default function ContactPage() {
                     {/* 폼은 모바일에서 먼저, lg 에서는 오른쪽 칸에서 히어로 아래쪽에 걸칩니다 */}
                     <div id="form" className="order-first scroll-mt-24 lg:relative lg:z-[1] lg:order-last lg:-mt-48">
                         <h2 className="sr-only">상담 남기기</h2>
-                        <LeadForm services={liveServices().map((s) => ({ slug: s.slug, short: s.name }))} />
+                        <LeadForm
+                            service={leadServiceFromParam(service)}
+                            services={liveServicesEverydayFirst().map((s) => ({ slug: s.slug, short: s.name }))}
+                        />
                     </div>
 
                     <div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { REGIONS, SIDO, dongLabel, getRegion, type Region } from "@/lib/site/regions";
-import { SERVICES, liveServices, type Service } from "@/lib/site/services";
+import { SERVICES, liveServicesEverydayFirst, type Service } from "@/lib/site/services";
 import { buildAreaHub, facilityDistances, neighborsOf } from "@/lib/site/local";
 import { breadcrumbLd } from "@/lib/site/schema";
 import { MAP_NOTE, NeighborhoodMap } from "@/components/site/NeighborhoodMap";
@@ -113,8 +113,9 @@ export default async function AreaHubPage({ params }: Props) {
             <Reveal as="section" className="py-14 sm:py-20">
                 <Container>
                     <SectionTitle id="area-services" title={`${r.name}에서 필요한 서비스`} />
+                    {/* 서비스가 정해지지 않은 동네 안내라 일상 서비스(미용)를 먼저, 장례를 뒤에 둡니다 */}
                     <ul aria-labelledby="area-services" className="mt-10 grid gap-5">
-                        {liveServices().map((s) => (
+                        {liveServicesEverydayFirst().map((s) => (
                             <li key={s.slug}>
                                 <PassCard
                                     href={`/${s.slug}/${r.sido}/${r.slug}`}

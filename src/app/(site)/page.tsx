@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, PawPrint } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Moon, PawPrint } from "lucide-react";
 import { SITE } from "@/lib/site/config";
 import { FACILITY_AREAS, FACILITY_CHECKED_AT } from "@/lib/site/facilities";
 import { FUNERAL_HOMES, funeralHomesPath } from "@/lib/site/funeral-homes";
 import { GUIDES, type Guide } from "@/lib/site/guides";
 import { REGIONS, SIDO, allDongs, dongLabel, type SidoSlug } from "@/lib/site/regions";
-import { SERVICES, getService, liveServices } from "@/lib/site/services";
+import { LEAD_SERVICE_UNSURE } from "@/lib/site/lead-options";
+import { SERVICES, getService, liveServicesEverydayFirst } from "@/lib/site/services";
 import { faqLd, organizationLd, websiteLd } from "@/lib/site/schema";
 import { LeadForm } from "@/components/site/LeadForm";
 import { PassCard } from "@/components/site/PassCard";
@@ -41,8 +42,9 @@ const ROUTE = [
     { t: "총액을 먼저 알려 드리고 연결합니다", d: "업체와 시간, 픽업을 정하고 현장에서 비용이 늘지 않도록 견적부터 공유합니다." },
 ];
 
-const FEATURED_GUIDE = "pet-death-first-steps";
-const MORE_GUIDES = ["pet-funeral-cost", "licensed-pet-crematorium-check", "individual-vs-group-cremation", "dog-grooming-price", "dog-grooming-cycle"];
+/** 대표 글은 함께 사는 날의 글(미용) 하나, 목록 첫 줄은 배웅하는 날의 글(장례) 하나. 장례 가이드로 가는 본문 링크는 남깁니다 */
+const FEATURED_GUIDE = "dog-grooming-cycle";
+const MORE_GUIDES = ["pet-death-first-steps", "dog-grooming-price", "pet-funeral-cost", "cat-grooming-anesthesia", "licensed-pet-crematorium-check"];
 
 /** "함께 사는 동안" 바로가기. icon 이 없으면 발자국 아이콘(추억상자 타일에는 라임을 쓰지 않습니다) */
 const LIFE_LINKS: { href: string; title: string; desc: string; icon?: string }[] = [
@@ -55,12 +57,12 @@ const LIFE_LINKS: { href: string; title: string; desc: string; icon?: string }[]
 const pickGuides = (slugs: string[]) => slugs.map((s) => GUIDES.find((g) => g.slug === s)).filter((g): g is Guide => Boolean(g));
 
 export default function HomePage() {
-    const live = liveServices();
     const soon = SERVICES.filter((s) => s.status === "soon");
     const funeral = getService("funeral")!;
     const grooming = getService("grooming")!;
     const pickerRegions = REGIONS.map(({ sido, slug, name, lat, lng }) => ({ sido, slug, name, lat, lng }));
-    const serviceOptions = live.map((s) => ({ slug: s.slug, short: s.name }));
+    // 서비스가 정해지지 않은 선택지는 일상 서비스 먼저(장례는 맨 뒤)
+    const serviceOptions = liveServicesEverydayFirst().map((s) => ({ slug: s.slug, short: s.name }));
     const metroCount = FACILITY_AREAS.reduce((s, f) => s + f.count, 0);
     const checkedAt = FACILITY_CHECKED_AT.slice(0, 7).replace("-", ".");
     const bySido = (sido: SidoSlug) => REGIONS.filter((r) => r.sido === sido);
@@ -89,6 +91,17 @@ export default function HomePage() {
                             우리 동네 찾기
                         </PillLink>
                     </div>
+                    {/* 급한 보호자의 장례 입구. 스크롤 없이 보이는 같은 자리, 그림·라임 없이 한 줄(하단 탭을 바꾸기 전에 먼저 둡니다) */}
+                    <p className="mt-4">
+                        <Link
+                            href={`/${funeral.slug}`}
+                            className="inline-flex min-h-11 items-center gap-2 text-[15px] font-medium text-star underline-offset-4 hover:underline"
+                        >
+                            <Moon className="h-4 w-4 shrink-0" strokeWidth={ICON_STROKE} aria-hidden />
+                            아이가 먼저 떠났다면 · 장례 안내
+                            <ArrowRight className="h-4 w-4 shrink-0" strokeWidth={ICON_STROKE} aria-hidden />
+                        </Link>
+                    </p>
                 </Container>
                 {/* 그림의 짙은 하늘(위 약 22%)이 글자 아래로 들어오도록 끌어올림 */}
                 <div className="relative -mt-[18vw] aspect-[43/24] w-full sm:-mt-[min(17vw,19rem)]">
@@ -357,7 +370,7 @@ export default function HomePage() {
                 <Reveal as="section" className="py-20 sm:py-24">
                     <Container>
                         <div className="flex flex-wrap items-end justify-between gap-4">
-                            <SectionTitle title="처음 겪는 일이라면, 먼저 읽어 보세요" />
+                            <SectionTitle title="보호자가 자주 찾는 안내" />
                             <Link href="/guide" className="inline-flex items-center gap-1 text-[15px] font-semibold text-pine underline-offset-4 hover:underline">
                                 가이드 전체 보기
                                 <ArrowUpRight className="h-4 w-4" strokeWidth={ICON_STROKE} aria-hidden />
@@ -432,7 +445,7 @@ export default function HomePage() {
                             <Fact>연결 전에 총액 견적 먼저 안내</Fact>
                         </ul>
                     </div>
-                    <LeadForm service={live[0].slug} services={serviceOptions} />
+                    <LeadForm service={LEAD_SERVICE_UNSURE} services={serviceOptions} />
                 </Container>
             </Reveal>
         </>

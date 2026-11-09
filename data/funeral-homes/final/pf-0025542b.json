@@ -103,28 +103,28 @@
     {
       "label": "에센셜 리추얼 5kg 이하",
       "amount": "43만 원(정가 46만 원)",
-      "includes": "이벤트가, 오동나무 관, 기본 유골함, 꽃다발, VAT 포함",
+      "includes": "할인가, 오동나무 관, 기본 유골함, 꽃다발, VAT 포함",
       "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
       "seenAt": "2026-11-07"
     },
     {
       "label": "스탠다드 리추얼 5kg 이하",
       "amount": "49만 원(정가 54만 원)",
-      "includes": "이벤트가, 오동나무 관, 친환경 수목함, VAT 포함",
+      "includes": "할인가, 오동나무 관, 친환경 수목함, VAT 포함",
       "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
       "seenAt": "2026-11-07"
     },
     {
       "label": "펫브릿지 리추얼 5kg 이하",
       "amount": "69만 원(정가 75만 원)",
-      "includes": "이벤트가, 오동나무 관과 이불보, 유골함 변경, VAT 포함",
+      "includes": "할인가, 오동나무 관과 이불보, 유골함 변경, VAT 포함",
       "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
       "seenAt": "2026-11-07"
     },
     {
       "label": "소동물 스탠다드 리추얼",
       "amount": "30만 원(정가 32만 원)",
-      "includes": "1kg 미만, 이벤트가, 소동물 전용 오동관, VAT 포함",
+      "includes": "1kg 미만, 할인가, 소동물 전용 오동관, VAT 포함",
       "sourceUrl": "https://www.petbrg.com/pbrg-farewell",
       "seenAt": "2026-11-07"
     }
@@ -138,7 +138,7 @@
   "summary": "펫브릿지는 개별 화장과 단독 추모실로 장례를 진행하며 메모리얼 스톤을 제작합니다. 기본 화장은 5kg 이하 22만 원이고 장례 상담은 연중무휴 24시간 받습니다.",
   "cautions": [
     "홈페이지 주소는 상록구 수인로 1171로 등록과 다름",
-    "패키지 가격은 이벤트가 기준이며 변동될 수 있음",
+    "패키지 가격은 업체가 안내한 할인가 기준이며 바뀔 수 있음",
     "기본 화장 요금의 VAT 포함 여부 미표기"
   ]
 }
