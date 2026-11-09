@@ -75,6 +75,7 @@ export function AppTopBar({
     back = true,
     backHref,
     onBack,
+    backDisabled = false,
     backLabel = "뒤로 가기",
     leading,
     action,
@@ -87,6 +88,8 @@ export function AppTopBar({
     back?: boolean | string;
     backHref?: string;
     onBack?: () => void;
+    /** onBack 버튼을 잠깐 잠급니다 (예: 등록하는 중) */
+    backDisabled?: boolean;
     /** backHref, onBack 버튼의 읽기 이름 */
     backLabel?: string;
     leading?: React.ReactNode;
@@ -99,7 +102,13 @@ export function AppTopBar({
     if (leading) left = leading;
     else if (onBack)
         left = (
-            <button type="button" onClick={onBack} aria-label={backLabel} className={appBackButtonClass("onNight", "ml-0")}>
+            <button
+                type="button"
+                onClick={onBack}
+                disabled={backDisabled}
+                aria-label={backLabel}
+                className={appBackButtonClass("onNight", "ml-0 disabled:pointer-events-none disabled:opacity-40")}
+            >
                 <ChevronLeft className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
             </button>
         );

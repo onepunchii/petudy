@@ -9,6 +9,9 @@ import { PET_PHOTO_BAD_TYPE, PET_PHOTO_MAX_BYTES, PET_PHOTO_TOO_BIG, sniffImageT
 
 export type PreparedPetPhoto = { ok: true; file: File } | { ok: false; error: string };
 
+/** 고른 직후 파일이 지워졌거나 권한이 없어 파일 자체를 읽지 못했을 때 */
+export const PET_PHOTO_READ_ERROR = "사진을 읽지 못했어요. 다시 골라 주세요.";
+
 const isHeic = (file: File) => /hei[cf]/i.test(file.type) || /\.hei[cf]$/i.test(file.name);
 
 /** 서버(uploadPetPhoto)와 같은 기준으로 확인. 문제가 없으면 null */
@@ -41,6 +44,11 @@ export async function preparePetPhoto(file: File): Promise<PreparedPetPhoto> {
     }
 
     // 줄이지 못했으면 원본을 그대로 쓸 수 있는지 봅니다
-    const error = await photoError(file);
-    return error ? { ok: false, error } : { ok: true, file };
+    try {
+        const error = await photoError(file);
+        return error ? { ok: false, error } : { ok: true, file };
+    } catch (error) {
+        console.error("Photo read failed:", error);
+        return { ok: false, error: PET_PHOTO_READ_ERROR };
+    }
 }

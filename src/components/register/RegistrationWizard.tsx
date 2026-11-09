@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { PetActionResult, PetFormData } from "@/actions/pet";
 import { APP_ICON_STROKE, AppBody, AppBottomAction, AppButton, AppProgress, AppTopBar, appBackButtonClass } from "@/components/app/ui";
 import { petDatesError, petNameError, weightError } from "@/lib/pet-rules";
-import { preparePetPhoto } from "@/lib/prepare-pet-photo";
+import { PET_PHOTO_READ_ERROR, preparePetPhoto } from "@/lib/prepare-pet-photo";
 import { cn } from "@/lib/utils";
 
 // Components
@@ -140,12 +140,17 @@ export default function RegistrationWizard({
             }
             setPhotoFile(prepared.file);
             setPhotoPreview(URL.createObjectURL(prepared.file));
+        } catch (error) {
+            // preparePetPhoto 는 문구를 돌려주지만, 그 밖의 뜻밖의 오류에도 안내 없이 끝나지 않게 합니다
+            console.error("Photo select failed:", error);
+            setPhotoError(PET_PHOTO_READ_ERROR);
         } finally {
             setIsPhotoBusy(false);
         }
     };
 
     const handlePhotoRemove = () => {
+        if (isSubmitting) return;
         setPhotoFile(null);
         setPhotoError(null);
         setPhotoPreview(null);
@@ -189,6 +194,8 @@ export default function RegistrationWizard({
     };
 
     const handlePrev = () => {
+        // 등록하는 중에는 이전 단계로 가서 사진·입력을 바꿀 수 없게 합니다 (이미 보낸 값과 화면이 달라짐)
+        if (isSubmitting) return;
         setSubmitError(null);
         if (!isFirstStep) setCurrentStepIndex(prev => prev - 1);
     };
@@ -349,6 +356,7 @@ export default function RegistrationWizard({
                         onRemove={handlePhotoRemove}
                         busy={isPhotoBusy}
                         error={photoError}
+                        disabled={isSubmitting}
                     />
                 );
             case "review":
@@ -386,6 +394,7 @@ export default function RegistrationWizard({
                     ) : undefined
                 }
                 onBack={isFirstStep ? undefined : handlePrev}
+                backDisabled={isSubmitting}
                 backLabel="이전 단계"
                 action={
                     <span className="shrink-0 pr-2 text-[13px] font-semibold tabular-nums text-star-3">
@@ -418,7 +427,7 @@ export default function RegistrationWizard({
                 )}
                 <div className="flex items-center gap-3">
                     {!isFirstStep && (
-                        <AppButton variant="secondary" size="lg" onClick={handlePrev} aria-label="이전 단계" className="w-14 shrink-0 px-0">
+                        <AppButton variant="secondary" size="lg" onClick={handlePrev} disabled={isSubmitting} aria-label="이전 단계" className="w-14 shrink-0 px-0">
                             <ChevronLeft className="h-6 w-6" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         </AppButton>
                     )}

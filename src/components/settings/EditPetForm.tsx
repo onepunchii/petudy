@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
@@ -11,7 +11,7 @@ import BreedSelectDrawer from "@/components/register/steps/BreedSelectDrawer";
 import { updatePet } from "@/actions/pet";
 import { APP_ICON_STROKE, AppBody, AppBottomAction, AppButton, AppSection, appChipClass, appInputClass, appLabelClass, appOptionClass } from "@/components/app/ui";
 import { PET_NAME_MAX, PET_REG_NUMBER_MAX, PET_WEIGHT_MAX, PET_WEIGHT_MIN, petDatesError, petNameError, regNumberError, weightError } from "@/lib/pet-rules";
-import { preparePetPhoto } from "@/lib/prepare-pet-photo";
+import { PET_PHOTO_READ_ERROR, preparePetPhoto } from "@/lib/prepare-pet-photo";
 import { useClientToday } from "@/hooks/useClientToday";
 import { cn } from "@/lib/utils";
 
@@ -24,6 +24,13 @@ function FieldError({ id, children }: { id: string; children: React.ReactNode })
     );
 }
 const invalidRing = "ring-2 ring-danger focus:ring-danger";
+
+/**
+ * 사진 아래 글자 버튼. 손가락으로 누르기 쉽게 높이 44px 영역을 줍니다.
+ * 글자를 키워 줄이 나뉘어도 두 버튼의 영역이 겹치지 않도록, 문장 속이 아니라 줄바꿈되는 가로 줄(flex-wrap)에 둡니다.
+ */
+const photoActionClass =
+    "inline-flex min-h-11 items-center px-1 font-semibold text-ink-2 underline underline-offset-2 hover:text-ink disabled:pointer-events-none disabled:opacity-40";
 
 // Reuse Concern Options
 const CONCERN_OPTIONS = [
@@ -78,6 +85,9 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
     const [photoFile, setPhotoFile] = useState<File | null>(null);
     const [isPhotoBusy, setIsPhotoBusy] = useState(false);
     const [photoError, setPhotoError] = useState<string | null>(null);
+    const photoInputRef = useRef<HTMLInputElement>(null);
+    /** 사진을 줄이는 중이거나 저장하는 중에는 사진을 바꿀 수 없습니다 */
+    const photoLocked = isPhotoBusy || isSubmitting;
     const [submitError, setSubmitError] = useState<string | null>(null);
 
     // 입력 규칙 (등록 화면·서버와 같은 규칙)
@@ -138,6 +148,10 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
             }
             setPhotoFile(prepared.file);
             setPhotoPreview(URL.createObjectURL(prepared.file));
+        } catch (error) {
+            // preparePetPhoto 는 문구를 돌려주지만, 그 밖의 뜻밖의 오류에도 안내 없이 끝나지 않게 합니다
+            console.error("Photo select failed:", error);
+            setPhotoError(PET_PHOTO_READ_ERROR);
         } finally {
             setIsPhotoBusy(false);
         }
@@ -145,9 +159,12 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
 
     /** 새로 고른 사진을 취소하고 원래 사진으로 */
     const handlePhotoRevert = () => {
+        if (photoLocked) return;
         setPhotoFile(null);
         setPhotoError(null);
         setPhotoPreview(initialData.photo || null);
+        // 누른 버튼이 사라지므로 키보드 위치를 사진 고르기로 옮깁니다
+        photoInputRef.current?.focus();
     };
 
     /** 원래 사진이 있고, 새로 골랐거나 지웠을 때만 되돌리기를 보여 줍니다 */
@@ -155,9 +172,11 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
 
     /** 사진 지우기 (저장하면 발바닥 아이콘으로 보임) */
     const handlePhotoRemove = () => {
+        if (photoLocked) return;
         setPhotoFile(null);
         setPhotoError(null);
         setPhotoPreview(null);
+        photoInputRef.current?.focus();
     };
 
     const handleSubmit = async () => {
@@ -206,8 +225,14 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
 
                 {/* 1. Photo Section */}
                 <div className="flex flex-col items-center gap-3">
-                    <label className={cn("group relative", isPhotoBusy ? "cursor-wait" : "cursor-pointer")}>
-                        <span className={cn("relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-paper-2 ring-1 transition-transform group-active:translate-y-px motion-reduce:transition-none", photoError ? "ring-2 ring-danger" : "ring-line")}>
+                    <label
+                        className={cn(
+                            "group relative rounded-full focus-within:outline focus-within:outline-2 focus-within:outline-offset-4 focus-within:outline-pine",
+                            photoLocked ? "cursor-wait" : "cursor-pointer",
+                        )}
+                    >
+                        {/* 빨간 테두리는 사진이 비었을 때만 (못 쓰는 사진을 골라도 지금 사진은 그대로 남으므로) */}
+                        <span className={cn("relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-paper-2 ring-1 transition-transform group-active:translate-y-px motion-reduce:transition-none", photoError && !formData.photo ? "ring-2 ring-danger" : "ring-line")}>
                             {formData.photo ? (
                                 <Image src={formData.photo} alt="프로필 사진" fill sizes="112px" className="object-cover" />
                             ) : (
@@ -223,11 +248,12 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                             <Camera className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         </span>
                         <input
+                            ref={photoInputRef}
                             type="file"
                             accept="image/*"
                             className="sr-only"
                             onChange={handlePhotoSelect}
-                            disabled={isPhotoBusy}
+                            disabled={photoLocked}
                             aria-label="프로필 사진 바꾸기"
                             aria-describedby={photoError ? "pet-photo-error" : undefined}
                         />
@@ -236,25 +262,25 @@ export default function EditPetForm({ petId, initialData }: EditPetFormProps) {
                         {isPhotoBusy ? (
                             <span className="text-[13px] text-ink-2">사진을 준비하고 있어요…</span>
                         ) : (
-                            <span className="text-[13px] text-ink-3">
-                                프로필 사진 변경
+                            <div className="flex flex-wrap items-center justify-center gap-x-1 text-[13px] text-ink-3">
+                                <span>프로필 사진 변경</span>
                                 {canRevertPhoto && (
                                     <>
-                                        {" · "}
-                                        <button type="button" onClick={handlePhotoRevert} className="font-semibold text-ink-2 underline underline-offset-2 hover:text-ink">
+                                        <span aria-hidden>·</span>
+                                        <button type="button" onClick={handlePhotoRevert} disabled={isSubmitting} className={photoActionClass}>
                                             원래 사진으로
                                         </button>
                                     </>
                                 )}
                                 {formData.photo && (
                                     <>
-                                        {" · "}
-                                        <button type="button" onClick={handlePhotoRemove} className="font-semibold text-ink-2 underline underline-offset-2 hover:text-ink">
+                                        <span aria-hidden>·</span>
+                                        <button type="button" onClick={handlePhotoRemove} disabled={isSubmitting} className={photoActionClass}>
                                             사진 지우기
                                         </button>
                                     </>
                                 )}
-                            </span>
+                            </div>
                         )}
                         {photoError && <FieldError id="pet-photo-error">{photoError}</FieldError>}
                     </div>
