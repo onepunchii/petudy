@@ -1,17 +1,17 @@
 # Vercel CLI 로 이 폴더를 배포할 때 올리지 않을 것.
 # 비밀 키(.env*)는 절대 올리지 않습니다. 환경변수가 필요하면 Vercel 프로젝트 설정에 넣습니다.
 .env*
-# 커밋하지 않는 작업 폴더와 큰 원본(빌드에 필요 없음)
-design-src
-docs/design-study
-59.*
-gstack-main
-supanova-design-skill-main
-pet
-.sisyphus
-.gstack
-.claude
-.cursorrules
-*.command
-aihubshell.sh
 *.swp
+# 커밋하지 않는 작업 폴더와 큰 원본. 앞의 / 는 루트에만 적용(src/components/pet 같은 같은 이름 폴더는 올림)
+/design-src
+/docs/design-study
+/59.*
+/gstack-main
+/supanova-design-skill-main
+/pet
+/.sisyphus
+/.gstack
+/.claude
+/.cursorrules
+/*.command
+/aihubshell.sh
