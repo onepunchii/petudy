@@ -13,7 +13,9 @@ export const SITE = {
     // 메타 description(홈·기본값). SEO 값이라 디자인 작업에서 바꾸지 않습니다
     description:
         "반려동물 장례·미용·호텔·펫시터까지. 포온이 보호자님 동네에서 가장 가까운 등록 업체를 확인해 연결합니다. 서울 25개 구·경기 주요 도시 24시간 상담.",
-    url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://foon.app").replace(/\/$/, ""),
+    // 정식 주소(canonical·사이트맵·OG 기준). 운영 도메인은 Vercel poon 프로젝트의 poon.co.kr 입니다(2026-11-11 배포).
+    // foon.app 은 이 사이트가 아닌 주차 페이지라 쓰지 않습니다. 도메인을 옮기면 NEXT_PUBLIC_SITE_URL 로 바꿉니다
+    url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://poon.co.kr").replace(/\/$/, ""),
 
     // TODO: 실제 대표번호로 교체
     phone: "1600-0000",

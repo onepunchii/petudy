@@ -30,7 +30,7 @@
 ## 3. 출시 전 반드시 할 일
 
 - [ ] `src/lib/site/config.ts`: 대표번호, 카카오 채널, 사업자 정보 (현재 임시값)
-- [ ] `NEXT_PUBLIC_SITE_URL` 환경변수 (기본값 `https://foon.app`)
+- [x] 정식 주소: 기본값을 운영 도메인 `https://poon.co.kr` 로 바꿈(2026-11-11). 도메인을 옮기면 `NEXT_PUBLIC_SITE_URL` 환경변수로 바꿉니다. `www.poon.co.kr` 도 그대로 열려 있어, Vercel 도메인 설정에서 한쪽으로 넘기는 것을 권합니다
 - [ ] 상담 DB 테이블 생성: `npx drizzle-kit generate && npx drizzle-kit migrate` (`agency_leads`), 또는 `LEAD_WEBHOOK_URL` 설정
 - [ ] 개인정보처리방침 (`/privacy`) 법무 검토
 - [ ] **법률 검토: 장묘업자가 아닌 자의 장례 알선을 제한하는 법안이 2022년 발의됨(통과 여부 미확인).** 에이전시 수익 모델 확정 전 확인 필요
