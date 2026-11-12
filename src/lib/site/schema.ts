@@ -9,7 +9,7 @@ export const organizationLd = () => ({
     name: SITE.fullName,
     alternateName: [SITE.name, SITE.brand],
     url: SITE.url,
-    telephone: SITE.phone,
+    ...(SITE.hasPhone ? { telephone: SITE.phone } : {}),
     email: SITE.company.email,
     areaServed: [
         { "@type": "AdministrativeArea", name: "서울특별시" },

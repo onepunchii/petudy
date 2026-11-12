@@ -6,6 +6,7 @@ import Link from "next/link";
 import { APP_ICON_STROKE, AppBody, AppButton, AppEmpty, AppHero, AppLinkButton, BRAND_ICON, skeletonClass } from "@/components/app/ui";
 import { PassCard } from "@/components/site/PassCard";
 import { usePets } from "@/hooks/usePets";
+import { SUPABASE_READY } from "@/lib/supabase/ready";
 import { cn } from "@/lib/utils";
 
 /*
@@ -50,7 +51,23 @@ export default function MemorialPage() {
             <AppHero title="추억상자" action={<Constellation />} />
 
             <AppBody>
-                {isLoading ? (
+                {!SUPABASE_READY ? (
+                    // 로그인을 아직 열지 않은 동안: 오류 대신 무엇을 하는 곳인지와 지금 할 수 있는 일 하나
+                    <AppEmpty
+                        icon={BRAND_ICON.memorial}
+                        title={
+                            <span role="heading" aria-level={2}>
+                                추억상자는 준비 중이에요
+                            </span>
+                        }
+                        description="아이 사진과 편지를 모아 두는 곳이에요. 로그인을 열면 바로 쓸 수 있어요."
+                        action={
+                            <AppLinkButton href="/guide/pet-loss-care" variant="secondary">
+                                펫로스 안내 읽기
+                            </AppLinkButton>
+                        }
+                    />
+                ) : isLoading ? (
                     <div className="space-y-4" role="status" aria-live="polite">
                         <div className={cn(skeletonClass, "h-[164px]")} aria-hidden />
                         <div className={cn(skeletonClass, "h-[164px]")} aria-hidden />

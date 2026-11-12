@@ -5,6 +5,14 @@
  *    (전화번호, 사업자 정보, 카카오 채널 등은 광고·표시 관련 법령상 실제 값이어야 합니다)
  */
 
+/**
+ * 대표 전화. 실제로 받는 번호가 생기면 환경 변수 NEXT_PUBLIC_SITE_PHONE 에 넣습니다(예: 1600-1234).
+ * 비어 있으면 화면의 전화 버튼을 모두 숨기고 '상담 남기기'로 대신합니다(없는 번호로 걸리지 않게).
+ */
+const PHONE = (process.env.NEXT_PUBLIC_SITE_PHONE ?? "").trim();
+/** 밤에도 전화를 받으면 NEXT_PUBLIC_SITE_OPEN_24H=true. 그때만 '24시간 상담'이라고 적습니다(번호가 있을 때만) */
+const OPEN_24H = PHONE !== "" && process.env.NEXT_PUBLIC_SITE_OPEN_24H === "true";
+
 export const SITE = {
     name: "포온",
     brand: "po-on",
@@ -12,17 +20,21 @@ export const SITE = {
     tagline: "반려동물의 여행을 함께 준비하고 배웅하는 동네 안내소",
     // 메타 description(홈·기본값). SEO 값이라 디자인 작업에서 바꾸지 않습니다
     description:
-        "반려동물 장례·미용·호텔·펫시터까지. 포온이 보호자님 동네에서 가장 가까운 등록 업체를 확인해 연결합니다. 서울 25개 구·경기 주요 도시 24시간 상담.",
+        `반려동물 장례·미용·호텔·펫시터까지. 포온이 보호자님 동네에서 가장 가까운 등록 업체를 확인해 연결합니다. 서울 25개 구·경기 주요 도시${OPEN_24H ? " 24시간" : ""} 상담.`,
     // 정식 주소(canonical·사이트맵·OG 기준). 운영 도메인은 Vercel poon 프로젝트의 poon.co.kr 입니다(2026-11-11 배포).
     // foon.app 은 이 사이트가 아닌 주차 페이지라 쓰지 않습니다. 도메인을 옮기면 NEXT_PUBLIC_SITE_URL 로 바꿉니다
     url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://poon.co.kr").replace(/\/$/, ""),
 
-    // TODO: 실제 대표번호로 교체
-    phone: "1600-0000",
-    phoneHref: "tel:16000000",
+    phone: PHONE,
+    phoneHref: PHONE ? `tel:${PHONE.replace(/[^0-9+]/g, "")}` : "",
+    /** 실제 대표 번호가 설정됐는지. false 면 전화 버튼 대신 상담 남기기를 보여 줍니다 */
+    hasPhone: PHONE !== "",
+    /** 밤에도 전화를 받는지. true 일 때만 '24시간'이라고 적습니다 */
+    open24h: OPEN_24H,
     // TODO: 카카오톡 채널 URL로 교체 (없으면 빈 문자열 → 버튼 숨김)
     kakaoUrl: "",
-    hours: "연중무휴 24시간 상담",
+    /** 상담 시간 한 줄. 정해지지 않았으면 빈 문자열(화면에서 숨김) */
+    hours: OPEN_24H ? "연중무휴 24시간 상담" : "",
 
     // TODO: 사업자 정보 (전자상거래법상 표시 의무)
     company: {

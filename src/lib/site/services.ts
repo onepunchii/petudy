@@ -7,6 +7,7 @@
  *            대량 생성하면 '얇은 페이지(doorway)'로 판단될 수 있어 일부러 막아둡니다.
  *            제휴처가 확보되면 "live"로 바꾸기만 하면 지역 페이지·사이트맵이 자동 생성됩니다.
  */
+import { SITE } from "./config";
 import { LEAD_SERVICE_UNSURE } from "./lead-options";
 
 export type ServiceSlug = "funeral" | "grooming" | "hotel" | "petsitter" | "pet-taxi" | "training";
@@ -69,12 +70,13 @@ export const SERVICES: Service[] = [
             type: "허가",
             desc: "동물보호법에 따라 지자체 허가를 받은 동물장묘업체만 반려동물을 화장할 수 있습니다. 포온은 허가 업체만 연결합니다.",
         },
-        available24h: true,
+        // 밤에도 전화를 받을 때만 24시간이라고 적습니다(SITE.open24h, src/lib/site/config.ts)
+        available24h: SITE.open24h,
         tagline: "떠나는 날, 가장 가까운 허가 장례식장에서 배웅할 수 있도록",
         intro:
             "아이가 떠난 직후에는 무엇부터 해야 할지 막막합니다. 포온은 보호자님이 계신 동네와 지금 시간대의 이동 여건을 확인해, 오늘 배웅할 수 있는 허가 장례식장과 픽업 방법, 예상 비용을 한 번에 안내합니다.",
         process: [
-            { title: "상담 접수", desc: "계신 동네, 아이 체중, 원하시는 시간만 알려 주세요. 상담은 24시간 받습니다." },
+            { title: "상담 접수", desc: `계신 동네, 아이 체중, 원하시는 시간만 알려 주세요.${SITE.open24h ? " 상담은 24시간 받습니다." : ""}` },
             { title: "가까운 허가 업체 확인", desc: "이동 시간, 당일 예약 가능 여부, 픽업 가능 여부를 함께 비교해 안내합니다." },
             { title: "안치·이동", desc: "직접 모시고 가셔도 되고, 운구(픽업) 차량을 요청하셔도 됩니다." },
             { title: "추모·염습", desc: "추모실에서 마지막 인사를 나누는 동안, 장례지도사가 아이의 몸을 단정하게 정리합니다." },

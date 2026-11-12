@@ -7,6 +7,7 @@
  * - note 는 지역의 지리·생활권 사실만 적고, 확인되지 않은 수치·평판은 쓰지 않습니다.
  * - 좌표(lat/lng)는 구청·시청 인근 대략값입니다. "내 위치로 찾기"의 최근접 지역 계산에 쓰입니다.
  */
+import { distanceKm, estimateDriveMinutes } from "./geo";
 
 export type SidoSlug = "seoul" | "gyeonggi";
 
@@ -656,27 +657,8 @@ export const dongLabel = (d: string) =>
 
 export const allDongs = (r: Region) => r.areas.flatMap((a) => a.dongs);
 
-/** 두 좌표 간 직선거리(km) */
-export function distanceKm(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
-    const R = 6371;
-    const dLat = ((b.lat - a.lat) * Math.PI) / 180;
-    const dLng = ((b.lng - a.lng) * Math.PI) / 180;
-    const s =
-        Math.sin(dLat / 2) ** 2 +
-        Math.cos((a.lat * Math.PI) / 180) * Math.cos((b.lat * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
-    return 2 * R * Math.asin(Math.sqrt(s));
-}
-
-/**
- * 직선거리 → 차량 예상 소요시간 범위(분).
- * 도로 우회계수 1.35, 한산 시 평균 38km/h ~ 혼잡 시 22km/h 기준의 보수적 추정입니다.
- */
-export function estimateDriveMinutes(km: number): [number, number] {
-    const road = km * 1.35;
-    const fast = Math.max(5, Math.round((road / 38) * 60));
-    const slow = Math.max(fast + 5, Math.round((road / 22) * 60));
-    return [fast, slow];
-}
+// 거리 계산은 브라우저 코드에서도 쓰도록 geo.ts 로 옮겼습니다(지역 데이터를 함께 싣지 않게)
+export { distanceKm, estimateDriveMinutes };
 
 export function nearestRegion(pos: { lat: number; lng: number }) {
     let best = REGIONS[0];

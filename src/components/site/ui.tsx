@@ -68,7 +68,8 @@ export function pillClass({
         // 키보드 초점: 밝은 면은 ink, 밤 위는 star 테두리(배경과 대비 3:1 이상)
         "focus-visible:outline-2 focus-visible:outline-offset-2",
         tone === "onNight" ? "focus-visible:outline-star" : "focus-visible:outline-ink",
-        size === "md" ? "h-12 px-6 text-[15px]" : "h-10 px-4 text-[14px]",
+        // 작은 알약도 누르는 높이 44px 이상
+        size === "md" ? "h-12 px-6 text-[15px]" : "h-11 px-4 text-[14px]",
         tone === "onLight" && variant === "solid" && "bg-ink text-white hover:bg-night-3",
         tone === "onLight" && variant === "ghost" && "bg-transparent text-ink ring-1 ring-inset ring-ink/20 hover:bg-paper-2",
         tone === "onNight" && variant === "solid" && accent === "white" && "bg-star text-ink hover:bg-white",
@@ -82,6 +83,8 @@ export function pillClass({
  * - tone="onLight": ink 알약 (밝은 면)
  * - tone="onNight": 흰 알약, accent="lime" 이면 라임 알약 (장례·가이드 페이지는 lime 금지)
  * 이전 값 tone="dark"(=onLight) / "light"(=onNight 흰색) 도 당분간 받습니다.
+ * 대표 번호가 설정되지 않았으면(SITE.hasPhone=false) 그리지 않습니다. 없는 번호로 걸리지 않게.
+ * 그 자리를 비우면 안 되는 곳(상담 카드 하나뿐인 자리)은 fallbackHref 를 주면 같은 모양의 '상담 남기기'가 대신 나옵니다.
  */
 export function CallButton({
     className,
@@ -90,6 +93,7 @@ export function CallButton({
     accent = "white",
     size = "md",
     showNumber = true,
+    fallbackHref,
 }: {
     className?: string;
     label?: string;
@@ -97,8 +101,17 @@ export function CallButton({
     accent?: PillAccent;
     size?: "sm" | "md";
     showNumber?: boolean;
+    /** 번호가 없을 때 대신 보여 줄 '상담 남기기' 링크 주소 (없으면 아무것도 그리지 않음) */
+    fallbackHref?: string;
 }) {
     const t: PillTone = tone === "onNight" || tone === "light" ? "onNight" : "onLight";
+    if (!SITE.hasPhone) {
+        return fallbackHref ? (
+            <PillLink href={fallbackHref} tone={t} variant="solid" accent={accent} size={size} className={className}>
+                상담 남기기
+            </PillLink>
+        ) : null;
+    }
     return (
         <a href={SITE.phoneHref} className={cn(pillClass({ tone: t, variant: "solid", accent, size }), className)}>
             <Phone className="h-4 w-4 shrink-0" strokeWidth={ICON_STROKE} aria-hidden />

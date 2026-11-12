@@ -400,7 +400,7 @@ function BookingContent() {
                 </AppBody>
 
                 <AppBottomAction>
-                    {isLastStep && (
+                    {isLastStep && SITE.hasPhone && (
                         <div className="mb-3 flex items-center justify-between gap-3 rounded-[20px] bg-pass px-4 py-3 ring-1 ring-line/70">
                             <p className="text-[13px] text-ink-2">담당자가 전화로 일정을 확정해요</p>
                             <a

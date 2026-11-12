@@ -16,7 +16,7 @@ export function DetailSidebar({ toc }: { toc: TocItem[] }) {
                     stubPosition="bottom"
                     mainClassName="p-6"
                     stubClassName="p-5"
-                    stub={<CallButton tone="onNight" size="sm" className="w-full" />}
+                    stub={<CallButton tone="onNight" size="sm" className="w-full" fallbackHref="#consult" />}
                 >
                     <p className="text-[16.5px] font-bold leading-snug text-star">어디로 모실지 고민이라면</p>
                     <p className="mt-2 text-[14px] leading-[1.7] text-star-2">계신 동네를 알려 주시면 가까운 허가 업체와 비용을 먼저 확인해 드립니다.</p>

@@ -12,6 +12,7 @@ import { PassCard } from "@/components/site/PassCard";
 import { ConsultSection } from "@/components/site/sections";
 import { CallButton, Container, FaqList, ICON_STROKE, JsonLd } from "@/components/site/ui";
 import { PageHero } from "../../_components/PageHero";
+import { ShareButton } from "@/components/site/ShareButton";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => GUIDES.map((g) => ({ slug: g.slug }));
@@ -159,6 +160,8 @@ export default async function GuidePage({ params }: Props) {
                 title={g.title}
                 // 표지 옆 제목 칸(lg 약 490~550px)에서 긴 가이드 제목도 2줄에 들도록 xl 부터 40px
                 titleClassName="leading-[1.3] sm:text-[36px] xl:text-[40px]"
+                // 가족·친구에게 글을 보내는 버튼(휴대폰 공유창 또는 링크 복사)
+                actions={<ShareButton tone="onNight" size="sm" title={g.title} text={g.description} path={path} />}
                 aside={
                     <figure className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-night-2 ring-1 ring-white/10 lg:ml-auto lg:max-w-[480px]">
                         <Image src={cover.src} alt={cover.alt} fill preload sizes="(min-width: 1024px) 480px, 100vw" className="object-cover" />
@@ -296,7 +299,7 @@ export default async function GuidePage({ params }: Props) {
                                 stubPosition="bottom"
                                 mainClassName="p-6"
                                 stubClassName="p-5"
-                                stub={<CallButton tone="onNight" size="sm" className="w-full" />}
+                                stub={<CallButton tone="onNight" size="sm" className="w-full" fallbackHref={`/contact?service=${service.slug}`} />}
                             >
                                 <p className="text-[17px] font-bold leading-snug text-star">
                                     {service.available24h ? "지금 도움이 필요하신가요?" : "우리 동네에서 찾고 계신가요?"}

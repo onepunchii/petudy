@@ -86,15 +86,22 @@ export default function HomePage() {
                         <br className="hidden sm:block" /> 우리 동네 정거장 포온이 길을 찾아 드려요.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-3">
+                        {/* 주 버튼은 하나: 대표 번호가 있으면 전화, 없으면 '우리 동네 찾기'가 라임 주 버튼이 됩니다 */}
                         <CallButton tone="onNight" accent="lime" />
-                        <PillLink href={`#${FIND}`} tone="onNight" className="bg-night/45 backdrop-blur-sm">
+                        <PillLink
+                            href={`#${FIND}`}
+                            tone="onNight"
+                            variant={SITE.hasPhone ? "ghost" : "solid"}
+                            accent="lime"
+                            className={SITE.hasPhone ? "bg-night/45 backdrop-blur-sm" : undefined}
+                        >
                             우리 동네 찾기
                         </PillLink>
                     </div>
                     {/* 급한 보호자의 장례 입구. 스크롤 없이 보이는 같은 자리, 그림·라임 없이 한 줄(하단 탭을 바꾸기 전에 먼저 둡니다) */}
                     <p className="mt-4">
                         <Link
-                            href={`/${funeral.slug}`}
+                            href={`/${funeral.slug}#nearest`}
                             className="inline-flex min-h-11 items-center gap-2 text-[15px] font-medium text-star underline-offset-4 hover:underline"
                         >
                             <Moon className="h-4 w-4 shrink-0" strokeWidth={ICON_STROKE} aria-hidden />
@@ -430,15 +437,19 @@ export default function HomePage() {
                         <SectionTitle
                             title={
                                 <>
-                                    전화가 어렵다면,
-                                    <br />
+                                    {SITE.hasPhone && (
+                                        <>
+                                            전화가 어렵다면,
+                                            <br />
+                                        </>
+                                    )}
                                     상담을 남겨 주세요
                                 </>
                             }
                             lead="계신 동네와 상황을 알려 주시면 가까운 업체와 예상 비용을 먼저 확인하고 연락드립니다."
                         />
                         <CallButton className="mt-8" />
-                        <p className="mt-3 text-[14px] text-ink-3">{SITE.hours}</p>
+                        {SITE.hours && <p className="mt-3 text-[14px] text-ink-3">{SITE.hours}</p>}
                         <ul className="mt-8 grid gap-2.5 border-t border-line pt-6 text-[15px] font-medium text-ink">
                             <Fact>상담·연결 비용 없음</Fact>
                             <Fact>허가·등록 업체만 연결</Fact>

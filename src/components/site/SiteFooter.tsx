@@ -23,11 +23,13 @@ export function SiteFooter() {
                     <div>
                         <Logo tone="onLight" />
                         <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-ink-2">{SITE.tagline}</p>
-                        <a href={SITE.phoneHref} className="mt-6 inline-flex items-center gap-2 text-[26px] font-bold tabular-nums text-ink hover:text-pine">
-                            <Phone className="h-5 w-5" strokeWidth={STROKE} aria-hidden />
-                            {SITE.phone}
-                        </a>
-                        <p className="mt-1 text-[13px] text-ink-3">{SITE.hours}</p>
+                        {SITE.hasPhone && (
+                            <a href={SITE.phoneHref} className="mt-6 inline-flex items-center gap-2 text-[26px] font-bold tabular-nums text-ink hover:text-pine">
+                                <Phone className="h-5 w-5" strokeWidth={STROKE} aria-hidden />
+                                {SITE.phone}
+                            </a>
+                        )}
+                        {SITE.hours && <p className="mt-1 text-[13px] text-ink-3">{SITE.hours}</p>}
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
                         <div>
@@ -119,6 +121,7 @@ export function MobileCallBar() {
             style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}
         >
             <div className="pointer-events-auto mx-auto flex max-w-md gap-1.5 rounded-full bg-night/90 p-1.5 shadow-[0_12px_32px_-8px_rgb(11_16_32/0.5)] ring-1 ring-white/10 backdrop-blur-md">
+                {SITE.hasPhone && (
                 <a
                     href={SITE.phoneHref}
                     className="flex h-12 flex-[1.45] items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-star px-3 text-[14.5px] font-semibold text-ink active:translate-y-px"
@@ -126,6 +129,7 @@ export function MobileCallBar() {
                     <Phone className="h-4 w-4 shrink-0" strokeWidth={STROKE} aria-hidden />
                     전화 상담 <span className="tabular-nums max-[359px]:hidden">{SITE.phone}</span>
                 </a>
+                )}
                 <Link
                     href="/contact"
                     className="flex h-12 flex-1 items-center justify-center whitespace-nowrap rounded-full px-3 text-[14.5px] font-semibold text-star ring-1 ring-inset ring-white/20 active:translate-y-px"

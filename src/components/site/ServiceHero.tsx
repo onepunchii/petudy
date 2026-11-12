@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
+import { SITE } from "@/lib/site/config";
 import { REGIONS } from "@/lib/site/regions";
 import type { Service, ServiceSlug } from "@/lib/site/services";
 import { cn } from "@/lib/utils";
@@ -118,8 +119,9 @@ export function ServiceHero({
                             {subtitle && <p className="mt-5 max-w-[34ch] text-pretty text-[16px] leading-[1.7] text-star-2 sm:text-[17px]">{subtitle}</p>}
                             <div className="mt-8 flex flex-wrap gap-3">
                                 <CallButton tone="onNight" accent={isFuneral ? "white" : "lime"} />
+                                {/* 대표 번호가 없으면 전화 버튼이 빠지고 두 번째 버튼이 주 버튼이 됩니다 */}
                                 {second && (
-                                    <PillLink href={second.href} tone="onNight" variant="ghost">
+                                    <PillLink href={second.href} tone="onNight" variant={SITE.hasPhone ? "ghost" : "solid"} accent={isFuneral ? "white" : "lime"}>
                                         {second.label}
                                     </PillLink>
                                 )}

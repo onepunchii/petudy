@@ -7,7 +7,7 @@ import { CallButton, Container } from "@/components/site/ui";
 import { PageHero } from "../_components/PageHero";
 
 export const metadata: Metadata = {
-    title: "상담 접수 · 24시간 반려동물 서비스 상담",
+    title: `상담 접수 · ${SITE.open24h ? "24시간 " : ""}반려동물 서비스 상담`,
     description: "반려동물 장례, 애견미용 상담을 남겨주세요. 계신 동네 기준으로 가까운 허가·등록 업체와 예상 비용을 확인해 연락드립니다.",
     alternates: { canonical: "/contact" },
 };
@@ -33,7 +33,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
                 crumbs={crumbs}
                 title={
                     <>
-                        24시간 반려동물
+                        {SITE.open24h ? "24시간 반려동물" : "반려동물"}
                         <br />
                         서비스 상담
                     </>
@@ -69,10 +69,12 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
                         </ol>
 
                         <dl className="mt-12 grid gap-5 border-t border-line pt-8 text-[15px] sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                            <div>
-                                <dt className="text-[13px] font-semibold text-ink-3">상담 시간</dt>
-                                <dd className="mt-1 font-semibold text-ink">{SITE.hours}</dd>
-                            </div>
+                            {SITE.hours && (
+                                <div>
+                                    <dt className="text-[13px] font-semibold text-ink-3">상담 시간</dt>
+                                    <dd className="mt-1 font-semibold text-ink">{SITE.hours}</dd>
+                                </div>
+                            )}
                             <div>
                                 <dt className="text-[13px] font-semibold text-ink-3">이메일</dt>
                                 <dd className="mt-1">

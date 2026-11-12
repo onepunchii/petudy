@@ -9,6 +9,7 @@ import { SIDO, REGIONS, allDongs, distanceKm, dongLabel, estimateDriveMinutes, g
 import { nearestPartners } from "./partners";
 import { FACILITY_AREAS, type FacilityArea } from "./facilities";
 import type { Faq, Service } from "./services";
+import { SITE } from "./config";
 
 const hash = (s: string) => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
 const pick = <T,>(arr: T[], seed: string) => arr[hash(seed) % arr.length];
@@ -123,11 +124,11 @@ export function buildLocal(service: Service, r: Region): LocalContent {
               };
 
         return {
-            title: `${r.name} 반려동물 장례식장 · 강아지·고양이 장례 24시간 안내`,
+            title: `${r.name} 반려동물 장례식장 · 강아지·고양이 장례${SITE.open24h ? " 24시간" : ""} 안내`,
             description: `${r.name} ${join(dongs.slice(0, 5).map(dongLabel), "·")} 등 ${r.short} 전 지역 강아지·고양이 장례 상담. 가장 가까운 허가 장례식장 방면(${facilities
                 .slice(0, 2)
                 .map((f) => f.area.name)
-                .join("·")}), 픽업, 체중별 예상 비용을 24시간 안내합니다.`,
+                .join("·")}), 픽업, 체중별 예상 비용을${SITE.open24h ? " 24시간" : ""} 안내합니다.`,
             h1: [`${r.name} 반려동물 장례식장,`, pick(["가장 가까운 곳에서 마지막 인사를", "우리 동네에서 가까운 곳으로", "지금 바로 갈 수 있는 곳으로"], seed)],
             // h1·lead 와 같은 variant 번호를 쓰되, 같은 페이지에서 표현이 겹치지 않는 부제를 짝지었습니다
             // (h1 둘째 줄에 "가까운 곳"이 들어가는 0·1번에는 부제에서 "가까운"을 다시 쓰지 않음)
@@ -167,7 +168,7 @@ export function buildLocal(service: Service, r: Region): LocalContent {
                 },
                 {
                     q: `밤이나 새벽에도 ${r.name}에서 장례를 진행할 수 있나요?`,
-                    a: `상담은 24시간 받습니다. 장례 진행 시간은 업체마다 달라, 밤에는 아이를 안전하게 안치하는 방법을 먼저 안내하고 가장 빨리 진행할 수 있는 시간을 잡아 드립니다.`,
+                    a: `${SITE.open24h ? "상담은 24시간 받습니다. " : ""}장례 진행 시간은 업체마다 달라, 밤에는 아이를 안전하게 안치하는 방법을 먼저 안내하고 가장 빨리 진행할 수 있는 시간을 잡아 드립니다.`,
                 },
                 {
                     q: `${r.name}에서 동물등록 말소 신고는 어디서 하나요?`,

@@ -3,6 +3,9 @@ import Image from "next/image";
 import { appButtonClass } from "@/components/app/tokens";
 import { Logo } from "@/components/site/SiteHeader";
 import { safeNextPath } from "@/lib/safe-next";
+import Link from "next/link";
+import { SITE } from "@/lib/site/config";
+import { SUPABASE_READY } from "@/lib/supabase/ready";
 
 interface LoginPageProps {
     searchParams: Promise<{ next?: string | string[] }>;
@@ -44,16 +47,31 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                         />
                     </div>
                     <h1 className="mt-6 text-[26px] font-extrabold leading-[1.28] tracking-[-0.03em] text-star">포온</h1>
-                    <p className="mt-2 text-[15px] leading-[1.65] text-star-2">
-                        반려동물과 함께하는
-                        <br />
-                        특별한 라이프스타일
-                    </p>
+                    <p className="mt-2 max-w-[22ch] text-[15px] leading-[1.65] text-star-2">{SITE.tagline}</p>
                 </div>
             </header>
 
             {/* 달빛 본문: 로그인 버튼 */}
             <div className="flex flex-1 flex-col px-5 pt-8" style={{ paddingBottom: "max(24px, env(safe-area-inset-bottom))" }}>
+                {!SUPABASE_READY ? (
+                    // 로그인 연결 값이 없는 동안: 눌러도 안 되는 버튼 대신 안내와 지금 쓸 수 있는 곳
+                    <div className="mx-auto w-full max-w-sm">
+                        <div role="status" className="rounded-[20px] bg-pass px-5 py-6 text-center ring-1 ring-inset ring-line">
+                            <h2 className="text-[17px] font-bold text-ink">로그인은 준비 중이에요</h2>
+                            <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
+                                아이 등록과 추억상자는 로그인을 열면 쓸 수 있어요. 장례식장 찾기와 가이드는 로그인 없이 볼 수 있어요.
+                            </p>
+                        </div>
+                        <div className="mt-5 grid gap-3">
+                            <Link href="/funeral-homes" className={appButtonClass({ variant: "primary", size: "lg", block: true })}>
+                                장례식장 찾기
+                            </Link>
+                            <Link href="/" className={appButtonClass({ variant: "secondary", size: "lg", block: true })}>
+                                홈으로
+                            </Link>
+                        </div>
+                    </div>
+                ) : (
                 <div className="mx-auto w-full max-w-sm space-y-3">
                     {reason && (
                         <p role="status" className="mb-5 rounded-2xl bg-pass px-4 py-3.5 text-center text-[15px] font-semibold leading-snug text-ink ring-1 ring-inset ring-line">
@@ -92,11 +110,14 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                         </button>
                     </form>
                 </div>
+                )}
 
+                {SUPABASE_READY && (
                 <p className="mt-auto pt-10 text-center text-[13px] leading-relaxed text-ink-3">
                     계속 진행하시면 포온의 <span className="underline decoration-ink-3/50 underline-offset-2">이용약관</span> 및 <br />
                     <span className="underline decoration-ink-3/50 underline-offset-2">개인정보처리방침</span>에 동의하는 것으로 간주됩니다.
                 </p>
+                )}
             </div>
         </div>
     );

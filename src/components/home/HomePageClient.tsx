@@ -138,13 +138,15 @@ export default function HomePageClient() {
 							label="아이가 떠난 직후 할 일"
 							detail="몸 정리, 안치, 장례 방법 고르기"
 						/>
-						<AppListItem
-							href={SITE.phoneHref}
-							external
-							icon={<Phone className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />}
-							label="전화 상담"
-							detail={<span className="tabular-nums">24시간 {SITE.phone}</span>}
-						/>
+						{SITE.hasPhone && (
+							<AppListItem
+								href={SITE.phoneHref}
+								external
+								icon={<Phone className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />}
+								label="전화 상담"
+								detail={<span className="tabular-nums">{SITE.open24h ? "24시간 " : ""}{SITE.phone}</span>}
+							/>
+						)}
 					</AppList>
 				</AppSection>
 

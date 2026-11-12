@@ -216,13 +216,13 @@ export function ScenarioSection({ service, scenarios, title, featured = 0 }: { s
                     stub={
                         <>
                             {isFuneral ? (
-                                <CallButton size="sm" className="self-start" />
+                                <CallButton size="sm" className="self-start" fallbackHref="#consult" />
                             ) : (
                                 <PillLink href="#consult" variant="solid" size="sm" className="self-start">
                                     상담 남기기
                                 </PillLink>
                             )}
-                            <span className="text-[13.5px] leading-relaxed text-ink-3">{isFuneral ? SITE.hours : "상담과 연결은 무료, 예약까지 도와드립니다"}</span>
+                            <span className="text-[13.5px] leading-relaxed text-ink-3">{isFuneral ? SITE.hours || "남겨 주시면 확인하는 대로 연락드려요" : "상담과 연결은 무료, 예약까지 도와드립니다"}</span>
                         </>
                     }
                 >
@@ -396,15 +396,17 @@ export function ConsultSection({
         <Reveal as="section" id="consult" className="scroll-mt-20 border-t border-line py-16 sm:pt-24 sm:pb-8">
             <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
                 <div className="lg:pt-2">
-                    <h2 className="whitespace-pre-line text-[26px] font-bold leading-[1.3] text-ink sm:text-[32px]">{title ?? "전화가 어렵다면,\n상담을 남겨주세요"}</h2>
+                    <h2 className="whitespace-pre-line text-[26px] font-bold leading-[1.3] text-ink sm:text-[32px]">{title ?? (SITE.hasPhone ? "전화가 어렵다면,\n상담을 남겨주세요" : "상담을 남겨주세요")}</h2>
                     <p className="mt-4 max-w-[46ch] text-[15.5px] leading-relaxed text-ink-2">
                         {lead ??
                             `${region ? `${region.name} ` : ""}계신 동네와 상황을 알려주시면 가까운 ${service ? service.short : "서비스"} 업체와 예상 비용을 먼저 확인해 연락드립니다.`}
                     </p>
-                    <div className="mt-8">
-                        <CallButton />
-                        <p className="mt-3 text-[13.5px] text-ink-3">{SITE.hours}</p>
-                    </div>
+                    {SITE.hasPhone && (
+                        <div className="mt-8">
+                            <CallButton />
+                            {SITE.hours && <p className="mt-3 text-[13.5px] text-ink-3">{SITE.hours}</p>}
+                        </div>
+                    )}
                     <ul className="mt-8 grid gap-2.5 border-t border-line pt-6">
                         {PROMISES.map((t) => (
                             <li key={t} className="flex items-center gap-2.5 text-[15px] text-ink-2">

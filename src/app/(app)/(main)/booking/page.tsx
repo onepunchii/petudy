@@ -17,14 +17,16 @@ export default function MyBookingsPage() {
                 <AppEmpty
                     icon={<MessageCircle className="h-7 w-7" strokeWidth={APP_ICON_STROKE} aria-hidden />}
                     title="아직 진행 중인 상담이 없어요"
-                    description={SITE.hours}
+                    description={SITE.hours || "상담을 남기면 담당자가 확인하는 대로 연락드려요."}
                 />
 
                 <div className="mt-4 space-y-3">
-                    <a href={SITE.phoneHref} className={appButtonClass({ variant: "accent", size: "lg", block: true, className: "tabular-nums" })}>
-                        <Phone className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
-                        전화 상담 {SITE.phone}
-                    </a>
+                    {SITE.hasPhone && (
+                        <a href={SITE.phoneHref} className={appButtonClass({ variant: "accent", size: "lg", block: true, className: "tabular-nums" })}>
+                            <Phone className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            전화 상담 {SITE.phone}
+                        </a>
+                    )}
                     <AppLinkButton href="/booking/new" variant="secondary" size="lg" block>
                         <Plus className="h-[18px] w-[18px]" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         새 상담 시작하기

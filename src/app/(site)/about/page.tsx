@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, X } from "lucide-react";
+import { SITE } from "@/lib/site/config";
 import { REGIONS } from "@/lib/site/regions";
 import { SERVICES } from "@/lib/site/services";
 import { breadcrumbLd, organizationLd } from "@/lib/site/schema";
@@ -25,7 +26,7 @@ const STOPS = [
     },
     {
         when: "떠나는 날",
-        desc: "가장 가까운 허가 장례식장에서 차분하게 배웅할 수 있도록 길을 찾습니다. 상담은 24시간 받습니다.",
+        desc: `가장 가까운 허가 장례식장에서 차분하게 배웅할 수 있도록 길을 찾습니다.${SITE.open24h ? " 상담은 24시간 받습니다." : ""}`,
         link: { href: "/funeral", label: "반려동물 장례 안내" },
     },
     {

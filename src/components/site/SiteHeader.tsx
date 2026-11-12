@@ -107,13 +107,23 @@ export function SiteHeader() {
                         <User className="h-4 w-4" strokeWidth={STROKE} aria-hidden />
                         <span className="lg:max-xl:sr-only">내 정보</span>
                     </Link>
-                    <a
-                        href={SITE.phoneHref}
-                        className="hidden h-10 items-center gap-2 whitespace-nowrap rounded-full bg-star px-4 text-[14px] font-semibold text-ink transition-colors hover:bg-white active:translate-y-px sm:inline-flex"
-                    >
-                        <Phone className="h-4 w-4" strokeWidth={STROKE} aria-hidden />
-                        전화 상담 <span className="tabular-nums">{SITE.phone}</span>
-                    </a>
+                    {/* 대표 번호가 없으면 같은 자리에 '상담 남기기' */}
+                    {SITE.hasPhone ? (
+                        <a
+                            href={SITE.phoneHref}
+                            className="hidden h-10 items-center gap-2 whitespace-nowrap rounded-full bg-star px-4 text-[14px] font-semibold text-ink transition-colors hover:bg-white active:translate-y-px sm:inline-flex"
+                        >
+                            <Phone className="h-4 w-4" strokeWidth={STROKE} aria-hidden />
+                            전화 상담 <span className="tabular-nums">{SITE.phone}</span>
+                        </a>
+                    ) : (
+                        <Link
+                            href="/contact"
+                            className="hidden h-10 items-center whitespace-nowrap rounded-full bg-star px-4 text-[14px] font-semibold text-ink transition-colors hover:bg-white active:translate-y-px sm:inline-flex"
+                        >
+                            상담 남기기
+                        </Link>
+                    )}
                     <button
                         type="button"
                         onClick={() => setOpen((v) => !v)}

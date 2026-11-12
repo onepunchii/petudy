@@ -68,14 +68,18 @@ export default function CompanyIntroSidebar() {
                             <span>{SITE.company.email}</span>
                             <Mail className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
                         </a>
-                        <a href={SITE.phoneHref} className="flex items-center gap-2 transition-colors hover:text-star-2">
-                            <span className="tabular-nums">{SITE.phone}</span>
-                            <Phone className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
-                        </a>
-                        <div className="flex items-center gap-2">
-                            <span>{SITE.hours}</span>
-                            <Clock className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
-                        </div>
+                        {SITE.hasPhone && (
+                            <a href={SITE.phoneHref} className="flex items-center gap-2 transition-colors hover:text-star-2">
+                                <span className="tabular-nums">{SITE.phone}</span>
+                                <Phone className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            </a>
+                        )}
+                        {SITE.hours && (
+                            <div className="flex items-center gap-2">
+                                <span>{SITE.hours}</span>
+                                <Clock className="h-4 w-4" strokeWidth={APP_ICON_STROKE} aria-hidden />
+                            </div>
+                        )}
                     </div>
                 </div>
 

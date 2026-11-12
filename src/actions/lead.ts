@@ -4,6 +4,7 @@ import { z } from "zod";
 import { db } from "@/lib/db";
 import { agencyLeads } from "@/lib/db/schema";
 import { LEAD_SERVICE_UNSURE, LEAD_SERVICE_UNSURE_LABEL } from "@/lib/site/lead-options";
+import { SITE } from "@/lib/site/config";
 import { getService } from "@/lib/site/services";
 
 const LeadSchema = z.object({
@@ -64,7 +65,12 @@ export async function submitLead(_prev: LeadState, formData: FormData): Promise<
     }
 
     if (!saved) {
-        return { ok: false, message: "접수 중 문제가 생겼어요. 번거로우시겠지만 전화로 연락 부탁드립니다." };
+        return {
+            ok: false,
+            message: SITE.hasPhone
+                ? "접수 중 문제가 생겼어요. 번거로우시겠지만 전화로 연락 부탁드립니다."
+                : "접수 중 문제가 생겼어요. 잠시 후 다시 남겨 주세요. 장례가 급하시면 '장례식장 찾기'에서 업체에 바로 전화하실 수 있어요.",
+        };
     }
     return { ok: true, message: "상담 접수가 완료됐어요. 담당자가 순서대로 연락드립니다." };
 }

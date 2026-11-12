@@ -15,6 +15,7 @@ import { ListingHeroActions } from "@/components/site/funeral-homes/listing/Hero
 import { collectionPageLd, listingBreadcrumbLd } from "@/components/site/funeral-homes/listing/ld";
 import { SidoIndex } from "@/components/site/funeral-homes/listing/SidoIndex";
 import { SourceNote } from "@/components/site/funeral-homes/listing/SourceNote";
+import { NearestFinderSection } from "@/components/site/funeral-homes/NearestFinderSection";
 
 const PATH = funeralHomesPath();
 const H1 = "전국 반려동물 장례식장 찾기";
@@ -57,9 +58,12 @@ export default function FuneralHomesHubPage() {
                 meta={`공식 허가 목록 · 확인일 ${CHECKED_DOT}`}
                 title={H1}
                 subtitle={`공식 허가 목록 ${total}곳을 시·도별로 정리했습니다`}
-                actions={<ListingHeroActions findHref="#sido" />}
+                actions={<ListingHeroActions findHref="#nearest" findLabel="가까운 장례식장 찾기" />}
                 image={{ src: ogImagePath(PATH, "square"), alt: imageAlt() }}
             />
+
+            {/* 위치·동네로 가까운 허가 장례식장 3곳과 업체 전화 */}
+            <NearestFinderSection className="pt-14 sm:pt-16" />
 
             {/* 시·도 바로가기 (표처럼 구분선 목록) */}
             <section className="py-16 sm:py-20">

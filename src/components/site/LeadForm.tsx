@@ -49,12 +49,14 @@ export function LeadForm({
             <div role="status" className={cn(card, "p-8 text-center", className)}>
                 <CheckCircle2 className="mx-auto h-10 w-10 text-pine" strokeWidth={ICON_STROKE} aria-hidden />
                 <p className="mt-4 text-[18px] font-bold text-ink">{state.message}</p>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">
-                    급하시면 바로 전화 주세요.{" "}
-                    <a href={SITE.phoneHref} className="font-semibold text-ink underline underline-offset-4">
-                        전화 상담 <span className="tabular-nums">{SITE.phone}</span>
-                    </a>
-                </p>
+                {SITE.hasPhone && (
+                    <p className="mt-2 text-[14.5px] leading-relaxed text-ink-2">
+                        급하시면 바로 전화 주세요.{" "}
+                        <a href={SITE.phoneHref} className="font-semibold text-ink underline underline-offset-4">
+                            전화 상담 <span className="tabular-nums">{SITE.phone}</span>
+                        </a>
+                    </p>
+                )}
             </div>
         );
     }
@@ -178,7 +180,7 @@ export function LeadForm({
                 상담 남기기
             </button>
             <p className={cn("text-center text-[12.5px] leading-relaxed text-ink-3", wide)}>
-                확인하는 대로 담당자가 연락드려요. 급하시면 전화가 가장 빠릅니다.
+                {SITE.hasPhone ? "확인하는 대로 담당자가 연락드려요. 급하시면 전화가 가장 빠릅니다." : "확인하는 대로 담당자가 연락드려요."}
             </p>
         </form>
     );

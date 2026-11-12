@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SITE } from "@/lib/site/config";
 import { ArrowRight, Route, TrainFront, Trees } from "lucide-react";
 import { REGIONS, SIDO, dongLabel, getRegion } from "@/lib/site/regions";
 import { getService, liveServices } from "@/lib/site/services";
@@ -278,7 +279,7 @@ export default async function LocalServicePage({ params }: Props) {
                 }
                 subtitle={noDash(c.subtitle)}
                 lead={noDash(c.lead)}
-                chips={[`${r.name} 전 지역`, ...(isFuneral ? ["24시간 상담", "허가 업체만", "개별 화장·참관", "픽업 상담"] : ["등록 업체만", "1:1 미용 우선", "예약까지 연결"])]}
+                chips={[`${r.name} 전 지역`, ...(isFuneral ? [...(SITE.open24h ? ["24시간 상담"] : []), "허가 업체만", "개별 화장·참관", "픽업 상담"] : ["등록 업체만", "1:1 미용 우선", "예약까지 연결"])]}
                 image={null}
                 secondary={{ href: "#consult", label: "상담 남기기" }}
                 // 별자리 지도는 데스크톱에서만 히어로에(모바일은 생활권 섹션에 세로형). 칸째 숨겨 모바일 빈 여백을 없앱니다

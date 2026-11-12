@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { SITE } from "@/lib/site/config";
 import { ArrowRight } from "lucide-react";
 import { NATIONAL_FUNERAL_COUNT, GYEONGGI_FUNERAL_COUNT } from "@/lib/site/facilities";
 import { SIDO } from "@/lib/site/regions";
@@ -13,6 +14,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { PassCard } from "@/components/site/PassCard";
 import { Reveal } from "@/components/site/Reveal";
 import { ServiceHero } from "@/components/site/ServiceHero";
+import { NearestFinderSection } from "@/components/site/funeral-homes/NearestFinderSection";
 import {
     ConsultSection,
     GuideCards,
@@ -37,13 +39,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!s) return {};
     const title =
         s.slug === "funeral"
-            ? "반려동물 장례식장 · 강아지·고양이 장례 24시간 상담 (서울·경기)"
+            ? `반려동물 장례식장 · 강아지·고양이 장례${SITE.open24h ? " 24시간" : ""} 상담 (서울·경기)`
             : s.slug === "grooming"
               ? "애견미용 · 강아지·고양이 미용실 동네별 연결 (서울·경기)"
               : `${s.name} · 오픈 준비중`;
     const description =
         s.slug === "funeral"
-            ? "서울·경기 반려동물 장례식장 24시간 상담. 서울에는 고정식 화장 시설이 없어 출발 동네 기준으로 가까운 경기·인천 허가 장례식장, 픽업, 체중별 비용을 먼저 안내합니다."
+            ? `서울·경기 반려동물 장례식장${SITE.open24h ? " 24시간" : ""} 상담. 서울에는 고정식 화장 시설이 없어 출발 동네 기준으로 가까운 경기·인천 허가 장례식장, 픽업, 체중별 비용을 먼저 안내합니다.`
             : s.slug === "grooming"
               ? "서울·경기 동네별 애견미용 연결. 산책 동선에서 가까운 등록 미용업체 중 1:1 미용, 예민·노령견, 고양이 미용이 가능한 곳을 골라 예약까지 연결합니다."
               : s.intro;
@@ -157,7 +159,12 @@ export default async function ServiceHubPage({ params }: Props) {
                         ? ["허가 장례식장만", "개별 화장·전 과정 참관", "당일 진행", "픽업(운구) 상담", "상담·연결 무료"]
                         : ["등록 미용업체만", "1:1 미용 우선", "예민·노령견 대응", "고양이 미용", "상담·연결 무료"]
                 }
+                // 장례: 급한 보호자가 바로 아래 '가까운 허가 장례식장 찾기'로 내려가도록
+                secondary={isFuneral ? { href: "#nearest", label: "가까운 장례식장 찾기" } : undefined}
             />
+
+            {/* 장례: 위치·동네로 가까운 허가 장례식장 3곳과 업체 전화 */}
+            {isFuneral && <NearestFinderSection className="pt-14 sm:pt-16" />}
 
             {/* 미용: 상황 → 가격 / 장례: 비용 → 허가 업체 표 */}
             {!isFuneral && <ScenarioSection service={service} scenarios={scenarios} title="지금 상황에 맞춰 안내합니다" featured={1} />}

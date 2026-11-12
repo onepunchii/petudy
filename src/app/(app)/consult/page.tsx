@@ -55,8 +55,9 @@ export default function ConsultPage() {
             <AppTopBar title="포온 AI 도우미" backHref="/" className="shrink-0">
                 {/* 긴급 연락 안내 (채팅 영역 밖이라 스크롤해도 항상 보임). 장례 안내라 라임 없이 흰 글자로 */}
                 <div className="flex flex-wrap items-center justify-between gap-x-3 border-t border-white/10 px-5 py-1 text-[13px]">
-                    <span className="py-1.5 text-star-2">급한 장례는 전화가 가장 빠릅니다</span>
+                    <span className="py-1.5 text-star-2">{SITE.hasPhone ? "급한 장례는 전화가 가장 빠릅니다" : "급한 장례는 장례식장에 바로 전화하세요"}</span>
                     <div className="flex items-center gap-3">
+                        {SITE.hasPhone ? (
                         <a
                             href={SITE.phoneHref}
                             className="inline-flex min-h-10 items-center gap-1 font-bold tabular-nums text-star transition-opacity hover:opacity-80"
@@ -65,6 +66,11 @@ export default function ConsultPage() {
                             <Phone className="h-3.5 w-3.5" strokeWidth={APP_ICON_STROKE} aria-hidden />
                             {SITE.phone}
                         </a>
+                        ) : (
+                            <Link href="/funeral-homes" className="inline-flex min-h-10 items-center font-bold text-star transition-opacity hover:opacity-80">
+                                장례식장 찾기
+                            </Link>
+                        )}
                         <span className="h-3 w-px bg-white/15" aria-hidden="true" />
                         <Link href="/contact" className="inline-flex min-h-10 items-center font-semibold text-star-2 transition-colors hover:text-star">
                             상담 남기기
