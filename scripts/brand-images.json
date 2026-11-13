@@ -160,6 +160,13 @@
       "prompt": "A person seen from behind sitting on a park bench at early dawn, sky turning from navy to soft peach; a few stars above form the gentle outline of a dog. Hopeful."
     },
     {
+      "id": "guide-senior-pet-farewell-prep",
+      "style": "ill",
+      "aspect": "4:3",
+      "out": "public/brand/guides/senior-pet-farewell-prep.png",
+      "prompt": "Golden-hour dusk inside a quiet Korean apartment: by a low window, an old small dog with a greying muzzle rests on a round cushion under a soft blanket, eyes half closed and content. A guardian's hand gently strokes its back; only the hand and forearm are visible. Through the window the sky shifts from muted dawn peach to deep navy with the first two or three small stars. Peaceful, tender, unhurried, not sad."
+    },
+    {
       "id": "guide-dog-grooming-cycle",
       "style": "ill",
       "aspect": "4:3",

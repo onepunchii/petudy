@@ -11,7 +11,7 @@ import { ICON_STROKE, pillClass } from "./ui";
 
 /** 밝은 카드 위 입력창. 테두리는 흰 바탕 대비 3:1, 초점은 남색 테두리 + 옅은 링 */
 const INPUT =
-    "w-full rounded-xl border border-ink-3/70 bg-white px-3.5 text-[15px] text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink-3 focus-visible:border-pine focus-visible:ring-2 focus-visible:ring-pine/25 motion-reduce:transition-none";
+    "w-full rounded-xl border border-ink-3/70 bg-white px-3.5 text-[16px] text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink-3 focus-visible:border-pine focus-visible:ring-2 focus-visible:ring-pine/25 motion-reduce:transition-none";
 const LABEL = "text-[13.5px] font-semibold text-ink";
 
 /**
@@ -26,6 +26,7 @@ export function LeadForm({
     regionSlug,
     regionName,
     compact,
+    defaults,
     className,
 }: {
     service: string;
@@ -35,6 +36,8 @@ export function LeadForm({
     regionName?: string;
     /** 한 줄에 한 칸씩 (좁은 자리용) */
     compact?: boolean;
+    /** 미리 채워 둘 값 (예: 장례식장 상세의 사장님 입구에서 업체명·소재지). 보호자가 고쳐 쓸 수 있습니다 */
+    defaults?: { dong?: string; petInfo?: string; message?: string };
     className?: string;
 }) {
     const pathname = usePathname();
@@ -148,7 +151,7 @@ export function LeadForm({
             </label>
             <label className="grid gap-1.5">
                 <span className={LABEL}>{copy.dong}</span>
-                <input name="dong" placeholder={copy.dongPh} className={cn(INPUT, "h-12")} />
+                <input name="dong" defaultValue={defaults?.dong} placeholder={copy.dongPh} className={cn(INPUT, "h-12")} />
             </label>
             <label className="grid gap-1.5">
                 <span className={LABEL}>{copy.name}</span>
@@ -156,11 +159,11 @@ export function LeadForm({
             </label>
             <label className="grid gap-1.5">
                 <span className={LABEL}>{copy.info}</span>
-                <input name="petInfo" placeholder={copy.infoPh} className={cn(INPUT, "h-12")} />
+                <input name="petInfo" defaultValue={defaults?.petInfo} placeholder={copy.infoPh} className={cn(INPUT, "h-12")} />
             </label>
             <label className={cn("grid gap-1.5", wide)}>
                 <span className={LABEL}>남기실 말씀</span>
-                <textarea name="message" rows={3} placeholder={copy.messagePh} className={cn(INPUT, "min-h-[6rem] resize-y py-3 leading-relaxed")} />
+                <textarea name="message" rows={3} defaultValue={defaults?.message} placeholder={copy.messagePh} className={cn(INPUT, "min-h-[6rem] resize-y py-3 leading-relaxed")} />
             </label>
 
             <label className={cn("flex items-start gap-2.5 text-[13.5px] leading-relaxed text-ink-2", wide)}>

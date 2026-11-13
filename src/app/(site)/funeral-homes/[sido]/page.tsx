@@ -17,7 +17,9 @@ import { faqLd } from "@/lib/site/schema";
 import { ConsultSection } from "@/components/site/sections";
 import { Container, FaqList, JsonLd } from "@/components/site/ui";
 import { DirectoryHero } from "@/components/site/funeral-homes/DirectoryHero";
-import { FuneralHomeList } from "@/components/site/funeral-homes/FuneralHomeList";
+import { toFilterRow } from "@/components/site/funeral-homes/FuneralHomeList";
+import { FilteredHomeGroups } from "@/components/site/funeral-homes/FilteredHomeGroups";
+import { ShelfLink } from "@/components/site/funeral-homes/HomeShelf";
 import { TocNav, type TocItem } from "@/components/site/funeral-homes/TocNav";
 import { AnchorTitle } from "@/components/site/funeral-homes/listing/AnchorTitle";
 import { CapitalLinks } from "@/components/site/funeral-homes/listing/CapitalLinks";
@@ -124,17 +126,10 @@ export default async function FuneralSidoPage({ params }: Props) {
                                 확인했습니다(확인일 {CHECKED_DOT}). 홈페이지에 안내가 없는 내용은 업체에 직접 확인해 주세요.
                             </p>
                             {note && <p className="mt-4 max-w-[62ch] text-[15.5px] leading-relaxed text-ink-2">{note}</p>}
+                            <ShelfLink className="mt-6 max-w-[62ch]" />
 
-                            <div className="mt-12 grid gap-14">
-                                {groups.map((g) => (
-                                    <div key={g.slug}>
-                                        <AnchorTitle id={g.slug} size="group">
-                                            {groupLabel(sido, g)} <span className="font-semibold tabular-nums text-ink-3">({g.homes.length}곳)</span>
-                                        </AnchorTitle>
-                                        <FuneralHomeList homes={g.homes} className="mt-4" />
-                                    </div>
-                                ))}
-                            </div>
+                            {/* 조건 거르기(24시간 접수·참관·대형견·가격) + 시·군·구별 목록. 서버 HTML 에는 전체 목록이 있습니다 */}
+                            <FilteredHomeGroups groups={groups.map((g) => ({ slug: g.slug, label: groupLabel(sido, g), rows: g.homes.map(toFilterRow) }))} />
 
                             {capital && <CapitalLinks className="mt-16" />}
 

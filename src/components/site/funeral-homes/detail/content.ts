@@ -26,6 +26,7 @@ export const DETAIL_TOC = [
     { id: "nearby", label: "가까운 장례식장" },
     { id: "faq", label: "자주 묻는 질문" },
     { id: "sources", label: "출처·정보 수정" },
+    { id: "owner", label: "업체 사장님" },
 ] as const;
 
 export const UNKNOWN_TEXT = "홈페이지 안내 없음";

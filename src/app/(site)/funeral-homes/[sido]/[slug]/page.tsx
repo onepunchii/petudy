@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MapPin, Phone } from "lucide-react";
 import { FUNERAL_HOMES, funeralHomePath, getFuneralHome, naverMapUrl, placeLabel, telHref } from "@/lib/site/funeral-homes";
 import { ShareButton } from "@/components/site/ShareButton";
+import { RecordRecentHome, SaveHomeButton } from "@/components/site/funeral-homes/HomeShelf";
 import { funeralHomeBreadcrumbLd, funeralHomeBusinessLd, funeralHomeCrumbs, funeralHomeImage, funeralHomeWebPageLd } from "@/lib/site/funeral-home-schema";
 import { faqLd } from "@/lib/site/schema";
 import { metaWithImage } from "@/lib/site/seo";
@@ -17,6 +18,7 @@ import { NearbySection } from "@/components/site/funeral-homes/detail/NearbySect
 import { PricesSection } from "@/components/site/funeral-homes/detail/PricesSection";
 import { ServicesSection } from "@/components/site/funeral-homes/detail/ServicesSection";
 import { SourcesSection } from "@/components/site/funeral-homes/detail/SourcesSection";
+import { OwnerSection } from "@/components/site/funeral-homes/detail/OwnerSection";
 import { SummarySection } from "@/components/site/funeral-homes/detail/SummarySection";
 import { ConsultSection } from "@/components/site/sections";
 import { Container, FaqList, ICON_STROKE, JsonLd, pillClass } from "@/components/site/ui";
@@ -60,6 +62,7 @@ export default async function FuneralHomePage({ params }: Props) {
         <>
             <JsonLd data={[funeralHomeBreadcrumbLd(h), funeralHomeBusinessLd(h), funeralHomeWebPageLd(h, { title, description, imageAlt }), faqLd(faqs)]} />
 
+            <RecordRecentHome id={h.id} />
             <DirectoryHero
                 crumbs={funeralHomeCrumbs(h)}
                 meta={h.facilityTypes.join(" · ")}
@@ -85,6 +88,8 @@ export default async function FuneralHomePage({ params }: Props) {
                             네이버 지도
                             <span className="sr-only"> (새 창)</span>
                         </a>
+                        {/* 저장(이 기기, 3곳까지) → 저장한 장례식장 비교 */}
+                        <SaveHomeButton id={h.id} name={h.name} />
                         {/* 장례는 가족과 상의해 정하는 일이 많아, 이 업체 정보를 바로 보낼 수 있게 */}
                         <ShareButton tone="onNight" label="가족에게 공유" title={`${h.name} · ${placeLabel(h)} 허가 반려동물 장례식장`} path={funeralHomePath(h)} />
                     </>
@@ -105,6 +110,7 @@ export default async function FuneralHomePage({ params }: Props) {
                             <FaqList faqs={faqs} />
                         </DetailSection>
                         <SourcesSection home={h} />
+                        <OwnerSection home={h} />
                     </div>
 
                     <DetailSidebar toc={toc} />

@@ -16,6 +16,7 @@ import { collectionPageLd, listingBreadcrumbLd } from "@/components/site/funeral
 import { SidoIndex } from "@/components/site/funeral-homes/listing/SidoIndex";
 import { SourceNote } from "@/components/site/funeral-homes/listing/SourceNote";
 import { NearestFinderSection } from "@/components/site/funeral-homes/NearestFinderSection";
+import { ShelfLink } from "@/components/site/funeral-homes/HomeShelf";
 
 const PATH = funeralHomesPath();
 const H1 = "전국 반려동물 장례식장 찾기";
@@ -64,6 +65,10 @@ export default function FuneralHomesHubPage() {
 
             {/* 위치·동네로 가까운 허가 장례식장 3곳과 업체 전화 */}
             <NearestFinderSection className="pt-14 sm:pt-16" />
+            {/* 저장했거나 최근 본 곳이 있을 때만 보이는 비교 입구 */}
+            <Container className="mt-4">
+                <ShelfLink />
+            </Container>
 
             {/* 시·도 바로가기 (표처럼 구분선 목록) */}
             <section className="py-16 sm:py-20">
