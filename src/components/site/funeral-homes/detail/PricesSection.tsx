@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Info } from "lucide-react";
 import { formatWon, naverMapUrl, type FuneralHome } from "@/lib/site/funeral-homes";
+import { COST_PATH } from "@/lib/site/funeral-cost";
 import { ICON_STROKE } from "../../ui";
 import { DetailSection, OutLink } from "./bits";
 import { dotDate, prettyUrl } from "./content";
@@ -108,13 +109,23 @@ export function PricesSection({ home: h }: { home: FuneralHome }) {
                 </div>
             )}
 
-            <Link
-                href={GUIDE_HREF}
-                className="group mt-6 inline-flex items-center gap-1.5 text-[15px] font-semibold text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink"
-            >
-                {GUIDE_LABEL}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" strokeWidth={ICON_STROKE} aria-hidden />
-            </Link>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-1">
+                <Link
+                    href={GUIDE_HREF}
+                    className="group inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink"
+                >
+                    {GUIDE_LABEL}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" strokeWidth={ICON_STROKE} aria-hidden />
+                </Link>
+                {/* 같은 시·도의 다른 허가 업체와 같은 조건(4kg 기본 장례)으로 비교 */}
+                <Link
+                    href={`${COST_PATH}#${h.sido}`}
+                    className="group inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink"
+                >
+                    이 지역 장례 비용 비교
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" strokeWidth={ICON_STROKE} aria-hidden />
+                </Link>
+            </div>
         </DetailSection>
     );
 }

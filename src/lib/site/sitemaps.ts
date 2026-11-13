@@ -8,7 +8,7 @@
  *      services       /[service], /[service]/[sido], /[service]/[sido]/[region]
  *      areas          /area, /area/[sido]/[region]
  *      guides         /guide, /guide/[slug] (+ 표지 이미지)
- *      funeral-homes  /funeral-homes, /funeral-homes/[sido], /funeral-homes/[sido]/[slug] (+ 정사각형 대표 이미지)
+ *      funeral-homes  /funeral-homes, /funeral-homes/cost, /funeral-homes/[sido], /funeral-homes/[sido]/[slug] (+ 정사각형 대표 이미지)
  *  - id 를 늘리면 SITEMAP_IDS 와 src/app/sitemap/{id}.xml/route.ts 를 함께 추가합니다.
  *
  * 왜 app/sitemap.ts(generateSitemaps)를 쓰지 않나요?
@@ -33,6 +33,7 @@ import {
     ogImagePath,
     type FuneralHome,
 } from "./funeral-homes";
+import { COST_PATH, costSummary } from "./funeral-cost";
 import { GUIDES, guideCover } from "./guides";
 import { isIndexable } from "./local";
 import { REGIONS, regionsBySido } from "./regions";
@@ -124,6 +125,8 @@ function funeralHomesSitemap(): SitemapEntry[] {
     const hub = funeralHomesPath();
     return [
         entry(hub, 0.8, "weekly", latestOf(FUNERAL_HOMES.map(checkedAt)), [ogImagePath(hub)]),
+        // 장례 비용 비교: 업체 가격을 확인한 가장 최근 날
+        entry(COST_PATH, 0.7, "monthly", costSummary().seenAt ?? FUNERAL_HOMES_CHECKED_AT, [ogImagePath(COST_PATH)]),
         ...funeralSidoList().map((s) => {
             const path = funeralSidoPath(s.slug);
             const checked = latestOf(FUNERAL_HOMES.filter((h) => h.sido === s.slug).map(checkedAt));

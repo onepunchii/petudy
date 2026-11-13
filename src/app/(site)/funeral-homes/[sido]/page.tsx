@@ -20,6 +20,7 @@ import { DirectoryHero } from "@/components/site/funeral-homes/DirectoryHero";
 import { toFilterRow } from "@/components/site/funeral-homes/FuneralHomeList";
 import { FilteredHomeGroups } from "@/components/site/funeral-homes/FilteredHomeGroups";
 import { ShelfLink } from "@/components/site/funeral-homes/HomeShelf";
+import { CostLink } from "@/components/site/funeral-homes/listing/CostLink";
 import { TocNav, type TocItem } from "@/components/site/funeral-homes/TocNav";
 import { AnchorTitle } from "@/components/site/funeral-homes/listing/AnchorTitle";
 import { CapitalLinks } from "@/components/site/funeral-homes/listing/CapitalLinks";
@@ -127,6 +128,7 @@ export default async function FuneralSidoPage({ params }: Props) {
                             </p>
                             {note && <p className="mt-4 max-w-[62ch] text-[15.5px] leading-relaxed text-ink-2">{note}</p>}
                             <ShelfLink className="mt-6 max-w-[62ch]" />
+                            <CostLink sido={sido} label={`${name} 장례 비용 비교`} className="mt-3 max-w-[62ch]" />
 
                             {/* 조건 거르기(24시간 접수·참관·대형견·가격) + 시·군·구별 목록. 서버 HTML 에는 전체 목록이 있습니다 */}
                             <FilteredHomeGroups groups={groups.map((g) => ({ slug: g.slug, label: groupLabel(sido, g), rows: g.homes.map(toFilterRow) }))} />
